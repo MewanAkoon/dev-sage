@@ -1,0 +1,1064 @@
+[
+	{
+		"question": "What is React and who developed it?",
+		"answer": "React is a JavaScript library for building user interfaces. It is used to create reusable UI components. React was developed by Facebook.",
+		"difficulty": 0,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 2,
+		"resources": []
+	},
+	{
+		"question": "What are components in React?",
+		"answer": "Components are the building blocks of any React application. A component is a self-contained unit that can manage its own state and controls its rendering. Components can be either class-based or functional.",
+		"difficulty": 0,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 3,
+		"resources": []
+	},
+	{
+		"question": "Explain the virtual DOM in React.",
+		"answer": "The virtual DOM (Document Object Model) is a programming concept where an ideal, or 'virtual', representation of a UI is kept in memory and synced with the 'real' DOM by a library such as ReactDOM. This process is called reconciliation. The virtual DOM allows React to efficiently update the UI by only rendering nodes that actually change.",
+		"difficulty": 0,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 3,
+		"resources": []
+	},
+	{
+		"question": "What is JSX?",
+		"answer": "JSX is a syntax extension for JavaScript recommended by React for describing what the UI should look like. It looks similar to HTML but is processed into JavaScript calls of React framework. JSX can include JavaScript expressions inside curly braces `{}`.",
+		"difficulty": 0,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 3,
+		"resources": []
+	},
+	{
+		"question": "How do you create a simple component in React?",
+		"answer": "A simple React component can be created using a JavaScript function. Here's an example: \n\n```javascript\nfunction Greeting() {\n  return <h1>Hello, world!</h1>;\n}\n```\n\nThis function returns a JSX element, which is rendered as HTML by React.",
+		"difficulty": 0,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 4,
+		"resources": []
+	},
+	{
+		"question": "What are props in React?",
+		"answer": "Props (short for properties) are a way of passing data from parent to child components in React. They are read-only and help you create reusable components.",
+		"difficulty": 0,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 3,
+		"resources": []
+	},
+	{
+		"question": "How does React handle events?",
+		"answer": "React handles events using camelCase event handlers, which are passed as functions. For example, to handle a click event in React, you might use `onClick` attribute, like this: \n\n```javascript\n<button onClick={handleClick}>Click me</button>\n```\n\nwhere `handleClick` is a function defined in the same component.",
+		"difficulty": 0,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 3,
+		"resources": []
+	},
+	{
+		"question": "What is state in React?",
+		"answer": "State is a set of data that determines the behavior and rendering of components. Unlike props, state is local and fully controlled by the component itself. It can be changed within the component.",
+		"difficulty": 0,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 3,
+		"resources": []
+	},
+	{
+		"question": "What is the difference between state and props?",
+		"answer": "The main difference between state and props is that state is internal and controlled by the component itself while props are external and controlled by whatever renders the component. State is mutable whereas props are immutable.",
+		"difficulty": 0,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 3,
+		"resources": []
+	},
+	{
+		"question": "How do you update the state in a React component?",
+		"answer": "State in a React component is updated using the `setState()` method for class components or the updater function from `useState()` hook in functional components. It's important to use these methods rather than modifying state directly because they ensure the component re-renders after update.",
+		"difficulty": 0,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 4,
+		"resources": []
+	},
+	{
+		"question": "What are lifecycle methods in React?",
+		"answer": "Lifecycle methods are special methods in class components that allow you to run code at particular times in the component’s lifecycle, such as before it renders, after it renders, before it updates, after it updates, or before it unmounts.",
+		"difficulty": 0,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 4,
+		"resources": []
+	},
+	{
+		"question": "What is a key in React lists and why is it important?",
+		"answer": "Keys are special string attributes that need to be included when creating lists of elements in React. They help React identify which items have changed, are added, or are removed, and are necessary for efficient updates.",
+		"difficulty": 0,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 3,
+		"resources": []
+	},
+	{
+		"question": "Explain the importance of the `key` prop in lists in React.",
+		"answer": "The `key` prop is a unique identifier that helps React manage the re-rendering of lists efficiently. When a list’s order changes, React uses keys to decide which elements need to be re-rendered instead of re-rendering the entire list, improving performance.",
+		"difficulty": 0,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 3,
+		"resources": []
+	},
+	{
+		"question": "How do you pass a method from a parent component to a child component?",
+		"answer": "You can pass methods from a parent to a child component using props, similar to how you pass data. Here's an example:\n\n```javascript\n<ChildComponent doSomething={this.parentMethod} />\n```\n\n`parentMethod` would be defined in the parent component, and `doSomething` can be called from the child component.",
+		"difficulty": 0,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 3,
+		"resources": []
+	},
+	{
+		"question": "Describe how conditional rendering works in React.",
+		"answer": "Conditional rendering in React works by using JavaScript operators like `if` or the conditional (ternary) operator to create elements representing the current state, and React updates the UI to match them. For example, you might render a component or null based on a condition.",
+		"difficulty": 0,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 3,
+		"resources": []
+	},
+	{
+		"question": "Explain the concept of higher-order components (HOC) in React.",
+		"answer": "Higher-order components (HOCs) are a pattern used in React to reuse component logic. An HOC is a function that takes a component and returns a new component, usually with additional properties or behavior. It's similar to higher-order functions in JavaScript. This pattern can be used for tasks like enhancing components with shared functionality such as logging, state management, or access control.",
+		"difficulty": 1,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 4,
+		"resources": []
+	},
+	{
+		"question": "What are pure components in React?",
+		"answer": "Pure components in React are a simpler way to write components that do not manage state by themselves or rely on side effects from external systems. A pure component’s output is solely determined by its props and it implements `shouldComponentUpdate()` with a shallow prop and state comparison. This can lead to performance improvements as the component only updates when its props or state change.",
+		"difficulty": 1,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 4,
+		"resources": []
+	},
+	{
+		"question": "Describe the Context API in React.",
+		"answer": "The Context API is a React structure that enables you to exchange unique details and assists in solving prop-drilling from all levels of your application. It is designed to share data that can be considered 'global' for a tree of React components, such as the current authenticated user, theme, or preferred language.",
+		"difficulty": 1,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 4,
+		"resources": []
+	},
+	{
+		"question": "How do you handle asynchronous operations in React?",
+		"answer": "Asynchronous operations in React are typically handled using JavaScript promises, async/await, or APIs like Fetch for network requests. In React components, these are often performed during lifecycle methods such as `componentDidMount` or within hooks like `useEffect` for functional components, to ensure they are executed at the correct point in the component's lifecycle.",
+		"difficulty": 1,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 5,
+		"resources": []
+	},
+	{
+		"question": "What is the significance of keys in React lists?",
+		"answer": "Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity. Using keys increases the performance of the application as React can skip re-rendering items that have not changed.",
+		"difficulty": 1,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 3,
+		"resources": []
+	},
+	{
+		"question": "What is reconciliation in React?",
+		"answer": "Reconciliation is the process through which React updates the DOM. When a component’s state changes, React needs to calculate if it is necessary to update the DOM. It does this by creating a virtual DOM and comparing it with the current DOM using a diffing algorithm. This process helps in determining the most efficient way to update the browser’s DOM.",
+		"difficulty": 1,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 5,
+		"resources": []
+	},
+	{
+		"question": "Explain how React's diffing algorithm works.",
+		"answer": "React's diffing algorithm, also called Reconciliation, works by comparing the new React elements with the previous ones. The algorithm identifies differences between the old and new trees and efficiently updates the DOM only at places where changes have occurred. It uses heuristics to update the DOM in a minimal number of operations, which generally involves updating nodes in place whenever possible.",
+		"difficulty": 1,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 4,
+		"resources": []
+	},
+	{
+		"question": "What are controlled components in React?",
+		"answer": "Controlled components in React are those that let React control their values and handle their changes through state. Typically, input form elements like `<input>`, `<textarea>`, and `<select>` become controlled components when their value is controlled by React in this way.",
+		"difficulty": 1,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 4,
+		"resources": []
+	},
+	{
+		"question": "How does React implement unidirectional data flow?",
+		"answer": "Unidirectional data flow in React means that data has only one way to be transferred to other parts of the application. This is achieved via props and state where data flows from parent components down to child components through props, and changes in state propagate up the component hierarchy not directly, but through callbacks or state lifting.",
+		"difficulty": 1,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 4,
+		"resources": []
+	},
+	{
+		"question": "Explain props drilling and how to avoid it.",
+		"answer": "Prop drilling refers to the process of passing data from a higher-level component to a lower-level component through props, which might not actually need the data themselves, but pass it down the chain. It can be avoided by using React's Context API or state management libraries like Redux to provide a more centralized and streamlined way of data sharing.",
+		"difficulty": 1,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 4,
+		"resources": []
+	},
+	{
+		"question": "What is a Fragment in React, and why would you use it?",
+		"answer": "A Fragment in React is a tool that allows you to return multiple elements without wrapping them in an extra node in the DOM. This can be very helpful for keeping the DOM cleaner and improving performance, especially when rendering lists or multiple components that do not need extra nodes for styling or scripting purposes.",
+		"difficulty": 1,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 3,
+		"resources": []
+	},
+	{
+		"question": "What are side effects in React components?",
+		"answer": "Side effects in React components are operations that affect other components, can't be done during rendering, and may involve asynchronous API calls, manipulating the DOM directly, or subscribing to some external events. The `useEffect` hook is commonly used in functional components to perform side effects.",
+		"difficulty": 1,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 4,
+		"resources": []
+	},
+	{
+		"question": "What is PropTypes in React and why is it important?",
+		"answer": "PropTypes is a library that helps in bug checking by validating the types of props passed to components in React applications. It ensures that the components use the right data type and logs a warning in the console during development if the types do not match the expected types.",
+		"difficulty": 1,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 3,
+		"resources": []
+	},
+	{
+		"question": "How do you handle forms in React?",
+		"answer": "Forms in React can be handled by controlled components. For instance, you can manage the form inputs' values through React state using the `useState` hook. Each state updater function tied to an input's `onChange` handler will update the corresponding state property, thereby updating the form element's value.",
+		"difficulty": 1,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 5,
+		"resources": []
+	},
+	{
+		"question": "Explain memoization in React components.",
+		"answer": "Memoization in React is a performance optimization technique that helps in avoiding costly recalculations by storing the results of expensive function calls and returning the cached result when the same inputs occur again. React provides hooks like `useMemo` for memoizing values and `React.memo` for memoizing components.",
+		"difficulty": 1,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 4,
+		"resources": []
+	},
+	{
+		"question": "Explain the concept of lifting state up in React.",
+		"answer": "Lifting state up is a technique in React for managing shared state across multiple components. When several components need to access and modify the same data, the shared state is moved up to their closest common ancestor. This approach makes the state accessible to all components that need it through props, maintaining consistency and facilitating communication between components.",
+		"difficulty": 2,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 5,
+		"resources": []
+	},
+	{
+		"question": "What is the render prop pattern in React?",
+		"answer": "The render prop pattern is a technique in React for sharing code between components using a prop whose value is a function. A component with a render prop takes a function that returns a React element and calls it instead of implementing its own render logic. This pattern is useful for reusing behavior across different components.",
+		"difficulty": 2,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 5,
+		"resources": []
+	},
+	{
+		"question": "Describe how you would use React's Profiler API to improve performance.",
+		"answer": "React's Profiler API provides a way to measure the 'cost' of rendering a component. It can be used in development to collect performance information about each component that is rendered. By wrapping components in a `<Profiler>` component, you can log base duration and actual duration of the render phase, helping identify slower-than-expected parts of your app and optimize them.",
+		"difficulty": 2,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 6,
+		"resources": []
+	},
+	{
+		"question": "What is the importance of immutability in React?",
+		"answer": "Immutability is a core concept in React, especially important for managing the application's state. React relies on immutable data structures to efficiently detect changes in data, which helps determine when to re-render the UI. By treating data as immutable, React can quickly compare references, which enhances performance and simplifies the development of predictable UIs.",
+		"difficulty": 2,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 5,
+		"resources": []
+	},
+	{
+		"question": "How can you optimize performance in a React application?",
+		"answer": "Performance in React applications can be optimized through several methods: using `React.memo()` for memoizing components, leveraging the `useCallback` and `useMemo` hooks to avoid unnecessary renders, implementing lazy loading with `React.lazy` and `Suspense`, keeping component state local where possible, and splitting code using dynamic import() statements to reduce the size of the initial load.",
+		"difficulty": 2,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 6,
+		"resources": []
+	},
+	{
+		"question": "Explain the use of error boundaries in React.",
+		"answer": "Error boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of the component tree that crashed. They are defined by class components that implement either `getDerivedStateFromError()` or `componentDidCatch()`. They improve the user experience by preventing the entire application from crashing in case of an error in part of the UI.",
+		"difficulty": 2,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 5,
+		"resources": []
+	},
+	{
+		"question": "Discuss the advantages of using functional components with hooks over class components.",
+		"answer": "Functional components with hooks offer several advantages over class components: they provide a simpler and more concise way to write components without managing 'this' context, make code reuse and composition easier with custom hooks, and enhance code readability and organization. Hooks also allow you to use more of React's features without classes, streamlining the integration of state and lifecycle features into components.",
+		"difficulty": 2,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 5,
+		"resources": []
+	},
+	{
+		"question": "What are synthetic events in React?",
+		"answer": "Synthetic events in React are objects that act as cross-browser wrappers around the browser's native event. They normalize events to ensure consistency across different browsers. React's event system implements its own event propagation mechanism that behaves exactly like the native one, but synthetic events work identically across all browsers.",
+		"difficulty": 2,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 4,
+		"resources": []
+	},
+	{
+		"question": "How does React handle batching of multiple setState() calls?",
+		"answer": "React batches multiple `setState()` calls into a single update for performance reasons. This means that state updates within the same cycle of the JavaScript event loop are batched, so the component only re-renders once instead of re-rendering after each state update. However, if `setState()` is called outside of an event handler, like in a setTimeout, batching does not occur unless wrapped in `ReactDOM.flushSync()`.",
+		"difficulty": 2,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 5,
+		"resources": []
+	},
+	{
+		"question": "Explain the significance of server-side rendering in React.",
+		"answer": "Server-side rendering (SSR) in React is significant because it enables the initial render of the application to be sent as a fully formed HTML page from the server, improving load times and SEO by allowing search engines to index static content. It also enhances the user experience by displaying a visible page faster while the client-side React app becomes interactive in the background.",
+		"difficulty": 2,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 5,
+		"resources": []
+	},
+	{
+		"question": "What are the differences between a React component and an element?",
+		"answer": "A React component can be either a function or a class that optionally accepts inputs and returns a React element, describing what should appear on the screen. A React element, however, is a simple object that describes a DOM node and its attributes or properties. Elements are the building blocks of React applications and are what components return in their render method.",
+		"difficulty": 2,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 5,
+		"resources": []
+	},
+	{
+		"question": "Discuss the use of the `useReducer` hook in managing state in React.",
+		"answer": "The `useReducer` hook in React is used for managing more complex state logic in components. It lets you manage local state of the component with a reducer function. This is particularly useful when the next state depends on the previous one or when the state logic is complex involving multiple sub-values or when the next state depends on multiple actions dispatched.",
+		"difficulty": 2,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 6,
+		"resources": []
+	},
+	{
+		"question": "How can you use the `useContext` hook to manage global state in a React app?",
+		"answer": "The `useContext` hook allows you to subscribe to React context without introducing nesting. It is used to let you access the context value in functional components directly. This hook makes it simpler to manage and access global state across various components without having to pass props down manually through every level of the component tree, improving code readability and reducing boilerplate.",
+		"difficulty": 2,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 5,
+		"resources": []
+	},
+	{
+		"question": "What is the virtual DOM and how does React use it to optimize re-rendering?",
+		"answer": "The virtual DOM is a concept implemented by React that provides a programming API which syncs with the actual DOM by keeping a light-weight copy. This virtual representation allows React to optimize rendering by minimizing the number of costly DOM manipulations. It compares the new virtual DOM with the old one, computes the best way to make these changes using the diffing algorithm, and then updates the DOM efficiently.",
+		"difficulty": 2,
+		"practicality": 0,
+		"tags": [],
+		"estimatedTime": 5,
+		"resources": []
+	},
+	{
+		"question": "Create a simple React component called `HelloWorld` that renders a heading saying 'Hello, World!'",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction HelloWorld() {\n  return (\n    <h1>Hello, World!</h1>\n  );\n}\n\nexport default HelloWorld;\n```",
+		"difficulty": 0,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 5,
+		"resources": []
+	},
+	{
+		"question": "Create a functional component called `Counter` that displays a button and a counter starting from 0. Clicking the button should increment the counter.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction Counter() {\n  const [count, setCount] = useState(0);\n\n  return (\n    <div>\n      <button onClick={() => setCount(count + 1)}>Increment</button>\n      <p>Count: {count}</p>\n    </div>\n  );\n}\n\nexport default Counter;\n```",
+		"difficulty": 0,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 7,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `Greeting` that takes a prop `name` and renders a personalized greeting message.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction Greeting({ name }) {\n  return (\n    <div>\n      <p>Hello, {name}!</p>\n    </div>\n  );\n}\n\nexport default Greeting;\n```",
+		"difficulty": 0,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 5,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `LoginForm` that contains input fields for username and password.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction LoginForm() {\n  const [username, setUsername] = useState('');\n  const [password, setPassword] = useState('');\n\n  return (\n    <form>\n      <input type=\"text\" value={username} onChange={(e) => setUsername(e.target.value)} placeholder=\"Username\" />\n      <input type=\"password\" value={password} onChange={(e) => setPassword(e.target.value)} placeholder=\"Password\" />\n    </form>\n  );\n}\n\nexport default LoginForm;\n```",
+		"difficulty": 0,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 8,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `TodoList` that displays a list of todos. The todos should be passed as props.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction TodoList({ todos }) {\n  return (\n    <ul>\n      {todos.map((todo, index) => (\n        <li key={index}>{todo}</li>\n      ))}\n    </ul>\n  );\n}\n\nexport default TodoList;\n```",
+		"difficulty": 0,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 6,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `ConditionalRendering` that renders 'Hello, User!' if `isLoggedIn` prop is true, otherwise renders 'Please log in'.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction ConditionalRendering({ isLoggedIn }) {\n  return (\n    <div>\n      {isLoggedIn ? <p>Hello, User!</p> : <p>Please log in</p>}\n    </div>\n  );\n}\n\nexport default ConditionalRendering;\n```",
+		"difficulty": 0,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 6,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `FetchData` that fetches data from a URL and displays it when the component mounts.",
+		"answer": "```jsx\nimport React, { useState, useEffect } from 'react';\n\nfunction FetchData() {\n  const [data, setData] = useState(null);\n\n  useEffect(() => {\n    fetch('https://api.example.com/data')\n      .then(response => response.json())\n      .then(data => setData(data))\n      .catch(error => console.error('Error fetching data:', error));\n  }, []);\n\n  return (\n    <div>\n      {data ? <p>{data}</p> : <p>Loading...</p>}\n    </div>\n  );\n}\n\nexport default FetchData;\n```",
+		"difficulty": 0,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 10,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `Toggle` that toggles the visibility of a message when a button is clicked.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction Toggle() {\n  const [isVisible, setIsVisible] = useState(false);\n\n  return (\n    <div>\n      <button onClick={() => setIsVisible(!isVisible)}>Toggle Message</button>\n      {isVisible && <p>Message is visible!</p>}\n    </div>\n  );\n}\n\nexport default Toggle;\n```",
+		"difficulty": 0,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 7,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `ColorPicker` that changes the background color of a div based on the selected color from a dropdown.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction ColorPicker() {\n  const [color, setColor] = useState('');\n\n  const handleChange = (e) => {\n    setColor(e.target.value);\n  };\n\n  return (\n    <div>\n      <select value={color} onChange={handleChange}>\n        <option value=\"\">Select a color</option>\n        <option value=\"red\">Red</option>\n        <option value=\"green\">Green</option>\n        <option value=\"blue\">Blue</option>\n      </select>\n      <div style={{ backgroundColor: color, width: '100px', height: '100px' }}></div>\n    </div>\n  );\n}\n\nexport default ColorPicker;\n```",
+		"difficulty": 0,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 9,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `Timer` that displays the current time and updates every second.",
+		"answer": "```jsx\nimport React, { useState, useEffect } from 'react';\n\nfunction Timer() {\n  const [time, setTime] = useState(new Date().toLocaleTimeString());\n\n  useEffect(() => {\n    const intervalId = setInterval(() => {\n      setTime(new Date().toLocaleTimeString());\n    }, 1000);\n\n    return () => clearInterval(intervalId);\n  }, []);\n\n  return (\n    <div>\n      <p>Current time: {time}</p>\n    </div>\n  );\n}\n\nexport default Timer;\n```",
+		"difficulty": 0,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 10,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `HoverEffect` that changes the text color to red when hovered over.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction HoverEffect() {\n  return (\n    <div style={{ color: 'black' }} onMouseEnter={(e) => e.target.style.color = 'red'} onMouseLeave={(e) => e.target.style.color = 'black'}>\n      Hover over me\n    </div>\n  );\n}\n\nexport default HoverEffect;\n```",
+		"difficulty": 0,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 7,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `SimpleForm` that logs the form input value to the console when the form is submitted.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction SimpleForm() {\n  const [inputValue, setInputValue] = useState('');\n\n  const handleSubmit = (e) => {\n    e.preventDefault();\n    console.log('Form submitted with value:', inputValue);\n  };\n\n  return (\n    <form onSubmit={handleSubmit}>\n      <input type=\"text\" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />\n      <button type=\"submit\">Submit</button>\n    </form>\n  );\n}\n\nexport default SimpleForm;\n```",
+		"difficulty": 0,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 8,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `CounterWithReset` that counts up from 0 and has a button to reset the counter.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction CounterWithReset() {\n  const [count, setCount] = useState(0);\n\n  const handleReset = () => {\n    setCount(0);\n  };\n\n  return (\n    <div>\n      <p>Count: {count}</p>\n      <button onClick={() => setCount(count + 1)}>Increment</button>\n      <button onClick={handleReset}>Reset</button>\n    </div>\n  );\n}\n\nexport default CounterWithReset;\n```",
+		"difficulty": 0,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 8,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `ListAndKeys` that renders a list of items provided as props with unique keys.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction ListAndKeys({ items }) {\n  return (\n    <ul>\n      {items.map((item, index) => (\n        <li key={index}>{item}</li>\n      ))}\n    </ul>\n  );\n}\n\nexport default ListAndKeys;\n```",
+		"difficulty": 0,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 6,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `SimpleCounter` that counts up from 0 to 10, displaying each number for 1 second before incrementing.",
+		"answer": "```jsx\nimport React, { useState, useEffect } from 'react';\n\nfunction SimpleCounter() {\n  const [count, setCount] = useState(0);\n\n  useEffect(() => {\n    const intervalId = setInterval(() => {\n      if (count < 10) {\n        setCount(count + 1);\n      }\n    }, 1000);\n\n    return () => clearInterval(intervalId);\n  }, [count]);\n\n  return (\n    <div>\n      <p>Count: {count}</p>\n    </div>\n  );\n}\n\nexport default SimpleCounter;\n```",
+		"difficulty": 0,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 10,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `Accordion` that displays a list of items with collapsible content.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction Accordion({ items }) {\n  const [openIndex, setOpenIndex] = useState(null);\n\n  const toggleAccordion = (index) => {\n    setOpenIndex(openIndex === index ? null : index);\n  };\n\n  return (\n    <div>\n      {items.map((item, index) => (\n        <div key={index}>\n          <div onClick={() => toggleAccordion(index)}>\n            <h3>{item.title}</h3>\n          </div>\n          {openIndex === index && <p>{item.content}</p>}\n        </div>\n      ))}\n    </div>\n  );\n}\n\nexport default Accordion;\n```",
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 9,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `Modal` that displays a modal dialog with close functionality.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction Modal({ isOpen, onClose, children }) {\n  if (!isOpen) return null;\n\n  return (\n    <div className=\"modal\">\n      <div className=\"modal-content\">\n        {children}\n        <button onClick={onClose}>Close</button>\n      </div>\n    </div>\n  );\n}\n\nexport default Modal;\n```",
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 7,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `Pagination` that allows users to navigate through pages of content.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction Pagination({ currentPage, totalPages, onPageChange }) {\n  const handleClick = (page) => {\n    onPageChange(page);\n  };\n\n  return (\n    <div>\n      {Array.from({ length: totalPages }, (_, index) => (\n        <button key={index} onClick={() => handleClick(index + 1)}>{index + 1}</button>\n      ))}\n    </div>\n  );\n}\n\nexport default Pagination;\n```",
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 7,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `Dropdown` that displays a dropdown menu with selectable options.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction Dropdown({ options, onSelect }) {\n  const [selectedOption, setSelectedOption] = useState(null);\n\n  const handleSelect = (option) => {\n    setSelectedOption(option);\n    onSelect(option);\n  };\n\n  return (\n    <select value={selectedOption} onChange={(e) => handleSelect(e.target.value)}>\n      {options.map((option, index) => (\n        <option key={index} value={option}>{option}</option>\n      ))}\n    </select>\n  );\n}\n\nexport default Dropdown;\n```",
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 8,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `SortableTable` that displays a table with sortable columns.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction SortableTable({ data }) {\n  const [sortedColumn, setSortedColumn] = useState(null);\n  const [sortDirection, setSortDirection] = useState('asc');\n\n  const handleSort = (column) => {\n    setSortedColumn(column);\n    setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');\n  };\n\n  const sortedData = sortedColumn ? [...data].sort((a, b) => {\n    if (sortDirection === 'asc') {\n      return a[sortedColumn] - b[sortedColumn];\n    } else {\n      return b[sortedColumn] - a[sortedColumn];\n    }\n  }) : data;\n\n  return (\n    <table>\n      <thead>\n        <tr>\n          {Object.keys(data[0]).map((column, index) => (\n            <th key={index} onClick={() => handleSort(column)}>{column}</th>\n          ))}\n        </tr>\n      </thead>\n      <tbody>\n        {sortedData.map((row, index) => (\n          <tr key={index}>\n            {Object.values(row).map((value, index) => (\n              <td key={index}>{value}</td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n}\n\nexport default SortableTable;\n```",
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 12,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `Tabs` that displays tabbed content.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction Tabs({ tabs }) {\n  const [activeTab, setActiveTab] = useState(0);\n\n  return (\n    <div>\n      <div className=\"tab-buttons\">\n        {tabs.map((tab, index) => (\n          <button key={index} onClick={() => setActiveTab(index)}>{tab.label}</button>\n        ))}\n      </div>\n      <div className=\"tab-content\">\n        {tabs[activeTab].content}\n      </div>\n    </div>\n  );\n}\n\nexport default Tabs;\n```",
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 9,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `FormValidation` that validates form inputs and displays error messages.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction FormValidation() {\n  const [email, setEmail] = useState('');\n  const [password, setPassword] = useState('');\n  const [errors, setErrors] = useState({});\n\n  const handleSubmit = (e) => {\n    e.preventDefault();\n    const errors = {};\n    if (!email) {\n      errors.email = 'Email is required';\n    }\n    if (!password) {\n      errors.password = 'Password is required';\n    }\n    setErrors(errors);\n    if (Object.keys(errors).length === 0) {\n      // Form submission logic\n    }\n  };\n\n  return (\n    <form onSubmit={handleSubmit}>\n      <input type=\"text\" value={email} onChange={(e) => setEmail(e.target.value)} placeholder=\"Email\" />\n      {errors.email && <p>{errors.email}</p>}\n      <input type=\"password\" value={password} onChange={(e) => setPassword(e.target.value)} placeholder=\"Password\" />\n      {errors.password && <p>{errors.password}</p>}\n      <button type=\"submit\">Submit</button>\n    </form>\n  );\n}\n\nexport default FormValidation;\n```",
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 10,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `FileUpload` that allows users to upload files.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction FileUpload() {\n  const [file, setFile] = useState(null);\n\n  const handleChange = (e) => {\n    const selectedFile = e.target.files[0];\n    setFile(selectedFile);\n  };\n\n  return (\n    <div>\n      <input type=\"file\" onChange={handleChange} />\n      {file && <p>Selected file: {file.name}</p>}\n    </div>\n  );\n}\n\nexport default FileUpload;\n```",
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 7,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `SearchBar` that allows users to search for items.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction SearchBar({ onSearch }) {\n  const [query, setQuery] = useState('');\n\n  const handleChange = (e) => {\n    setQuery(e.target.value);\n  };\n\n  const handleSubmit = (e) => {\n    e.preventDefault();\n    onSearch(query);\n  };\n\n  return (\n    <form onSubmit={handleSubmit}>\n      <input type=\"text\" value={query} onChange={handleChange} placeholder=\"Search...\" />\n      <button type=\"submit\">Search</button>\n    </form>\n  );\n}\n\nexport default SearchBar;\n```",
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 8,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `Carousel` that displays a carousel of images.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction Carousel({ images }) {\n  const [currentIndex, setCurrentIndex] = useState(0);\n\n  const nextSlide = () => {\n    setCurrentIndex((currentIndex + 1) % images.length);\n  };\n\n  const prevSlide = () => {\n    setCurrentIndex(currentIndex === 0 ? images.length - 1 : currentIndex - 1);\n  };\n\n  return (\n    <div>\n      <button onClick={prevSlide}>Previous</button>\n      <img src={images[currentIndex]} alt=\"Carousel slide\" />\n      <button onClick={nextSlide}>Next</button>\n    </div>\n  );\n}\n\nexport default Carousel;\n```",
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 9,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `InfiniteScroll` that loads more content as the user scrolls down.",
+		"answer": "```jsx\nimport React, { useState, useEffect } from 'react';\n\nfunction InfiniteScroll({ fetchMoreData }) {\n  const [isFetching, setIsFetching] = useState(false);\n\n  useEffect(() => {\n    window.addEventListener('scroll', handleScroll);\n    return () => window.removeEventListener('scroll', handleScroll);\n  }, []);\n\n  const handleScroll = () => {\n    if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || isFetching) return;\n    setIsFetching(true);\n    fetchMoreData();\n  };\n\n  return (\n    <div>\n      {isFetching && <p>Loading...</p>}\n    </div>\n  );\n}\n\nexport default InfiniteScroll;\n```",
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 10,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `ImageGallery` that displays a grid of images.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction ImageGallery({ images }) {\n  return (\n    <div className=\"image-gallery\">\n      {images.map((image, index) => (\n        <img key={index} src={image.url} alt={image.alt} />\n      ))}\n    </div>\n  );\n}\n\nexport default ImageGallery;\n```",
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 8,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `StickyHeader` that sticks to the top of the page as the user scrolls.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction StickyHeader() {\n  return (\n    <div className=\"sticky-header\">\n      Sticky header content\n    </div>\n  );\n}\n\nexport default StickyHeader;\n```",
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 6,
+		"resources": []
+	},
+	{
+		"question": "Create a Higher-Order Component (HOC) called `withLoading` that wraps a component and displays a loading spinner while data is being fetched.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction withLoading(Component) {\n  return function WithLoadingComponent({ isLoading, ...props }) {\n    if (isLoading) {\n      return <div>Loading...</div>;\n    }\n    return <Component {...props} />;\n  };\n}\n\nexport default withLoading;\n```",
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 9,
+		"resources": []
+	},
+	{
+		"question": "Create a Render Prop component called `MouseTracker` that tracks the mouse position and passes it to its children as a render prop.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction MouseTracker({ children }) {\n  const [position, setPosition] = useState({ x: 0, y: 0 });\n\n  const handleMouseMove = (e) => {\n    setPosition({ x: e.clientX, y: e.clientY });\n  };\n\n  return (\n    <div style={{ height: '100vh' }} onMouseMove={handleMouseMove}>\n      {children(position)}\n    </div>\n  );\n}\n\nexport default MouseTracker;\n```",
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 8,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `VirtualizedList` that efficiently renders a large list of items by only rendering the visible items.",
+		"answer": "```jsx\nimport React, { useState, useEffect, useRef } from 'react';\n\nfunction VirtualizedList({ items }) {\n  const [visibleItems, setVisibleItems] = useState([]);\n  const containerRef = useRef(null);\n\n  useEffect(() => {\n    const handleScroll = () => {\n      const container = containerRef.current;\n      const scrollOffset = container.scrollTop;\n      const startIndex = Math.floor(scrollOffset / 20);\n      const endIndex = Math.min(startIndex + Math.ceil(container.clientHeight / 20), items.length);\n      setVisibleItems(items.slice(startIndex, endIndex));\n    };\n\n    const container = containerRef.current;\n    container.addEventListener('scroll', handleScroll);\n    handleScroll();\n\n    return () => container.removeEventListener('scroll', handleScroll);\n  }, [items]);\n\n  return (\n    <div ref={containerRef} style={{ height: '400px', overflow: 'auto' }}>\n      {visibleItems.map((item, index) => (\n        <div key={index} style={{ height: '20px' }}>{item}</div>\n      ))}\n    </div>\n  );\n}\n\nexport default VirtualizedList;\n```",
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 15,
+		"resources": []
+	},
+	{
+		"question": "Create a Context called `ThemeContext` that provides a theme to its child components.",
+		"answer": "```jsx\nimport React, { createContext, useState } from 'react';\n\nconst ThemeContext = createContext();\n\nfunction ThemeProvider({ children }) {\n  const [theme, setTheme] = useState('light');\n\n  const toggleTheme = () => {\n    setTheme(theme === 'light' ? 'dark' : 'light');\n  };\n\n  return (\n    <ThemeContext.Provider value={{ theme, toggleTheme }}>\n      {children}\n    </ThemeContext.Provider>\n  );\n}\n\nexport { ThemeProvider, ThemeContext };\n```",
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 10,
+		"resources": []
+	},
+	{
+		"question": "Create a custom hook called `useLocalStorage` that synchronizes state with local storage.",
+		"answer": "```jsx\nimport { useState, useEffect } from 'react';\n\nfunction useLocalStorage(key, initialValue) {\n  const [value, setValue] = useState(() => {\n    const storedValue = localStorage.getItem(key);\n    return storedValue ? JSON.parse(storedValue) : initialValue;\n  });\n\n  useEffect(() => {\n    localStorage.setItem(key, JSON.stringify(value));\n  }, [key, value]);\n\n  return [value, setValue];\n}\n\nexport default useLocalStorage;\n```",
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 10,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `ErrorBoundary` that catches JavaScript errors in its child component tree.",
+		"answer": "```jsx\nimport React, { Component } from 'react';\n\nclass ErrorBoundary extends Component {\n  constructor(props) {\n    super(props);\n    this.state = { hasError: false };\n  }\n\n  static getDerivedStateFromError(error) {\n    return { hasError: true };\n  }\n\n  componentDidCatch(error, errorInfo) {\n    console.error('Error caught by ErrorBoundary:', error, errorInfo);\n  }\n\n  render() {\n    if (this.state.hasError) {\n      return <p>Something went wrong.</p>;\n    }\n    return this.props.children;\n  }\n}\n\nexport default ErrorBoundary;\n```",
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 10,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `Portal` that renders its children into a different DOM node.",
+		"answer": "```jsx\nimport React, { useEffect, useRef } from 'react';\nimport { createPortal } from 'react-dom';\n\nfunction Portal({ children }) {\n  const containerRef = useRef(document.createElement('div'));\n\n  useEffect(() => {\n    document.body.appendChild(containerRef.current);\n    return () => {\n      document.body.removeChild(containerRef.current);\n    };\n  }, []);\n\n  return createPortal(children, containerRef.current);\n}\n\nexport default Portal;\n```",
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 10,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `DragAndDrop` that allows users to drag and drop elements.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction DragAndDrop() {\n  const [isDragging, setIsDragging] = useState(false);\n\n  const handleDragStart = () => {\n    setIsDragging(true);\n  };\n\n  const handleDragEnd = () => {\n    setIsDragging(false);\n  };\n\n  return (\n    <div\n      draggable\n      onDragStart={handleDragStart}\n      onDragEnd={handleDragEnd}\n      style={{ width: '100px', height: '100px', backgroundColor: isDragging ? 'red' : 'blue' }}\n    >\n      Drag me\n    </div>\n  );\n}\n\nexport default DragAndDrop;\n```",
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 9,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `LazyLoad` that lazily loads its children when they become visible in the viewport.",
+		"answer": "```jsx\nimport React, { useState, useEffect, useRef } from 'react';\n\nfunction LazyLoad({ children }) {\n  const [isVisible, setIsVisible] = useState(false);\n  const ref = useRef(null);\n\n  useEffect(() => {\n    const observer = new IntersectionObserver((entries) => {\n      entries.forEach((entry) => {\n        if (entry.isIntersecting) {\n          setIsVisible(true);\n          observer.unobserve(ref.current);\n        }\n      });\n    });\n\n    observer.observe(ref.current);\n    return () => observer.disconnect();\n  }, []);\n\n  return <div ref={ref}>{isVisible ? children : null}</div>;\n}\n\nexport default LazyLoad;\n```",
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 12,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `WebSocketChat` that enables real-time chat using WebSocket.",
+		"answer": "```jsx\nimport React, { useState, useEffect } from 'react';\n\nfunction WebSocketChat() {\n  const [messages, setMessages] = useState([]);\n  const [inputValue, setInputValue] = useState('');\n  const [socket, setSocket] = useState(null);\n\n  useEffect(() => {\n    const newSocket = new WebSocket('ws://localhost:8080');\n    newSocket.onopen = () => {\n      console.log('WebSocket connection established.');\n    };\n    newSocket.onmessage = (event) => {\n      setMessages((prevMessages) => [...prevMessages, event.data]);\n    };\n    setSocket(newSocket);\n    return () => newSocket.close();\n  }, []);\n\n  const handleSubmit = (e) => {\n    e.preventDefault();\n    if (!socket || !inputValue.trim()) return;\n    socket.send(inputValue);\n    setInputValue('');\n  };\n\n  return (\n    <div>\n      <div>{messages.map((message, index) => (<p key={index}>{message}</p>))}</div>\n      <form onSubmit={handleSubmit}>\n        <input type=\"text\" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />\n        <button type=\"submit\">Send</button>\n      </form>\n    </div>\n  );\n}\n\nexport default WebSocketChat;\n```",
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 15,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `GraphQLQuery` that fetches data using GraphQL.",
+		"answer": "```jsx\nimport React from 'react';\nimport { useQuery, gql } from '@apollo/client';\n\nconst GET_DATA = gql`\n  query {\n    getData {\n      id\n      name\n    }\n  }\n`;\n\nfunction GraphQLQuery() {\n  const { loading, error, data } = useQuery(GET_DATA);\n\n  if (loading) return <p>Loading...</p>;\n  if (error) return <p>Error: {error.message}</p>;\n\n  return (\n    <div>\n      {data.getData.map((item) => (\n        <div key={item.id}>{item.name}</div>\n      ))}\n    </div>\n  );\n}\n\nexport default GraphQLQuery;\n```",
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 15,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `WebRTCVideoChat` that enables real-time video chat using WebRTC.",
+		"answer": "```jsx\nimport React, { useState, useRef, useEffect } from 'react';\n\nfunction WebRTCVideoChat() {\n  const localVideoRef = useRef(null);\n  const remoteVideoRef = useRef(null);\n  const [localStream, setLocalStream] = useState(null);\n  const [remoteStream, setRemoteStream] = useState(null);\n\n  useEffect(() => {\n    navigator.mediaDevices.getUserMedia({ video: true, audio: true })\n      .then((stream) => {\n        setLocalStream(stream);\n        if (localVideoRef.current) {\n          localVideoRef.current.srcObject = stream;\n        }\n      })\n      .catch((error) => {\n        console.error('Error accessing media devices:', error);\n      });\n  }, []);\n\n  return (\n    <div>\n      <video ref={localVideoRef} autoPlay muted style={{ width: '200px', height: '150px' }}></video>\n      <video ref={remoteVideoRef} autoPlay style={{ width: '200px', height: '150px' }}></video>\n    </div>\n  );\n}\n\nexport default WebRTCVideoChat;\n```",
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 20,
+		"resources": []
+	},
+	{
+		"question": "Create a component called `ServerSentEvents` that receives server-sent events and updates the UI accordingly.",
+		"answer": "```jsx\nimport React, { useState, useEffect } from 'react';\n\nfunction ServerSentEvents() {\n  const [events, setEvents] = useState([]);\n\n  useEffect(() => {\n    const eventSource = new EventSource('/events');\n\n    eventSource.onmessage = (event) => {\n      setEvents((prevEvents) => [...prevEvents, event.data]);\n    };\n\n    return () => {\n      eventSource.close();\n    };\n  }, []);\n\n  return (\n    <div>\n      {events.map((event, index) => (\n        <p key={index}>{event}</p>\n      ))}\n    </div>\n  );\n}\n\nexport default ServerSentEvents;\n```",
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": [],
+		"estimatedTime": 15,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are tasked with creating a simple todo list application. Write a React component called `TodoList` that displays a list of todo items.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction TodoList({ todos }) {\n  return (\n    <ul>\n      {todos.map((todo, index) => (\n        <li key={index}>{todo}</li>\n      ))}\n    </ul>\n  );\n}\n\nexport default TodoList;\n```",
+		"difficulty": 0,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 5,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You need to create a simple form to collect user feedback. Write a React component called `FeedbackForm` that includes input fields for name, email, and feedback message.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction FeedbackForm() {\n  const [name, setName] = useState('');\n  const [email, setEmail] = useState('');\n  const [feedback, setFeedback] = useState('');\n\n  const handleSubmit = (e) => {\n    e.preventDefault();\n    // Logic to submit feedback\n  };\n\n  return (\n    <form onSubmit={handleSubmit}>\n      <input type=\"text\" value={name} onChange={(e) => setName(e.target.value)} placeholder=\"Name\" />\n      <input type=\"email\" value={email} onChange={(e) => setEmail(e.target.value)} placeholder=\"Email\" />\n      <textarea value={feedback} onChange={(e) => setFeedback(e.target.value)} placeholder=\"Feedback\"></textarea>\n      <button type=\"submit\">Submit</button>\n    </form>\n  );\n}\n\nexport default FeedbackForm;\n```",
+		"difficulty": 0,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 7,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are building a blog application and need to display a list of blog posts. Write a React component called `BlogPosts` that receives an array of blog post objects and renders them as a list.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction BlogPosts({ posts }) {\n  return (\n    <div>\n      {posts.map((post, index) => (\n        <div key={index}>\n          <h2>{post.title}</h2>\n          <p>{post.body}</p>\n        </div>\n      ))}\n    </div>\n  );\n}\n\nexport default BlogPosts;\n```",
+		"difficulty": 0,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 6,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are creating a product catalog for an e-commerce website. Write a React component called `ProductCatalog` that displays a grid of product cards.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction ProductCatalog({ products }) {\n  return (\n    <div className=\"product-catalog\">\n      {products.map((product, index) => (\n        <div className=\"product-card\" key={index}>\n          <img src={product.image} alt={product.name} />\n          <h3>{product.name}</h3>\n          <p>${product.price}</p>\n          <button>Add to Cart</button>\n        </div>\n      ))}\n    </div>\n  );\n}\n\nexport default ProductCatalog;\n```",
+		"difficulty": 0,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 8,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are building a weather application and need to display the current weather conditions. Write a React component called `WeatherWidget` that receives weather data as props and displays it.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction WeatherWidget({ temperature, description, icon }) {\n  return (\n    <div>\n      <h2>Current Weather</h2>\n      <div>\n        <img src={icon} alt=\"Weather Icon\" />\n        <p>{description}</p>\n      </div>\n      <p>Temperature: {temperature}°C</p>\n    </div>\n  );\n}\n\nexport default WeatherWidget;\n```",
+		"difficulty": 0,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 7,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are developing a social media application and need to display a list of user profiles. Write a React component called `UserProfileList` that receives an array of user profile objects and renders them as cards.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction UserProfileList({ profiles }) {\n  return (\n    <div className=\"user-profile-list\">\n      {profiles.map((profile, index) => (\n        <div className=\"user-profile-card\" key={index}>\n          <img src={profile.avatar} alt={profile.username} />\n          <h3>{profile.username}</h3>\n          <p>{profile.bio}</p>\n        </div>\n      ))}\n    </div>\n  );\n}\n\nexport default UserProfileList;\n```",
+		"difficulty": 0,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 8,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are building a music streaming application and need to display a list of playlists. Write a React component called `PlaylistList` that receives an array of playlist objects and renders them as a list.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction PlaylistList({ playlists }) {\n  return (\n    <div className=\"playlist-list\">\n      {playlists.map((playlist, index) => (\n        <div className=\"playlist-item\" key={index}>\n          <h3>{playlist.name}</h3>\n          <p>{playlist.description}</p>\n          <img src={playlist.coverImage} alt={playlist.name} />\n        </div>\n      ))}\n    </div>\n  );\n}\n\nexport default PlaylistList;\n```",
+		"difficulty": 0,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 7,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are developing a movie review website and need to display a list of movie reviews. Write a React component called `MovieReviews` that receives an array of review objects and renders them as cards.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction MovieReviews({ reviews }) {\n  return (\n    <div className=\"movie-reviews\">\n      {reviews.map((review, index) => (\n        <div className=\"review-card\" key={index}>\n          <h3>{review.title}</h3>\n          <p>{review.body}</p>\n          <p>Rating: {review.rating}</p>\n        </div>\n      ))}\n    </div>\n  );\n}\n\nexport default MovieReviews;\n```",
+		"difficulty": 0,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 8,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are building a recipe application and need to display a list of recipes. Write a React component called `RecipeList` that receives an array of recipe objects and renders them as cards.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction RecipeList({ recipes }) {\n  return (\n    <div className=\"recipe-list\">\n      {recipes.map((recipe, index) => (\n        <div className=\"recipe-card\" key={index}>\n          <h3>{recipe.title}</h3>\n          <p>{recipe.description}</p>\n          <ul>\n            {recipe.ingredients.map((ingredient, index) => (\n              <li key={index}>{ingredient}</li>\n            ))}\n          </ul>\n        </div>\n      ))}\n    </div>\n  );\n}\n\nexport default RecipeList;\n```",
+		"difficulty": 0,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 9,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are developing a job board application and need to display a list of job postings. Write a React component called `JobList` that receives an array of job posting objects and renders them as cards.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction JobList({ jobs }) {\n  return (\n    <div className=\"job-list\">\n      {jobs.map((job, index) => (\n        <div className=\"job-card\" key={index}>\n          <h3>{job.title}</h3>\n          <p>{job.company}</p>\n          <p>{job.location}</p>\n          <p>{job.description}</p>\n        </div>\n      ))}\n    </div>\n  );\n}\n\nexport default JobList;\n```",
+		"difficulty": 0,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 9,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are building a contact list application and need to display a list of contacts. Write a React component called `ContactList` that receives an array of contact objects and renders them as cards.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction ContactList({ contacts }) {\n  return (\n    <div className=\"contact-list\">\n      {contacts.map((contact, index) => (\n        <div className=\"contact-card\" key={index}>\n          <h3>{contact.name}</h3>\n          <p>{contact.email}</p>\n          <p>{contact.phone}</p>\n        </div>\n      ))}\n    </div>\n  );\n}\n\nexport default ContactList;\n```",
+		"difficulty": 0,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 8,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are developing a news website and need to display a list of news articles. Write a React component called `NewsArticles` that receives an array of news article objects and renders them as cards.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction NewsArticles({ articles }) {\n  return (\n    <div className=\"news-articles\">\n      {articles.map((article, index) => (\n        <div className=\"article-card\" key={index}>\n          <h3>{article.title}</h3>\n          <p>{article.author}</p>\n          <p>{article.publishedAt}</p>\n          <p>{article.description}</p>\n        </div>\n      ))}\n    </div>\n  );\n}\n\nexport default NewsArticles;\n```",
+		"difficulty": 0,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 8,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are building a social media dashboard and need to display a list of posts with the option to like and comment on each post. Write a React component called `SocialMediaFeed` that receives an array of post objects and renders them with like and comment functionality.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction SocialMediaFeed({ posts }) {\n  const [likedPosts, setLikedPosts] = useState([]);\n  const [comments, setComments] = useState({});\n\n  const handleLike = (postId) => {\n    setLikedPosts((prevLikedPosts) => [...prevLikedPosts, postId]);\n  };\n\n  const handleComment = (postId, comment) => {\n    setComments((prevComments) => ({ ...prevComments, [postId]: comment }));\n  };\n\n  return (\n    <div className=\"social-media-feed\">\n      {posts.map((post, index) => (\n        <div className=\"post\" key={index}>\n          <h3>{post.title}</h3>\n          <p>{post.content}</p>\n          <button onClick={() => handleLike(post.id)}>{likedPosts.includes(post.id) ? 'Unlike' : 'Like'}</button>\n          <input type=\"text\" value={comments[post.id] || ''} onChange={(e) => handleComment(post.id, e.target.value)} placeholder=\"Add a comment\" />\n        </div>\n      ))}\n    </div>\n  );\n}\n\nexport default SocialMediaFeed;\n```",
+		"difficulty": 1,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 10,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are developing a task management application and need to display a list of tasks with the ability to mark them as completed. Write a React component called `TaskList` that receives an array of task objects and renders them with a checkbox to mark each task as completed.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction TaskList({ tasks }) {\n  const [completedTasks, setCompletedTasks] = useState([]);\n\n  const handleCheckboxChange = (taskId) => {\n    if (completedTasks.includes(taskId)) {\n      setCompletedTasks(completedTasks.filter((id) => id !== taskId));\n    } else {\n      setCompletedTasks([...completedTasks, taskId]);\n    }\n  };\n\n  return (\n    <div className=\"task-list\">\n      {tasks.map((task, index) => (\n        <div className=\"task\" key={index}>\n          <input type=\"checkbox\" checked={completedTasks.includes(task.id)} onChange={() => handleCheckboxChange(task.id)} />\n          <span>{task.description}</span>\n        </div>\n      ))}\n    </div>\n  );\n}\n\nexport default TaskList;\n```",
+		"difficulty": 1,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 9,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are building an e-commerce website and need to display a list of products with filtering options. Write a React component called `ProductList` that receives an array of product objects and renders them with filtering functionality by category.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction ProductList({ products }) {\n  const [selectedCategory, setSelectedCategory] = useState(null);\n\n  const handleCategoryChange = (category) => {\n    setSelectedCategory(category);\n  };\n\n  return (\n    <div className=\"product-list\">\n      <select value={selectedCategory} onChange={(e) => handleCategoryChange(e.target.value)}>\n        <option value=\"\">All Categories</option>\n        {Array.from(new Set(products.map((product) => product.category))).map((category, index) => (\n          <option key={index} value={category}>{category}</option>\n        ))}\n      </select>\n      {products.filter((product) => !selectedCategory || product.category === selectedCategory).map((product, index) => (\n        <div className=\"product\" key={index}>\n          <h3>{product.name}</h3>\n          <p>{product.description}</p>\n          <p>${product.price}</p>\n        </div>\n      ))}\n    </div>\n  );\n}\n\nexport default ProductList;\n```",
+		"difficulty": 1,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 12,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are developing a user profile management system and need to display a list of users with pagination. Write a React component called `UserList` that receives an array of user objects and renders them with pagination controls.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction UserList({ users }) {\n  const [currentPage, setCurrentPage] = useState(1);\n  const itemsPerPage = 10;\n\n  const totalPages = Math.ceil(users.length / itemsPerPage);\n\n  const handlePageChange = (page) => {\n    setCurrentPage(page);\n  };\n\n  const startIndex = (currentPage - 1) * itemsPerPage;\n  const endIndex = startIndex + itemsPerPage;\n\n  const visibleUsers = users.slice(startIndex, endIndex);\n\n  return (\n    <div className=\"user-list\">\n      {visibleUsers.map((user, index) => (\n        <div className=\"user\" key={index}>\n          <h3>{user.name}</h3>\n          <p>{user.email}</p>\n        </div>\n      ))}\n      <div className=\"pagination\">\n        {Array.from({ length: totalPages }, (_, index) => (\n          <button key={index} onClick={() => handlePageChange(index + 1)}>{index + 1}</button>\n        ))}\n      </div>\n    </div>\n  );\n}\n\nexport default UserList;\n```",
+		"difficulty": 1,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 12,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are building a blogging platform and need to display a list of blog posts with pagination and sorting options. Write a React component called `BlogPostList` that receives an array of blog post objects and renders them with pagination and sorting controls.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction BlogPostList({ posts }) {\n  const [currentPage, setCurrentPage] = useState(1);\n  const [sortBy, setSortBy] = useState('date');\n  const itemsPerPage = 5;\n\n  const totalPages = Math.ceil(posts.length / itemsPerPage);\n\n  const handlePageChange = (page) => {\n    setCurrentPage(page);\n  };\n\n  const handleSortChange = (e) => {\n    setSortBy(e.target.value);\n  };\n\n  const sortedPosts = posts.sort((a, b) => {\n    if (sortBy === 'date') {\n      return new Date(b.date) - new Date(a.date);\n    } else if (sortBy === 'title') {\n      return a.title.localeCompare(b.title);\n    }\n  });\n\n  const startIndex = (currentPage - 1) * itemsPerPage;\n  const endIndex = startIndex + itemsPerPage;\n\n  const visiblePosts = sortedPosts.slice(startIndex, endIndex);\n\n  return (\n    <div className=\"blog-post-list\">\n      <div className=\"sorting\">\n        <select value={sortBy} onChange={handleSortChange}>\n          <option value=\"date\">Sort by Date</option>\n          <option value=\"title\">Sort by Title</option>\n        </select>\n      </div>\n      {visiblePosts.map((post, index) => (\n        <div className=\"post\" key={index}>\n          <h3>{post.title}</h3>\n          <p>{post.content}</p>\n        </div>\n      ))}\n      <div className=\"pagination\">\n        {Array.from({ length: totalPages }, (_, index) => (\n          <button key={index} onClick={() => handlePageChange(index + 1)}>{index + 1}</button>\n        ))}\n      </div>\n    </div>\n  );\n}\n\nexport default BlogPostList;\n```",
+		"difficulty": 1,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 15,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are developing a file management system and need to display a list of files with filtering and search functionality. Write a React component called `FileList` that receives an array of file objects and renders them with filtering by type and search by name.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction FileList({ files }) {\n  const [fileTypeFilter, setFileTypeFilter] = useState('all');\n  const [searchQuery, setSearchQuery] = useState('');\n\n  const handleFileTypeChange = (e) => {\n    setFileTypeFilter(e.target.value);\n  };\n\n  const handleSearchChange = (e) => {\n    setSearchQuery(e.target.value);\n  };\n\n  const filteredFiles = files.filter((file) => {\n    const matchesType = fileTypeFilter === 'all' || file.type === fileTypeFilter;\n    const matchesSearch = file.name.toLowerCase().includes(searchQuery.toLowerCase());\n    return matchesType && matchesSearch;\n  });\n\n  return (\n    <div className=\"file-list\">\n      <div className=\"filters\">\n        <select value={fileTypeFilter} onChange={handleFileTypeChange}>\n          <option value=\"all\">All Types</option>\n          <option value=\"image\">Images</option>\n          <option value=\"document\">Documents</option>\n          <option value=\"video\">Videos</option>\n        </select>\n        <input type=\"text\" value={searchQuery} onChange={handleSearchChange} placeholder=\"Search by name\" />\n      </div>\n      <ul>\n        {filteredFiles.map((file, index) => (\n          <li key={index}>{file.name}</li>\n        ))}\n      </ul>\n    </div>\n  );\n}\n\nexport default FileList;\n```",
+		"difficulty": 1,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 14,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are building a dashboard for monitoring system metrics and need to display a list of metrics with real-time updates. Write a React component called `MetricDashboard` that receives an array of metric objects and renders them with live updates.",
+		"answer": "```jsx\nimport React, { useState, useEffect } from 'react';\n\nfunction MetricDashboard({ metrics }) {\n  const [updatedMetrics, setUpdatedMetrics] = useState(metrics);\n\n  useEffect(() => {\n    const interval = setInterval(() => {\n      setUpdatedMetrics((prevMetrics) => (\n        prevMetrics.map((metric) => ({\n          ...metric,\n          value: Math.random() * 100 // Simulate random value update\n        }))\n      ));\n    }, 5000); // Update every 5 seconds\n\n    return () => clearInterval(interval);\n  }, []);\n\n  return (\n    <div className=\"metric-dashboard\">\n      {updatedMetrics.map((metric, index) => (\n        <div className=\"metric\" key={index}>\n          <h3>{metric.name}</h3>\n          <p>{metric.value}</p>\n        </div>\n      ))}\n    </div>\n  );\n}\n\nexport default MetricDashboard;\n```",
+		"difficulty": 1,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 12,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are developing a content management system and need to display a list of articles with drag-and-drop functionality for reordering. Write a React component called `ArticleList` that receives an array of article objects and renders them with drag-and-drop reordering.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\nimport { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';\n\nfunction ArticleList({ articles }) {\n  const [orderedArticles, setOrderedArticles] = useState(articles);\n\n  const handleDragEnd = (result) => {\n    if (!result.destination) return;\n\n    const newArticles = Array.from(orderedArticles);\n    const [removed] = newArticles.splice(result.source.index, 1);\n    newArticles.splice(result.destination.index, 0, removed);\n\n    setOrderedArticles(newArticles);\n  };\n\n  return (\n    <DragDropContext onDragEnd={handleDragEnd}>\n      <Droppable droppableId=\"article-list\">\n        {(provided) => (\n          <div {...provided.droppableProps} ref={provided.innerRef}>\n            {orderedArticles.map((article, index) => (\n              <Draggable key={article.id} draggableId={article.id} index={index}>\n                {(provided) => (\n                  <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>\n                    <h3>{article.title}</h3>\n                    <p>{article.content}</p>\n                  </div>\n                )}\n              </Draggable>\n            ))}\n            {provided.placeholder}\n          </div>\n        )}\n      </Droppable>\n    </DragDropContext>\n  );\n}\n\nexport default ArticleList;\n```",
+		"difficulty": 1,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 15,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are developing a messaging application and need to display a list of conversations with unread message counts. Write a React component called `ConversationList` that receives an array of conversation objects and renders them with unread message counts.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction ConversationList({ conversations }) {\n  return (\n    <div className=\"conversation-list\">\n      {conversations.map((conversation, index) => (\n        <div className=\"conversation\" key={index}>\n          <h3>{conversation.contact}</h3>\n          <p>{conversation.lastMessage}</p>\n          {conversation.unreadMessages > 0 && <span>{conversation.unreadMessages} unread</span>}\n        </div>\n      ))}\n    </div>\n  );\n}\n\nexport default ConversationList;\n```",
+		"difficulty": 1,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 10,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are building a survey application and need to display a list of questions with multiple-choice answers. Write a React component called `Survey` that receives an array of question objects and renders them with radio buttons for selecting answers.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction Survey({ questions }) {\n  const [answers, setAnswers] = useState({});\n\n  const handleAnswerChange = (questionId, answer) => {\n    setAnswers((prevAnswers) => ({\n      ...prevAnswers,\n      [questionId]: answer\n    }));\n  };\n\n  return (\n    <div className=\"survey\">\n      {questions.map((question, index) => (\n        <div className=\"question\" key={index}>\n          <h3>{question.text}</h3>\n          {question.choices.map((choice, choiceIndex) => (\n            <div key={choiceIndex}>\n              <input type=\"radio\" id={`${question.id}-${choiceIndex}`} name={question.id} value={choice} onChange={() => handleAnswerChange(question.id, choice)} />\n              <label htmlFor={`${question.id}-${choiceIndex}`}>{choice}</label>\n            </div>\n          ))}\n        </div>\n      ))}\n      <button onClick={() => console.log(answers)}>Submit</button>\n    </div>\n  );\n}\n\nexport default Survey;\n```",
+		"difficulty": 1,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 13,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are developing a dashboard for tracking cryptocurrency prices and need to display a list of cryptocurrencies with real-time price updates. Write a React component called `CryptoTracker` that receives an array of cryptocurrency objects and renders them with live price updates.",
+		"answer": "```jsx\nimport React, { useState, useEffect } from 'react';\n\nfunction CryptoTracker({ cryptocurrencies }) {\n  const [updatedCryptocurrencies, setUpdatedCryptocurrencies] = useState(cryptocurrencies);\n\n  useEffect(() => {\n    const interval = setInterval(() => {\n      setUpdatedCryptocurrencies((prevCryptocurrencies) => (\n        prevCryptocurrencies.map((crypto) => ({\n          ...crypto,\n          price: crypto.price * (1 + Math.random() * 0.1 - 0.05) // Simulate price update\n        }))\n      ));\n    }, 10000); // Update every 10 seconds\n\n    return () => clearInterval(interval);\n  }, []);\n\n  return (\n    <div className=\"crypto-tracker\">\n      {updatedCryptocurrencies.map((crypto, index) => (\n        <div className=\"crypto\" key={index}>\n          <h3>{crypto.name}</h3>\n          <p>${crypto.price.toFixed(2)}</p>\n        </div>\n      ))}\n    </div>\n  );\n}\n\nexport default CryptoTracker;\n```",
+		"difficulty": 1,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 12,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are developing a project management tool and need to implement a Kanban board for managing tasks across different stages (e.g., To Do, In Progress, Done). Write a React component called `KanbanBoard` that receives an array of task objects categorized by stages and renders them in a Kanban board layout.",
+		"answer": "```jsx\nimport React from 'react';\n\nfunction KanbanBoard({ tasks }) {\n  return (\n    <div className=\"kanban-board\">\n      {tasks.map((column, columnIndex) => (\n        <div className=\"kanban-column\" key={columnIndex}>\n          <h2>{column.stage}</h2>\n          {column.tasks.map((task, taskIndex) => (\n            <div className=\"kanban-task\" key={taskIndex}>\n              <h3>{task.title}</h3>\n              <p>{task.description}</p>\n            </div>\n          ))}\n        </div>\n      ))}\n    </div>\n  );\n}\n\nexport default KanbanBoard;\n```",
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 15,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are building a data visualization tool and need to create a chart component that supports multiple chart types (e.g., line chart, bar chart, pie chart). Write a React component called `Chart` that receives data and a type prop indicating the desired chart type and renders the appropriate chart.",
+		"answer": "```jsx\nimport React from 'react';\nimport { LineChart, BarChart, PieChart } from './Charts'; // Import chart components\n\nfunction Chart({ data, type }) {\n  switch (type) {\n    case 'line':\n      return <LineChart data={data} />;\n    case 'bar':\n      return <BarChart data={data} />;\n    case 'pie':\n      return <PieChart data={data} />;\n    default:\n      return null;\n  }\n}\n\nexport default Chart;\n```",
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 10,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are developing a scheduling application and need to implement a calendar view with support for adding, editing, and deleting events. Write a React component called `Calendar` that displays a monthly calendar with event markers and allows users to interact with events.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\nimport { format, startOfMonth, endOfMonth, eachDayOfInterval } from 'date-fns';\nimport CalendarEvent from './CalendarEvent';\n\nfunction Calendar({ events }) {\n  const [selectedDate, setSelectedDate] = useState(new Date());\n\n  const daysInMonth = eachDayOfInterval({ start: startOfMonth(selectedDate), end: endOfMonth(selectedDate) });\n\n  return (\n    <div className=\"calendar\">\n      <div className=\"calendar-header\">\n        <button onClick={() => setSelectedDate(new Date(selectedDate.getFullYear(), selectedDate.getMonth() - 1))}>Previous Month</button>\n        <h2>{format(selectedDate, 'MMMM yyyy')}</h2>\n        <button onClick={() => setSelectedDate(new Date(selectedDate.getFullYear(), selectedDate.getMonth() + 1))}>Next Month</button>\n      </div>\n      <div className=\"calendar-body\">\n        {daysInMonth.map((day, index) => (\n          <div className=\"calendar-day\" key={index}>\n            <div className=\"day-header\">{format(day, 'EEE')}</div>\n            <div className=\"day-number\">{format(day, 'd')}</div>\n            {events.filter((event) => format(event.date, 'yyyy-MM-dd') === format(day, 'yyyy-MM-dd')).map((event, eventIndex) => (\n              <CalendarEvent key={eventIndex} event={event} />\n            ))}\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n\nexport default Calendar;\n```",
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 20,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are building a messaging application and need to implement real-time chat functionality with support for sending and receiving messages. Write a React component called `Chat` that displays a chat interface and handles sending and receiving messages in real-time.",
+		"answer": "```jsx\nimport React, { useState, useEffect } from 'react';\nimport Message from './Message';\n\nfunction Chat({ messages }) {\n  const [messageInput, setMessageInput] = useState('');\n  const [chatMessages, setChatMessages] = useState(messages);\n\n  useEffect(() => {\n    // Simulate receiving new messages in real-time\n    const interval = setInterval(() => {\n      setChatMessages((prevMessages) => (\n        prevMessages.concat({\n          id: prevMessages.length + 1,\n          content: 'New message',\n          sender: 'Anonymous',\n          timestamp: new Date()\n        })\n      ));\n    }, 5000);\n\n    return () => clearInterval(interval);\n  }, []);\n\n  const handleMessageSend = () => {\n    if (messageInput.trim() === '') return;\n\n    setChatMessages((prevMessages) => (\n      prevMessages.concat({\n        id: prevMessages.length + 1,\n        content: messageInput,\n        sender: 'You',\n        timestamp: new Date()\n      })\n    ));\n    setMessageInput('');\n  };\n\n  return (\n    <div className=\"chat\">\n      <div className=\"message-container\">\n        {chatMessages.map((message) => (\n          <Message key={message.id} message={message} />\n        ))}\n      </div>\n      <div className=\"input-container\">\n        <input type=\"text\" value={messageInput} onChange={(e) => setMessageInput(e.target.value)} />\n        <button onClick={handleMessageSend}>Send</button>\n      </div>\n    </div>\n  );\n}\n\nexport default Chat;\n```",
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 20,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are developing a photo editing application and need to implement a feature for applying filters to images. Write a React component called `ImageEditor` that receives an image URL and renders it with options for applying various filters.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\nimport Filter from './Filter';\n\nfunction ImageEditor({ imageUrl }) {\n  const [selectedFilter, setSelectedFilter] = useState(null);\n\n  const handleFilterChange = (filter) => {\n    setSelectedFilter(filter);\n  };\n\n  return (\n    <div className=\"image-editor\">\n      <img src={imageUrl} alt=\"Original\" />\n      <div className=\"filter-options\">\n        <Filter name=\"Grayscale\" onClick={() => handleFilterChange('grayscale')} />\n        <Filter name=\"Sepia\" onClick={() => handleFilterChange('sepia')} />\n        <Filter name=\"Blur\" onClick={() => handleFilterChange('blur')} />\n        {/* Add more filter options as needed */}\n      </div>\n      {selectedFilter && (\n        <div className=\"filtered-image\">\n          <img src={`${imageUrl}?filter=${selectedFilter}`} alt=\"Filtered\" />\n        </div>\n      )}\n    </div>\n  );\n}\n\nexport default ImageEditor;\n```",
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 15,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are building a collaborative document editing tool and need to implement real-time editing functionality. Write a React component called `DocumentEditor` that allows multiple users to simultaneously edit a shared document and see each other's changes in real-time.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\nimport Quill from 'quill'; // Import Quill text editor\n\nfunction DocumentEditor() {\n  const [editor, setEditor] = useState(null);\n\n  useEffect(() => {\n    const quill = new Quill('#editor', {\n      theme: 'snow'\n    });\n    setEditor(quill);\n  }, []);\n\n  return (\n    <div id=\"editor\" className=\"document-editor\"></div>\n  );\n}\n\nexport default DocumentEditor;\n```",
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 15,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are developing a code editor and need to implement syntax highlighting for various programming languages. Write a React component called `CodeEditor` that provides syntax highlighting for code snippets.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\nimport SyntaxHighlighter from 'react-syntax-highlighter'; // Import SyntaxHighlighter component\nimport { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs'; // Import syntax highlighting style\n\nfunction CodeEditor({ language, code }) {\n  return (\n    <SyntaxHighlighter language={language} style={docco}>\n      {code}\n    </SyntaxHighlighter>\n  );\n}\n\nexport default CodeEditor;\n```",
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 10,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are developing a music streaming application and need to implement a player component with playback controls and visualizations. Write a React component called `MusicPlayer` that provides playback controls and visualizations for music tracks.",
+		"answer": "```jsx\nimport React, { useState, useEffect } from 'react';\nimport Visualizer from './Visualizer';\n\nfunction MusicPlayer({ trackUrl }) {\n  const [isPlaying, setIsPlaying] = useState(false);\n\n  const togglePlayback = () => {\n    setIsPlaying((prevIsPlaying) => !prevIsPlaying);\n  };\n\n  useEffect(() => {\n    // Logic for playing and pausing audio track\n  }, [isPlaying]);\n\n  return (\n    <div className=\"music-player\">\n      <audio src={trackUrl} autoPlay={isPlaying} controls />\n      <button onClick={togglePlayback}>{isPlaying ? 'Pause' : 'Play'}</button>\n      <Visualizer />\n    </div>\n  );\n}\n\nexport default MusicPlayer;\n```",
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 15,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are building a travel booking application and need to implement a map component for displaying locations and routes. Write a React component called `Map` that displays a map with markers for locations and routes between them.",
+		"answer": "```jsx\nimport React, { useState, useEffect } from 'react';\nimport MapboxGL from 'mapbox-gl'; // Import MapboxGL library\n\nfunction Map({ locations, routes }) {\n  const [map, setMap] = useState(null);\n\n  useEffect(() => {\n    MapboxGL.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN'; // Set your Mapbox access token\n    const mapInstance = new MapboxGL.Map({\n      container: 'map',\n      style: 'mapbox://styles/mapbox/streets-v11',\n      center: [0, 0],\n      zoom: 1\n    });\n    setMap(mapInstance);\n  }, []);\n\n  useEffect(() => {\n    if (map) {\n      // Logic for adding markers and routes to the map\n    }\n  }, [map, locations, routes]);\n\n  return (\n    <div id=\"map\" className=\"map\"></div>\n  );\n}\n\nexport default Map;\n```",
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 20,
+		"resources": []
+	},
+	{
+		"question": "Scenario: You are developing a multiplayer game and need to implement a game lobby where players can join and leave rooms. Write a React component called `GameLobby` that displays a list of rooms and allows players to join and leave rooms.",
+		"answer": "```jsx\nimport React, { useState } from 'react';\n\nfunction GameLobby({ rooms }) {\n  const [selectedRoom, setSelectedRoom] = useState(null);\n\n  const handleRoomSelect = (roomId) => {\n    setSelectedRoom(roomId);\n  };\n\n  const handleJoinRoom = () => {\n    // Logic for joining a selected room\n  };\n\n  const handleLeaveRoom = () => {\n    // Logic for leaving the currently joined room\n  };\n\n  return (\n    <div className=\"game-lobby\">\n      <div className=\"room-list\">\n        {rooms.map((room) => (\n          <div className=\"room\" key={room.id}>\n            <h3>{room.name}</h3>\n            <p>{room.description}</p>\n            {selectedRoom === room.id ? (\n              <button onClick={handleLeaveRoom}>Leave Room</button>\n            ) : (\n              <button onClick={() => handleRoomSelect(room.id)}>Join Room</button>\n            )}\n          </div>\n        ))}\n      </div>\n      {selectedRoom && (\n        <div className=\"room-details\">\n          <h2>Room: {selectedRoom}</h2>\n          {/* Additional room details and chat functionality can be added here */}\n          <button onClick={handleJoinRoom}>Join</button>\n        </div>\n      )}\n    </div>\n  );\n}\n\nexport default GameLobby;\n```",
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": [],
+		"estimatedTime": 20,
+		"resources": []
+	}
+]
