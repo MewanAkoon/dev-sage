@@ -1,6 +1,6 @@
 'use client';
 
-import { Difficulty, QAPair, SearchParamProps } from '@/lib/types';
+import { QAPair, SearchParamProps } from '@/lib/types';
 import React from 'react';
 import {
 	ColumnDef,
@@ -44,7 +44,7 @@ import {
 import { Separator } from '@/components/ui/separator';
 import DifficultyBadge from '@/components/shared/difficultyBadge';
 
-export const columns: ColumnDef<QAPair>[] = [
+const columns: ColumnDef<QAPair>[] = [
 	{
 		accessorKey: 'question',
 		header: 'Question',
