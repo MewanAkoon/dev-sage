@@ -1,7 +1,10 @@
 'use client';
 
-import Link from 'next/link';
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -9,9 +12,8 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from '../ui/dropdown-menu';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
+
+import menuIcon from '../../../public/assets/icons/menu.svg';
 
 const links = [
 	{
@@ -34,11 +36,12 @@ export default function NavItems() {
 				<DropdownMenu>
 					<DropdownMenuTrigger>
 						<Image
-							src='/assets/icons/menu.svg'
-							alt='menu'
+							src={menuIcon}
+							alt='Menu Icon'
 							width={24}
 							height={24}
-							className='cursor-pointer w-auto h-auto'
+							className='cursor-pointer w-6 h-6'
+							priority
 						/>
 					</DropdownMenuTrigger>
 					<DropdownMenuContent className='w-52'>
