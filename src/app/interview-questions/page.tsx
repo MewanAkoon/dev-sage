@@ -71,7 +71,13 @@ export default function Page() {
 						onClick={() => route.push(`${pathname}/${tech.href}`)}
 					>
 						<div className='inline-flex rounded-lg'>
-							<Image src={tech.src} alt={tech.alt} width={60} height={60} />
+							<Image
+								src={tech.src}
+								alt={tech.alt}
+								width={60}
+								height={60}
+								className='w-auto h-auto'
+							/>
 						</div>
 						<div className='mt-6'>
 							<h3 className='text-base font-semibold leading-6 text-gray-900'>

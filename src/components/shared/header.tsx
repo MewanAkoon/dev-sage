@@ -2,11 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import NavItems from './navItems';
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuTrigger,
-} from '../ui/dropdown-menu';
 
 export default function Header() {
 	return (
@@ -18,32 +13,12 @@ export default function Header() {
 						alt='logo'
 						width={20}
 						height={20}
+						className='w-auto h-auto'
 					/>
 					DevSage
 				</Link>
 
-				{/* Mobile View */}
-				<nav className='flex sm:hidden'>
-					<DropdownMenu>
-						<DropdownMenuTrigger>
-							<Image
-								src='/assets/icons/menu.svg'
-								alt='menu'
-								width={24}
-								height={24}
-								className='cursor-pointer'
-							/>
-						</DropdownMenuTrigger>
-						<DropdownMenuContent>
-							<NavItems />
-						</DropdownMenuContent>
-					</DropdownMenu>
-				</nav>
-
-				{/* Desktop View */}
-				<nav className='hidden sm:flex'>
-					<NavItems />
-				</nav>
+				<NavItems />
 			</div>
 		</header>
 	);
