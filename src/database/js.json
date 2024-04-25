@@ -1,7 +1,12 @@
 [
 	{
 		"question": "What is JavaScript?",
-		"answer": "JavaScript is a high-level, dynamic, and interpreted programming language that is widely used for building interactive websites and web applications. It can be used on the client-side (front-end) as well as on the server-side (back-end) using Node.js.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "JavaScript is a high-level, dynamic, and interpreted programming language that is widely used for building interactive websites and web applications. It can be used on the client-side (front-end) as well as on the server-side (back-end) using Node.js."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 0,
 		"tags": [],
@@ -10,7 +15,12 @@
 	},
 	{
 		"question": "What is a variable in JavaScript?",
-		"answer": "A variable in JavaScript is a named storage that programmers use to store data values. JavaScript uses the keywords 'var', 'let', or 'const' to declare variables.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "A variable in JavaScript is a named storage that programmers use to store data values. JavaScript uses the keywords 'var', 'let', or 'const' to declare variables."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 0,
 		"tags": [],
@@ -19,7 +29,12 @@
 	},
 	{
 		"question": "What are the types of data types supported by JavaScript?",
-		"answer": "JavaScript supports various data types including Undefined, Null, Boolean, String, Symbol, Number, and Object.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "JavaScript supports various data types including Undefined, Null, Boolean, String, Symbol, Number, and Object."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 0,
 		"tags": [],
@@ -28,7 +43,12 @@
 	},
 	{
 		"question": "Explain the difference between '=='' and '===' operators.",
-		"answer": "'==' is the loose equality operator that converts the operands to the same type before making the comparison. '===' is the strict equality operator that does not perform type conversion; it compares both type and value.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "'==' is the loose equality operator that converts the operands to the same type before making the comparison. '===' is the strict equality operator that does not perform type conversion; it compares both type and value."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 0,
 		"tags": [],
@@ -37,7 +57,12 @@
 	},
 	{
 		"question": "What are JavaScript Functions?",
-		"answer": "Functions are one of the fundamental building blocks in JavaScript. A function in JavaScript is a set of statements that performs a task or calculates a value. Functions are defined with the function keyword, followed by a name, followed by parentheses ().",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Functions are one of the fundamental building blocks in JavaScript. A function in JavaScript is a set of statements that performs a task or calculates a value. Functions are defined with the function keyword, followed by a name, followed by parentheses ()."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 0,
 		"tags": [],
@@ -46,7 +71,12 @@
 	},
 	{
 		"question": "What is an array in JavaScript?",
-		"answer": "An array is a single, indexed collection of elements. Each element in the array can be accessed by its numerical index. JavaScript arrays are dynamic, and they can contain elements of different types.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "An array is a single, indexed collection of elements. Each element in the array can be accessed by its numerical index. JavaScript arrays are dynamic, and they can contain elements of different types."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 0,
 		"tags": [],
@@ -55,7 +85,12 @@
 	},
 	{
 		"question": "Describe what 'undefined' value means in JavaScript.",
-		"answer": "The 'undefined' value in JavaScript is used to represent the absence of a value for a variable that has not been assigned a value, or a function that has no explicit return.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The 'undefined' value in JavaScript is used to represent the absence of a value for a variable that has not been assigned a value, or a function that has no explicit return."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 0,
 		"tags": [],
@@ -64,7 +99,12 @@
 	},
 	{
 		"question": "What does 'null' represent in JavaScript?",
-		"answer": "In JavaScript, 'null' is a primitive value that represents the intentional absence of any object value. It is often used to represent a 'nothing' or 'empty' value.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "In JavaScript, 'null' is a primitive value that represents the intentional absence of any object value. It is often used to represent a 'nothing' or 'empty' value."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 0,
 		"tags": [],
@@ -73,7 +113,12 @@
 	},
 	{
 		"question": "What is a boolean in JavaScript?",
-		"answer": "A boolean is a primitive data type in JavaScript. It can have only two values: true or false. It is typically used in conditional statements to decide which block of code should be executed.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "A boolean is a primitive data type in JavaScript. It can have only two values: true or false. It is typically used in conditional statements to decide which block of code should be executed."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 0,
 		"tags": [],
@@ -82,7 +127,12 @@
 	},
 	{
 		"question": "Explain what a conditional statement is in JavaScript.",
-		"answer": "Conditional statements control behavior in JavaScript and determine whether or not pieces of code can run. The most common types are 'if', 'else', and 'else if' statements.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Conditional statements control behavior in JavaScript and determine whether or not pieces of code can run. The most common types are 'if', 'else', and 'else if' statements."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 0,
 		"tags": [],
@@ -91,7 +141,12 @@
 	},
 	{
 		"question": "What is 'Hoisting' in JavaScript?",
-		"answer": "Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope (current script or function). This means that a variable or function can be used before it has been declared.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope (current script or function). This means that a variable or function can be used before it has been declared."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 0,
 		"tags": [],
@@ -100,7 +155,12 @@
 	},
 	{
 		"question": "Explain the use of the 'this' keyword in JavaScript.",
-		"answer": "The 'this' keyword refers to the object it belongs to. In a method, this refers to the owner object and in a function, it refers to the global object (Window in browsers, global in Node.js).",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The 'this' keyword refers to the object it belongs to. In a method, this refers to the owner object and in a function, it refers to the global object (Window in browsers, global in Node.js)."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 0,
 		"tags": [],
@@ -109,7 +169,12 @@
 	},
 	{
 		"question": "What is the use of the 'Array.prototype.map()' method in JavaScript?",
-		"answer": "'Array.prototype.map()' method creates a new array with the results of calling a provided function on every element in the calling array. It is a pure function and does not modify the original array.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "'Array.prototype.map()' method creates a new array with the results of calling a provided function on every element in the calling array. It is a pure function and does not modify the original array."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 0,
 		"tags": [],
@@ -118,7 +183,12 @@
 	},
 	{
 		"question": "Describe the difference between 'var', 'let', and 'const' keywords.",
-		"answer": "'var' declares a variable optionally initializing it to a value. 'var' is function-scoped. 'let' and 'const' are block-scoped. 'let' can be reassigned but not re-declared; 'const' must be initialized at declaration and cannot be reassigned.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "'var' declares a variable optionally initializing it to a value. 'var' is function-scoped. 'let' and 'const' are block-scoped. 'let' can be reassigned but not re-declared; 'const' must be initialized at declaration and cannot be reassigned."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 0,
 		"tags": [],
@@ -127,7 +197,12 @@
 	},
 	{
 		"question": "What is an object in JavaScript?",
-		"answer": "An object is a collection of properties, and a property is an association between a name (or key) and a value. A value of a property can be a function, which is then considered a method of the object.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "An object is a collection of properties, and a property is an association between a name (or key) and a value. A value of a property can be a function, which is then considered a method of the object."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 0,
 		"tags": [],
@@ -136,7 +211,12 @@
 	},
 	{
 		"question": "Explain what closures are in JavaScript and provide an example.",
-		"answer": "A closure is a feature in JavaScript where an inner function has access to the outer (enclosing) function’s variables — a scope chain. The closure has three scope chains: it has access to its own scope (variables defined between its curly brackets), it has access to the outer function's variables, and it has access to the global variables. Example: function outer() { var b = 10; function inner() { var a = 20; console.log(a+b); } inner(); } outer();",
+		"answer": [
+			{
+				"type": "text",
+				"content": "A closure is a feature in JavaScript where an inner function has access to the outer (enclosing) function\u2019s variables \u2014 a scope chain. The closure has three scope chains: it has access to its own scope (variables defined between its curly brackets), it has access to the outer function's variables, and it has access to the global variables. Example: function outer() { var b = 10; function inner() { var a = 20; console.log(a+b); } inner(); } outer();"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 0,
 		"tags": ["Closures", "Functions"],
@@ -145,7 +225,12 @@
 	},
 	{
 		"question": "What is the difference between 'null' and 'undefined' in JavaScript?",
-		"answer": "'undefined' is a type of variable that has been declared but not assigned a value. On the other hand, 'null' is an assignment value that represents a lack of value or a 'nothing' value. It needs to be assigned to a variable as it implies that the variable explicitly points to no object.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "'undefined' is a type of variable that has been declared but not assigned a value. On the other hand, 'null' is an assignment value that represents a lack of value or a 'nothing' value. It needs to be assigned to a variable as it implies that the variable explicitly points to no object."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 0,
 		"tags": ["Basics", "Data Types"],
@@ -154,7 +239,12 @@
 	},
 	{
 		"question": "Describe the concept of prototypal inheritance in JavaScript.",
-		"answer": "Prototypal inheritance is a feature in JavaScript where objects can inherit properties and methods from other objects. This is done using a prototype object that is associated with the constructor function and is shared among all instances of the constructor. When a property or method is accessed, the JavaScript engine first looks on the object itself, and if not found, it looks on the object's prototype, and so on up the prototype chain until it finds it or reaches the end of the chain.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Prototypal inheritance is a feature in JavaScript where objects can inherit properties and methods from other objects. This is done using a prototype object that is associated with the constructor function and is shared among all instances of the constructor. When a property or method is accessed, the JavaScript engine first looks on the object itself, and if not found, it looks on the object's prototype, and so on up the prototype chain until it finds it or reaches the end of the chain."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 0,
 		"tags": ["Inheritance", "Prototypes"],
@@ -163,7 +253,12 @@
 	},
 	{
 		"question": "What are JavaScript promises and how do they work?",
-		"answer": "A JavaScript Promise is an object representing the eventual completion or failure of an asynchronous operation. Essentially, a promise is a returned object from any asynchronous function, to which you attach callbacks, instead of passing callbacks into the function. It lets asynchronous methods return values like synchronous methods: instead of the final value, the asynchronous method returns a promise of having a value at some point in the future.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "A JavaScript Promise is an object representing the eventual completion or failure of an asynchronous operation. Essentially, a promise is a returned object from any asynchronous function, to which you attach callbacks, instead of passing callbacks into the function. It lets asynchronous methods return values like synchronous methods: instead of the final value, the asynchronous method returns a promise of having a value at some point in the future."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 0,
 		"tags": ["Asynchronous", "Promises"],
@@ -172,7 +267,12 @@
 	},
 	{
 		"question": "Explain event bubbling and event capturing in JavaScript.",
-		"answer": "Event bubbling and event capturing are two ways of event propagation in the HTML DOM API when an event occurs in an element inside another element, and both elements have registered a handle for that event. With bubbling, the event is first captured and handled by the innermost element and then propagated to outer elements. In contrast, capturing is the opposite: the event is first captured by the outermost element and propagated to the inner elements.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Event bubbling and event capturing are two ways of event propagation in the HTML DOM API when an event occurs in an element inside another element, and both elements have registered a handle for that event. With bubbling, the event is first captured and handled by the innermost element and then propagated to outer elements. In contrast, capturing is the opposite: the event is first captured by the outermost element and propagated to the inner elements."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 0,
 		"tags": ["Events", "DOM"],
@@ -181,7 +281,12 @@
 	},
 	{
 		"question": "What is the execution context in JavaScript?",
-		"answer": "Execution context is the environment in which JavaScript code is executed. There are three types of execution contexts: global, functional, and eval. The global execution context is the default, where code that is not inside any function is executed. Each function call creates a new functional execution context. The execution context contains the variable environment, the scope chain, and the 'this' reference.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Execution context is the environment in which JavaScript code is executed. There are three types of execution contexts: global, functional, and eval. The global execution context is the default, where code that is not inside any function is executed. Each function call creates a new functional execution context. The execution context contains the variable environment, the scope chain, and the 'this' reference."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 0,
 		"tags": ["Execution Context", "Scope"],
@@ -190,7 +295,12 @@
 	},
 	{
 		"question": "How do JavaScript engines work?",
-		"answer": "JavaScript engines like V8 (Chrome, Node.js), SpiderMonkey (Firefox), and Chakra (Edge) parse JavaScript code and convert it into executable machine code. This process involves several steps: parsing the source code into an Abstract Syntax Tree (AST), transforming the AST into bytecode, and finally JIT-compiling the bytecode into native machine code for execution. The engines optimize code execution by analyzing and re-compiling hot code paths at runtime (JIT optimization).",
+		"answer": [
+			{
+				"type": "text",
+				"content": "JavaScript engines like V8 (Chrome, Node.js), SpiderMonkey (Firefox), and Chakra (Edge) parse JavaScript code and convert it into executable machine code. This process involves several steps: parsing the source code into an Abstract Syntax Tree (AST), transforming the AST into bytecode, and finally JIT-compiling the bytecode into native machine code for execution. The engines optimize code execution by analyzing and re-compiling hot code paths at runtime (JIT optimization)."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 0,
 		"tags": ["JavaScript Engine", "V8", "Compilation"],
@@ -199,7 +309,12 @@
 	},
 	{
 		"question": "What are the methods to prevent default behavior in event handling?",
-		"answer": "To prevent the default behavior in event handling, you can use the 'event.preventDefault()' method in your event handler function. This method stops the default action of an element from happening. For example, this can be useful when clicking on a 'submit' button in a form to prevent it from submitting.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To prevent the default behavior in event handling, you can use the 'event.preventDefault()' method in your event handler function. This method stops the default action of an element from happening. For example, this can be useful when clicking on a 'submit' button in a form to prevent it from submitting."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 0,
 		"tags": ["Events", "DOM"],
@@ -208,7 +323,12 @@
 	},
 	{
 		"question": "Describe the 'this' keyword in various contexts.",
-		"answer": "In JavaScript, 'this' refers to the object it belongs to, and its value is determined by the execution context. In a global context, 'this' refers to the global object (window in browsers, global in Node.js). Inside a function, 'this' refers to the global object unless the function is called as a method of an object. In arrow functions, 'this' is lexically inherited from the outer function where the arrow function is defined.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "In JavaScript, 'this' refers to the object it belongs to, and its value is determined by the execution context. In a global context, 'this' refers to the global object (window in browsers, global in Node.js). Inside a function, 'this' refers to the global object unless the function is called as a method of an object. In arrow functions, 'this' is lexically inherited from the outer function where the arrow function is defined."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 0,
 		"tags": ["this", "Scope"],
@@ -217,7 +337,12 @@
 	},
 	{
 		"question": "Explain the 'Event Loop' in JavaScript.",
-		"answer": "The event loop is a mechanism in JavaScript that allows asynchronous code execution to occur despite JavaScript being single-threaded. It works by repeatedly checking a queue of messages (events or function calls) and executing them one by one. When a function is executed, any callbacks it registers (like setTimeout or API calls) are placed into a queue. Once the stack is clear, the event loop begins processing the queue, thus allowing for event-driven programming.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The event loop is a mechanism in JavaScript that allows asynchronous code execution to occur despite JavaScript being single-threaded. It works by repeatedly checking a queue of messages (events or function calls) and executing them one by one. When a function is executed, any callbacks it registers (like setTimeout or API calls) are placed into a queue. Once the stack is clear, the event loop begins processing the queue, thus allowing for event-driven programming."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 0,
 		"tags": ["Event Loop", "Asynchronous"],
@@ -226,7 +351,12 @@
 	},
 	{
 		"question": "What is JSON and how does it relate to JavaScript?",
-		"answer": "JSON (JavaScript Object Notation) is a lightweight data-interchange format that is easy for humans to read and write and easy for machines to parse and generate. Although it is derived from JavaScript, it is language-independent, with parsers available for many languages. In JavaScript, JSON strings can be parsed into native JavaScript objects with JSON.parse(), and objects can be converted to JSON strings with JSON.stringify().",
+		"answer": [
+			{
+				"type": "text",
+				"content": "JSON (JavaScript Object Notation) is a lightweight data-interchange format that is easy for humans to read and write and easy for machines to parse and generate. Although it is derived from JavaScript, it is language-independent, with parsers available for many languages. In JavaScript, JSON strings can be parsed into native JavaScript objects with JSON.parse(), and objects can be converted to JSON strings with JSON.stringify()."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 0,
 		"tags": ["JSON", "Data Formats"],
@@ -235,7 +365,12 @@
 	},
 	{
 		"question": "Discuss the difference between object literals and constructor functions in JavaScript.",
-		"answer": "Object literals are a convenient way to create objects with properties defined inline using curly braces {}. Constructor functions, however, are more dynamic, allowing multiple instances of an object to be created. Each instance is created using the 'new' keyword, and constructors are typically used for objects that share a structure but have unique values for their properties.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Object literals are a convenient way to create objects with properties defined inline using curly braces {}. Constructor functions, however, are more dynamic, allowing multiple instances of an object to be created. Each instance is created using the 'new' keyword, and constructors are typically used for objects that share a structure but have unique values for their properties."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 0,
 		"tags": ["Objects", "Constructors"],
@@ -244,7 +379,12 @@
 	},
 	{
 		"question": "How do you handle exceptions in JavaScript?",
-		"answer": "Exceptions in JavaScript can be handled using the try-catch-finally statement. The try block encloses the code that might throw an exception, the catch block catches and handles the exception, and the finally block executes code after try and catch, regardless of the result.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Exceptions in JavaScript can be handled using the try-catch-finally statement. The try block encloses the code that might throw an exception, the catch block catches and handles the exception, and the finally block executes code after try and catch, regardless of the result."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 0,
 		"tags": ["Error Handling", "Exceptions"],
@@ -253,7 +393,12 @@
 	},
 	{
 		"question": "What is the Global Object in JavaScript, and what is its role?",
-		"answer": "The Global Object in JavaScript is an object that always exists in the global scope. In browsers, the global object is 'window', whereas in Node.js, it is 'global'. This object contains global functions and variables, including built-in objects such as Math and Date. Any global variable that is not inside a function is a property of the global object.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The Global Object in JavaScript is an object that always exists in the global scope. In browsers, the global object is 'window', whereas in Node.js, it is 'global'. This object contains global functions and variables, including built-in objects such as Math and Date. Any global variable that is not inside a function is a property of the global object."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 0,
 		"tags": ["Global Object", "Scope"],
@@ -262,7 +407,12 @@
 	},
 	{
 		"question": "Explain the concept of 'temporal dead zone' in ES6.",
-		"answer": "The temporal dead zone (TDZ) refers to the period where a variable is declared but cannot be accessed until the memory is initialized. This occurs with variables declared using 'let' and 'const'. Accessing such variables before the declaration is initialized results in a ReferenceError. The TDZ starts from the beginning of the block until the initialization is evaluated.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The temporal dead zone (TDZ) refers to the period where a variable is declared but cannot be accessed until the memory is initialized. This occurs with variables declared using 'let' and 'const'. Accessing such variables before the declaration is initialized results in a ReferenceError. The TDZ starts from the beginning of the block until the initialization is evaluated."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 0,
 		"tags": [],
@@ -271,7 +421,12 @@
 	},
 	{
 		"question": "Discuss the difference between lexical scoping and dynamic scoping.",
-		"answer": "Lexical scoping (also known as static scoping) in JavaScript means that a variable defined outside a function can be accessible inside another function defined after the variable declaration. The scoping is based on the location where the variable is declared within the source code. On the other hand, dynamic scoping uses the calling context to resolve variables, which JavaScript does not support; it is used in other languages like Bash.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Lexical scoping (also known as static scoping) in JavaScript means that a variable defined outside a function can be accessible inside another function defined after the variable declaration. The scoping is based on the location where the variable is declared within the source code. On the other hand, dynamic scoping uses the calling context to resolve variables, which JavaScript does not support; it is used in other languages like Bash."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 0,
 		"tags": [],
@@ -280,7 +435,12 @@
 	},
 	{
 		"question": "What is the purpose of the Array.prototype.reduce() method in JavaScript and provide an example?",
-		"answer": "The reduce() method executes a reducer function (that you provide) on each member of the array resulting in a single output value. The reducer function takes four arguments: accumulator, currentValue, currentIndex, and array. An example of using reduce is summing all numbers in an array: var numbers = [1, 2, 3, 4]; var sum = numbers.reduce(function(accumulator, currentValue) { return accumulator + currentValue; }, 0);",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The reduce() method executes a reducer function (that you provide) on each member of the array resulting in a single output value. The reducer function takes four arguments: accumulator, currentValue, currentIndex, and array. An example of using reduce is summing all numbers in an array: var numbers = [1, 2, 3, 4]; var sum = numbers.reduce(function(accumulator, currentValue) { return accumulator + currentValue; }, 0);"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 0,
 		"tags": [],
@@ -289,7 +449,12 @@
 	},
 	{
 		"question": "How does the 'new' keyword work in JavaScript and what does it return?",
-		"answer": "The 'new' keyword in JavaScript is used to create an instance of an object that has a constructor function. It creates a new object, sets the prototype of this object to the object's type prototype, binds 'this' to the new object, and returns 'this' if the function doesn't return its own object. This allows the function to act as a constructor, setting properties or methods on new objects as needed.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The 'new' keyword in JavaScript is used to create an instance of an object that has a constructor function. It creates a new object, sets the prototype of this object to the object's type prototype, binds 'this' to the new object, and returns 'this' if the function doesn't return its own object. This allows the function to act as a constructor, setting properties or methods on new objects as needed."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 0,
 		"tags": [],
@@ -298,7 +463,12 @@
 	},
 	{
 		"question": "Explain the difference between mutable and immutable objects. What are the implications of each in JavaScript?",
-		"answer": "Mutable objects are those whose state can be changed after creation. In JavaScript, objects and arrays are mutable by default. Immutable objects, once created, cannot be changed. JavaScript offers primitive values (e.g., numbers, strings) as immutable. Immutability can help prevent bugs associated with changing shared state and offers performance optimizations in JavaScript engines.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Mutable objects are those whose state can be changed after creation. In JavaScript, objects and arrays are mutable by default. Immutable objects, once created, cannot be changed. JavaScript offers primitive values (e.g., numbers, strings) as immutable. Immutability can help prevent bugs associated with changing shared state and offers performance optimizations in JavaScript engines."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 0,
 		"tags": [],
@@ -307,7 +477,12 @@
 	},
 	{
 		"question": "Describe the role of the 'prototype' property in JavaScript.",
-		"answer": "The 'prototype' property in JavaScript is a fundamental part of the language's prototypal inheritance model. Every constructor function has a 'prototype' property that is shared by every instance of the constructor. This allows properties and methods to be shared across all instances without duplicating the functionality, which can save memory and allow for dynamic updates to all instances by modifying the prototype.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The 'prototype' property in JavaScript is a fundamental part of the language's prototypal inheritance model. Every constructor function has a 'prototype' property that is shared by every instance of the constructor. This allows properties and methods to be shared across all instances without duplicating the functionality, which can save memory and allow for dynamic updates to all instances by modifying the prototype."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 0,
 		"tags": [],
@@ -316,7 +491,12 @@
 	},
 	{
 		"question": "How can you prevent modifications to an object in JavaScript?",
-		"answer": "JavaScript provides several methods to prevent modifications to an object. 'Object.freeze()' makes an object immutable, preventing new properties from being added to it and existing properties from being removed or changed. 'Object.seal()' prevents new properties from being added to the object and marks all existing properties as non-configurable, but allows modification of existing properties. 'Object.preventExtensions()' prevents new properties from being added to the object.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "JavaScript provides several methods to prevent modifications to an object. 'Object.freeze()' makes an object immutable, preventing new properties from being added to it and existing properties from being removed or changed. 'Object.seal()' prevents new properties from being added to the object and marks all existing properties as non-configurable, but allows modification of existing properties. 'Object.preventExtensions()' prevents new properties from being added to the object."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 0,
 		"tags": [],
@@ -325,7 +505,12 @@
 	},
 	{
 		"question": "Explain how garbage collection works in JavaScript.",
-		"answer": "Garbage collection in JavaScript is performed automatically to manage memory. The most common algorithm used is mark-and-sweep. This algorithm reduces the definition of 'an object is not needed anymore' to 'an object is unreachable'. It assumes that objects are no longer needed if there are no references to them from the root (global object) or from any other reachable object.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Garbage collection in JavaScript is performed automatically to manage memory. The most common algorithm used is mark-and-sweep. This algorithm reduces the definition of 'an object is not needed anymore' to 'an object is unreachable'. It assumes that objects are no longer needed if there are no references to them from the root (global object) or from any other reachable object."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 0,
 		"tags": [],
@@ -334,7 +519,12 @@
 	},
 	{
 		"question": "What are the different ways to handle asynchronous operations in JavaScript?",
-		"answer": "JavaScript handles asynchronous operations through callbacks, promises, and async/await. Callbacks are the simplest form where functions are passed as arguments to other functions and are called back to handle completion. Promises represent a completion or failure of an asynchronous operation and can be chained. Async/await is syntactic sugar built on top of promises that allows writing asynchronous code in a more synchronous manner, improving readability.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "JavaScript handles asynchronous operations through callbacks, promises, and async/await. Callbacks are the simplest form where functions are passed as arguments to other functions and are called back to handle completion. Promises represent a completion or failure of an asynchronous operation and can be chained. Async/await is syntactic sugar built on top of promises that allows writing asynchronous code in a more synchronous manner, improving readability."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 0,
 		"tags": [],
@@ -343,7 +533,12 @@
 	},
 	{
 		"question": "Discuss the impact of using 'use strict'; in JavaScript programs.",
-		"answer": "Using 'use strict'; in JavaScript enforces stricter parsing and error handling in your code. This mode helps catch common coding bloopers, prevents or throws errors when relatively 'unsafe' actions are taken (such as gaining access to the global object), and disables features that are confusing or poorly thought out. It also prevents the use of variables that have not been declared.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Using 'use strict'; in JavaScript enforces stricter parsing and error handling in your code. This mode helps catch common coding bloopers, prevents or throws errors when relatively 'unsafe' actions are taken (such as gaining access to the global object), and disables features that are confusing or poorly thought out. It also prevents the use of variables that have not been declared."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 0,
 		"tags": [],
@@ -352,7 +547,12 @@
 	},
 	{
 		"question": "Explain how 'this' keyword behaves in different contexts such as global, function, and arrow functions.",
-		"answer": "In the global context, 'this' refers to the global object (window in a browser, global in Node.js). Inside a regular function, 'this' refers to the object that called the function, which can be the global object or a specific instance depending on how the function is called. In arrow functions, 'this' is lexically inherited from the outer function context where the arrow function is defined and does not change based on the call site.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "In the global context, 'this' refers to the global object (window in a browser, global in Node.js). Inside a regular function, 'this' refers to the object that called the function, which can be the global object or a specific instance depending on how the function is called. In arrow functions, 'this' is lexically inherited from the outer function context where the arrow function is defined and does not change based on the call site."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 0,
 		"tags": [],
@@ -361,7 +561,12 @@
 	},
 	{
 		"question": "What is function currying, and provide an example using JavaScript?",
-		"answer": "Function currying is a technique of evaluating functions with multiple arguments, into a sequence of functions with a single argument. In other words, when a function, instead of taking all arguments at one time, takes the first one and returns a new function that takes the second one and so on. Example: function multiply(a) { return function(b) { return a * b; }; } const multiplyByTwo = multiply(2); console.log(multiplyByTwo(3));",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Function currying is a technique of evaluating functions with multiple arguments, into a sequence of functions with a single argument. In other words, when a function, instead of taking all arguments at one time, takes the first one and returns a new function that takes the second one and so on. Example: function multiply(a) { return function(b) { return a * b; }; } const multiplyByTwo = multiply(2); console.log(multiplyByTwo(3));"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 0,
 		"tags": [],
@@ -370,7 +575,12 @@
 	},
 	{
 		"question": "How does JavaScript handle type coercion, especially in comparison operations?",
-		"answer": "JavaScript performs type coercion when it encounters an operator that requires a particular type. In comparisons, if two values are not the same type, JavaScript converts the values to numbers (with some exceptions for strict equality). This can lead to unexpected results, like '5' == 5 being true because the string '5' is coerced to the number 5. However, '5' === 5 is false as the types must also be the same in strict equality.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "JavaScript performs type coercion when it encounters an operator that requires a particular type. In comparisons, if two values are not the same type, JavaScript converts the values to numbers (with some exceptions for strict equality). This can lead to unexpected results, like '5' == 5 being true because the string '5' is coerced to the number 5. However, '5' === 5 is false as the types must also be the same in strict equality."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 0,
 		"tags": [],
@@ -379,7 +589,12 @@
 	},
 	{
 		"question": "Discuss the event delegation pattern in JavaScript and its advantages.",
-		"answer": "Event delegation is a pattern used in JavaScript where instead of adding an event listener to each individual element, the listener is added to one parent. That parent listens for events bubbling up from its children. The main advantages are memory savings from fewer event handlers and simplicity in managing and updating event handlers, especially in dynamic content where elements are added or removed.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Event delegation is a pattern used in JavaScript where instead of adding an event listener to each individual element, the listener is added to one parent. That parent listens for events bubbling up from its children. The main advantages are memory savings from fewer event handlers and simplicity in managing and updating event handlers, especially in dynamic content where elements are added or removed."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 0,
 		"tags": [],
@@ -388,7 +603,12 @@
 	},
 	{
 		"question": "What is the purpose of the Array.prototype.filter() method in JavaScript and provide an example?",
-		"answer": "The filter() method creates a new array with all elements that pass the test implemented by the provided function. For example, filtering an array of numbers to get only even numbers: var numbers = [1, 2, 3, 4, 5, 6]; var evens = numbers.filter(function(num) { return num % 2 === 0; }); This returns [2, 4, 6], a new array containing only the even numbers.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The filter() method creates a new array with all elements that pass the test implemented by the provided function. For example, filtering an array of numbers to get only even numbers: var numbers = [1, 2, 3, 4, 5, 6]; var evens = numbers.filter(function(num) { return num % 2 === 0; }); This returns [2, 4, 6], a new array containing only the even numbers."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 0,
 		"tags": [],
@@ -397,7 +617,12 @@
 	},
 	{
 		"question": "Write a JavaScript function to check whether a variable is a string or not.",
-		"answer": "You can check if a variable is a string by using the typeof operator. Here's a simple function to do this: function isString(value) { return typeof value === 'string'; }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can check if a variable is a string by using the typeof operator. Here's a simple function to do this: function isString(value) { return typeof value === 'string'; }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 1,
 		"tags": [],
@@ -406,7 +631,12 @@
 	},
 	{
 		"question": "How can you add an element at the beginning of an array in JavaScript?",
-		"answer": "You can add an element at the beginning of an array using the unshift method. For example, if you have an array arr, you can add the element 'newElement' by calling arr.unshift('newElement');",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can add an element at the beginning of an array using the unshift method. For example, if you have an array arr, you can add the element 'newElement' by calling arr.unshift('newElement');"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 1,
 		"tags": [],
@@ -415,7 +645,12 @@
 	},
 	{
 		"question": "Write a JavaScript function to calculate the sum of numbers received in a parameter array.",
-		"answer": "You can calculate the sum of an array of numbers using the Array.prototype.reduce method. Here's how you might write this function: function sumNumbers(numbers) { return numbers.reduce((acc, curr) => acc + curr, 0); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can calculate the sum of an array of numbers using the Array.prototype.reduce method. Here's how you might write this function: function sumNumbers(numbers) { return numbers.reduce((acc, curr) => acc + curr, 0); }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 1,
 		"tags": [],
@@ -424,7 +659,12 @@
 	},
 	{
 		"question": "How can you remove the last element from an array and return that element in JavaScript?",
-		"answer": "You can remove the last element from an array and return it using the pop method. For example, calling arr.pop() on an array arr will remove the last element and return it.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can remove the last element from an array and return it using the pop method. For example, calling arr.pop() on an array arr will remove the last element and return it."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 1,
 		"tags": [],
@@ -433,7 +673,12 @@
 	},
 	{
 		"question": "Write a simple JavaScript script to hide an HTML element by its ID.",
-		"answer": "You can hide an HTML element by setting its style.display property to 'none'. Here’s a function that does this: function hideElement(elementId) { document.getElementById(elementId).style.display = 'none'; }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can hide an HTML element by setting its style.display property to 'none'. Here\u2019s a function that does this: function hideElement(elementId) { document.getElementById(elementId).style.display = 'none'; }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 1,
 		"tags": [],
@@ -442,7 +687,12 @@
 	},
 	{
 		"question": "How can you check if an object is an array in JavaScript?",
-		"answer": "To check if an object is an array, you can use Array.isArray method. For example, Array.isArray([1, 2, 3]) returns true, whereas Array.isArray({foo: 'bar'}) returns false.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To check if an object is an array, you can use Array.isArray method. For example, Array.isArray([1, 2, 3]) returns true, whereas Array.isArray({foo: 'bar'}) returns false."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 1,
 		"tags": [],
@@ -451,7 +701,12 @@
 	},
 	{
 		"question": "Write a function to convert a string to lowercase in JavaScript.",
-		"answer": "You can convert a string to lowercase in JavaScript using the toLowerCase method. For example: function toLower(str) { return str.toLowerCase(); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can convert a string to lowercase in JavaScript using the toLowerCase method. For example: function toLower(str) { return str.toLowerCase(); }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 1,
 		"tags": [],
@@ -460,7 +715,12 @@
 	},
 	{
 		"question": "How do you find the largest number in an array of numbers?",
-		"answer": "You can find the largest number in an array using the Math.max function combined with the spread operator (...). For example: let numbers = [1, 2, 3]; let max = Math.max(...numbers);",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find the largest number in an array using the Math.max function combined with the spread operator (...). For example: let numbers = [1, 2, 3]; let max = Math.max(...numbers);"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 1,
 		"tags": [],
@@ -469,7 +729,12 @@
 	},
 	{
 		"question": "Write a JavaScript function to toggle a CSS class for an element by its ID.",
-		"answer": "To toggle a CSS class on an element, you can use the classList.toggle method. Here’s a function that does this: function toggleClass(elementId, className) { document.getElementById(elementId).classList.toggle(className); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To toggle a CSS class on an element, you can use the classList.toggle method. Here\u2019s a function that does this: function toggleClass(elementId, className) { document.getElementById(elementId).classList.toggle(className); }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 1,
 		"tags": [],
@@ -478,7 +743,12 @@
 	},
 	{
 		"question": "How can you redirect a user to another webpage using JavaScript?",
-		"answer": "You can redirect a user to another webpage using the window.location.href property. For example, window.location.href = 'https://www.example.com'; will redirect the user to 'www.example.com'.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can redirect a user to another webpage using the window.location.href property. For example, window.location.href = 'https://www.example.com'; will redirect the user to 'www.example.com'."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 1,
 		"tags": [],
@@ -487,7 +757,12 @@
 	},
 	{
 		"question": "Write a function in JavaScript to check whether a provided number is prime or not.",
-		"answer": "A prime number is only divisible by 1 and itself. Here's how you could write a function to check for a prime number: function isPrime(num) { if (num <= 1) return false; for (let i = 2; i <= Math.sqrt(num); i++) { if (num % i === 0) return false; } return true; }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "A prime number is only divisible by 1 and itself. Here's how you could write a function to check for a prime number: function isPrime(num) { if (num <= 1) return false; for (let i = 2; i <= Math.sqrt(num); i++) { if (num % i === 0) return false; } return true; }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 1,
 		"tags": [],
@@ -496,7 +771,12 @@
 	},
 	{
 		"question": "How do you create a timer using JavaScript?",
-		"answer": "You can create a timer in JavaScript using the setTimeout function, which executes a function after a specified number of milliseconds. For example: setTimeout(function() { alert('Timer done!'); }, 3000); will alert 'Timer done!' after 3 seconds.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can create a timer in JavaScript using the setTimeout function, which executes a function after a specified number of milliseconds. For example: setTimeout(function() { alert('Timer done!'); }, 3000); will alert 'Timer done!' after 3 seconds."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 1,
 		"tags": [],
@@ -505,7 +785,12 @@
 	},
 	{
 		"question": "Write a function that multiplies all the values in an array by two and returns the new array.",
-		"answer": "You can multiply all values in an array by two using the Array.prototype.map method. Here’s how: function multiplyByTwo(numbers) { return numbers.map(number => number * 2); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can multiply all values in an array by two using the Array.prototype.map method. Here\u2019s how: function multiplyByTwo(numbers) { return numbers.map(number => number * 2); }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 1,
 		"tags": [],
@@ -514,7 +799,12 @@
 	},
 	{
 		"question": "How can you find all the links on a webpage with a specific class using JavaScript?",
-		"answer": "You can find all links with a specific class on a webpage using document.querySelectorAll and specify the 'a' tag and the class name. For example: var links = document.querySelectorAll('a.className'); This will return a NodeList of all 'a' elements with the class 'className'.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find all links with a specific class on a webpage using document.querySelectorAll and specify the 'a' tag and the class name. For example: var links = document.querySelectorAll('a.className'); This will return a NodeList of all 'a' elements with the class 'className'."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 1,
 		"tags": [],
@@ -523,7 +813,12 @@
 	},
 	{
 		"question": "Write a function to check if an array contains a specific value in JavaScript.",
-		"answer": "You can check if an array contains a specific value using the Array.prototype.includes method. Here’s a function for that: function contains(arr, value) { return arr.includes(value); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can check if an array contains a specific value using the Array.prototype.includes method. Here\u2019s a function for that: function contains(arr, value) { return arr.includes(value); }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 1,
 		"tags": [],
@@ -532,7 +827,12 @@
 	},
 	{
 		"question": "Write a JavaScript function to shuffle an array.",
-		"answer": "You can shuffle an array using the Fisher-Yates (aka Knuth) Shuffle algorithm. Here's how you might implement it: function shuffleArray(array) { for (let i = array.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [array[i], array[j]] = [array[j], array[i]]; } return array; }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can shuffle an array using the Fisher-Yates (aka Knuth) Shuffle algorithm. Here's how you might implement it: function shuffleArray(array) { for (let i = array.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [array[i], array[j]] = [array[j], array[i]]; } return array; }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 1,
 		"tags": [],
@@ -541,7 +841,12 @@
 	},
 	{
 		"question": "How do you convert a JavaScript object to a JSON string?",
-		"answer": "You can convert a JavaScript object to a JSON string using the JSON.stringify method. For example: var obj = { key: 'value' }; var jsonString = JSON.stringify(obj);",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can convert a JavaScript object to a JSON string using the JSON.stringify method. For example: var obj = { key: 'value' }; var jsonString = JSON.stringify(obj);"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 1,
 		"tags": [],
@@ -550,7 +855,12 @@
 	},
 	{
 		"question": "Write a function to debounce a function call in JavaScript.",
-		"answer": "Debouncing a function call means delaying its execution until a certain amount of time has passed without additional calls. Here's how you might implement a debounce function: function debounce(func, delay) { let timeoutId; return function(...args) { clearTimeout(timeoutId); timeoutId = setTimeout(() => { func.apply(this, args); }, delay); }; }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Debouncing a function call means delaying its execution until a certain amount of time has passed without additional calls. Here's how you might implement a debounce function: function debounce(func, delay) { let timeoutId; return function(...args) { clearTimeout(timeoutId); timeoutId = setTimeout(() => { func.apply(this, args); }, delay); }; }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 1,
 		"tags": [],
@@ -559,7 +869,12 @@
 	},
 	{
 		"question": "Explain how to use the fetch API to make HTTP requests in JavaScript.",
-		"answer": "The fetch API is used to make HTTP requests in JavaScript. It provides a modern, promise-based interface for fetching resources. You can use fetch like this: fetch(url) .then(response => response.json()) .then(data => console.log(data)) .catch(error => console.error('Error:', error));",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The fetch API is used to make HTTP requests in JavaScript. It provides a modern, promise-based interface for fetching resources. You can use fetch like this: fetch(url) .then(response => response.json()) .then(data => console.log(data)) .catch(error => console.error('Error:', error));"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 1,
 		"tags": [],
@@ -568,7 +883,12 @@
 	},
 	{
 		"question": "How do you clone an object in JavaScript?",
-		"answer": "You can clone an object in JavaScript using various methods such as Object.assign, spread operator, or JSON.parse/JSON.stringify. Here's an example using the spread operator: const original = { a: 1, b: 2 }; const clone = { ...original };",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can clone an object in JavaScript using various methods such as Object.assign, spread operator, or JSON.parse/JSON.stringify. Here's an example using the spread operator: const original = { a: 1, b: 2 }; const clone = { ...original };"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 1,
 		"tags": [],
@@ -577,7 +897,12 @@
 	},
 	{
 		"question": "Write a JavaScript function to format a number as currency.",
-		"answer": "You can format a number as currency using the toLocaleString method. For example: function formatCurrency(number) { return number.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can format a number as currency using the toLocaleString method. For example: function formatCurrency(number) { return number.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 1,
 		"tags": [],
@@ -586,7 +911,12 @@
 	},
 	{
 		"question": "Explain how to handle errors in asynchronous code in JavaScript.",
-		"answer": "You can handle errors in asynchronous code using try...catch blocks or by attaching a .catch() method to a promise chain. For example: try { const result = await fetch(url); const data = await result.json(); } catch (error) { console.error('Error:', error); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can handle errors in asynchronous code using try...catch blocks or by attaching a .catch() method to a promise chain. For example: try { const result = await fetch(url); const data = await result.json(); } catch (error) { console.error('Error:', error); }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 1,
 		"tags": [],
@@ -595,7 +925,12 @@
 	},
 	{
 		"question": "How do you remove duplicates from an array in JavaScript?",
-		"answer": "You can remove duplicates from an array in JavaScript using several methods, such as using Set, filter, or reduce. Here's an example using Set: const uniqueArray = [...new Set(array)];",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can remove duplicates from an array in JavaScript using several methods, such as using Set, filter, or reduce. Here's an example using Set: const uniqueArray = [...new Set(array)];"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 1,
 		"tags": [],
@@ -604,7 +939,12 @@
 	},
 	{
 		"question": "Write a function to truncate a string to a certain number of characters and add '...' at the end if it exceeds the limit.",
-		"answer": "You can truncate a string to a certain number of characters using String.prototype.slice method and then add '...' at the end if it exceeds the limit. Here's an example function: function truncateString(str, maxLength) { return str.length > maxLength ? str.slice(0, maxLength) + '...' : str; }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can truncate a string to a certain number of characters using String.prototype.slice method and then add '...' at the end if it exceeds the limit. Here's an example function: function truncateString(str, maxLength) { return str.length > maxLength ? str.slice(0, maxLength) + '...' : str; }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 1,
 		"tags": [],
@@ -613,7 +953,12 @@
 	},
 	{
 		"question": "Explain the difference between 'undefined' and 'null' in JavaScript.",
-		"answer": "In JavaScript, 'undefined' means a variable has been declared but has not yet been assigned a value, whereas 'null' is an assignment value representing a lack of value. 'undefined' is a type itself, while 'null' is an object. When checking for absence of value, use 'null', and when checking for undefined variables, use 'undefined'.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "In JavaScript, 'undefined' means a variable has been declared but has not yet been assigned a value, whereas 'null' is an assignment value representing a lack of value. 'undefined' is a type itself, while 'null' is an object. When checking for absence of value, use 'null', and when checking for undefined variables, use 'undefined'."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 1,
 		"tags": [],
@@ -622,7 +967,12 @@
 	},
 	{
 		"question": "How do you convert a JSON string to a JavaScript object?",
-		"answer": "You can convert a JSON string to a JavaScript object using the JSON.parse method. For example: var jsonString = '{\"key\": \"value\"}'; var obj = JSON.parse(jsonString);",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can convert a JSON string to a JavaScript object using the JSON.parse method. For example: var jsonString = '{\"key\": \"value\"}'; var obj = JSON.parse(jsonString);"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 1,
 		"tags": [],
@@ -631,7 +981,12 @@
 	},
 	{
 		"question": "Write a JavaScript function to calculate the factorial of a number.",
-		"answer": "The factorial of a number is the product of all positive integers less than or equal to that number. Here's how you might implement a factorial function: function factorial(n) { return n <= 1 ? 1 : n * factorial(n - 1); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The factorial of a number is the product of all positive integers less than or equal to that number. Here's how you might implement a factorial function: function factorial(n) { return n <= 1 ? 1 : n * factorial(n - 1); }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 1,
 		"tags": [],
@@ -640,7 +995,12 @@
 	},
 	{
 		"question": "Explain the difference between '==' and '===' operators in JavaScript.",
-		"answer": "In JavaScript, '==' is the equality operator, which compares two values for equality after performing type conversion, while '===' is the strict equality operator, which checks for both equality of value and type without type conversion. Use '===' for strict equality checks to avoid unexpected type coercion.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "In JavaScript, '==' is the equality operator, which compares two values for equality after performing type conversion, while '===' is the strict equality operator, which checks for both equality of value and type without type conversion. Use '===' for strict equality checks to avoid unexpected type coercion."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 1,
 		"tags": [],
@@ -649,7 +1009,12 @@
 	},
 	{
 		"question": "How do you convert a number to a string in JavaScript?",
-		"answer": "You can convert a number to a string in JavaScript using the String function or the toString method. For example: var number = 42; var str = String(number);",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can convert a number to a string in JavaScript using the String function or the toString method. For example: var number = 42; var str = String(number);"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 1,
 		"tags": [],
@@ -658,7 +1023,12 @@
 	},
 	{
 		"question": "Write a JavaScript function to sort an array of objects by a specific property value.",
-		"answer": "You can sort an array of objects by a specific property value using the Array.prototype.sort method with a custom comparison function. Here's an example: function sortByProperty(arr, prop) { return arr.sort((a, b) => a[prop] - b[prop]); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can sort an array of objects by a specific property value using the Array.prototype.sort method with a custom comparison function. Here's an example: function sortByProperty(arr, prop) { return arr.sort((a, b) => a[prop] - b[prop]); }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 1,
 		"tags": [],
@@ -667,7 +1037,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing products, each with a 'price' property. Write a function to calculate the total price of all products in the array.",
-		"answer": "You can calculate the total price of all products in the array by using the Array.prototype.reduce method to iterate over the array and sum up the prices of each product. Here's how you might implement this function: function calculateTotalPrice(products) { return products.reduce((total, product) => total + product.price, 0); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can calculate the total price of all products in the array by using the Array.prototype.reduce method to iterate over the array and sum up the prices of each product. Here's how you might implement this function: function calculateTotalPrice(products) { return products.reduce((total, product) => total + product.price, 0); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 1,
 		"tags": [],
@@ -676,7 +1051,12 @@
 	},
 	{
 		"question": "Scenario: You want to implement a debounce function with an option to execute the callback immediately on the leading edge. Write such a debounce function.",
-		"answer": "You can implement a debounce function with an option for immediate execution on the leading edge by keeping track of whether the function has been called immediately and using setTimeout to delay subsequent calls. Here's how you might implement this function: function debounce(func, delay, immediate) { let timeout; return function(...args) { const context = this; const later = function() { timeout = null; if (!immediate) func.apply(context, args); }; const callNow = immediate && !timeout; clearTimeout(timeout); timeout = setTimeout(later, delay); if (callNow) func.apply(context, args); }; }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can implement a debounce function with an option for immediate execution on the leading edge by keeping track of whether the function has been called immediately and using setTimeout to delay subsequent calls. Here's how you might implement this function: function debounce(func, delay, immediate) { let timeout; return function(...args) { const context = this; const later = function() { timeout = null; if (!immediate) func.apply(context, args); }; const callNow = immediate && !timeout; clearTimeout(timeout); timeout = setTimeout(later, delay); if (callNow) func.apply(context, args); }; }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 1,
 		"tags": [],
@@ -685,7 +1065,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing books, each with 'title' and 'author' properties. Write a function to group books by their author.",
-		"answer": "You can group books by their author by using the Array.prototype.reduce method to iterate over the array and create an object where each key is an author and the value is an array of books by that author. Here's how you might implement this function: function groupBooksByAuthor(books) { return books.reduce((grouped, book) => { grouped[book.author] = grouped[book.author] || []; grouped[book.author].push(book); return grouped; }, {}); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can group books by their author by using the Array.prototype.reduce method to iterate over the array and create an object where each key is an author and the value is an array of books by that author. Here's how you might implement this function: function groupBooksByAuthor(books) { return books.reduce((grouped, book) => { grouped[book.author] = grouped[book.author] || []; grouped[book.author].push(book); return grouped; }, {}); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 1,
 		"tags": [],
@@ -694,7 +1079,12 @@
 	},
 	{
 		"question": "Scenario: You want to implement a function that accepts an async function and returns a new function that handles errors gracefully. Write such a function.",
-		"answer": "You can implement a function that accepts an async function and returns a new function that handles errors gracefully by wrapping the async function in a try...catch block and returning a promise that resolves with the result or rejects with the error. Here's how you might implement this function: function gracefulAsync(fn) { return async function(...args) { try { return await fn(...args); } catch (error) { console.error('Error:', error); // Handle or log the error as needed } }; }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can implement a function that accepts an async function and returns a new function that handles errors gracefully by wrapping the async function in a try...catch block and returning a promise that resolves with the result or rejects with the error. Here's how you might implement this function: function gracefulAsync(fn) { return async function(...args) { try { return await fn(...args); } catch (error) { console.error('Error:', error); // Handle or log the error as needed } }; }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 1,
 		"tags": [],
@@ -703,7 +1093,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing users, each with 'name' and 'age' properties. Write a function to filter users who are older than a specified age.",
-		"answer": "You can filter users who are older than a specified age by using the Array.prototype.filter method to iterate over the array and return only the users who meet the criteria. Here's how you might implement this function: function filterUsersByAge(users, minAge) { return users.filter(user => user.age > minAge); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can filter users who are older than a specified age by using the Array.prototype.filter method to iterate over the array and return only the users who meet the criteria. Here's how you might implement this function: function filterUsersByAge(users, minAge) { return users.filter(user => user.age > minAge); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 1,
 		"tags": [],
@@ -712,7 +1107,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing transactions, each with 'amount' and 'type' properties ('credit' or 'debit'). Write a function to calculate the total balance, considering both credits and debits.",
-		"answer": "You can calculate the total balance considering both credits and debits by using the Array.prototype.reduce method to iterate over the array and sum up the amounts based on the transaction type. Here's how you might implement this function: function calculateTotalBalance(transactions) { return transactions.reduce((balance, transaction) => { if (transaction.type === 'credit') { return balance + transaction.amount; } else if (transaction.type === 'debit') { return balance - transaction.amount; } }, 0); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can calculate the total balance considering both credits and debits by using the Array.prototype.reduce method to iterate over the array and sum up the amounts based on the transaction type. Here's how you might implement this function: function calculateTotalBalance(transactions) { return transactions.reduce((balance, transaction) => { if (transaction.type === 'credit') { return balance + transaction.amount; } else if (transaction.type === 'debit') { return balance - transaction.amount; } }, 0); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 1,
 		"tags": [],
@@ -721,7 +1121,12 @@
 	},
 	{
 		"question": "Scenario: You want to implement a function that accepts a callback and returns a new function that can only be called once. Write such a function.",
-		"answer": "You can implement a function that accepts a callback and returns a new function that can only be called once by using a flag to track whether the function has already been called and returning early if it has. Here's how you might implement this function: function once(fn) { let called = false; return function(...args) { if (!called) { called = true; return fn(...args); } }; }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can implement a function that accepts a callback and returns a new function that can only be called once by using a flag to track whether the function has already been called and returning early if it has. Here's how you might implement this function: function once(fn) { let called = false; return function(...args) { if (!called) { called = true; return fn(...args); } }; }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 1,
 		"tags": [],
@@ -730,7 +1135,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing students, each with 'name' and 'grades' properties (an array of numbers). Write a function to calculate the average grade for each student.",
-		"answer": "You can calculate the average grade for each student by using the Array.prototype.map method to iterate over the array and calculate the average grade for each student based on their grades array. Here's how you might implement this function: function calculateAverageGrade(students) { return students.map(student => { const sum = student.grades.reduce((total, grade) => total + grade, 0); return { name: student.name, averageGrade: sum / student.grades.length }; }); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can calculate the average grade for each student by using the Array.prototype.map method to iterate over the array and calculate the average grade for each student based on their grades array. Here's how you might implement this function: function calculateAverageGrade(students) { return students.map(student => { const sum = student.grades.reduce((total, grade) => total + grade, 0); return { name: student.name, averageGrade: sum / student.grades.length }; }); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 1,
 		"tags": [],
@@ -739,7 +1149,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing customers, each with 'name' and 'orders' properties (an array of order amounts). Write a function to find the customer with the highest total order amount.",
-		"answer": "You can find the customer with the highest total order amount by using the Array.prototype.reduce method to iterate over the array and keep track of the customer with the highest total order amount found so far. Here's how you might implement this function: function findCustomerWithHighestOrderAmount(customers) { return customers.reduce((highestCustomer, customer) => { const totalOrderAmount = customer.orders.reduce((total, order) => total + order, 0); if (totalOrderAmount > highestCustomer.ordersTotal) { return { name: customer.name, ordersTotal: totalOrderAmount }; } else { return highestCustomer; } }, { name: '', ordersTotal: 0 }); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find the customer with the highest total order amount by using the Array.prototype.reduce method to iterate over the array and keep track of the customer with the highest total order amount found so far. Here's how you might implement this function: function findCustomerWithHighestOrderAmount(customers) { return customers.reduce((highestCustomer, customer) => { const totalOrderAmount = customer.orders.reduce((total, order) => total + order, 0); if (totalOrderAmount > highestCustomer.ordersTotal) { return { name: customer.name, ordersTotal: totalOrderAmount }; } else { return highestCustomer; } }, { name: '', ordersTotal: 0 }); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 1,
 		"tags": [],
@@ -748,7 +1163,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing employees, each with 'name' and 'salary' properties. Write a function to calculate the total salary of all employees, considering the possibility of different salary currencies.",
-		"answer": "You can calculate the total salary of all employees, considering different salary currencies, by using the Array.prototype.reduce method to iterate over the array and convert each salary to a common currency before summing them up. Here's how you might implement this function: function calculateTotalSalary(employees) { const exchangeRates = { 'USD': 1, 'EUR': 0.85, 'GBP': 0.73 }; return employees.reduce((total, employee) => { return total + (employee.salary * exchangeRates[employee.currency]); }, 0); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can calculate the total salary of all employees, considering different salary currencies, by using the Array.prototype.reduce method to iterate over the array and convert each salary to a common currency before summing them up. Here's how you might implement this function: function calculateTotalSalary(employees) { const exchangeRates = { 'USD': 1, 'EUR': 0.85, 'GBP': 0.73 }; return employees.reduce((total, employee) => { return total + (employee.salary * exchangeRates[employee.currency]); }, 0); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 1,
 		"tags": [],
@@ -757,7 +1177,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing movies, each with 'title', 'genre', and 'rating' properties. Write a function to find the highest-rated movie in each genre.",
-		"answer": "You can find the highest-rated movie in each genre by first grouping the movies by genre and then finding the highest-rated movie in each group. Here's how you might implement this function: function findHighestRatedMoviesByGenre(movies) { const groupedMovies = movies.reduce((grouped, movie) => { grouped[movie.genre] = grouped[movie.genre] || []; grouped[movie.genre].push(movie); return grouped; }, {}); return Object.keys(groupedMovies).reduce((highestRatedMovies, genre) => { const highestRatedMovie = groupedMovies[genre].reduce((highestRated, movie) => { return highestRated.rating > movie.rating ? highestRated : movie; }); return [...highestRatedMovies, highestRatedMovie]; }, []); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find the highest-rated movie in each genre by first grouping the movies by genre and then finding the highest-rated movie in each group. Here's how you might implement this function: function findHighestRatedMoviesByGenre(movies) { const groupedMovies = movies.reduce((grouped, movie) => { grouped[movie.genre] = grouped[movie.genre] || []; grouped[movie.genre].push(movie); return grouped; }, {}); return Object.keys(groupedMovies).reduce((highestRatedMovies, genre) => { const highestRatedMovie = groupedMovies[genre].reduce((highestRated, movie) => { return highestRated.rating > movie.rating ? highestRated : movie; }); return [...highestRatedMovies, highestRatedMovie]; }, []); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 1,
 		"tags": [],
@@ -766,7 +1191,12 @@
 	},
 	{
 		"question": "Scenario: You want to implement a function that accepts a promise and returns a new promise that resolves or rejects based on a timeout. Write such a function.",
-		"answer": "You can implement a function that accepts a promise and returns a new promise that resolves or rejects based on a timeout by using Promise.race to race between the original promise and a timeout promise. Here's how you might implement this function: function timeoutPromise(promise, timeout) { return Promise.race([ promise, new Promise((resolve, reject) => { setTimeout(() => { reject(new Error('Timeout')); }, timeout); }) ]); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can implement a function that accepts a promise and returns a new promise that resolves or rejects based on a timeout by using Promise.race to race between the original promise and a timeout promise. Here's how you might implement this function: function timeoutPromise(promise, timeout) { return Promise.race([ promise, new Promise((resolve, reject) => { setTimeout(() => { reject(new Error('Timeout')); }, timeout); }) ]); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 1,
 		"tags": [],
@@ -775,7 +1205,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing tasks, each with 'name' and 'priority' properties. Write a function to sort tasks by priority, with higher priority tasks appearing first.",
-		"answer": "You can sort tasks by priority, with higher priority tasks appearing first, by using the Array.prototype.sort method with a custom comparison function. Here's how you might implement this function: function sortTasksByPriority(tasks) { return tasks.sort((a, b) => b.priority - a.priority); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can sort tasks by priority, with higher priority tasks appearing first, by using the Array.prototype.sort method with a custom comparison function. Here's how you might implement this function: function sortTasksByPriority(tasks) { return tasks.sort((a, b) => b.priority - a.priority); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 1,
 		"tags": [],
@@ -784,7 +1219,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing songs, each with 'title', 'artist', and 'duration' properties. Write a function to find the total duration of songs by a specific artist.",
-		"answer": "You can find the total duration of songs by a specific artist by using the Array.prototype.reduce method to iterate over the array and sum up the durations of songs by that artist. Here's how you might implement this function: function calculateTotalDurationByArtist(songs, artist) { return songs.reduce((totalDuration, song) => { return song.artist === artist ? totalDuration + song.duration : totalDuration; }, 0); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find the total duration of songs by a specific artist by using the Array.prototype.reduce method to iterate over the array and sum up the durations of songs by that artist. Here's how you might implement this function: function calculateTotalDurationByArtist(songs, artist) { return songs.reduce((totalDuration, song) => { return song.artist === artist ? totalDuration + song.duration : totalDuration; }, 0); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 1,
 		"tags": [],
@@ -793,7 +1233,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of numbers. Write a function to find the largest number in the array.",
-		"answer": "You can find the largest number in an array by iterating through it and keeping track of the largest number found so far. Here's how you might implement this function: function findLargestNumber(numbers) { let largest = numbers[0]; for (let i = 1; i < numbers.length; i++) { if (numbers[i] > largest) { largest = numbers[i]; } } return largest; }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find the largest number in an array by iterating through it and keeping track of the largest number found so far. Here's how you might implement this function: function findLargestNumber(numbers) { let largest = numbers[0]; for (let i = 1; i < numbers.length; i++) { if (numbers[i] > largest) { largest = numbers[i]; } } return largest; }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 2,
 		"tags": [],
@@ -802,7 +1247,12 @@
 	},
 	{
 		"question": "Scenario: You want to check if a given number is even or odd. Write a function to do this.",
-		"answer": "You can check if a number is even or odd by using the modulo operator (%). If a number modulo 2 equals 0, it's even; otherwise, it's odd. Here's a function to do this: function isEven(number) { return number % 2 === 0; }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can check if a number is even or odd by using the modulo operator (%). If a number modulo 2 equals 0, it's even; otherwise, it's odd. Here's a function to do this: function isEven(number) { return number % 2 === 0; }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 2,
 		"tags": [],
@@ -811,7 +1261,12 @@
 	},
 	{
 		"question": "Scenario: You have a string containing a sentence. Write a function to count the number of words in the sentence.",
-		"answer": "You can count the number of words in a sentence by splitting it into an array of words and then returning the length of that array. Here's how you might implement this function: function countWords(sentence) { return sentence.split(' ').length; }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can count the number of words in a sentence by splitting it into an array of words and then returning the length of that array. Here's how you might implement this function: function countWords(sentence) { return sentence.split(' ').length; }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 2,
 		"tags": [],
@@ -820,7 +1275,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of numbers. Write a function to calculate the sum of all positive numbers in the array.",
-		"answer": "You can calculate the sum of all positive numbers in an array by iterating through it and adding up the positive numbers. Here's how you might implement this function: function sumPositiveNumbers(numbers) { let sum = 0; for (let number of numbers) { if (number > 0) { sum += number; } } return sum; }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can calculate the sum of all positive numbers in an array by iterating through it and adding up the positive numbers. Here's how you might implement this function: function sumPositiveNumbers(numbers) { let sum = 0; for (let number of numbers) { if (number > 0) { sum += number; } } return sum; }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 2,
 		"tags": [],
@@ -829,7 +1289,12 @@
 	},
 	{
 		"question": "Scenario: You have a string containing a list of names separated by commas. Write a function to convert the string into an array of names.",
-		"answer": "You can convert a string containing a list of names separated by commas into an array of names by using the split method. Here's how you might implement this function: function convertStringToArray(string) { return string.split(','); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can convert a string containing a list of names separated by commas into an array of names by using the split method. Here's how you might implement this function: function convertStringToArray(string) { return string.split(','); }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 2,
 		"tags": [],
@@ -838,7 +1303,12 @@
 	},
 	{
 		"question": "Scenario: You want to calculate the factorial of a given number. Write a function to do this.",
-		"answer": "The factorial of a number is the product of all positive integers less than or equal to that number. You can calculate it recursively or iteratively. Here's an example of a recursive function: function factorial(n) { return n <= 1 ? 1 : n * factorial(n - 1); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The factorial of a number is the product of all positive integers less than or equal to that number. You can calculate it recursively or iteratively. Here's an example of a recursive function: function factorial(n) { return n <= 1 ? 1 : n * factorial(n - 1); }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 2,
 		"tags": [],
@@ -847,7 +1317,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of strings. Write a function to concatenate all the strings in the array into a single string.",
-		"answer": "You can concatenate all the strings in an array into a single string using the join method. Here's how you might implement this function: function concatenateStrings(array) { return array.join(''); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can concatenate all the strings in an array into a single string using the join method. Here's how you might implement this function: function concatenateStrings(array) { return array.join(''); }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 2,
 		"tags": [],
@@ -856,7 +1331,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of numbers. Write a function to find the average of all the numbers in the array.",
-		"answer": "You can find the average of all the numbers in an array by summing them up and dividing by the number of elements. Here's how you might implement this function: function calculateAverage(numbers) { const sum = numbers.reduce((acc, curr) => acc + curr, 0); return sum / numbers.length; }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find the average of all the numbers in an array by summing them up and dividing by the number of elements. Here's how you might implement this function: function calculateAverage(numbers) { const sum = numbers.reduce((acc, curr) => acc + curr, 0); return sum / numbers.length; }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 2,
 		"tags": [],
@@ -865,7 +1345,12 @@
 	},
 	{
 		"question": "Scenario: You have a string containing a list of items separated by semicolons. Write a function to convert the string into an array of items.",
-		"answer": "You can convert a string containing a list of items separated by semicolons into an array of items by using the split method. Here's how you might implement this function: function convertStringToArray(string) { return string.split(';'); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can convert a string containing a list of items separated by semicolons into an array of items by using the split method. Here's how you might implement this function: function convertStringToArray(string) { return string.split(';'); }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 2,
 		"tags": [],
@@ -874,7 +1359,12 @@
 	},
 	{
 		"question": "Scenario: You have two arrays of numbers. Write a function to merge them into a single array.",
-		"answer": "You can merge two arrays into a single array using the concat method. Here's how you might implement this function: function mergeArrays(array1, array2) { return array1.concat(array2); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can merge two arrays into a single array using the concat method. Here's how you might implement this function: function mergeArrays(array1, array2) { return array1.concat(array2); }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 2,
 		"tags": [],
@@ -883,7 +1373,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of numbers. Write a function to find the second largest number in the array.",
-		"answer": "You can find the second largest number in an array by sorting it in descending order and then returning the second element. Here's how you might implement this function: function findSecondLargestNumber(numbers) { const sorted = numbers.sort((a, b) => b - a); return sorted[1]; }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find the second largest number in an array by sorting it in descending order and then returning the second element. Here's how you might implement this function: function findSecondLargestNumber(numbers) { const sorted = numbers.sort((a, b) => b - a); return sorted[1]; }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 2,
 		"tags": [],
@@ -892,7 +1387,12 @@
 	},
 	{
 		"question": "Scenario: You have a string containing a list of items separated by commas. Write a function to remove a specific item from the string.",
-		"answer": "You can remove a specific item from a string containing a list of items separated by commas by splitting the string into an array, removing the item, and then joining the array back into a string. Here's how you might implement this function: function removeItemFromString(string, item) { const array = string.split(','); const index = array.indexOf(item); if (index !== -1) { array.splice(index, 1); } return array.join(','); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can remove a specific item from a string containing a list of items separated by commas by splitting the string into an array, removing the item, and then joining the array back into a string. Here's how you might implement this function: function removeItemFromString(string, item) { const array = string.split(','); const index = array.indexOf(item); if (index !== -1) { array.splice(index, 1); } return array.join(','); }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 2,
 		"tags": [],
@@ -901,7 +1401,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of strings. Write a function to find the longest string in the array.",
-		"answer": "You can find the longest string in an array by iterating through it and keeping track of the longest string found so far. Here's how you might implement this function: function findLongestString(strings) { let longest = strings[0]; for (let string of strings) { if (string.length > longest.length) { longest = string; } } return longest; }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find the longest string in an array by iterating through it and keeping track of the longest string found so far. Here's how you might implement this function: function findLongestString(strings) { let longest = strings[0]; for (let string of strings) { if (string.length > longest.length) { longest = string; } } return longest; }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 2,
 		"tags": [],
@@ -910,7 +1415,12 @@
 	},
 	{
 		"question": "Scenario: You have a string containing a list of items separated by semicolons. Write a function to remove duplicate items from the string.",
-		"answer": "You can remove duplicate items from a string containing a list of items separated by semicolons by splitting the string into an array, converting it to a Set to remove duplicates, and then joining the Set back into a string. Here's how you might implement this function: function removeDuplicatesFromString(string) { const array = string.split(';'); const uniqueArray = [...new Set(array)]; return uniqueArray.join(';'); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can remove duplicate items from a string containing a list of items separated by semicolons by splitting the string into an array, converting it to a Set to remove duplicates, and then joining the Set back into a string. Here's how you might implement this function: function removeDuplicatesFromString(string) { const array = string.split(';'); const uniqueArray = [...new Set(array)]; return uniqueArray.join(';'); }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 2,
 		"tags": [],
@@ -919,7 +1429,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of numbers. Write a function to find the median value of the numbers in the array.",
-		"answer": "To find the median value of numbers in an array, you need to sort the array and then determine the middle value. If the array has an odd number of elements, the median is the middle value. If it has an even number of elements, the median is the average of the two middle values. Here's how you might implement this function: function findMedian(numbers) { const sorted = numbers.sort((a, b) => a - b); const middleIndex = Math.floor(sorted.length / 2); if (sorted.length % 2 === 0) { return (sorted[middleIndex - 1] + sorted[middleIndex]) / 2; } else { return sorted[middleIndex]; } }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To find the median value of numbers in an array, you need to sort the array and then determine the middle value. If the array has an odd number of elements, the median is the middle value. If it has an even number of elements, the median is the average of the two middle values. Here's how you might implement this function: function findMedian(numbers) { const sorted = numbers.sort((a, b) => a - b); const middleIndex = Math.floor(sorted.length / 2); if (sorted.length % 2 === 0) { return (sorted[middleIndex - 1] + sorted[middleIndex]) / 2; } else { return sorted[middleIndex]; } }"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 2,
 		"tags": [],
@@ -928,7 +1443,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of numbers. Write a function to find the sum of all even numbers in the array.",
-		"answer": "You can find the sum of all even numbers in an array by using the Array.prototype.reduce method to iterate over the array and accumulate the sum of even numbers. Here's how you might implement this function: function sumOfEvenNumbers(numbers) { return numbers.reduce((sum, number) => number % 2 === 0 ? sum + number : sum, 0); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find the sum of all even numbers in an array by using the Array.prototype.reduce method to iterate over the array and accumulate the sum of even numbers. Here's how you might implement this function: function sumOfEvenNumbers(numbers) { return numbers.reduce((sum, number) => number % 2 === 0 ? sum + number : sum, 0); }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 2,
 		"tags": [],
@@ -937,7 +1457,12 @@
 	},
 	{
 		"question": "Scenario: You want to implement a function that checks if a given string is a palindrome. Write such a function.",
-		"answer": "You can check if a string is a palindrome by comparing the string with its reversed version. Here's how you might implement this function: function isPalindrome(string) { const reversed = string.split('').reverse().join(''); return string === reversed; }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can check if a string is a palindrome by comparing the string with its reversed version. Here's how you might implement this function: function isPalindrome(string) { const reversed = string.split('').reverse().join(''); return string === reversed; }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 2,
 		"tags": [],
@@ -946,7 +1471,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of numbers. Write a function to find the second smallest number in the array.",
-		"answer": "You can find the second smallest number in an array by first sorting the array and then returning the second element. Here's how you might implement this function: function findSecondSmallestNumber(numbers) { const sorted = numbers.sort((a, b) => a - b); return sorted[1]; }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find the second smallest number in an array by first sorting the array and then returning the second element. Here's how you might implement this function: function findSecondSmallestNumber(numbers) { const sorted = numbers.sort((a, b) => a - b); return sorted[1]; }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 2,
 		"tags": [],
@@ -955,7 +1485,12 @@
 	},
 	{
 		"question": "Scenario: You have a string containing a list of numbers separated by commas. Write a function to find the smallest number in the string.",
-		"answer": "You can find the smallest number in a string containing a list of numbers separated by commas by splitting the string into an array, converting the strings to numbers, and then finding the minimum value. Here's how you might implement this function: function findSmallestNumber(string) { const numbers = string.split(',').map(Number); return Math.min(...numbers); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find the smallest number in a string containing a list of numbers separated by commas by splitting the string into an array, converting the strings to numbers, and then finding the minimum value. Here's how you might implement this function: function findSmallestNumber(string) { const numbers = string.split(',').map(Number); return Math.min(...numbers); }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 2,
 		"tags": [],
@@ -964,7 +1499,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of strings. Write a function to find the longest word in the array.",
-		"answer": "You can find the longest word in an array of strings by using the Array.prototype.reduce method to iterate over the array and keep track of the longest word found so far. Here's how you might implement this function: function findLongestWord(strings) { return strings.reduce((longest, current) => current.length > longest.length ? current : longest, ''); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find the longest word in an array of strings by using the Array.prototype.reduce method to iterate over the array and keep track of the longest word found so far. Here's how you might implement this function: function findLongestWord(strings) { return strings.reduce((longest, current) => current.length > longest.length ? current : longest, ''); }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 2,
 		"tags": [],
@@ -973,7 +1513,12 @@
 	},
 	{
 		"question": "Scenario: You have a string containing a list of numbers separated by spaces. Write a function to calculate the sum of all numbers in the string.",
-		"answer": "You can calculate the sum of all numbers in a string containing a list of numbers separated by spaces by splitting the string into an array, converting the strings to numbers, and then summing them up. Here's how you might implement this function: function calculateSum(string) { const numbers = string.split(' ').map(Number); return numbers.reduce((sum, number) => sum + number, 0); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can calculate the sum of all numbers in a string containing a list of numbers separated by spaces by splitting the string into an array, converting the strings to numbers, and then summing them up. Here's how you might implement this function: function calculateSum(string) { const numbers = string.split(' ').map(Number); return numbers.reduce((sum, number) => sum + number, 0); }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 2,
 		"tags": [],
@@ -982,7 +1527,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of strings. Write a function to count the number of vowels in all strings combined.",
-		"answer": "You can count the number of vowels in all strings combined by using the Array.prototype.reduce method to iterate over the array and accumulate the count of vowels in each string. Here's how you might implement this function: function countVowels(strings) { const vowels = 'aeiou'; return strings.reduce((count, string) => { return count + string.split('').filter(char => vowels.includes(char)).length; }, 0); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can count the number of vowels in all strings combined by using the Array.prototype.reduce method to iterate over the array and accumulate the count of vowels in each string. Here's how you might implement this function: function countVowels(strings) { const vowels = 'aeiou'; return strings.reduce((count, string) => { return count + string.split('').filter(char => vowels.includes(char)).length; }, 0); }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 2,
 		"tags": [],
@@ -991,7 +1541,12 @@
 	},
 	{
 		"question": "Scenario: You have a string containing a list of words separated by spaces. Write a function to reverse the order of words in the string.",
-		"answer": "You can reverse the order of words in a string containing a list of words separated by spaces by splitting the string into an array, reversing the array, and then joining it back into a string. Here's how you might implement this function: function reverseWords(string) { return string.split(' ').reverse().join(' '); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can reverse the order of words in a string containing a list of words separated by spaces by splitting the string into an array, reversing the array, and then joining it back into a string. Here's how you might implement this function: function reverseWords(string) { return string.split(' ').reverse().join(' '); }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 2,
 		"tags": [],
@@ -1000,7 +1555,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of numbers. Write a function to find the average of all numbers in the array.",
-		"answer": "You can find the average of all numbers in an array by using the Array.prototype.reduce method to iterate over the array and accumulate the sum of all numbers, and then divide by the length of the array. Here's how you might implement this function: function findAverage(numbers) { const sum = numbers.reduce((total, number) => total + number, 0); return sum / numbers.length; }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find the average of all numbers in an array by using the Array.prototype.reduce method to iterate over the array and accumulate the sum of all numbers, and then divide by the length of the array. Here's how you might implement this function: function findAverage(numbers) { const sum = numbers.reduce((total, number) => total + number, 0); return sum / numbers.length; }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 2,
 		"tags": [],
@@ -1009,7 +1569,12 @@
 	},
 	{
 		"question": "Scenario: You have a string containing a list of words separated by commas. Write a function to alphabetically sort the words in the string.",
-		"answer": "You can alphabetically sort the words in a string containing a list of words separated by commas by splitting the string into an array, sorting the array, and then joining it back into a string. Here's how you might implement this function: function sortWords(string) { return string.split(',').sort().join(','); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can alphabetically sort the words in a string containing a list of words separated by commas by splitting the string into an array, sorting the array, and then joining it back into a string. Here's how you might implement this function: function sortWords(string) { return string.split(',').sort().join(','); }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 2,
 		"tags": [],
@@ -1018,7 +1583,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of strings. Write a function to find the shortest string in the array.",
-		"answer": "You can find the shortest string in an array of strings by using the Array.prototype.reduce method to iterate over the array and keep track of the shortest string found so far. Here's how you might implement this function: function findShortestString(strings) { return strings.reduce((shortest, current) => current.length < shortest.length ? current : shortest, strings[0]); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find the shortest string in an array of strings by using the Array.prototype.reduce method to iterate over the array and keep track of the shortest string found so far. Here's how you might implement this function: function findShortestString(strings) { return strings.reduce((shortest, current) => current.length < shortest.length ? current : shortest, strings[0]); }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 2,
 		"tags": [],
@@ -1027,7 +1597,12 @@
 	},
 	{
 		"question": "Scenario: You have a string containing a list of words separated by semicolons. Write a function to count the number of words in the string.",
-		"answer": "You can count the number of words in a string containing a list of words separated by semicolons by splitting the string into an array and then returning the length of the array. Here's how you might implement this function: function countWords(string) { return string.split(';').length; }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can count the number of words in a string containing a list of words separated by semicolons by splitting the string into an array and then returning the length of the array. Here's how you might implement this function: function countWords(string) { return string.split(';').length; }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 2,
 		"tags": [],
@@ -1036,7 +1611,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of strings. Write a function to concatenate all strings in the array.",
-		"answer": "You can concatenate all strings in an array of strings by using the Array.prototype.join method to join the array elements into a single string. Here's how you might implement this function: function concatenateStrings(strings) { return strings.join(''); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can concatenate all strings in an array of strings by using the Array.prototype.join method to join the array elements into a single string. Here's how you might implement this function: function concatenateStrings(strings) { return strings.join(''); }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 2,
 		"tags": [],
@@ -1045,7 +1625,12 @@
 	},
 	{
 		"question": "Scenario: You have a string containing a list of numbers separated by hyphens. Write a function to find the largest number in the string.",
-		"answer": "You can find the largest number in a string containing a list of numbers separated by hyphens by splitting the string into an array, converting the strings to numbers, and then finding the maximum value. Here's how you might implement this function: function findLargestNumber(string) { const numbers = string.split('-').map(Number); return Math.max(...numbers); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find the largest number in a string containing a list of numbers separated by hyphens by splitting the string into an array, converting the strings to numbers, and then finding the maximum value. Here's how you might implement this function: function findLargestNumber(string) { const numbers = string.split('-').map(Number); return Math.max(...numbers); }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 2,
 		"tags": [],
@@ -1054,7 +1639,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of strings. Write a function to capitalize the first letter of each word in the array.",
-		"answer": "You can capitalize the first letter of each word in an array of strings by using the Array.prototype.map method to iterate over the array and capitalize the first letter of each string. Here's how you might implement this function: function capitalizeFirstLetter(strings) { return strings.map(string => string.charAt(0).toUpperCase() + string.slice(1)); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can capitalize the first letter of each word in an array of strings by using the Array.prototype.map method to iterate over the array and capitalize the first letter of each string. Here's how you might implement this function: function capitalizeFirstLetter(strings) { return strings.map(string => string.charAt(0).toUpperCase() + string.slice(1)); }"
+			}
+		],
 		"difficulty": 1,
 		"practicality": 2,
 		"tags": [],
@@ -1063,7 +1653,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing customers, each with 'name' and 'orders' properties. Write a function to find the customer with the highest total order amount.",
-		"answer": "You can find the customer with the highest total order amount by using the Array.prototype.reduce method to iterate over the array of customers and their orders, accumulating the total order amount for each customer, and comparing it with the highest total order amount found so far. Here's how you might implement this function: function customerWithHighestOrderAmount(customers) { return customers.reduce((highestCustomer, customer) => { const totalOrderAmount = customer.orders.reduce((total, order) => total + order, 0); if (totalOrderAmount > highestCustomer.ordersTotal) { return { name: customer.name, ordersTotal: totalOrderAmount }; } else { return highestCustomer; } }, { name: '', ordersTotal: 0 }); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find the customer with the highest total order amount by using the Array.prototype.reduce method to iterate over the array of customers and their orders, accumulating the total order amount for each customer, and comparing it with the highest total order amount found so far. Here's how you might implement this function: function customerWithHighestOrderAmount(customers) { return customers.reduce((highestCustomer, customer) => { const totalOrderAmount = customer.orders.reduce((total, order) => total + order, 0); if (totalOrderAmount > highestCustomer.ordersTotal) { return { name: customer.name, ordersTotal: totalOrderAmount }; } else { return highestCustomer; } }, { name: '', ordersTotal: 0 }); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 2,
 		"tags": [],
@@ -1072,7 +1667,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing employees, each with 'name' and 'salary' properties. Write a function to calculate the total salary of all employees, considering the possibility of different salary currencies.",
-		"answer": "You can calculate the total salary of all employees, considering different salary currencies, by using the Array.prototype.reduce method to iterate over the array and convert each salary to a common currency before summing them up. Here's how you might implement this function: function calculateTotalSalary(employees) { const exchangeRates = { 'USD': 1, 'EUR': 0.85, 'GBP': 0.73 }; return employees.reduce((total, employee) => { return total + (employee.salary * exchangeRates[employee.currency]); }, 0); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can calculate the total salary of all employees, considering different salary currencies, by using the Array.prototype.reduce method to iterate over the array and convert each salary to a common currency before summing them up. Here's how you might implement this function: function calculateTotalSalary(employees) { const exchangeRates = { 'USD': 1, 'EUR': 0.85, 'GBP': 0.73 }; return employees.reduce((total, employee) => { return total + (employee.salary * exchangeRates[employee.currency]); }, 0); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 2,
 		"tags": [],
@@ -1081,7 +1681,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing movies, each with 'title', 'genre', and 'rating' properties. Write a function to find the highest-rated movie in each genre.",
-		"answer": "You can find the highest-rated movie in each genre by first grouping the movies by genre and then finding the highest-rated movie in each group. Here's how you might implement this function: function findHighestRatedMoviesByGenre(movies) { const groupedMovies = movies.reduce((grouped, movie) => { grouped[movie.genre] = grouped[movie.genre] || []; grouped[movie.genre].push(movie); return grouped; }, {}); return Object.keys(groupedMovies).reduce((highestRatedMovies, genre) => { const highestRatedMovie = groupedMovies[genre].reduce((highestRated, movie) => { return highestRated.rating > movie.rating ? highestRated : movie; }); return [...highestRatedMovies, highestRatedMovie]; }, []); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find the highest-rated movie in each genre by first grouping the movies by genre and then finding the highest-rated movie in each group. Here's how you might implement this function: function findHighestRatedMoviesByGenre(movies) { const groupedMovies = movies.reduce((grouped, movie) => { grouped[movie.genre] = grouped[movie.genre] || []; grouped[movie.genre].push(movie); return grouped; }, {}); return Object.keys(groupedMovies).reduce((highestRatedMovies, genre) => { const highestRatedMovie = groupedMovies[genre].reduce((highestRated, movie) => { return highestRated.rating > movie.rating ? highestRated : movie; }); return [...highestRatedMovies, highestRatedMovie]; }, []); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 2,
 		"tags": [],
@@ -1090,7 +1695,12 @@
 	},
 	{
 		"question": "Scenario: You want to implement a function that accepts a promise and returns a new promise that resolves or rejects based on a timeout. Write such a function.",
-		"answer": "You can implement a function that accepts a promise and returns a new promise that resolves or rejects based on a timeout by using Promise.race to race between the original promise and a timeout promise. Here's how you might implement this function: function timeoutPromise(promise, timeout) { return Promise.race([ promise, new Promise((resolve, reject) => { setTimeout(() => { reject(new Error('Timeout')); }, timeout); }) ]); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can implement a function that accepts a promise and returns a new promise that resolves or rejects based on a timeout by using Promise.race to race between the original promise and a timeout promise. Here's how you might implement this function: function timeoutPromise(promise, timeout) { return Promise.race([ promise, new Promise((resolve, reject) => { setTimeout(() => { reject(new Error('Timeout')); }, timeout); }) ]); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 2,
 		"tags": [],
@@ -1099,7 +1709,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing tasks, each with 'name' and 'priority' properties. Write a function to sort tasks by priority, with higher priority tasks appearing first.",
-		"answer": "You can sort tasks by priority, with higher priority tasks appearing first, by using the Array.prototype.sort method with a custom comparison function. Here's how you might implement this function: function sortTasksByPriority(tasks) { return tasks.sort((a, b) => b.priority - a.priority); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can sort tasks by priority, with higher priority tasks appearing first, by using the Array.prototype.sort method with a custom comparison function. Here's how you might implement this function: function sortTasksByPriority(tasks) { return tasks.sort((a, b) => b.priority - a.priority); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 2,
 		"tags": [],
@@ -1108,7 +1723,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing customers, each with 'name' and 'orders' properties. Write a function to find the customer with the highest total order amount.",
-		"answer": "You can find the customer with the highest total order amount by using the Array.prototype.reduce method to iterate over the array of customers and their orders, accumulating the total order amount for each customer, and comparing it with the highest total order amount found so far. Here's how you might implement this function: function customerWithHighestOrderAmount(customers) { return customers.reduce((highestCustomer, customer) => { const totalOrderAmount = customer.orders.reduce((total, order) => total + order, 0); if (totalOrderAmount > highestCustomer.ordersTotal) { return { name: customer.name, ordersTotal: totalOrderAmount }; } else { return highestCustomer; } }, { name: '', ordersTotal: 0 }); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find the customer with the highest total order amount by using the Array.prototype.reduce method to iterate over the array of customers and their orders, accumulating the total order amount for each customer, and comparing it with the highest total order amount found so far. Here's how you might implement this function: function customerWithHighestOrderAmount(customers) { return customers.reduce((highestCustomer, customer) => { const totalOrderAmount = customer.orders.reduce((total, order) => total + order, 0); if (totalOrderAmount > highestCustomer.ordersTotal) { return { name: customer.name, ordersTotal: totalOrderAmount }; } else { return highestCustomer; } }, { name: '', ordersTotal: 0 }); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 2,
 		"tags": [],
@@ -1117,7 +1737,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing employees, each with 'name' and 'salary' properties. Write a function to calculate the total salary of all employees, considering the possibility of different salary currencies.",
-		"answer": "You can calculate the total salary of all employees, considering different salary currencies, by using the Array.prototype.reduce method to iterate over the array and convert each salary to a common currency before summing them up. Here's how you might implement this function: function calculateTotalSalary(employees) { const exchangeRates = { 'USD': 1, 'EUR': 0.85, 'GBP': 0.73 }; return employees.reduce((total, employee) => { return total + (employee.salary * exchangeRates[employee.currency]); }, 0); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can calculate the total salary of all employees, considering different salary currencies, by using the Array.prototype.reduce method to iterate over the array and convert each salary to a common currency before summing them up. Here's how you might implement this function: function calculateTotalSalary(employees) { const exchangeRates = { 'USD': 1, 'EUR': 0.85, 'GBP': 0.73 }; return employees.reduce((total, employee) => { return total + (employee.salary * exchangeRates[employee.currency]); }, 0); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 2,
 		"tags": [],
@@ -1126,7 +1751,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing movies, each with 'title', 'genre', and 'rating' properties. Write a function to find the highest-rated movie in each genre.",
-		"answer": "You can find the highest-rated movie in each genre by first grouping the movies by genre and then finding the highest-rated movie in each group. Here's how you might implement this function: function findHighestRatedMoviesByGenre(movies) { const groupedMovies = movies.reduce((grouped, movie) => { grouped[movie.genre] = grouped[movie.genre] || []; grouped[movie.genre].push(movie); return grouped; }, {}); return Object.keys(groupedMovies).reduce((highestRatedMovies, genre) => { const highestRatedMovie = groupedMovies[genre].reduce((highestRated, movie) => { return highestRated.rating > movie.rating ? highestRated : movie; }); return [...highestRatedMovies, highestRatedMovie]; }, []); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find the highest-rated movie in each genre by first grouping the movies by genre and then finding the highest-rated movie in each group. Here's how you might implement this function: function findHighestRatedMoviesByGenre(movies) { const groupedMovies = movies.reduce((grouped, movie) => { grouped[movie.genre] = grouped[movie.genre] || []; grouped[movie.genre].push(movie); return grouped; }, {}); return Object.keys(groupedMovies).reduce((highestRatedMovies, genre) => { const highestRatedMovie = groupedMovies[genre].reduce((highestRated, movie) => { return highestRated.rating > movie.rating ? highestRated : movie; }); return [...highestRatedMovies, highestRatedMovie]; }, []); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 2,
 		"tags": [],
@@ -1135,7 +1765,12 @@
 	},
 	{
 		"question": "Scenario: You want to implement a function that accepts a promise and returns a new promise that resolves or rejects based on a timeout. Write such a function.",
-		"answer": "You can implement a function that accepts a promise and returns a new promise that resolves or rejects based on a timeout by using Promise.race to race between the original promise and a timeout promise. Here's how you might implement this function: function timeoutPromise(promise, timeout) { return Promise.race([ promise, new Promise((resolve, reject) => { setTimeout(() => { reject(new Error('Timeout')); }, timeout); }) ]); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can implement a function that accepts a promise and returns a new promise that resolves or rejects based on a timeout by using Promise.race to race between the original promise and a timeout promise. Here's how you might implement this function: function timeoutPromise(promise, timeout) { return Promise.race([ promise, new Promise((resolve, reject) => { setTimeout(() => { reject(new Error('Timeout')); }, timeout); }) ]); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 2,
 		"tags": [],
@@ -1144,7 +1779,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing tasks, each with 'name' and 'priority' properties. Write a function to sort tasks by priority, with higher priority tasks appearing first.",
-		"answer": "You can sort tasks by priority, with higher priority tasks appearing first, by using the Array.prototype.sort method with a custom comparison function. Here's how you might implement this function: function sortTasksByPriority(tasks) { return tasks.sort((a, b) => b.priority - a.priority); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can sort tasks by priority, with higher priority tasks appearing first, by using the Array.prototype.sort method with a custom comparison function. Here's how you might implement this function: function sortTasksByPriority(tasks) { return tasks.sort((a, b) => b.priority - a.priority); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 2,
 		"tags": [],
@@ -1153,7 +1793,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing customers, each with 'name' and 'orders' properties. Write a function to find the customer with the highest total order amount.",
-		"answer": "You can find the customer with the highest total order amount by using the Array.prototype.reduce method to iterate over the array of customers and their orders, accumulating the total order amount for each customer, and comparing it with the highest total order amount found so far. Here's how you might implement this function: function customerWithHighestOrderAmount(customers) { return customers.reduce((highestCustomer, customer) => { const totalOrderAmount = customer.orders.reduce((total, order) => total + order, 0); if (totalOrderAmount > highestCustomer.ordersTotal) { return { name: customer.name, ordersTotal: totalOrderAmount }; } else { return highestCustomer; } }, { name: '', ordersTotal: 0 }); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find the customer with the highest total order amount by using the Array.prototype.reduce method to iterate over the array of customers and their orders, accumulating the total order amount for each customer, and comparing it with the highest total order amount found so far. Here's how you might implement this function: function customerWithHighestOrderAmount(customers) { return customers.reduce((highestCustomer, customer) => { const totalOrderAmount = customer.orders.reduce((total, order) => total + order, 0); if (totalOrderAmount > highestCustomer.ordersTotal) { return { name: customer.name, ordersTotal: totalOrderAmount }; } else { return highestCustomer; } }, { name: '', ordersTotal: 0 }); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 2,
 		"tags": [],
@@ -1162,7 +1807,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing employees, each with 'name' and 'salary' properties. Write a function to calculate the total salary of all employees, considering the possibility of different salary currencies.",
-		"answer": "You can calculate the total salary of all employees, considering different salary currencies, by using the Array.prototype.reduce method to iterate over the array and convert each salary to a common currency before summing them up. Here's how you might implement this function: function calculateTotalSalary(employees) { const exchangeRates = { 'USD': 1, 'EUR': 0.85, 'GBP': 0.73 }; return employees.reduce((total, employee) => { return total + (employee.salary * exchangeRates[employee.currency]); }, 0); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can calculate the total salary of all employees, considering different salary currencies, by using the Array.prototype.reduce method to iterate over the array and convert each salary to a common currency before summing them up. Here's how you might implement this function: function calculateTotalSalary(employees) { const exchangeRates = { 'USD': 1, 'EUR': 0.85, 'GBP': 0.73 }; return employees.reduce((total, employee) => { return total + (employee.salary * exchangeRates[employee.currency]); }, 0); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 2,
 		"tags": [],
@@ -1171,7 +1821,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing movies, each with 'title', 'genre', and 'rating' properties. Write a function to find the highest-rated movie in each genre.",
-		"answer": "You can find the highest-rated movie in each genre by first grouping the movies by genre and then finding the highest-rated movie in each group. Here's how you might implement this function: function findHighestRatedMoviesByGenre(movies) { const groupedMovies = movies.reduce((grouped, movie) => { grouped[movie.genre] = grouped[movie.genre] || []; grouped[movie.genre].push(movie); return grouped; }, {}); return Object.keys(groupedMovies).reduce((highestRatedMovies, genre) => { const highestRatedMovie = groupedMovies[genre].reduce((highestRated, movie) => { return highestRated.rating > movie.rating ? highestRated : movie; }); return [...highestRatedMovies, highestRatedMovie]; }, []); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can find the highest-rated movie in each genre by first grouping the movies by genre and then finding the highest-rated movie in each group. Here's how you might implement this function: function findHighestRatedMoviesByGenre(movies) { const groupedMovies = movies.reduce((grouped, movie) => { grouped[movie.genre] = grouped[movie.genre] || []; grouped[movie.genre].push(movie); return grouped; }, {}); return Object.keys(groupedMovies).reduce((highestRatedMovies, genre) => { const highestRatedMovie = groupedMovies[genre].reduce((highestRated, movie) => { return highestRated.rating > movie.rating ? highestRated : movie; }); return [...highestRatedMovies, highestRatedMovie]; }, []); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 2,
 		"tags": [],
@@ -1180,7 +1835,12 @@
 	},
 	{
 		"question": "Scenario: You want to implement a function that accepts a promise and returns a new promise that resolves or rejects based on a timeout. Write such a function.",
-		"answer": "You can implement a function that accepts a promise and returns a new promise that resolves or rejects based on a timeout by using Promise.race to race between the original promise and a timeout promise. Here's how you might implement this function: function timeoutPromise(promise, timeout) { return Promise.race([ promise, new Promise((resolve, reject) => { setTimeout(() => { reject(new Error('Timeout')); }, timeout); }) ]); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can implement a function that accepts a promise and returns a new promise that resolves or rejects based on a timeout by using Promise.race to race between the original promise and a timeout promise. Here's how you might implement this function: function timeoutPromise(promise, timeout) { return Promise.race([ promise, new Promise((resolve, reject) => { setTimeout(() => { reject(new Error('Timeout')); }, timeout); }) ]); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 2,
 		"tags": [],
@@ -1189,7 +1849,12 @@
 	},
 	{
 		"question": "Scenario: You have an array of objects representing tasks, each with 'name' and 'priority' properties. Write a function to sort tasks by priority, with higher priority tasks appearing first.",
-		"answer": "You can sort tasks by priority, with higher priority tasks appearing first, by using the Array.prototype.sort method with a custom comparison function. Here's how you might implement this function: function sortTasksByPriority(tasks) { return tasks.sort((a, b) => b.priority - a.priority); }",
+		"answer": [
+			{
+				"type": "text",
+				"content": "You can sort tasks by priority, with higher priority tasks appearing first, by using the Array.prototype.sort method with a custom comparison function. Here's how you might implement this function: function sortTasksByPriority(tasks) { return tasks.sort((a, b) => b.priority - a.priority); }"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 2,
 		"tags": [],

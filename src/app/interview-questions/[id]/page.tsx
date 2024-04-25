@@ -1,6 +1,6 @@
 'use client';
 
-import { QAPair, SearchParamProps } from '@/lib/types';
+import { AnswerSegment, QAPair, SearchParamProps } from '@/lib/types';
 import React from 'react';
 import {
 	ColumnDef,
@@ -58,7 +58,9 @@ const columns: ColumnDef<QAPair>[] = [
 		accessorKey: 'answer',
 		header: 'Answer',
 		cell: ({ row }) => (
-			<div className='line-clamp-2'>{row.getValue('answer')}</div>
+			<div className='line-clamp-2'>
+				{(row.getValue('answer') as AnswerSegment[])[0].content}
+			</div>
 		),
 	},
 	{
@@ -94,6 +96,26 @@ const columns: ColumnDef<QAPair>[] = [
 		},
 	},
 ];
+
+function AnswerRenderer({ segments }: { segments: AnswerSegment[] }) {
+	return (
+		<div className='flex flex-col gap-y-2 max-w-full w-full'>
+			{segments.map((segment, index) => {
+				if (segment.type === 'text') {
+					return <p key={index}>{segment.content}</p>;
+				} else {
+					return (
+						<div key={index} className='bg-gray-100 text-green-700 p-3 mb-2'>
+							<pre className='whitespace-pre-wrap break-words'>
+								<code className='text-sm block'>{`${segment.content}`}</code>
+							</pre>
+						</div>
+					);
+				}
+			})}
+		</div>
+	);
+}
 
 export default function Page({ params }: SearchParamProps) {
 	const data = getQuestionsAndAnswers(params.id);
@@ -218,7 +240,7 @@ export default function Page({ params }: SearchParamProps) {
 										</DialogTrigger>
 										<DialogContent className='w-full max-h-full sm:max-w-xl overflow-y-auto'>
 											<DialogHeader>
-												<DialogTitle className='flex gap-x-4 items-center'>
+												<DialogTitle className='flex gap-x-4 items-center w-full'>
 													<span className='capitalize'>
 														{params.id} Question {parseInt(row.id) + 1}
 													</span>
@@ -233,7 +255,7 @@ export default function Page({ params }: SearchParamProps) {
 													{row.getValue('question')}
 												</section>
 												<section className='text-gray-600 leading-relaxed'>
-													{row.getValue('answer')}
+													<AnswerRenderer segments={row.getValue('answer')} />
 												</section>
 											</div>
 										</DialogContent>
@@ -255,7 +277,7 @@ export default function Page({ params }: SearchParamProps) {
 				<div className='flex items-center justify-end space-x-2 py-4'>
 					<div className='flex-1 text-sm text-muted-foreground'>
 						{table.getFilteredSelectedRowModel().rows.length} of{' '}
-						{table.getFilteredRowModel().rows.length} row(s) selected.
+						{table.getFilteredRowModel().rows.length} question(s) selected.
 					</div>
 					<div className='space-x-2'>
 						<Button

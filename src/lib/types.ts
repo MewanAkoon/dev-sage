@@ -15,9 +15,14 @@ export enum Difficulty {
 	Advanced = 2,
 }
 
+export type AnswerSegment = {
+	type: 'text' | 'code';
+	content: string;
+};
+
 export type QAPair = {
 	question: string;
-	answer: string;
+	answer: AnswerSegment[];
 	difficulty: Difficulty;
 	practicality: Practicality;
 	tags: string[];

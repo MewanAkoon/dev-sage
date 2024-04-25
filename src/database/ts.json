@@ -1,7 +1,12 @@
 [
 	{
 		"question": "What is TypeScript and how does it differ from JavaScript?",
-		"answer": "TypeScript is a superset of JavaScript that adds static typing capabilities to the language. This means that while JavaScript variables and parameters can be of any type without explicit declarations, TypeScript allows and requires you to specify types for variables, function parameters, and return values. This helps in catching errors during development, improving code readability and maintainability. TypeScript is compiled into plain JavaScript, meaning any valid JavaScript code is also valid TypeScript code.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "TypeScript is a superset of JavaScript that adds static typing capabilities to the language. This means that while JavaScript variables and parameters can be of any type without explicit declarations, TypeScript allows and requires you to specify types for variables, function parameters, and return values. This helps in catching errors during development, improving code readability and maintainability. TypeScript is compiled into plain JavaScript, meaning any valid JavaScript code is also valid TypeScript code."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 0,
 		"tags": [],
@@ -10,7 +15,12 @@
 	},
 	{
 		"question": "Explain the purpose of type annotations in TypeScript.",
-		"answer": "Type annotations in TypeScript are used to explicitly assign a type to variables, function parameters, and function return values. This helps in statically checking the types of data being used throughout the code, which can catch type-related errors during development before the code is compiled into JavaScript. This feature ensures that the data types being used are consistent with what is expected in the function signatures and variable declarations, improving the code's reliability and robustness.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Type annotations in TypeScript are used to explicitly assign a type to variables, function parameters, and function return values. This helps in statically checking the types of data being used throughout the code, which can catch type-related errors during development before the code is compiled into JavaScript. This feature ensures that the data types being used are consistent with what is expected in the function signatures and variable declarations, improving the code's reliability and robustness."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 0,
 		"tags": [],
@@ -19,7 +29,12 @@
 	},
 	{
 		"question": "What is an 'interface' in TypeScript and how is it used?",
-		"answer": "An interface in TypeScript is a structure that defines the shape of an object. It specifies the properties that an object must have and their types, but it does not implement any functionality. Interfaces are used for type-checking to ensure that the objects conform to a specific structure, making the code more predictable and easier to manage. Interfaces are particularly useful in large applications to define custom types that can be reused throughout the application.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "An interface in TypeScript is a structure that defines the shape of an object. It specifies the properties that an object must have and their types, but it does not implement any functionality. Interfaces are used for type-checking to ensure that the objects conform to a specific structure, making the code more predictable and easier to manage. Interfaces are particularly useful in large applications to define custom types that can be reused throughout the application."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 0,
 		"tags": [],
@@ -28,7 +43,12 @@
 	},
 	{
 		"question": "Describe the benefits of using TypeScript's type inference.",
-		"answer": "TypeScript's type inference refers to the compiler's ability to automatically deduce the types of variables and expressions when they are not explicitly provided. This feature simplifies the code by reducing the need for explicit type annotations while still maintaining the benefits of type safety. It makes the code cleaner and easier to read, while still providing robust type checking. Type inference also helps in catching errors when there is a mismatch in expected and actual data types without explicit type declarations.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "TypeScript's type inference refers to the compiler's ability to automatically deduce the types of variables and expressions when they are not explicitly provided. This feature simplifies the code by reducing the need for explicit type annotations while still maintaining the benefits of type safety. It makes the code cleaner and easier to read, while still providing robust type checking. Type inference also helps in catching errors when there is a mismatch in expected and actual data types without explicit type declarations."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 0,
 		"tags": [],
@@ -37,17 +57,26 @@
 	},
 	{
 		"question": "What does the 'any' type represent in TypeScript and when should it be used?",
-		"answer": "The 'any' type in TypeScript is used to represent any JavaScript value without type-checking. It is a type-safe escape hatch that can be used when the type of a variable is unknown and cannot be declared from the beginning. Using 'any' allows assignments and operations on the variable without TypeScript's static type checking. However, it should be used sparingly as it defeats the purpose of TypeScript, which is to provide type safety. 'Any' is typically used in situations where type information is not available or when migrating JavaScript code to TypeScript.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The 'any' type in TypeScript is used to represent any JavaScript value without type-checking. It is a type-safe escape hatch that can be used when the type of a variable is unknown and cannot be declared from the beginning. Using 'any' allows assignments and operations on the variable without TypeScript's static type checking. However, it should be used sparingly as it defeats the purpose of TypeScript, which is to provide type safety. 'Any' is typically used in situations where type information is not available or when migrating JavaScript code to TypeScript."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 0,
 		"tags": [],
 		"estimatedTime": 6,
 		"resources": []
 	},
-
 	{
 		"question": "Explain how TypeScript handles null and undefined differently compared to JavaScript?",
-		"answer": "In TypeScript, null and undefined are handled more strictly than in JavaScript, especially when the 'strictNullChecks' option is enabled in the TypeScript compiler settings. In JavaScript, null and undefined are often interchangeable and both are considered 'falsy' values. However, in TypeScript with strict null checks, null and undefined are treated as distinct types. This means a variable declared to hold a string cannot be assigned null or undefined without explicitly declaring its type as 'string | null | undefined', which helps prevent runtime errors due to unintentional null or undefined values.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "In TypeScript, null and undefined are handled more strictly than in JavaScript, especially when the 'strictNullChecks' option is enabled in the TypeScript compiler settings. In JavaScript, null and undefined are often interchangeable and both are considered 'falsy' values. However, in TypeScript with strict null checks, null and undefined are treated as distinct types. This means a variable declared to hold a string cannot be assigned null or undefined without explicitly declaring its type as 'string | null | undefined', which helps prevent runtime errors due to unintentional null or undefined values."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 0,
 		"tags": [],
@@ -56,7 +85,12 @@
 	},
 	{
 		"question": "Discuss the difference between the 'let' and 'const' declarations in TypeScript and the scope implications.",
-		"answer": "In TypeScript, 'let' and 'const' declarations both provide block scope variables, unlike 'var' which provides function scope. The key difference between 'let' and 'const' is that 'let' allows re-assigning new values to variables, while 'const' requires variables to be assigned a value at declaration and cannot be reassigned thereafter. This immutability of 'const' is useful for ensuring that certain identifiers do not get overwritten and provide a layer of protection against bugs in larger codebases.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "In TypeScript, 'let' and 'const' declarations both provide block scope variables, unlike 'var' which provides function scope. The key difference between 'let' and 'const' is that 'let' allows re-assigning new values to variables, while 'const' requires variables to be assigned a value at declaration and cannot be reassigned thereafter. This immutability of 'const' is useful for ensuring that certain identifiers do not get overwritten and provide a layer of protection against bugs in larger codebases."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 0,
 		"tags": [],
@@ -65,7 +99,12 @@
 	},
 	{
 		"question": "What are union types in TypeScript and how do they enhance the language's type system?",
-		"answer": "Union types in TypeScript allow a variable to be of one of several types. For example, a variable can be declared to be either a 'string' or a 'number'. This is denoted by the syntax 'string | number'. Union types are particularly useful for function parameters that might accept multiple types of arguments, enhancing the flexibility and reusability of functions. They make the type system more expressive and capable of handling more complex scenarios where a strict single type is too limiting.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Union types in TypeScript allow a variable to be of one of several types. For example, a variable can be declared to be either a 'string' or a 'number'. This is denoted by the syntax 'string | number'. Union types are particularly useful for function parameters that might accept multiple types of arguments, enhancing the flexibility and reusability of functions. They make the type system more expressive and capable of handling more complex scenarios where a strict single type is too limiting."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 0,
 		"tags": [],
@@ -74,7 +113,12 @@
 	},
 	{
 		"question": "Describe generics in TypeScript and provide an example of how they might be used in a function.",
-		"answer": "Generics in TypeScript allow for the creation of components that can work over a variety of types rather than a single one. This makes it possible to create reusable and flexible components. For instance, a generic function to return the first element of an array regardless of its type could be written as: function firstElement<T>(arr: T[]): T | undefined { return arr[0]; } Here, <T> is a type variable that captures the type passed to the function at the time it's called, thus allowing the function to be used with arrays of any type.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Generics in TypeScript allow for the creation of components that can work over a variety of types rather than a single one. This makes it possible to create reusable and flexible components. For instance, a generic function to return the first element of an array regardless of its type could be written as: function firstElement<T>(arr: T[]): T | undefined { return arr[0]; } Here, <T> is a type variable that captures the type passed to the function at the time it's called, thus allowing the function to be used with arrays of any type."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 0,
 		"tags": [],
@@ -83,7 +127,12 @@
 	},
 	{
 		"question": "Explain the concept of type aliases in TypeScript and how it differs from interfaces.",
-		"answer": "Type aliases in TypeScript allow a name to be associated with a type expression. Type aliases can define a type that might be a union, primitive, intersection, tuple, or any other valid type expression. Unlike interfaces, which declare a shape that objects must conform to, type aliases can declare a type for any pattern, including primitives and unions. While interfaces can be extended and merged, type aliases are fixed once they are defined and cannot be changed or extended.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Type aliases in TypeScript allow a name to be associated with a type expression. Type aliases can define a type that might be a union, primitive, intersection, tuple, or any other valid type expression. Unlike interfaces, which declare a shape that objects must conform to, type aliases can declare a type for any pattern, including primitives and unions. While interfaces can be extended and merged, type aliases are fixed once they are defined and cannot be changed or extended."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 0,
 		"tags": [],
@@ -92,7 +141,12 @@
 	},
 	{
 		"question": "What are decorators in TypeScript, and how would you use them in a class?",
-		"answer": "Decorators are a design pattern in TypeScript used to modify the behavior of a class, method, accessor, property, or parameter. They are special kinds of declarations that can be attached to a class declaration, method, accessor, property, or parameter. Decorators use the form '@expression', where expression must evaluate to a function that will be called at runtime with information about the decorated declaration. For example, a simple @log decorator could be used on a class method to log each time the method is called, providing insights into method usage and parameters passed.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Decorators are a design pattern in TypeScript used to modify the behavior of a class, method, accessor, property, or parameter. They are special kinds of declarations that can be attached to a class declaration, method, accessor, property, or parameter. Decorators use the form '@expression', where expression must evaluate to a function that will be called at runtime with information about the decorated declaration. For example, a simple @log decorator could be used on a class method to log each time the method is called, providing insights into method usage and parameters passed."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 0,
 		"tags": [],
@@ -101,7 +155,12 @@
 	},
 	{
 		"question": "Explain the concept of intersection types in TypeScript and provide an example of a practical use case.",
-		"answer": "Intersection types are a way in TypeScript to combine multiple types into one. This allows you to add together existing types to get a single type that has all the features you need. For example, you might have a 'User' type and an 'Admin' type. An intersection type 'User & Admin' then represents a type that is both a 'User' and an 'Admin'. This is useful in situations where you want to precisely define what properties and methods should exist together on a single object, thereby ensuring strict type safety across disparate type systems.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Intersection types are a way in TypeScript to combine multiple types into one. This allows you to add together existing types to get a single type that has all the features you need. For example, you might have a 'User' type and an 'Admin' type. An intersection type 'User & Admin' then represents a type that is both a 'User' and an 'Admin'. This is useful in situations where you want to precisely define what properties and methods should exist together on a single object, thereby ensuring strict type safety across disparate type systems."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 0,
 		"tags": [],
@@ -110,7 +169,12 @@
 	},
 	{
 		"question": "Discuss the role of the 'never' type in TypeScript, including scenarios where it is useful.",
-		"answer": "The 'never' type in TypeScript represents values that never occur. For instance, it is used as the return type for functions that always throw an error or never return (such as a function that initiates an infinite loop). It is also useful in discriminated unions where exhaustive checks ensure that every case is covered, and the 'never' type can indicate an error if a case that shouldn't be possible is reached. Essentially, 'never' helps in function return type checking and in controlling flow analysis in more complex logical structures.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The 'never' type in TypeScript represents values that never occur. For instance, it is used as the return type for functions that always throw an error or never return (such as a function that initiates an infinite loop). It is also useful in discriminated unions where exhaustive checks ensure that every case is covered, and the 'never' type can indicate an error if a case that shouldn't be possible is reached. Essentially, 'never' helps in function return type checking and in controlling flow analysis in more complex logical structures."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 0,
 		"tags": [],
@@ -119,7 +183,12 @@
 	},
 	{
 		"question": "How does TypeScript handle type assertions, and what are the risks involved?",
-		"answer": "Type assertions in TypeScript are used to tell the compiler to consider an item to be of a specific type more specific than the one it has computed. It is similar to type casting in other languages but performs no special checking or restructuring of data. This is done using the 'as' keyword, like 'let x: any = 'hello'; let s: string = x as string;'. The risk is that while it bypasses TypeScript’s static type checking, it does not change the type at runtime, which can lead to runtime errors if the assertion was incorrect.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Type assertions in TypeScript are used to tell the compiler to consider an item to be of a specific type more specific than the one it has computed. It is similar to type casting in other languages but performs no special checking or restructuring of data. This is done using the 'as' keyword, like 'let x: any = 'hello'; let s: string = x as string;'. The risk is that while it bypasses TypeScript\u2019s static type checking, it does not change the type at runtime, which can lead to runtime errors if the assertion was incorrect."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 0,
 		"tags": [],
@@ -128,7 +197,12 @@
 	},
 	{
 		"question": "Explain the concept of conditional types in TypeScript, with a practical example of where they might be used.",
-		"answer": "Conditional types in TypeScript allow types to be chosen based on a condition. This is a form of type-level if statement. For example, a conditional type might look like 'type Check<T> = T extends string ? boolean : number;', which means that the type 'Check' depends on whether 'T' is a subtype of string. If true, 'Check<T>' resolves to 'boolean'; otherwise, it resolves to 'number'. They are particularly useful for library authors and in scenarios involving type manipulation based on input types, making the APIs more flexible and robust.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Conditional types in TypeScript allow types to be chosen based on a condition. This is a form of type-level if statement. For example, a conditional type might look like 'type Check<T> = T extends string ? boolean : number;', which means that the type 'Check' depends on whether 'T' is a subtype of string. If true, 'Check<T>' resolves to 'boolean'; otherwise, it resolves to 'number'. They are particularly useful for library authors and in scenarios involving type manipulation based on input types, making the APIs more flexible and robust."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 0,
 		"tags": [],
@@ -137,7 +211,12 @@
 	},
 	{
 		"question": "What is the purpose of using TypeScript for a new web development project, especially when compared to using plain JavaScript?",
-		"answer": "TypeScript is beneficial for web development projects because it introduces static typing, which helps detect errors during the development phase rather than at runtime. This leads to more reliable and maintainable code. Moreover, TypeScript’s adherence to future JavaScript standards ensures that the codebase remains modern and scalable. Compared to plain JavaScript, TypeScript’s tooling support with autocompletion and integrated documentation enhances developer productivity and makes the code easier to refactor and understand.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "TypeScript is beneficial for web development projects because it introduces static typing, which helps detect errors during the development phase rather than at runtime. This leads to more reliable and maintainable code. Moreover, TypeScript\u2019s adherence to future JavaScript standards ensures that the codebase remains modern and scalable. Compared to plain JavaScript, TypeScript\u2019s tooling support with autocompletion and integrated documentation enhances developer productivity and makes the code easier to refactor and understand."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 1,
 		"tags": [],
@@ -146,7 +225,12 @@
 	},
 	{
 		"question": "Write a simple TypeScript function to calculate the area of a rectangle given its length and width.",
-		"answer": "To calculate the area of a rectangle in TypeScript, you can define a function that takes two parameters, length and width, both of which are numbers, and returns the product of these two parameters. Here is an example function: \nfunction calculateArea(length: number, width: number): number {\n    return length * width;\n}",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To calculate the area of a rectangle in TypeScript, you can define a function that takes two parameters, length and width, both of which are numbers, and returns the product of these two parameters. Here is an example function: \nfunction calculateArea(length: number, width: number): number {\n    return length * width;\n}"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 1,
 		"tags": [],
@@ -155,7 +239,12 @@
 	},
 	{
 		"question": "Describe how you would use TypeScript interfaces to define a data structure for a user profile in an application.",
-		"answer": "In TypeScript, an interface can be used to define the structure of a user profile object, which specifies the types for each property expected in the user profile. For example, an interface for a user profile might include properties like name, email, and age, each with a specified type: \ninterface UserProfile {\n    name: string;\n    email: string;\n    age: number;\n}\nThis ensures that any user profile objects throughout the application conform to this structure, providing consistency and type safety.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "In TypeScript, an interface can be used to define the structure of a user profile object, which specifies the types for each property expected in the user profile. For example, an interface for a user profile might include properties like name, email, and age, each with a specified type: \ninterface UserProfile {\n    name: string;\n    email: string;\n    age: number;\n}\nThis ensures that any user profile objects throughout the application conform to this structure, providing consistency and type safety."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 1,
 		"tags": [],
@@ -164,7 +253,12 @@
 	},
 	{
 		"question": "Explain how TypeScript's type system can help prevent bugs in a web application.",
-		"answer": "TypeScript’s static type system helps prevent bugs by enabling developers to define types for variables, function parameters, and return values. This type enforcement ensures that functions receive and work with the correct type of data, reducing runtime errors such as type mismatches. Furthermore, TypeScript's compile-time checks catch errors early in the development process, long before the application is deployed or tested, which helps in building robust and error-resistant applications.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "TypeScript\u2019s static type system helps prevent bugs by enabling developers to define types for variables, function parameters, and return values. This type enforcement ensures that functions receive and work with the correct type of data, reducing runtime errors such as type mismatches. Furthermore, TypeScript's compile-time checks catch errors early in the development process, long before the application is deployed or tested, which helps in building robust and error-resistant applications."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 1,
 		"tags": [],
@@ -173,7 +267,12 @@
 	},
 	{
 		"question": "How can TypeScript's union types be used to enhance function parameter flexibility in a logging function?",
-		"answer": "Union types in TypeScript allow function parameters to accept multiple types, enhancing the flexibility of functions. For a logging function, you could use a union type to accept either a string or an array of strings as input, allowing the function to handle single messages or batches of messages. Here’s an example: \nfunction logMessage(message: string | string[]): void {\n    if (typeof message === 'string') {\n        console.log(message);\n    } else {\n        message.forEach(msg => console.log(msg));\n    }\n}",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Union types in TypeScript allow function parameters to accept multiple types, enhancing the flexibility of functions. For a logging function, you could use a union type to accept either a string or an array of strings as input, allowing the function to handle single messages or batches of messages. Here\u2019s an example: \nfunction logMessage(message: string | string[]): void {\n    if (typeof message === 'string') {\n        console.log(message);\n    } else {\n        message.forEach(msg => console.log(msg));\n    }\n}"
+			}
+		],
 		"difficulty": 0,
 		"practicality": 1,
 		"tags": [],
@@ -182,7 +281,12 @@
 	},
 	{
 		"question": "How can TypeScript modules help in managing a large-scale application's codebase?",
-		"answer": "TypeScript modules are crucial for organizing and managing code in a large-scale application. They allow developers to divide the codebase into smaller, manageable pieces, each encapsulating specific functionality. This modular approach enhances code maintainability and reusability. By importing and exporting classes, interfaces, functions, and variables, modules help in maintaining clear boundaries and dependencies between different parts of the application, which simplifies both development and debugging.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "TypeScript modules are crucial for organizing and managing code in a large-scale application. They allow developers to divide the codebase into smaller, manageable pieces, each encapsulating specific functionality. This modular approach enhances code maintainability and reusability. By importing and exporting classes, interfaces, functions, and variables, modules help in maintaining clear boundaries and dependencies between different parts of the application, which simplifies both development and debugging."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 1,
 		"tags": [],
@@ -191,7 +295,12 @@
 	},
 	{
 		"question": "Write a TypeScript function that takes an array of numbers and returns the array sorted in descending order.",
-		"answer": "To sort an array of numbers in descending order in TypeScript, you can use the sort method provided by the array prototype, along with a comparison function. Here is a simple function implementation:\nfunction sortDescending(arr: number[]): number[] {\n    return arr.sort((a, b) => b - a);\n}\nThis function takes an array of numbers as an input and returns a new array sorted in descending order using the sort method, which compares each pair of elements using the provided comparison function.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To sort an array of numbers in descending order in TypeScript, you can use the sort method provided by the array prototype, along with a comparison function. Here is a simple function implementation:\nfunction sortDescending(arr: number[]): number[] {\n    return arr.sort((a, b) => b - a);\n}\nThis function takes an array of numbers as an input and returns a new array sorted in descending order using the sort method, which compares each pair of elements using the provided comparison function."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 1,
 		"tags": [],
@@ -200,7 +309,12 @@
 	},
 	{
 		"question": "Explain the use of TypeScript's enum types in managing sets of related constants in a project, providing a practical example.",
-		"answer": "TypeScript's enum types are useful for defining a set of named constants, making the code more readable and maintainable. Enums help in reducing errors associated with using literal strings or numbers, providing a structured way to use symbolic names. For example, an enum could be used for handling user roles within an application:\nenum UserRole {\n    Administrator,\n    Manager,\n    Contributor,\n    Viewer\n}\nThis allows developers to refer to user roles in a clear and consistent way throughout the application, enhancing code reliability.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "TypeScript's enum types are useful for defining a set of named constants, making the code more readable and maintainable. Enums help in reducing errors associated with using literal strings or numbers, providing a structured way to use symbolic names. For example, an enum could be used for handling user roles within an application:\nenum UserRole {\n    Administrator,\n    Manager,\n    Contributor,\n    Viewer\n}\nThis allows developers to refer to user roles in a clear and consistent way throughout the application, enhancing code reliability."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 1,
 		"tags": [],
@@ -209,7 +323,12 @@
 	},
 	{
 		"question": "Discuss how generics in TypeScript can be used to create flexible and reusable components with a practical example involving a data structure.",
-		"answer": "Generics in TypeScript provide a way to create components that can work with any data type, thereby increasing their flexibility and reusability. For example, a generic interface for a response object might look like this:\ninterface Response<T> {\n    status: number;\n    message: string;\n    data: T;\n}\nThis generic interface can then be used to type responses with any kind of data, ensuring type safety across the application while keeping the component reusable for different data types, such as string, number, or even custom classes.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Generics in TypeScript provide a way to create components that can work with any data type, thereby increasing their flexibility and reusability. For example, a generic interface for a response object might look like this:\ninterface Response<T> {\n    status: number;\n    message: string;\n    data: T;\n}\nThis generic interface can then be used to type responses with any kind of data, ensuring type safety across the application while keeping the component reusable for different data types, such as string, number, or even custom classes."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 1,
 		"tags": [],
@@ -218,7 +337,12 @@
 	},
 	{
 		"question": "How can you use TypeScript decorators to add metadata or modify the behavior of class methods?",
-		"answer": "TypeScript decorators can be used to add metadata or modify the behavior of class methods by annotating and modifying class declarations at design time. For instance, a logging decorator might be used to automatically log calls to methods:\nfunction Log(target: any, propertyKey: string, descriptor: PropertyDescriptor) {\n    let originalMethod = descriptor.value;\n    descriptor.value = function(...args: any[]) {\n        console.log(`Calling ${propertyKey} with arguments ${JSON.stringify(args)}`);\n        return originalMethod.apply(this, args);\n    };\n}\nclass MyClass {\n    @Log\n    method(arg: number) {\n        return arg;\n    }\n}\nThis adds behavior to the method to log its calls, enhancing debugging and monitoring without altering the method's core functionality.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "TypeScript decorators can be used to add metadata or modify the behavior of class methods by annotating and modifying class declarations at design time. For instance, a logging decorator might be used to automatically log calls to methods:\nfunction Log(target: any, propertyKey: string, descriptor: PropertyDescriptor) {\n    let originalMethod = descriptor.value;\n    descriptor.value = function(...args: any[]) {\n        console.log(`Calling ${propertyKey} with arguments ${JSON.stringify(args)}`);\n        return originalMethod.apply(this, args);\n    };\n}\nclass MyClass {\n    @Log\n    method(arg: number) {\n        return arg;\n    }\n}\nThis adds behavior to the method to log its calls, enhancing debugging and monitoring without altering the method's core functionality."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 1,
 		"tags": [],
@@ -227,7 +351,12 @@
 	},
 	{
 		"question": "Explain the concept of async/await in TypeScript and provide an example of how it can be used to handle asynchronous operations.",
-		"answer": "Async/await is a feature in TypeScript (and JavaScript) that allows asynchronous code to be written in a synchronous-like manner, making it easier to understand and maintain. The 'async' keyword is used to define an asynchronous function, and 'await' is used to pause the execution of the function until a promise is resolved. Here's an example of using async/await to fetch data from an API:\nasync function fetchData() {\n    try {\n        const response = await fetch('https://api.example.com/data');\n        const data = await response.json();\n        return data;\n    } catch (error) {\n        console.error('Error fetching data:', error);\n        throw error;\n    }\n}",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Async/await is a feature in TypeScript (and JavaScript) that allows asynchronous code to be written in a synchronous-like manner, making it easier to understand and maintain. The 'async' keyword is used to define an asynchronous function, and 'await' is used to pause the execution of the function until a promise is resolved. Here's an example of using async/await to fetch data from an API:\nasync function fetchData() {\n    try {\n        const response = await fetch('https://api.example.com/data');\n        const data = await response.json();\n        return data;\n    } catch (error) {\n        console.error('Error fetching data:', error);\n        throw error;\n    }\n}"
+			}
+		],
 		"difficulty": 2,
 		"practicality": 1,
 		"tags": [],
@@ -236,7 +365,12 @@
 	},
 	{
 		"question": "Discuss TypeScript's concept of ambient declarations and provide an example of when they might be used in a project.",
-		"answer": "Ambient declarations in TypeScript are used to describe the shape of existing JavaScript code that does not have TypeScript declarations. They allow TypeScript to understand the types and APIs of external libraries or environments. For example, when using a third-party JavaScript library without TypeScript support, ambient declarations can be used to define types and interfaces for the library's API. Here's an example of ambient declarations for the 'jquery' library:\ndeclare var $: any;\ninterface JQuery {\n    // Define JQuery methods here\n}\nIn this example, the 'declare var $: any;' line tells TypeScript that the '$' variable exists in the global scope and has the 'any' type.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Ambient declarations in TypeScript are used to describe the shape of existing JavaScript code that does not have TypeScript declarations. They allow TypeScript to understand the types and APIs of external libraries or environments. For example, when using a third-party JavaScript library without TypeScript support, ambient declarations can be used to define types and interfaces for the library's API. Here's an example of ambient declarations for the 'jquery' library:\ndeclare var $: any;\ninterface JQuery {\n    // Define JQuery methods here\n}\nIn this example, the 'declare var $: any;' line tells TypeScript that the '$' variable exists in the global scope and has the 'any' type."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 1,
 		"tags": [],
@@ -245,7 +379,12 @@
 	},
 	{
 		"question": "Explain the concept of namespace merging in TypeScript and provide a practical example of how it can be used.",
-		"answer": "Namespace merging in TypeScript occurs when multiple declarations of the same namespace are encountered. Instead of causing an error, TypeScript merges the declarations into a single namespace. This allows developers to split the definition of a namespace across multiple files. Here's an example:\n// File 1: myNamespace.ts\ndeclare namespace MyNamespace {\n    function foo(): void;\n}\n// File 2: myNamespace.ts\nnamespace MyNamespace {\n    export function bar(): void {\n        console.log('bar');\n    }\n}\nIn this example, both 'foo' and 'bar' functions are part of the 'MyNamespace' namespace, and TypeScript merges them into a single namespace definition.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Namespace merging in TypeScript occurs when multiple declarations of the same namespace are encountered. Instead of causing an error, TypeScript merges the declarations into a single namespace. This allows developers to split the definition of a namespace across multiple files. Here's an example:\n// File 1: myNamespace.ts\ndeclare namespace MyNamespace {\n    function foo(): void;\n}\n// File 2: myNamespace.ts\nnamespace MyNamespace {\n    export function bar(): void {\n        console.log('bar');\n    }\n}\nIn this example, both 'foo' and 'bar' functions are part of the 'MyNamespace' namespace, and TypeScript merges them into a single namespace definition."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 1,
 		"tags": [],
@@ -254,7 +393,12 @@
 	},
 	{
 		"question": "Discuss TypeScript's keyof operator and provide an example of how it can be used to improve type safety in code.",
-		"answer": "The keyof operator in TypeScript returns a union type of all known, enumerable property names of an object type. It is useful for creating more type-safe code, especially when working with objects and their properties. Here's an example:\ninterface User {\n    id: number;\n    name: string;\n    email: string;\n}\ntype UserKey = keyof User; // 'id' | 'name' | 'email'\nIn this example, the UserKey type is defined as a union of the property names of the User interface. This can be useful for functions that accept property names as arguments, ensuring that only valid property names are accepted.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The keyof operator in TypeScript returns a union type of all known, enumerable property names of an object type. It is useful for creating more type-safe code, especially when working with objects and their properties. Here's an example:\ninterface User {\n    id: number;\n    name: string;\n    email: string;\n}\ntype UserKey = keyof User; // 'id' | 'name' | 'email'\nIn this example, the UserKey type is defined as a union of the property names of the User interface. This can be useful for functions that accept property names as arguments, ensuring that only valid property names are accepted."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 1,
 		"tags": [],
@@ -263,7 +407,12 @@
 	},
 	{
 		"question": "Explain the concept of conditional module loading in TypeScript and provide an example of when it might be useful.",
-		"answer": "Conditional module loading in TypeScript allows modules to be loaded conditionally based on runtime conditions. This can be useful for scenarios where different modules need to be loaded based on environment variables or configurations. For example, a web application might need to load different authentication modules based on whether the user is accessing the application from a browser or a mobile device. Conditional module loading allows developers to keep the codebase modular and maintainable while adapting to different runtime environments.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Conditional module loading in TypeScript allows modules to be loaded conditionally based on runtime conditions. This can be useful for scenarios where different modules need to be loaded based on environment variables or configurations. For example, a web application might need to load different authentication modules based on whether the user is accessing the application from a browser or a mobile device. Conditional module loading allows developers to keep the codebase modular and maintainable while adapting to different runtime environments."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 1,
 		"tags": [],
@@ -272,7 +421,12 @@
 	},
 	{
 		"question": "Scenario: You are building a simple web application and need to ensure that user input is validated before submission. How would you use TypeScript to define the structure of a user object and validate user input?",
-		"answer": "To define the structure of a user object in TypeScript, you can create an interface with properties representing the user's information, such as name, email, and age. Then, you can use TypeScript's type annotations and optional properties to ensure that each field is of the correct type and format. For example:\ninterface User {\n    name: string;\n    email: string;\n    age?: number;\n}\nTo validate user input, you can create functions that check whether the input values match the expected types and formats. For instance, you could use regular expressions to validate email addresses and ensure that the age is a positive number.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To define the structure of a user object in TypeScript, you can create an interface with properties representing the user's information, such as name, email, and age. Then, you can use TypeScript's type annotations and optional properties to ensure that each field is of the correct type and format. For example:\ninterface User {\n    name: string;\n    email: string;\n    age?: number;\n}\nTo validate user input, you can create functions that check whether the input values match the expected types and formats. For instance, you could use regular expressions to validate email addresses and ensure that the age is a positive number."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 2,
 		"tags": [],
@@ -281,7 +435,12 @@
 	},
 	{
 		"question": "Scenario: You are developing a simple todo list application and need to implement functionality to add new tasks. How would you use TypeScript to define the structure of a task object and handle adding tasks?",
-		"answer": "To define the structure of a task object in TypeScript, you can create an interface with properties representing the task's information, such as title, description, and due date. Then, you can use TypeScript's type annotations to ensure that each field is of the correct type. For example:\ninterface Task {\n    title: string;\n    description?: string;\n    dueDate: Date;\n}\nTo handle adding tasks, you can create a function that takes input values and constructs a new task object. You can then use this function to add tasks to your todo list. Additionally, you can use TypeScript's type system to enforce constraints such as required fields or valid due dates.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To define the structure of a task object in TypeScript, you can create an interface with properties representing the task's information, such as title, description, and due date. Then, you can use TypeScript's type annotations to ensure that each field is of the correct type. For example:\ninterface Task {\n    title: string;\n    description?: string;\n    dueDate: Date;\n}\nTo handle adding tasks, you can create a function that takes input values and constructs a new task object. You can then use this function to add tasks to your todo list. Additionally, you can use TypeScript's type system to enforce constraints such as required fields or valid due dates."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 2,
 		"tags": [],
@@ -290,7 +449,12 @@
 	},
 	{
 		"question": "Scenario: You are working on a basic weather application and need to fetch weather data from an external API. How would you use TypeScript to define the structure of the weather data and handle fetching data from the API?",
-		"answer": "To define the structure of weather data in TypeScript, you can create an interface with properties representing the different weather attributes, such as temperature, humidity, and weather conditions. Then, you can use TypeScript's type annotations to ensure that each field is of the correct type. For example:\ninterface WeatherData {\n    temperature: number;\n    humidity: number;\n    conditions: string;\n}\nTo fetch data from the external API, you can use TypeScript's built-in fetch API or a third-party library like axios. You can define functions that make HTTP requests to the API endpoints and handle the returned data. TypeScript's type system can help ensure that the received data matches the expected structure, reducing the risk of runtime errors.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To define the structure of weather data in TypeScript, you can create an interface with properties representing the different weather attributes, such as temperature, humidity, and weather conditions. Then, you can use TypeScript's type annotations to ensure that each field is of the correct type. For example:\ninterface WeatherData {\n    temperature: number;\n    humidity: number;\n    conditions: string;\n}\nTo fetch data from the external API, you can use TypeScript's built-in fetch API or a third-party library like axios. You can define functions that make HTTP requests to the API endpoints and handle the returned data. TypeScript's type system can help ensure that the received data matches the expected structure, reducing the risk of runtime errors."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 2,
 		"tags": [],
@@ -299,7 +463,12 @@
 	},
 	{
 		"question": "Scenario: You are developing a basic e-commerce website and need to handle product information. How would you use TypeScript to define the structure of a product object and display product details on a web page?",
-		"answer": "To define the structure of a product object in TypeScript, you can create an interface with properties representing the product's information, such as name, price, and description. Then, you can use TypeScript's type annotations to ensure that each field is of the correct type. For example:\ninterface Product {\n    name: string;\n    price: number;\n    description?: string;\n}\nTo display product details on a web page, you can use TypeScript along with HTML and CSS. You can create functions that retrieve product information from a database or an external API and generate HTML elements dynamically to display the product details. TypeScript's type system can help ensure that the received product data is properly formatted and avoid rendering errors.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To define the structure of a product object in TypeScript, you can create an interface with properties representing the product's information, such as name, price, and description. Then, you can use TypeScript's type annotations to ensure that each field is of the correct type. For example:\ninterface Product {\n    name: string;\n    price: number;\n    description?: string;\n}\nTo display product details on a web page, you can use TypeScript along with HTML and CSS. You can create functions that retrieve product information from a database or an external API and generate HTML elements dynamically to display the product details. TypeScript's type system can help ensure that the received product data is properly formatted and avoid rendering errors."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 2,
 		"tags": [],
@@ -308,7 +477,12 @@
 	},
 	{
 		"question": "Scenario: You are building a basic chat application and need to handle messages between users. How would you use TypeScript to define the structure of a message object and display messages in the chat interface?",
-		"answer": "To define the structure of a message object in TypeScript, you can create an interface with properties representing the message's information, such as sender, timestamp, and content. Then, you can use TypeScript's type annotations to ensure that each field is of the correct type. For example:\ninterface Message {\n    sender: string;\n    timestamp: Date;\n    content: string;\n}\nTo display messages in the chat interface, you can use TypeScript along with HTML, CSS, and JavaScript. You can create functions that retrieve message data from a database or an external API and dynamically generate HTML elements to display the messages in the chat window. TypeScript's type system can help ensure that the received message data is properly formatted and avoid rendering errors.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To define the structure of a message object in TypeScript, you can create an interface with properties representing the message's information, such as sender, timestamp, and content. Then, you can use TypeScript's type annotations to ensure that each field is of the correct type. For example:\ninterface Message {\n    sender: string;\n    timestamp: Date;\n    content: string;\n}\nTo display messages in the chat interface, you can use TypeScript along with HTML, CSS, and JavaScript. You can create functions that retrieve message data from a database or an external API and dynamically generate HTML elements to display the messages in the chat window. TypeScript's type system can help ensure that the received message data is properly formatted and avoid rendering errors."
+			}
+		],
 		"difficulty": 0,
 		"practicality": 2,
 		"tags": [],
@@ -317,7 +491,12 @@
 	},
 	{
 		"question": "Scenario: You are developing a blog platform and need to implement functionality to manage user comments. How would you use TypeScript to define the structure of a comment object and handle CRUD operations for comments?",
-		"answer": "To define the structure of a comment object in TypeScript, you can create an interface with properties representing the comment's information, such as content, author, and timestamp. Then, you can use TypeScript's type annotations to ensure that each field is of the correct type. For example:\ninterface Comment {\n    content: string;\n    author: string;\n    timestamp: Date;\n}\nTo handle CRUD operations for comments, you can create functions that interact with a database or an external API to perform operations such as creating, reading, updating, and deleting comments. TypeScript's type system can help ensure that the data passed to and returned from these functions is properly formatted and avoid runtime errors.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To define the structure of a comment object in TypeScript, you can create an interface with properties representing the comment's information, such as content, author, and timestamp. Then, you can use TypeScript's type annotations to ensure that each field is of the correct type. For example:\ninterface Comment {\n    content: string;\n    author: string;\n    timestamp: Date;\n}\nTo handle CRUD operations for comments, you can create functions that interact with a database or an external API to perform operations such as creating, reading, updating, and deleting comments. TypeScript's type system can help ensure that the data passed to and returned from these functions is properly formatted and avoid runtime errors."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 2,
 		"tags": [],
@@ -326,7 +505,12 @@
 	},
 	{
 		"question": "Scenario: You are working on a social media platform and need to implement functionality to manage user profiles. How would you use TypeScript to define the structure of a user profile object and handle profile management?",
-		"answer": "To define the structure of a user profile object in TypeScript, you can create an interface with properties representing the profile's information, such as username, bio, and avatar URL. Then, you can use TypeScript's type annotations to ensure that each field is of the correct type. For example:\ninterface UserProfile {\n    username: string;\n    bio?: string;\n    avatarUrl?: string;\n}\nTo handle profile management, you can create functions that allow users to update their profiles, change their passwords, and delete their accounts. TypeScript's type system can help ensure that the data passed to and returned from these functions is properly formatted and avoid runtime errors.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To define the structure of a user profile object in TypeScript, you can create an interface with properties representing the profile's information, such as username, bio, and avatar URL. Then, you can use TypeScript's type annotations to ensure that each field is of the correct type. For example:\ninterface UserProfile {\n    username: string;\n    bio?: string;\n    avatarUrl?: string;\n}\nTo handle profile management, you can create functions that allow users to update their profiles, change their passwords, and delete their accounts. TypeScript's type system can help ensure that the data passed to and returned from these functions is properly formatted and avoid runtime errors."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 2,
 		"tags": [],
@@ -335,7 +519,12 @@
 	},
 	{
 		"question": "Scenario: You are developing an inventory management system for a small business and need to implement functionality to track product information. How would you use TypeScript to define the structure of a product object and handle inventory management?",
-		"answer": "To define the structure of a product object in TypeScript, you can create an interface with properties representing the product's information, such as name, price, and quantity. Then, you can use TypeScript's type annotations to ensure that each field is of the correct type. For example:\ninterface Product {\n    name: string;\n    price: number;\n    quantity: number;\n}\nTo handle inventory management, you can create functions that allow users to add new products, update existing product information, and track inventory levels. TypeScript's type system can help ensure that the data passed to and returned from these functions is properly formatted and avoid runtime errors.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To define the structure of a product object in TypeScript, you can create an interface with properties representing the product's information, such as name, price, and quantity. Then, you can use TypeScript's type annotations to ensure that each field is of the correct type. For example:\ninterface Product {\n    name: string;\n    price: number;\n    quantity: number;\n}\nTo handle inventory management, you can create functions that allow users to add new products, update existing product information, and track inventory levels. TypeScript's type system can help ensure that the data passed to and returned from these functions is properly formatted and avoid runtime errors."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 2,
 		"tags": [],
@@ -344,7 +533,12 @@
 	},
 	{
 		"question": "Scenario: You are building a recipe sharing platform and need to implement functionality to manage recipes. How would you use TypeScript to define the structure of a recipe object and handle recipe management?",
-		"answer": "To define the structure of a recipe object in TypeScript, you can create an interface with properties representing the recipe's information, such as title, ingredients, and instructions. Then, you can use TypeScript's type annotations to ensure that each field is of the correct type. For example:\ninterface Recipe {\n    title: string;\n    ingredients: string[];\n    instructions: string;\n}\nTo handle recipe management, you can create functions that allow users to add new recipes, edit existing recipes, and delete recipes. TypeScript's type system can help ensure that the data passed to and returned from these functions is properly formatted and avoid runtime errors.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To define the structure of a recipe object in TypeScript, you can create an interface with properties representing the recipe's information, such as title, ingredients, and instructions. Then, you can use TypeScript's type annotations to ensure that each field is of the correct type. For example:\ninterface Recipe {\n    title: string;\n    ingredients: string[];\n    instructions: string;\n}\nTo handle recipe management, you can create functions that allow users to add new recipes, edit existing recipes, and delete recipes. TypeScript's type system can help ensure that the data passed to and returned from these functions is properly formatted and avoid runtime errors."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 2,
 		"tags": [],
@@ -353,7 +547,12 @@
 	},
 	{
 		"question": "Scenario: You are developing an e-learning platform and need to implement functionality to manage courses. How would you use TypeScript to define the structure of a course object and handle course management?",
-		"answer": "To define the structure of a course object in TypeScript, you can create an interface with properties representing the course's information, such as title, description, and instructor. Then, you can use TypeScript's type annotations to ensure that each field is of the correct type. For example:\ninterface Course {\n    title: string;\n    description: string;\n    instructor: string;\n}\nTo handle course management, you can create functions that allow users to create new courses, enroll in existing courses, and view course details. TypeScript's type system can help ensure that the data passed to and returned from these functions is properly formatted and avoid runtime errors.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To define the structure of a course object in TypeScript, you can create an interface with properties representing the course's information, such as title, description, and instructor. Then, you can use TypeScript's type annotations to ensure that each field is of the correct type. For example:\ninterface Course {\n    title: string;\n    description: string;\n    instructor: string;\n}\nTo handle course management, you can create functions that allow users to create new courses, enroll in existing courses, and view course details. TypeScript's type system can help ensure that the data passed to and returned from these functions is properly formatted and avoid runtime errors."
+			}
+		],
 		"difficulty": 1,
 		"practicality": 2,
 		"tags": [],
@@ -362,7 +561,12 @@
 	},
 	{
 		"question": "Scenario: You are working on a financial application and need to implement functionality to perform currency conversion using an external API. How would you use TypeScript to handle asynchronous currency conversion requests and ensure type safety?",
-		"answer": "To handle asynchronous currency conversion requests in TypeScript, you can use async/await along with a library like axios to make HTTP requests to the external currency conversion API. You can define a function that takes the source currency, target currency, and amount as parameters, makes a request to the API, and returns the converted amount. TypeScript's type system can ensure that the input parameters are of the correct types, and the returned data matches the expected format.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To handle asynchronous currency conversion requests in TypeScript, you can use async/await along with a library like axios to make HTTP requests to the external currency conversion API. You can define a function that takes the source currency, target currency, and amount as parameters, makes a request to the API, and returns the converted amount. TypeScript's type system can ensure that the input parameters are of the correct types, and the returned data matches the expected format."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 2,
 		"tags": [],
@@ -371,7 +575,12 @@
 	},
 	{
 		"question": "Scenario: You are developing a real-time chat application and need to implement functionality to handle message encryption and decryption. How would you use TypeScript to ensure secure communication between users?",
-		"answer": "To ensure secure communication between users in a real-time chat application, you can use cryptographic algorithms like AES or RSA for message encryption and decryption. TypeScript can be used to implement encryption and decryption functions, ensuring that sensitive data is protected during transmission. Additionally, TypeScript's type system can enforce proper handling of encrypted data and prevent runtime errors.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To ensure secure communication between users in a real-time chat application, you can use cryptographic algorithms like AES or RSA for message encryption and decryption. TypeScript can be used to implement encryption and decryption functions, ensuring that sensitive data is protected during transmission. Additionally, TypeScript's type system can enforce proper handling of encrypted data and prevent runtime errors."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 2,
 		"tags": [],
@@ -380,7 +589,12 @@
 	},
 	{
 		"question": "Scenario: You are working on a data visualization tool and need to implement functionality to generate interactive charts based on user input. How would you use TypeScript to integrate with a charting library and ensure type safety?",
-		"answer": "To integrate with a charting library in TypeScript, you can use a library like Chart.js or D3.js and create TypeScript definitions for the library's API if they are not already available. You can then define TypeScript interfaces for the chart data and options, ensuring type safety when constructing and configuring the charts. TypeScript's type system can help catch errors related to incorrect data types or options, providing a more robust development experience.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To integrate with a charting library in TypeScript, you can use a library like Chart.js or D3.js and create TypeScript definitions for the library's API if they are not already available. You can then define TypeScript interfaces for the chart data and options, ensuring type safety when constructing and configuring the charts. TypeScript's type system can help catch errors related to incorrect data types or options, providing a more robust development experience."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 2,
 		"tags": [],
@@ -389,7 +603,12 @@
 	},
 	{
 		"question": "Scenario: You are developing a collaborative document editing tool and need to implement functionality to handle concurrent edits from multiple users. How would you use TypeScript to ensure data consistency and avoid conflicts?",
-		"answer": "To ensure data consistency and avoid conflicts in a collaborative document editing tool, you can use techniques like operational transformation or Conflict-Free Replicated Data Types (CRDTs). TypeScript can be used to implement algorithms for resolving conflicts and maintaining a consistent state across multiple clients. Additionally, TypeScript's type system can help ensure that the data structures used for representing documents and edits are properly defined and prevent runtime errors.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To ensure data consistency and avoid conflicts in a collaborative document editing tool, you can use techniques like operational transformation or Conflict-Free Replicated Data Types (CRDTs). TypeScript can be used to implement algorithms for resolving conflicts and maintaining a consistent state across multiple clients. Additionally, TypeScript's type system can help ensure that the data structures used for representing documents and edits are properly defined and prevent runtime errors."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 2,
 		"tags": [],
@@ -398,7 +617,12 @@
 	},
 	{
 		"question": "Scenario: You are building a sophisticated recommendation engine for an e-commerce platform and need to implement functionality to generate personalized product recommendations for users. How would you use TypeScript to process user data, analyze preferences, and generate recommendations?",
-		"answer": "To generate personalized product recommendations for users in an e-commerce platform, you can use machine learning algorithms like collaborative filtering or content-based filtering. TypeScript can be used to implement data processing pipelines for collecting user data, analyzing preferences, and generating recommendations based on user profiles and historical behavior. TypeScript's type system can ensure that data is properly formatted and that algorithms are implemented correctly, leading to more accurate and reliable recommendations.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To generate personalized product recommendations for users in an e-commerce platform, you can use machine learning algorithms like collaborative filtering or content-based filtering. TypeScript can be used to implement data processing pipelines for collecting user data, analyzing preferences, and generating recommendations based on user profiles and historical behavior. TypeScript's type system can ensure that data is properly formatted and that algorithms are implemented correctly, leading to more accurate and reliable recommendations."
+			}
+		],
 		"difficulty": 2,
 		"practicality": 2,
 		"tags": [],
