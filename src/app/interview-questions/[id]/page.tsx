@@ -104,7 +104,7 @@ const columns: ColumnDef<QAPair>[] = [
 
 function AnswerRenderer({ segments }: { segments: AnswerSegment[] }) {
 	return (
-		<div className='flex flex-col gap-y-2 max-w-full w-full'>
+		<div className='flex flex-col gap-y-3 max-w-full w-full text-pretty'>
 			{segments.map((segment, index) => {
 				if (segment.type === 'text') {
 					return <p key={index}>{segment.content}</p>;
@@ -267,7 +267,7 @@ export default function Page({ params }: SearchParamProps) {
 												))}
 											</TableRow>
 										</DialogTrigger>
-										<DialogContent className='w-full max-h-full sm:max-w-xl overflow-y-auto'>
+										<DialogContent className='w-full max-h-full sm:max-w-2xl overflow-y-auto'>
 											<DialogHeader>
 												<DialogTitle className='flex gap-x-4 items-center w-full'>
 													<span className='capitalize'>
