@@ -1,7 +1,7 @@
 'use client';
 
 import { AnswerSegment, QAPair, SearchParamProps } from '@/lib/types';
-import React from 'react';
+import React, { useState } from 'react';
 import {
 	ColumnDef,
 	ColumnFiltersState,
@@ -33,7 +33,6 @@ import {
 	TableRow,
 } from '@/components/ui/table';
 import { getQuestionsAndAnswers } from '@/actions/q-and-a.actions';
-import { Badge } from '@/components/ui/badge';
 import {
 	Dialog,
 	DialogContent,
@@ -43,8 +42,14 @@ import {
 } from '@/components/ui/dialog';
 import { Separator } from '@/components/ui/separator';
 import DifficultyBadge from '@/components/shared/difficultyBadge';
+import { Input } from '@/components/ui/input';
 
 const columns: ColumnDef<QAPair>[] = [
+	{
+		accessorKey: 'number',
+		header: 'Number',
+		cell: ({ row }) => <div className='text-center'>{Number(row.id) + 1}</div>,
+	},
 	{
 		accessorKey: 'question',
 		header: 'Question',
@@ -117,52 +122,76 @@ function AnswerRenderer({ segments }: { segments: AnswerSegment[] }) {
 	);
 }
 
+function PaginationTextRenderer({
+	pageIndex,
+	pageSize,
+	rowsLength,
+}: {
+	pageIndex: number;
+	pageSize: number;
+	rowsLength: number;
+}) {
+	const currentPageStartIndex = pageIndex * pageSize + 1;
+	const tempCurrentPageEndIndex = currentPageStartIndex + pageSize;
+
+	const currentPageEndIndex =
+		tempCurrentPageEndIndex > rowsLength ? rowsLength : tempCurrentPageEndIndex;
+
+	return (
+		<>
+			{currentPageStartIndex} - {currentPageEndIndex} of {rowsLength}{' '}
+			question(s).
+		</>
+	);
+}
+
 export default function Page({ params }: SearchParamProps) {
 	const data = getQuestionsAndAnswers(params.id);
 
-	const [sorting, setSorting] = React.useState<SortingState>([]);
-	const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-		[]
-	);
-	const [columnVisibility, setColumnVisibility] =
-		React.useState<VisibilityState>({});
-	const [rowSelection, setRowSelection] = React.useState({});
+	const [sorting, setSorting] = useState<SortingState>([]);
+	const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({
+		answer: false,
+	});
+	const [pagination, setPagination] = useState({
+		pageIndex: 0,
+		pageSize: 10,
+	});
 
 	const table = useReactTable({
 		data,
 		columns,
 		onSortingChange: setSorting,
-		onColumnFiltersChange: setColumnFilters,
 		getCoreRowModel: getCoreRowModel(),
 		getPaginationRowModel: getPaginationRowModel(),
 		getSortedRowModel: getSortedRowModel(),
 		getFilteredRowModel: getFilteredRowModel(),
 		onColumnVisibilityChange: setColumnVisibility,
-		onRowSelectionChange: setRowSelection,
+		onPaginationChange: setPagination,
 		state: {
 			sorting,
-			columnFilters,
 			columnVisibility,
-			rowSelection,
+			pagination,
 		},
 	});
 
 	return (
 		<main>
-			<h1 className='text-center mt-8 capitalize'>
+			<h1 className='text-center mt-8 mb-4 capitalize'>
 				{params.id} Interview Questions
 			</h1>
 
 			<div className='w-full'>
-				<div className='flex items-center py-4'>
-					{/* <Input
-						placeholder='Filter emails...'
-						value={(table.getColumn('email')?.getFilterValue() as string) ?? ''}
-						onChange={(event) =>
-							table.getColumn('email')?.setFilterValue(event.target.value)
+				<div className='flex items-center py-4 gap-x-1'>
+					<Input
+						placeholder='Filter questions...'
+						value={
+							(table.getColumn('question')?.getFilterValue() as string) ?? ''
 						}
-						className='max-w-sm'
-					/> */}
+						onChange={(event) =>
+							table.getColumn('question')?.setFilterValue(event.target.value)
+						}
+						className='w-full max-w-md'
+					/>
 					<DropdownMenu>
 						<DropdownMenuTrigger asChild>
 							<Button variant='outline' className='ml-auto'>
@@ -276,8 +305,10 @@ export default function Page({ params }: SearchParamProps) {
 				</div>
 				<div className='flex items-center justify-end space-x-2 py-4'>
 					<div className='flex-1 text-sm text-muted-foreground'>
-						{table.getFilteredSelectedRowModel().rows.length} of{' '}
-						{table.getFilteredRowModel().rows.length} question(s) selected.
+						<PaginationTextRenderer
+							{...pagination}
+							rowsLength={table.getFilteredRowModel().rows.length}
+						/>
 					</div>
 					<div className='space-x-2'>
 						<Button
