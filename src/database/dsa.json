@@ -1,0 +1,916 @@
+[
+	{
+		"question": "Explain how a binary search algorithm works and provide a TypeScript implementation.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Binary search is an efficient algorithm for finding an item from a sorted list of items. It works by repeatedly dividing in half the portion of the list that could contain the item, until you've narrowed the possible locations to just one."
+			},
+			{
+				"type": "code",
+				"content": "function binarySearch(arr: number[], target: number): number {\n  let low = 0;\n  let high = arr.length - 1;\n  while (low <= high) {\n    let mid = Math.floor((low + high) / 2);\n    if (arr[mid] === target) return mid;\n    else if (arr[mid] < target) low = mid + 1;\n    else high = mid - 1;\n  }\n  return -1; // target not found\n}"
+			}
+		],
+		"difficulty": 1,
+		"practicality": 2,
+		"tags": ["binary-search", "search-algorithms"],
+		"estimatedTime": 15,
+		"resources": ["https://en.wikipedia.org/wiki/Binary_search_algorithm"]
+	},
+	{
+		"question": "What is a hash table and how does it handle collisions?",
+		"answer": [
+			{
+				"type": "text",
+				"content": "A hash table is a data structure that implements an associative array abstract data type, a structure that can map keys to values. Collisions are handled primarily through two methods: chaining and open addressing."
+			},
+			{
+				"type": "code",
+				"content": "class HashTable<T> {\n  private table: Array<Array<[string, T]>>;\n  constructor(size: number = 100) {\n    this.table = new Array(size).fill(null).map(() => new Array());\n  }\n  // Implementation details...\n}"
+			}
+		],
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": ["hash-table", "data-structures"],
+		"estimatedTime": 20,
+		"resources": ["https://en.wikipedia.org/wiki/Hash_table"]
+	},
+	{
+		"question": "Implement a stack using TypeScript and explain its operations.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "A stack is a linear data structure which follows a particular order in which the operations are performed. The order may be LIFO (Last In First Out) or FILO (First In Last Out). Main operations: push, pop, peek."
+			},
+			{
+				"type": "code",
+				"content": "class Stack<T> {\n  private storage: T[] = [];\n  push(item: T): void {\n    this.storage.push(item);\n  }\n  pop(): T | undefined {\n    return this.storage.pop();\n  }\n  peek(): T | undefined {\n    return this.storage[this.storage.length - 1];\n  }\n}"
+			}
+		],
+		"difficulty": 0,
+		"practicality": 0,
+		"tags": ["stack", "data-structures"],
+		"estimatedTime": 10,
+		"resources": []
+	},
+	{
+		"question": "Describe the merge sort algorithm and provide a TypeScript implementation.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Merge sort is a divide and conquer algorithm that was invented by John von Neumann in 1945. It divides the unsorted list into n sublists, each containing one element, then repeatedly merges sublists to produce new sorted sublists until there is only one sublist remaining."
+			},
+			{
+				"type": "code",
+				"content": "function mergeSort(arr: number[]): number[] {\n  if (arr.length <= 1) return arr;\n  const mid = Math.floor(arr.length / 2);\n  const left = mergeSort(arr.slice(0, mid));\n  const right = mergeSort(arr.slice(mid));\n  return merge(left, right);\n}\nfunction merge(left: number[], right: number[]): number[] {\n  let results = [], i = 0, j = 0;\n  while (i < left.length && j < right.length) {\n    if (left[i] < right[j]) {\n      results.push(left[i++]);\n    } else {\n      results.push(right[j++]);\n    }\n  }\n  return results.concat(left.slice(i), right.slice(j));\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": ["merge-sort", "sorting-algorithms"],
+		"estimatedTime": 30,
+		"resources": ["https://en.wikipedia.org/wiki/Merge_sort"]
+	},
+	{
+		"question": "How does a graph traversal algorithm work, specifically DFS and BFS, and provide TypeScript examples for both?",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Graph traversal algorithms like DFS (Depth First Search) and BFS (Breadth First Search) are used to visit all the nodes of a graph. DFS explores as far as possible along each branch before backtracking, while BFS visits neighbors level by level."
+			},
+			{
+				"type": "code",
+				"content": "function dfs(graph: Map<number, number[]>, start: number): number[] {\n  const visited = new Set<number>();\n  const stack = [start];\n  while (stack.length) {\n    const node = stack.pop();\n    if (!visited.has(node)) {\n      visited.add(node);\n      graph.get(node)?.forEach(neighbor => {\n        if (!visited.has(neighbor)) stack.push(neighbor);\n      });\n    }\n  }\n  return Array.from(visited);\n}\nfunction bfs(graph: Map<number, number[]>, start: number): number[] {\n  const visited = new Set<number>();\n  const queue = [start];\n  while (queue.length) {\n    const node = queue.shift();\n    if (!visited.has(node)) {\n      visited.add(node);\n      graph.get(node)?.forEach(neighbor => {\n        if (!visited.has(neighbor)) queue.push(neighbor);\n      });\n    }\n  }\n  return Array.from(visited);\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": ["graph-traversal", "dfs", "bfs", "algorithms"],
+		"estimatedTime": 25,
+		"resources": ["https://en.wikipedia.org/wiki/Graph_traversal"]
+	},
+	{
+		"question": "What is the difference between a depth-first search (DFS) and a breadth-first search (BFS) in tree traversal?",
+		"answer": [
+			{
+				"type": "text",
+				"content": "DFS and BFS are both tree traversal algorithms. DFS explores as deep as possible down one branch before backing up, while BFS explores all the nodes at the present depth prior to moving on to nodes at the next depth level."
+			},
+			{
+				"type": "code",
+				"content": "function dfs(node: TreeNode | null): void {\n  if (node === null) return;\n  console.log(node.value); // Process node\n  dfs(node.left); // Visit left subtree\n  dfs(node.right); // Visit right subtree\n}\nfunction bfs(root: TreeNode | null): void {\n  if (root === null) return;\n  const queue: TreeNode[] = [root];\n  while (queue.length) {\n    const node = queue.shift();\n    console.log(node.value); // Process node\n    if (node.left) queue.push(node.left); // Add left child to queue\n    if (node.right) queue.push(node.right); // Add right child to queue\n  }\n}"
+			}
+		],
+		"difficulty": 1,
+		"practicality": 2,
+		"tags": ["tree-traversal", "dfs", "bfs"],
+		"estimatedTime": 15,
+		"resources": ["https://en.wikipedia.org/wiki/Tree_traversal"]
+	},
+	{
+		"question": "Implement a function in TypeScript that checks if a linked list has a cycle. Explain your approach.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To detect a cycle in a linked list, you can use the two-pointer technique, also known as Floyd's Tortoise and Hare algorithm. The idea is to have two pointers at different speeds (one fast, one slow) moving through the list. If they meet, a cycle exists."
+			},
+			{
+				"type": "code",
+				"content": "function hasCycle(head: ListNode | null): boolean {\n  let slow = head, fast = head;\n  while (fast && fast.next) {\n    slow = slow.next;\n    fast = fast.next.next;\n    if (slow === fast) return true; // Cycle detected\n  }\n  return false; // No cycle\n}"
+			}
+		],
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": ["linked-list", "cycle-detection"],
+		"estimatedTime": 20,
+		"resources": ["https://en.wikipedia.org/wiki/Cycle_detection"]
+	},
+	{
+		"question": "Describe the process of balancing a binary search tree and provide a TypeScript function for a simple balancing method.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Balancing a binary search tree ensures that the depth of the tree remains minimal, allowing operations such as search, insert, and delete to remain efficient. One simple method for balancing is using rotations to reorganize the tree structure."
+			},
+			{
+				"type": "code",
+				"content": "function rotateRight(node: TreeNode): TreeNode {\n  const left = node.left;\n  node.left = left.right;\n  left.right = node;\n  return left;\n}\nfunction balanceBST(root: TreeNode): TreeNode {\n  // This is a placeholder for actual balancing logic, which would typically involve more comprehensive manipulations.\n  return root; // Assuming root is the node to balance\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": ["binary-search-tree", "tree-balancing"],
+		"estimatedTime": 25,
+		"resources": ["https://en.wikipedia.org/wiki/Tree_rotation"]
+	},
+	{
+		"question": "Implement a priority queue using heaps in TypeScript and explain its operations.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "A priority queue is an abstract data type in which each element is associated with a priority, and the elements are served based on their priority. It's typically implemented using a heap to allow for efficient retrieval of the highest priority element."
+			},
+			{
+				"type": "code",
+				"content": "class PriorityQueue<T> {\n  private heap: T[] = [];\n  // Methods for push (insert), pop (remove), and peek should be implemented here based on heap properties\n}"
+			}
+		],
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": ["priority-queue", "heap"],
+		"estimatedTime": 20,
+		"resources": ["https://en.wikipedia.org/wiki/Priority_queue"]
+	},
+	{
+		"question": "Explain the concept of dynamic programming and implement the Fibonacci sequence using dynamic programming in TypeScript.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Dynamic programming is a method for solving complex problems by breaking them down into simpler subproblems. It is applicable where the problem can be divided into overlapping sub-problems that can be solved independently."
+			},
+			{
+				"type": "code",
+				"content": "function fibonacci(n: number): number {\n  const fib: number[] = [0, 1];\n  for (let i = 2; i <= n; i++) {\n    fib[i] = fib[i - 1] + fib[i - 2];\n  }\n  return fib[n];\n}"
+			}
+		],
+		"difficulty": 0,
+		"practicality": 1,
+		"tags": ["dynamic-programming", "fibonacci"],
+		"estimatedTime": 10,
+		"resources": ["https://en.wikipedia.org/wiki/Dynamic_programming"]
+	},
+	{
+		"question": "Describe the algorithm to detect and remove a loop in a linked list using TypeScript.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To detect and remove a loop in a linked list, you can use Floyd's Cycle detection algorithm (Tortoise and Hare). Once a loop is detected, you find the start of the loop and remove it by setting the previous node's next pointer to null."
+			},
+			{
+				"type": "code",
+				"content": "function detectAndRemoveLoop(head: ListNode | null): void {\n  let slow = head, fast = head;\n  while (fast && fast.next) {\n    slow = slow.next;\n    fast = fast.next.next;\n    if (slow === fast) { // Loop detected\n      removeLoop(slow, head);\n      return;\n    }\n  }\n}\nfunction removeLoop(loopNode: ListNode, head: ListNode): void {\n  let ptr1 = loopNode, ptr2 = loopNode;\n  // Find loop size\n  let k = 1;\n  while (ptr1.next !== ptr2) {\n    ptr1 = ptr1.next;\n    k++;\n  }\n  ptr1 = head; ptr2 = head;\n  // Move ptr2 k nodes ahead\n  for (let i = 0; i < k; i++) ptr2 = ptr2.next;\n  // Move both pointers at the same pace, they will meet at loop start\n  while (ptr1 !== ptr2) {\n    ptr1 = ptr1.next;\n    ptr2 = ptr2.next;\n  }\n  // Get pointer to the last node\n  while (ptr2.next !== ptr1) ptr2 = ptr2.next;\n  ptr2.next = null; // Break the loop\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": ["linked-list", "cycle-detection", "loop"],
+		"estimatedTime": 20,
+		"resources": ["https://en.wikipedia.org/wiki/Cycle_detection"]
+	},
+	{
+		"question": "What are red-black trees, and how do you insert an element into a red-black tree? Provide a TypeScript implementation.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Red-black trees are a type of self-balancing binary search tree. Each node stores an extra bit representing 'color' (red or black), used to ensure the tree remains approximately balanced during insertions and deletions."
+			},
+			{
+				"type": "code",
+				"content": "class RedBlackTree<T> {\n  // Define the tree structure and methods here\n  insert(value: T): void {\n    // Insertion logic, including maintaining red-black properties\n  }\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": ["red-black-tree", "trees", "insertion"],
+		"estimatedTime": 30,
+		"resources": ["https://en.wikipedia.org/wiki/Red%E2%80%93black_tree"]
+	},
+	{
+		"question": "Explain the concept of 'Memoization' in dynamic programming with a TypeScript example implementing memoized Fibonacci series.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Memoization is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again."
+			},
+			{
+				"type": "code",
+				"content": "const fibMemo: {[key: number]: number} = {0: 0, 1: 1};\nfunction fibonacci(n: number): number {\n  if (n in fibMemo) return fibMemo[n];\n  fibMemo[n] = fibonacci(n - 1) + fibonacci(n - 2);\n  return fibMemo[n];\n}"
+			}
+		],
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": ["memoization", "dynamic-programming", "fibonacci"],
+		"estimatedTime": 15,
+		"resources": ["https://en.wikipedia.org/wiki/Memoization"]
+	},
+	{
+		"question": "How would you implement a Least Recently Used (LRU) cache in TypeScript? Explain your approach and provide the code.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "An LRU cache discards the least recently used items first. This kind of data structure is commonly used to store limited amounts of data that are expensive to recompute or retrieve."
+			},
+			{
+				"type": "code",
+				"content": "class LRUCache<K, V> {\n  private capacity: number;\n  private cache: Map<K, V> = new Map();\n  constructor(capacity: number) {\n    this.capacity = capacity;\n  }\n  get(key: K): V | undefined {\n    if (!this.cache.has(key)) return undefined;\n    const value = this.cache.get(key);\n    this.cache.delete(key);\n    this.cache.set(key, value);\n    return value;\n  }\n  put(key: K, value: V): void {\n    if (this.cache.has(key)) {\n      this.cache.delete(key);\n    }\n    this.cache.set(key, value);\n    if (this.cache.size > this.capacity) {\n      const oldestKey = this.cache.keys().next().value;\n      this.cache.delete(oldestKey);\n    }\n  }\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": ["lru-cache", "caching", "data-structures"],
+		"estimatedTime": 25,
+		"resources": [
+			"https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)"
+		]
+	},
+	{
+		"question": "Write a TypeScript function to sort an array using the Heap Sort algorithm. Explain how heap sort works.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Heap sort is a comparison-based sorting technique based on a binary heap data structure. It is similar to selection sort where we first find the maximum element and place the maximum at the end. We repeat the process for the remaining elements."
+			},
+			{
+				"type": "code",
+				"content": "function heapSort(arr: number[]): number[] {\n  // Build the heap in array a so that largest value is at the root\n  const n = arr.length;\n  for (let i = Math.floor(n / 2 - 1); i >= 0; i--) {\n    heapify(arr, n, i);\n  }\n  // One by one extract elements\n  for (let i = n - 1; i > 0; i--) {\n    [arr[0], arr[i]] = [arr[i], arr[0]]; // Move current root to end\n    heapify(arr, i, 0);\n  }\n  return arr;\n}\nfunction heapify(arr: number[], n: number, i: number): void {\n  let largest = i; // Initialize largest as root\n  const left = 2 * i + 1;\n  const right = 2 * i + 2;\n  if (left < n && arr[left] > arr[largest]) largest = left;\n  if (right < n && arr[right] > arr[largest]) largest = right;\n  if (largest !== i) {\n    [arr[i], arr[largest]] = [arr[largest], arr[i]]; // Swap\n    heapify(arr, n, largest);\n  }\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": ["heap-sort", "sorting-algorithms"],
+		"estimatedTime": 25,
+		"resources": ["https://en.wikipedia.org/wiki/Heapsort"]
+	},
+	{
+		"question": "What are AVL trees and how do they maintain balance? Provide a TypeScript implementation for inserting a node.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "AVL trees are self-balancing binary search trees where the heights of two child subtrees of any node differ by no more than one. Rebalancing is performed via rotations (single or double) after every insertion or deletion to maintain this property."
+			},
+			{
+				"type": "code",
+				"content": "class AVLTree<T> {\n  private root: AVLNode<T> | null = null;\n  // Assume AVLNode is a class that extends TreeNode with a height property\n  insert(value: T): void {\n    this.root = this.insertRec(this.root, value);\n  }\n  private insertRec(node: AVLNode<T> | null, value: T): AVLNode<T> {\n    if (!node) return new AVLNode(value);\n    if (value < node.value) node.left = this.insertRec(node.left, value);\n    else if (value > node.value) node.right = this.insertRec(node.right, value);\n    else return node; // Duplicate keys not allowed\n    return this.balance(node);\n  }\n  // Balance and rotation methods would be defined here\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": ["avl-tree", "trees", "balancing"],
+		"estimatedTime": 30,
+		"resources": ["https://en.wikipedia.org/wiki/AVL_tree"]
+	},
+	{
+		"question": "Implement a graph using adjacency list in TypeScript and provide methods to add a vertex and an edge.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "A graph can be represented using an adjacency list, which is a more space-efficient way to store sparse graphs compared to adjacency matrices. An adjacency list represents a graph as an array of lists."
+			},
+			{
+				"type": "code",
+				"content": "class Graph {\n  private adjacencyList: Map<number, number[]> = new Map();\n  addVertex(vertex: number): void {\n    if (!this.adjacencyList.has(vertex)) {\n      this.adjacencyList.set(vertex, []);\n    }\n  }\n  addEdge(vertex1: number, vertex2: number): void {\n    this.adjacencyList.get(vertex1)?.push(vertex2);\n    this.adjacencyList.get(vertex2)?.push(vertex1); // For undirected graph\n  }\n}"
+			}
+		],
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": ["graph", "adjacency-list", "data-structures"],
+		"estimatedTime": 15,
+		"resources": ["https://en.wikipedia.org/wiki/Graph_(abstract_data_type)"]
+	},
+	{
+		"question": "Describe the Knuth-Morris-Pratt (KMP) string matching algorithm and provide a TypeScript implementation.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The KMP algorithm is used for finding a substring within a string. It improves the worst-case time complexity to O(n + m) by avoiding unnecessary comparisons using a 'partial match' table (also called 'prefix' table)."
+			},
+			{
+				"type": "code",
+				"content": "function KMP(text: string, pattern: string): number {\n  let lps = buildLPS(pattern);\n  let i = 0, j = 0;\n  while (i < text.length) {\n    if (pattern[j] === text[i]) {\n      if (j === pattern.length - 1) return i - j; // Match found\n      i++; j++;\n    } else if (j > 0) j = lps[j - 1];\n    else i++;\n  }\n  return -1; // No match found\n}\nfunction buildLPS(pattern: string): number[] {\n  let lps = Array(pattern.length).fill(0);\n  let length = 0, i = 1;\n  while (i < pattern.length) {\n    if (pattern[i] === pattern[length]) {\n      lps[i++] = ++length;\n    } else if (length) length = lps[length - 1];\n    else lps[i++] = 0;\n  }\n  return lps;\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": ["kmp-algorithm", "string-matching", "algorithms"],
+		"estimatedTime": 20,
+		"resources": [
+			"https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm"
+		]
+	},
+	{
+		"question": "Explain the algorithm for the Towers of Hanoi problem and provide a TypeScript solution.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The Towers of Hanoi is a classic problem that involves moving a set of disks from one rod to another, with the constraint that a larger disk cannot be placed on top of a smaller disk. The solution involves recursive steps."
+			},
+			{
+				"type": "code",
+				"content": "function hanoi(n: number, source: string, auxiliary: string, destination: string, moves: string[] = []): string[] {\n  if (n === 1) {\n    moves.push(`Move disk 1 from ${source} to ${destination}`);\n    return moves;\n  }\n  hanoi(n - 1, source, destination, auxiliary, moves);\n  moves.push(`Move disk ${n} from ${source} to ${destination}`);\n  hanoi(n - 1, auxiliary, source, destination, moves);\n  return moves;\n}"
+			}
+		],
+		"difficulty": 1,
+		"practicality": 0,
+		"tags": ["towers-of-hanoi", "recursion", "puzzles"],
+		"estimatedTime": 15,
+		"resources": ["https://en.wikipedia.org/wiki/Tower_of_Hanoi"]
+	},
+	{
+		"question": "Write a TypeScript function to check if a binary tree is a valid binary search tree (BST).",
+		"answer": [
+			{
+				"type": "text",
+				"content": "A valid BST is defined as a binary tree in which for every node, the values of all the nodes in its left subtree are less than the node's value, and all the values in the right subtree are greater than the node's value."
+			},
+			{
+				"type": "code",
+				"content": "function isValidBST(node: TreeNode | null, min: number | null = null, max: number | null = null): boolean {\n  if (!node) return true;\n  if ((min !== null && node.value <= min) || (max !== null && node.value >= max)) return false;\n  return isValidBST(node.left, min, node.value) && isValidBST(node.right, node.value, max);\n}"
+			}
+		],
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": ["binary-search-tree", "trees", "validation"],
+		"estimatedTime": 15,
+		"resources": ["https://en.wikipedia.org/wiki/Binary_search_tree"]
+	},
+	{
+		"question": "Implement a function to reverse a singly linked list in TypeScript. Explain the iterative approach.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Reversing a singly linked list involves changing the next pointers of each node to point to the previous node. In an iterative approach, you traverse the list once and change the next pointers as you go, using a temporary variable to hold the previous node."
+			},
+			{
+				"type": "code",
+				"content": "function reverseLinkedList(head: ListNode | null): ListNode | null {\n  let prev = null;\n  let current = head;\n  while (current) {\n    let next = current.next;\n    current.next = prev;\n    prev = current;\n    current = next;\n  }\n  return prev;\n}"
+			}
+		],
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": ["linked-list", "reversal"],
+		"estimatedTime": 10,
+		"resources": ["https://en.wikipedia.org/wiki/Linked_list"]
+	},
+	{
+		"question": "Describe and implement the Sieve of Eratosthenes algorithm in TypeScript to find all prime numbers up to n.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The Sieve of Eratosthenes is an efficient algorithm for finding all primes smaller than n. It iteratively marks the multiples of each prime starting from 2. The numbers which are not marked in the end are the primes."
+			},
+			{
+				"type": "code",
+				"content": "function sieveOfEratosthenes(n: number): boolean[] {\n  const primes: boolean[] = Array(n+1).fill(true);\n  primes[0] = primes[1] = false;\n  for (let p = 2; p*p <= n; p++) {\n    if (primes[p]) {\n      for (let i = p*p; i <= n; i += p) {\n        primes[i] = false;\n      }\n    }\n  }\n  return primes;\n}"
+			}
+		],
+		"difficulty": 1,
+		"practicality": 0,
+		"tags": ["sieve-of-eratosthenes", "primes", "algorithms"],
+		"estimatedTime": 15,
+		"resources": ["https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes"]
+	},
+	{
+		"question": "Implement a function in TypeScript to convert a binary tree into a doubly linked list in-place.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To convert a binary tree into a doubly linked list, you can perform an in-order traversal and modify the pointers so that each node points to the previous and next nodes in the order they appear in the in-order traversal."
+			},
+			{
+				"type": "code",
+				"content": "function convertToDoublyLinkedList(root: TreeNode | null): TreeNode | null {\n  if (!root) return null;\n  let prev: TreeNode | null = null;\n  function inOrder(node: TreeNode | null) {\n    if (!node) return;\n    inOrder(node.left);\n    if (prev) {\n      prev.right = node;\n      node.left = prev;\n    }\n    prev = node;\n    inOrder(node.right);\n  }\n  inOrder(root);\n  // Adjust head to the start of the list\n  while (root && root.left) root = root.left;\n  return root;\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": ["binary-tree", "doubly-linked-list", "in-place"],
+		"estimatedTime": 20,
+		"resources": []
+	},
+	{
+		"question": "Write a TypeScript function to check if two strings are anagrams of each other.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Two strings are anagrams if they contain the same characters in the same frequency. One way to check this is to sort both strings and compare them, or use a character count."
+			},
+			{
+				"type": "code",
+				"content": "function areAnagrams(s1: string, s2: string): boolean {\n  const charCount = new Map<string, number>();\n  for (let char of s1) {\n    charCount.set(char, (charCount.get(char) || 0) + 1);\n  }\n  for (let char of s2) {\n    if (!charCount.has(char) || charCount.get(char) === 0) return false;\n    charCount.set(char, charCount.get(char) - 1);\n  }\n  return Array.from(charCount.values()).every(count => count === 0);\n}"
+			}
+		],
+		"difficulty": 0,
+		"practicality": 1,
+		"tags": ["anagrams", "string-manipulation"],
+		"estimatedTime": 10,
+		"resources": ["https://en.wikipedia.org/wiki/Anagram"]
+	},
+	{
+		"question": "Implement the Quickselect algorithm in TypeScript to find the k-th smallest element in an unsorted list.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Quickselect is a selection algorithm to find the k-th smallest element in an unordered list. It is related to the quicksort sorting algorithm."
+			},
+			{
+				"type": "code",
+				"content": "function quickSelect(arr: number[], k: number): number {\n  function partition(left: number, right: number, pivotIndex: number): number {\n    let pivotValue = arr[pivotIndex];\n    [arr[pivotIndex], arr[right]] = [arr[right], arr[pivotIndex]]; // Move pivot to end\n    let storeIndex = left;\n    for (let i = left; i < right; i++) {\n      if (arr[i] < pivotValue) {\n        [arr[i], arr[storeIndex]] = [arr[storeIndex], arr[i]];\n        storeIndex++;\n      }\n    }\n    [arr[storeIndex], arr[right]] = [arr[right], arr[storeIndex]]; // Move pivot to its final place\n    return storeIndex;\n  }\n  function select(left: number, right: number, k: number): number {\n    if (left === right) return arr[left];\n    let pivotIndex = Math.floor((left + right) / 2);\n    pivotIndex = partition(left, right, pivotIndex);\n    if (k === pivotIndex) return arr[k];\n    else if (k < pivotIndex) return select(left, pivotIndex - 1, k);\n    else return select(pivotIndex + 1, right, k);\n  }\n  return select(0, arr.length - 1, k - 1);\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": ["quickselect", "selection-algorithm"],
+		"estimatedTime": 20,
+		"resources": ["https://en.wikipedia.org/wiki/Quickselect"]
+	},
+	{
+		"question": "Explain the process of tree rotation in AVL trees and implement a left rotation in TypeScript.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Tree rotation is a fundamental operation in AVL trees used to rebalance the tree. Left rotation is used when a right-right case occurs, which means there is a need to balance a right heavy subtree."
+			},
+			{
+				"type": "code",
+				"content": "class AVLNode<T> {\n  public left: AVLNode<T> | null;\n  public right: AVLNode<T> | null;\n  public value: T;\n  constructor(value: T) {\n    this.value = value;\n    this.left = null;\n    this.right = null;\n  }\n}\nfunction leftRotate<T>(x: AVLNode<T>): AVLNode<T> {\n  const y = x.right;\n  x.right = y.left;\n  y.left = x;\n  return y; // y becomes new root\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": ["avl-trees", "tree-rotation", "left-rotation"],
+		"estimatedTime": 15,
+		"resources": ["https://en.wikipedia.org/wiki/Tree_rotation"]
+	},
+	{
+		"question": "Implement a method to find the maximum depth of a binary tree in TypeScript.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The maximum depth of a binary tree is the number of nodes along the longest path from the root node down to the farthest leaf node. It is calculated recursively by comparing the depth of left and right subtrees."
+			},
+			{
+				"type": "code",
+				"content": "function maxDepth<T>(root: TreeNode<T> | null): number {\n  if (root === null) {\n    return 0;\n  } else {\n    const leftDepth = maxDepth(root.left);\n    const rightDepth = maxDepth(root.right);\n    return Math.max(leftDepth, rightDepth) + 1;\n  }\n}"
+			}
+		],
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": ["binary-tree", "depth", "recursive"],
+		"estimatedTime": 10,
+		"resources": ["https://en.wikipedia.org/wiki/Binary_tree"]
+	},
+	{
+		"question": "Describe the Dijkstra's algorithm for finding the shortest path in a graph. Implement it in TypeScript.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Dijkstra's algorithm finds the shortest paths from a source vertex to all other vertices in a graph with non-negative edge weights. It uses a priority queue to greedily select the next vertex with the least distance."
+			},
+			{
+				"type": "code",
+				"content": "class Graph {\n  vertices: number;\n  adjList: Map<number, Array<{node: number, weight: number}>>;\n  constructor(vertices: number) {\n    this.vertices = vertices;\n    this.adjList = new Map();\n  }\n  addEdge(src: number, dest: number, weight: number) {\n    this.adjList.get(src)?.push({node: dest, weight: weight});\n  }\n}\nfunction dijkstra(graph: Graph, src: number): number[] {\n  const dist: number[] = Array(graph.vertices).fill(Infinity);\n  dist[src] = 0;\n  const pq = new MinPriorityQueue<{vertex: number, dist: number}>();\n  pq.enqueue({vertex: src, dist: 0});\n  while (!pq.isEmpty()) {\n    const {vertex} = pq.dequeue();\n    graph.adjList.get(vertex)?.forEach(({node, weight}) => {\n      let distance = dist[vertex] + weight;\n      if (distance < dist[node]) {\n        dist[node] = distance;\n        pq.enqueue({vertex: node, dist: distance});\n      }\n    });\n  }\n  return dist;\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": ["dijkstra", "shortest-path", "graph-algorithm"],
+		"estimatedTime": 30,
+		"resources": ["https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm"]
+	},
+	{
+		"question": "Write a TypeScript function to merge two sorted linked lists into one sorted linked list.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Merging two sorted linked lists involves creating a new linked list by choosing nodes from the two lists in a way that maintains the sorted order. The function should iterate through both lists and append the smaller value node to the merged list."
+			},
+			{
+				"type": "code",
+				"content": "function mergeSortedLists<T>(l1: ListNode<T> | null, l2: ListNode<T> | null): ListNode<T> | null {\n  if (!l1) return l2;\n  if (!l2) return l1;\n  if (l1.value < l2.value) {\n    l1.next = mergeSortedLists(l1.next, l2);\n    return l1;\n  } else {\n    l2.next = mergeSortedLists(l1, l2.next);\n    return l2;\n  }\n}"
+			}
+		],
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": ["linked-list", "merge-sorted", "algorithms"],
+		"estimatedTime": 15,
+		"resources": ["https://en.wikipedia.org/wiki/Merge_algorithm"]
+	},
+	{
+		"question": "Implement a method in TypeScript to delete a node from a binary search tree.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Deleting a node from a binary search tree involves three main cases: deleting a node with no children, a node with one child, and a node with two children. The most complex case is when the node has two children, where you typically replace the node with its in-order successor or predecessor."
+			},
+			{
+				"type": "code",
+				"content": "function deleteNode<T>(root: TreeNode<T> | null, key: T): TreeNode<T> | null {\n  if (!root) return null;\n  if (key < root.value) {\n    root.left = deleteNode(root.left, key);\n  } else if (key > root.value) {\n    root.right = deleteNode(root.right, key);\n  } else {\n    if (!root.left) return root.right;\n    else if (!root.right) return root.left;\n    root.value = minValue(root.right);\n    root.right = deleteNode(root.right, root.value);\n  }\n  return root;\n}\nfunction minValue<T>(node: TreeNode<T>): T {\n  let min = node.value;\n  while (node.left) {\n    min = node.left.value;\n    node = node.left;\n  }\n  return min;\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": ["binary-search-tree", "delete-node", "trees"],
+		"estimatedTime": 20,
+		"resources": ["https://en.wikipedia.org/wiki/Binary_search_tree#Deletion"]
+	},
+	{
+		"question": "Implement a circular queue in TypeScript and explain the advantages of using a circular queue over a linear queue.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "A circular queue is a linear data structure that follows the FIFO principle but connects the last position back to the first to make a circle. It is more memory efficient as it utilizes empty slots by maintaining two pointers (front and rear) that can cycle back to the beginning."
+			},
+			{
+				"type": "code",
+				"content": "class CircularQueue<T> {\n  private queue: Array<T | null>;\n  private head: number = 0;\n  private tail: number = 0;\n  private count: number = 0;\n  constructor(size: number) {\n    this.queue = new Array(size).fill(null);\n  }\n  enqueue(element: T): boolean {\n    if (this.count === this.queue.length) return false;\n    this.queue[this.tail] = element;\n    this.tail = (this.tail + 1) % this.queue.length;\n    this.count++;\n    return true;\n  }\n  dequeue(): T | null {\n    if (this.count === 0) return null;\n    const element = this.queue[this.head];\n    this.queue[this.head] = null;\n    this.head = (this.head + 1) % this.queue.length;\n    this.count--;\n    return element;\n  }\n}"
+			}
+		],
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": ["circular-queue", "queue", "data-structures"],
+		"estimatedTime": 15,
+		"resources": ["https://en.wikipedia.org/wiki/Circular_buffer"]
+	},
+	{
+		"question": "Describe and implement the Boyer-Moore majority vote algorithm in TypeScript to find the majority element in an array.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The Boyer-Moore majority vote algorithm is an efficient method to find the majority element that appears more than n/2 times in an array. It does so with two passes: one to get a candidate and another to verify it."
+			},
+			{
+				"type": "code",
+				"content": "function majorityElement(nums: number[]): number | null {\n  let candidate = null;\n  let count = 0;\n  for (let num of nums) {\n    if (count === 0) {\n      candidate = num;\n    }\n    count += (num === candidate) ? 1 : -1;\n  }\n  count = 0;\n  nums.forEach(num => {\n    if (num === candidate) count++;\n  });\n  return count > nums.length / 2 ? candidate : null;\n}"
+			}
+		],
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": ["boyer-moore", "majority-element", "algorithms"],
+		"estimatedTime": 10,
+		"resources": [
+			"https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm"
+		]
+	},
+	{
+		"question": "Implement a binary heap in TypeScript and describe its use cases.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "A binary heap is a complete binary tree used primarily for priority queue implementations. It is efficient for operations like insert, find minimum, and delete minimum, making it useful in algorithms that require priority-based scheduling or the efficient retrieval of elements."
+			},
+			{
+				"type": "code",
+				"content": "class BinaryHeap<T> {\n  private heap: T[];\n  constructor() {\n    this.heap = [];\n  }\n  insert(value: T): void {\n    this.heap.push(value);\n    this.bubbleUp();\n  }\n  private bubbleUp(): void {\n    let index = this.heap.length - 1;\n    const element = this.heap[index];\n    while (index > 0) {\n      let parentIdx = Math.floor((index - 1) / 2);\n      let parent = this.heap[parentIdx];\n      if (element >= parent) break;\n      this.heap[index] = parent;\n      this.heap[parentIdx] = element;\n      index = parentIdx;\n    }\n  }\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": ["binary-heap", "priority-queue", "data-structures"],
+		"estimatedTime": 20,
+		"resources": ["https://en.wikipedia.org/wiki/Binary_heap"]
+	},
+	{
+		"question": "Write a TypeScript function to find all permutations of a given string.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "To find all permutations of a string, you can use a recursive method that swaps characters at each level of recursion to generate all possible arrangements."
+			},
+			{
+				"type": "code",
+				"content": "function getPermutations(str: string): string[] {\n  let results: string[] = [];\n  function permute(arr: string[], l: number, r: number) {\n    if (l === r) results.push(arr.join(''));\n    else {\n      for (let i = l; i <= r; i++) {\n        [arr[l], arr[i]] = [arr[i], arr[l]];\n        permute(arr, l + 1, r);\n        [arr[l], arr[i]] = [arr[i], arr[l]]; // backtrack\n      }\n    }\n  }\n  permute(str.split(''), 0, str.length - 1);\n  return results;\n}"
+			}
+		],
+		"difficulty": 1,
+		"practicality": 0,
+		"tags": ["permutations", "recursion", "backtracking"],
+		"estimatedTime": 20,
+		"resources": ["https://en.wikipedia.org/wiki/Permutation"]
+	},
+	{
+		"question": "Implement a function in TypeScript to find the intersection of two arrays using a set.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Finding the intersection of two arrays involves identifying the common elements between them. Using a set can make this process efficient by storing one array's elements in a set and then checking which elements from the second array are present in the set."
+			},
+			{
+				"type": "code",
+				"content": "function intersection(nums1: number[], nums2: number[]): number[] {\n  const set1 = new Set(nums1);\n  const result = nums2.filter(num => set1.has(num));\n  return Array.from(new Set(result)); // Remove duplicates\n}"
+			}
+		],
+		"difficulty": 0,
+		"practicality": 1,
+		"tags": ["array-intersection", "sets", "algorithms"],
+		"estimatedTime": 10,
+		"resources": []
+	},
+	{
+		"question": "Explain the Counting Sort algorithm and provide a TypeScript implementation.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Counting Sort is a non-comparative sorting algorithm that sorts elements of an array by counting the number of occurrences of each unique element. It then uses this count to place each element directly into its position in the output array."
+			},
+			{
+				"type": "code",
+				"content": "function countingSort(arr: number[]): number[] {\n  const max = Math.max(...arr);\n  const min = Math.min(...arr);\n  const range = max - min + 1;\n  const count = new Array(range).fill(0);\n  const output = new Array(arr.length);\n  arr.forEach((num) => {\n    count[num - min]++;\n  });\n  for (let i = 1; i < count.length; i++) {\n    count[i] += count[i - 1];\n  }\n  for (let i = arr.length - 1; i >= 0; i--) {\n    output[count[arr[i] - min] - 1] = arr[i];\n    count[arr[i] - min]--;\n  }\n  return output;\n}"
+			}
+		],
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": ["counting-sort", "sorting-algorithms"],
+		"estimatedTime": 20,
+		"resources": ["https://en.wikipedia.org/wiki/Counting_sort"]
+	},
+	{
+		"question": "Describe how a Trie (Prefix Tree) works and implement one in TypeScript for inserting and searching words.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "A Trie, or prefix tree, is a tree-like data structure which proves to be very efficient for handling dynamic sets and lookup-intensive applications. Each node stores the letters of the alphabet and links to child nodes for letters following the current one, thus speeding up prefix-based searches."
+			},
+			{
+				"type": "code",
+				"content": "class TrieNode {\n  children: Map<string, TrieNode>;\n  isEndOfWord: boolean;\n  constructor() {\n    this.children = new Map();\n    this.isEndOfWord = false;\n  }\n}\nclass Trie {\n  root: TrieNode;\n  constructor() {\n    this.root = new TrieNode();\n  }\n  insert(word: string): void {\n    let node = this.root;\n    for (let char of word) {\n      if (!node.children.has(char)) {\n        node.children.set(char, new TrieNode());\n      }\n      node = node.children.get(char)!;\n    }\n    node.isEndOfWord = true;\n  }\n  search(word: string): boolean {\n    let node = this.root;\n    for (let char of word) {\n      if (!node.children.has(char)) return false;\n      node = node.children.get(char)!;\n    }\n    return node.isEndOfWord;\n  }\n}"
+			}
+		],
+		"difficulty": 1,
+		"practicality": 2,
+		"tags": ["trie", "prefix-tree", "data-structures"],
+		"estimatedTime": 20,
+		"resources": ["https://en.wikipedia.org/wiki/Trie"]
+	},
+	{
+		"question": "Implement a graph traversal using Breadth-First Search (BFS) in TypeScript for a graph represented as an adjacency list.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Breadth-First Search (BFS) is a traversal algorithm that explores vertices in the order of their distance from the source vertex, layer by layer. It is typically implemented using a queue."
+			},
+			{
+				"type": "code",
+				"content": "class Graph {\n  adjacencyList: Map<number, number[]>;\n  constructor() {\n    this.adjacencyList = new Map();\n  }\n  addEdge(v: number, w: number): void {\n    if (!this.adjacencyList.get(v)) {\n      this.adjacencyList.set(v, []);\n    }\n    this.adjacencyList.get(v).push(w);\n  }\n}\nfunction bfs(graph: Graph, startVertex: number): number[] {\n  const visited = new Array(graph.adjacencyList.size).fill(false);\n  const queue = [startVertex];\n  const result = [];\n  visited[startVertex] = true;\n  while (queue.length) {\n    const vertex = queue.shift()!;\n    result.push(vertex);\n    graph.adjacencyList.get(vertex)!.forEach((n) => {\n      if (!visited[n]) {\n        visited[n] = true;\n        queue.push(n);\n      }\n    });\n  }\n  return result;\n}"
+			}
+		],
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": ["graph-traversal", "bfs", "adjacency-list"],
+		"estimatedTime": 15,
+		"resources": ["https://en.wikipedia.org/wiki/Breadth-first_search"]
+	},
+	{
+		"question": "Write a TypeScript function to implement the Radix Sort algorithm for sorting a list of integers.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Radix Sort is a non-comparative integer sorting algorithm that sorts data with integer keys by grouping the keys by individual digits which share the same significant position and value. It uses counting sort as a subroutine to sort the digits."
+			},
+			{
+				"type": "code",
+				"content": "function radixSort(arr: number[]): number[] {\n  const maxNum = Math.max(...arr);\n  let exp = 1;\n  while (maxNum / exp > 1) {\n    countingSortByDigit(arr, exp);\n    exp *= 10;\n  }\n  return arr;\n}\nfunction countingSortByDigit(arr: number[], exp: number): void {\n  const output = new Array(arr.length).fill(0);\n  const count = new Array(10).fill(0);\n  arr.forEach((num) => {\n    count[Math.floor((num / exp) % 10)]++;\n  });\n  for (let i = 1; i < 10; i++) {\n    count[i] += count[i - 1];\n  }\n  for (let i = arr.length - 1; i >= 0; i--) {\n    const num = arr[i];\n    output[count[Math.floor((num / exp) % 10)] - 1] = num;\n    count[Math.floor((num / exp) % 10)]--;\n  }\n  for (let i = 0; i < arr.length; i++) {\n    arr[i] = output[i];\n  }\n}"
+			}
+		],
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": ["radix-sort", "sorting-algorithms"],
+		"estimatedTime": 20,
+		"resources": ["https://en.wikipedia.org/wiki/Radix_sort"]
+	},
+	{
+		"question": "How do you find the lowest common ancestor (LCA) of two nodes in a binary tree? Provide a TypeScript implementation.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The lowest common ancestor between two nodes n1 and n2 in a binary tree is the lowest node in T that has both n1 and n2 as descendants (where we allow a node to be a descendant of itself)."
+			},
+			{
+				"type": "code",
+				"content": "function findLCA(root: TreeNode | null, n1: number, n2: number): TreeNode | null {\n  if (!root) return null;\n  if (root.value === n1 || root.value === n2) return root;\n  const leftLCA = findLCA(root.left, n1, n2);\n  const rightLCA = findLCA(root.right, n1, n2);\n  if (leftLCA && rightLCA) return root;\n  return leftLCA ? leftLCA : rightLCA;\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": ["binary-tree", "lowest-common-ancestor"],
+		"estimatedTime": 20,
+		"resources": ["https://en.wikipedia.org/wiki/Lowest_common_ancestor"]
+	},
+	{
+		"question": "Implement a function in TypeScript to check if a graph is bipartite using Breadth-First Search (BFS).",
+		"answer": [
+			{
+				"type": "text",
+				"content": "A bipartite graph is one that can be colored using two colors such that no two adjacent vertices share the same color. BFS can be used to check this by trying to color the graph using two colors while traversing."
+			},
+			{
+				"type": "code",
+				"content": "function isBipartite(graph: number[][]): boolean {\n  const colors = new Array(graph.length).fill(-1);\n  for (let i = 0; i < graph.length; i++) {\n    if (colors[i] === -1) {\n      const queue: number[] = [i];\n      colors[i] = 0;\n      while (queue.length) {\n        const node = queue.shift()!;\n        for (const neighbor of graph[node]) {\n          if (colors[neighbor] === -1) {\n            colors[neighbor] = 1 - colors[node];\n            queue.push(neighbor);\n          } else if (colors[neighbor] === colors[node]) {\n            return false;\n          }\n        }\n      }\n    }\n  }\n  return true;\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": ["graph-theory", "bipartite", "bfs"],
+		"estimatedTime": 20,
+		"resources": ["https://en.wikipedia.org/wiki/Bipartite_graph"]
+	},
+	{
+		"question": "Describe and implement the Union-Find algorithm in TypeScript to detect cycles in an undirected graph.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Union-Find, also known as Disjoint Set Union (DSU), is an algorithm that keeps track of elements partitioned into a number of disjoint (non-overlapping) subsets. It can be used to detect cycles in an undirected graph by checking if a newly added edge connects vertices in the same subset."
+			},
+			{
+				"type": "code",
+				"content": "class UnionFind {\n  private parent: number[];\n  private rank: number[];\n  constructor(size: number) {\n    this.parent = Array.from({ length: size }, (_, index) => index);\n    this.rank = new Array(size).fill(0);\n  }\n  find(x: number): number {\n    if (this.parent[x] !== x) {\n      this.parent[x] = this.find(this.parent[x]); // Path compression\n    }\n    return this.parent[x];\n  }\n  union(x: number, y: number): boolean {\n    const rootX = this.find(x);\n    const rootY = this.find(y);\n    if (rootX === rootY) return false;\n    if (this.rank[rootX] > this.rank[rootY]) this.parent[rootY] = rootX;\n    else if (this.rank[rootX] < this.rank[rootY]) this.parent[rootX] = rootY;\n    else {\n      this.parent[rootY] = rootX;\n      this.rank[rootX]++; // Increase rank if they were same\n    }\n    return true;\n  }\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": ["union-find", "graph-theory", "cycle-detection"],
+		"estimatedTime": 20,
+		"resources": ["https://en.wikipedia.org/wiki/Disjoint-set_data_structure"]
+	},
+	{
+		"question": "Write a TypeScript function that uses the Floyd-Warshall algorithm to find the shortest paths between all pairs of vertices in a graph represented as an adjacency matrix.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The Floyd-Warshall algorithm is a dynamic programming algorithm that calculates the shortest paths between all pairs of vertices in a weighted graph. It can handle graphs with negative weights but no negative cycles."
+			},
+			{
+				"type": "code",
+				"content": "function floydWarshall(weights: number[][]): number[][] {\n  const dist = weights.map(row => row.slice());\n  for (let k = 0; k < weights.length; k++) {\n    for (let i = 0; i < weights.length; i++) {\n      for (let j = 0; j < weights.length; j++) {\n        if (dist[i][k] + dist[k][j] < dist[i][j]) {\n          dist[i][j] = dist[i][k] + dist[k][j];\n        }\n      }\n    }\n  }\n  return dist;\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": [
+			"floyd-warshall",
+			"all-pairs-shortest-path",
+			"dynamic-programming"
+		],
+		"estimatedTime": 25,
+		"resources": [
+			"https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm"
+		]
+	},
+	{
+		"question": "Implement a simple text editor with basic operations such as insert, delete, and get using a linked list in TypeScript.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "A text editor can be efficiently implemented using a doubly linked list to allow for easy insertions and deletions. Each node in the list can represent a character or a line of text."
+			},
+			{
+				"type": "code",
+				"content": "class TextNode {\n  char: string;\n  next: TextNode | null;\n  prev: TextNode | null;\n  constructor(char: string) {\n    this.char = char;\n    this.next = null;\n    this.prev = null;\n  }\n}\nclass TextEditor {\n  head: TextNode;\n  tail: TextNode;\n  cursor: TextNode;\n  constructor() {\n    this.head = new TextNode('');\n    this.tail = new TextNode('');\n    this.head.next = this.tail;\n    this.tail.prev = this.head;\n    this.cursor = this.tail;\n  }\n  insert(char: string): void {\n    const newNode = new TextNode(char);\n    newNode.prev = this.cursor.prev;\n    newNode.next = this.cursor;\n    this.cursor.prev!.next = newNode;\n    this.cursor.prev = newNode;\n  }\n  delete(): void {\n    if (this.cursor.prev !== this.head) {\n      this.cursor.prev = this.cursor.prev.prev;\n      this.cursor.prev.next = this.cursor;\n    }\n  }\n  getText(): string {\n    let node = this.head.next;\n    let result = '';\n    while (node !== this.tail) {\n      result += node.char;\n      node = node.next;\n    }\n    return result;\n  }\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": ["text-editor", "doubly-linked-list", "data-structures"],
+		"estimatedTime": 30,
+		"resources": []
+	},
+	{
+		"question": "How can you implement an autocomplete system using Tries? Provide a TypeScript implementation.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "An autocomplete system can efficiently be implemented using a Trie to store all possible words. When a prefix is entered, the system searches the Trie to find all words that start with that prefix and returns them as suggestions."
+			},
+			{
+				"type": "code",
+				"content": "class TrieNode {\n  children: Map<string, TrieNode>;\n  isEndOfWord: boolean;\n  constructor() {\n    this.children = new Map();\n    this.isEndOfWord = false;\n  }\n}\nclass Trie {\n  root: TrieNode;\n  constructor() {\n    this.root = new TrieNode();\n  }\n  insert(word: string): void {\n    let node = this.root;\n    for (const char of word) {\n      if (!node.children.has(char)) {\n        node.children.set(char, new TrieNode());\n      }\n      node = node.children.get(char);\n    }\n    node.isEndOfWord = true;\n  }\n  autoComplete(prefix: string): string[] {\n    let node = this.root;\n    for (const char of prefix) {\n      if (!node.children.has(char)) return [];\n      node = node.children.get(char);\n    }\n    return this._findWords(node, prefix);\n  }\n  private _findWords(node: TrieNode, prefix: string): string[] {\n    const words: string[] = [];\n    if (node.isEndOfWord) words.push(prefix);\n    node.children.forEach((childNode, char) => {\n      words.push(...this._findWords(childNode, prefix + char));\n    });\n    return words;\n  }\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": ["autocomplete", "trie", "prefix-tree"],
+		"estimatedTime": 30,
+		"resources": ["https://en.wikipedia.org/wiki/Trie"]
+	},
+	{
+		"question": "Implement the topological sort algorithm for a directed acyclic graph (DAG) in TypeScript.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Topological sorting of a directed graph is a linear ordering of its vertices such that for every directed edge UV from vertex U to vertex V, U comes before V in the ordering. It can only be performed on a DAG."
+			},
+			{
+				"type": "code",
+				"content": "class Graph {\n  vertices: number;\n  adjList: Map<number, number[]>;\n  constructor(vertices: number) {\n    this.vertices = vertices;\n    this.adjList = new Map();\n    for (let i = 0; i < vertices; i++) {\n      this.adjList.set(i, []);\n    }\n  }\n  addEdge(v: number, w: number): void {\n    this.adjList.get(v)?.push(w);\n  }\n}\nfunction topologicalSort(graph: Graph): number[] {\n  const visited = new Array(graph.vertices).fill(false);\n  const stack: number[] = [];\n  function sortUtil(v: number) {\n    visited[v] = true;\n    graph.adjList.get(v)?.forEach((n) => {\n      if (!visited[n]) sortUtil(n);\n    });\n    stack.push(v);\n  }\n  for (let i = 0; i < graph.vertices; i++) {\n    if (!visited[i]) sortUtil(i);\n  }\n  return stack.reverse();\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": ["topological-sort", "dag", "graphs"],
+		"estimatedTime": 20,
+		"resources": ["https://en.wikipedia.org/wiki/Topological_sorting"]
+	},
+	{
+		"question": "Write a TypeScript function to compute the Longest Common Subsequence (LCS) between two strings.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The Longest Common Subsequence (LCS) problem is a classic computer science problem, which is the problem of finding the longest subsequence common to all sequences in a set of sequences (often just two sequences)."
+			},
+			{
+				"type": "code",
+				"content": "function lcs(X: string, Y: string): number {\n  const m = X.length;\n  const n = Y.length;\n  const L: number[][] = Array.from({ length: m + 1 }, () => new Array(n + 1));\n  for (let i = 0; i <= m; i++) {\n    for (let j = 0; j <= n; j++) {\n      if (i === 0 || j === 0) {\n        L[i][j] = 0;\n      } else if (X[i - 1] === Y[j - 1]) {\n        L[i][j] = L[i - 1][j - 1] + 1;\n      } else {\n        L[i][j] = Math.max(L[i - 1][j], L[i][j - 1]);\n      }\n    }\n  }\n  return L[m][n];\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": ["dynamic-programming", "lcs", "string"],
+		"estimatedTime": 20,
+		"resources": [
+			"https://en.wikipedia.org/wiki/Longest_common_subsequence_problem"
+		]
+	},
+	{
+		"question": "How would you implement an algorithm to generate all possible valid IP addresses from a given string? Provide a TypeScript solution.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Given a string containing only digits, the task is to restore it by returning all possible valid IP address combinations. A valid IP address consists of exactly four integers, each integer is between 0 and 255, separated by single dots."
+			},
+			{
+				"type": "code",
+				"content": "function restoreIpAddresses(s: string): string[] {\n  const res: string[] = [];\n  function backtrack(start: number, path: string[], dots: number) {\n    if (dots === 4 && start === s.length) {\n      res.push(path.join('.'));\n      return;\n    }\n    if (dots > 4) return;\n    for (let i = 1; i <= 3; i++) {\n      if (start + i > s.length) break;\n      const segment = s.substring(start, start + i);\n      if (segment.length > 1 && segment.startsWith('0') || parseInt(segment) > 255) continue;\n      path.push(segment);\n      backtrack(start + i, path, dots + 1);\n      path.pop();\n    }\n  }\n  backtrack(0, [], 0);\n  return res;\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": ["backtracking", "ip-addresses", "combinatorial"],
+		"estimatedTime": 30,
+		"resources": ["https://en.wikipedia.org/wiki/IP_address"]
+	},
+	{
+		"question": "Implement a function in TypeScript to serialize and deserialize a binary tree.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file, a memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment."
+			},
+			{
+				"type": "code",
+				"content": "class TreeNode {\n  value: number;\n  left: TreeNode | null;\n  right: TreeNode | null;\n  constructor(value: number) {\n    this.value = value;\n    this.left = null;\n    this.right = null;\n  }\n}\nfunction serialize(root: TreeNode | null): string {\n  const res: string[] = [];\n  function dfs(node: TreeNode | null) {\n    if (!node) {\n      res.push('null');\n      return;\n    }\n    res.push(node.value.toString());\n    dfs(node.left);\n    dfs(node.right);\n  }\n  dfs(root);\n  return res.join(',');\n}\nfunction deserialize(data: string): TreeNode | null {\n  let list = data.split(',');\n  function build(): TreeNode | null {\n    const val = list.shift();\n    if (val === 'null') return null;\n    const node = new TreeNode(parseInt(val));\n    node.left = build();\n    node.right = build();\n    return node;\n  }\n  return build();\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": ["serialization", "trees", "data-structures"],
+		"estimatedTime": 25,
+		"resources": ["https://en.wikipedia.org/wiki/Serialization"]
+	},
+	{
+		"question": "Design a data structure that supports the following operations: insert, delete, getRandom in constant time. Provide a TypeScript implementation.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "The data structure can be implemented using a combination of an array and a hash map. The array allows getRandom to be implemented in constant time by randomly selecting an index, while the hash map stores array indices for constant time insertions and deletions."
+			},
+			{
+				"type": "code",
+				"content": "class RandomizedSet {\n  map: Map<number, number>;\n  arr: number[];\n  constructor() {\n    this.map = new Map();\n    this.arr = [];\n  }\n  insert(val: number): boolean {\n    if (this.map.has(val)) return false;\n    this.map.set(val, this.arr.length);\n    this.arr.push(val);\n    return true;\n  }\n  delete(val: number): boolean {\n    if (!this.map.has(val)) return false;\n    const index = this.map.get(val)!;\n    const lastElement = this.arr.pop()!;\n    if (index < this.arr.length) {\n      this.arr[index] = lastElement;\n      this.map.set(lastElement, index);\n    }\n    this.map.delete(val);\n    return true;\n  }\n  getRandom(): number {\n    const randomIndex = Math.floor(Math.random() * this.arr.length);\n    return this.arr[randomIndex];\n  }\n}"
+			}
+		],
+		"difficulty": 2,
+		"practicality": 2,
+		"tags": ["data-structures", "constant-time-operations", "design"],
+		"estimatedTime": 25,
+		"resources": []
+	}
+]

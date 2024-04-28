@@ -10,6 +10,7 @@ import reactLogo from '../../../public/assets/logos/react.png';
 import nodeLogo from '../../../public/assets/logos/node.png';
 import expressLogo from '../../../public/assets/logos/express.png';
 import mongoLogo from '../../../public/assets/logos/mongodb.png';
+import dsaLogo from '../../../public/assets/logos/dsa.png';
 
 const technologies = [
 	{
@@ -59,6 +60,14 @@ const technologies = [
 		href: '/mongo',
 		description:
 			'MongoDB is a leading NoSQL database, favored for its scalability and flexibility. It stores data in JSON-like documents, facilitating a rich, dynamic schema.',
+	},
+	{
+		title: 'Data Structures and Algorithms',
+		src: dsaLogo,
+		alt: 'DSA Logo',
+		href: '/dsa',
+		description:
+			'Data Structures and Algorithms (DSA) are fundamental concepts in computer science, essential for efficient problem-solving and software development. They encompass methods of organizing data and step-by-step procedures for processing it, optimizing computational tasks.',
 	},
 ] as const;
 

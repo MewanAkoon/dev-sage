@@ -6,6 +6,7 @@ import reactData from '../database/react.json';
 import nodeData from '../database/node.json';
 import expressData from '../database/express.json';
 import mongoData from '../database/mongo.json';
+import dsaData from '../database/dsa.json';
 import { notFound } from 'next/navigation';
 
 type DataConfig = {
@@ -37,6 +38,10 @@ const config: DataConfig = [
 	{
 		id: 'express',
 		data: JSON.parse(JSON.stringify(expressData)),
+	},
+	{
+		id: 'dsa',
+		data: JSON.parse(JSON.stringify(dsaData)),
 	},
 	// Add more configurations for other JSON files if needed
 ];
