@@ -1,0 +1,46 @@
+## Stacks
+
+- **Definition**:
+
+  - A stack is a linear data structure that follows the Last In, First Out (LIFO) principle.
+  - Operations are performed from one end, referred to as the top of the stack.
+
+- **Operations**:
+
+  - **Push**: Adds an item to the top of the stack. Complexity: O(1).
+  - **Pop**: Removes the top item from the stack and returns it. Complexity: O(1).
+  - **Peek** or **Top**: Returns the top element without removing it. Complexity: O(1).
+
+- **Applications**:
+
+  - Undo mechanisms in text editors.
+  - Backtracking paths in maze solving.
+  - Syntax parsing in compilers.
+  - Supporting function calls and returns in programming languages.
+
+--- 
+
+```typescript
+class Stack<T = any> {
+	constructor(private items: T[] = []) {}
+
+	get length(): number {
+		return this.items.length;
+	}
+
+	// Adds the value onto the end of the stack
+	push(item: T): void {
+		this.items.push(item);
+	}
+
+	// Removes and returns the value at the end of the stack
+	pop(): T | undefined {
+		return this.items.pop();
+	}
+
+	// Returns the value at the end of the stack
+	peek(): T | undefined {
+		return this.items[this.length - 1];
+	}
+}
+```

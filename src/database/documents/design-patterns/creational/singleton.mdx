@@ -1,0 +1,49 @@
+# Singleton Pattern Example: ConfigurationManager
+
+This example demonstrates the Singleton Pattern with a `ConfigurationManager` class. The Singleton Pattern ensures that only one instance of `ConfigurationManager` can exist, providing a single, globally accessible point of access to the configuration settings. This pattern is useful for managing resources such as configuration settings where consistency across an application is critical.
+
+## Class: ConfigurationManager
+
+Represents a singleton class for managing configuration settings.
+
+```typescript
+class ConfigurationManager {
+	private static instance: ConfigurationManager;
+	private settings: Map<string, string> = new Map();
+
+	// Private constructor to prevent external instantiation
+	private constructor() {}
+
+	// Static method that controls access to the singleton instance
+	public static getInstance(): ConfigurationManager {
+		if (!ConfigurationManager.instance) {
+			ConfigurationManager.instance = new ConfigurationManager();
+		}
+		return ConfigurationManager.instance;
+	}
+
+	// Method to get a configuration value
+	public getSetting(key: string): string | undefined {
+		return this.settings.get(key);
+	}
+
+	// Method to set a configuration value
+	public setSetting(key: string, value: string): void {
+		this.settings.set(key, value);
+	}
+}
+```
+
+## Usage
+
+Demonstrating the use of the singleton instance to manage configuration settings.
+
+```typescript
+const configManager = ConfigurationManager.getInstance(); // Retrieves the singleton instance
+configManager.setSetting('theme', 'dark'); // Sets a setting on the singleton instance
+
+const anotherConfigManager = ConfigurationManager.getInstance(); // Retrieves the same instance
+console.log(anotherConfigManager.getSetting('theme')); // Outputs: dark
+```
+
+This example illustrates that no matter how many times `ConfigurationManager.getInstance()` is called, the same instance is returned, ensuring that all parts of the application can access and modify the same set of configuration settings consistently.

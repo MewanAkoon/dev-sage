@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
 }
 
-const titlesToUppercase = ['oop', 'dsa'];
+const titlesToUppercase = ['oop', 'dsa', 'solid', 'rest', 'sdm', 'bst'];
 
 export const getTextCase = (title: string) => {
 	return titlesToUppercase.includes(title) ? 'uppercase' : 'capitalize';

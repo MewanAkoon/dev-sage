@@ -1,0 +1,86 @@
+# MongoDB Guide
+
+MongoDB stands out as a powerful, document-oriented NoSQL database known for its versatility, scalability, and efficiency. It excels in handling vast amounts of data, providing a flexible schema for easy data integration and evolution. This guide encompasses essential MongoDB concepts, features, and advanced functionalities, tailored to enhance your understanding before an interview.
+
+## BSON Format
+
+MongoDB utilizes BSON (Binary JSON) for storing data. BSON is a binary-encoded serialization of JSON-like documents, extending JSON with additional data types. This format is optimized for efficient data size management and speed in encoding and decoding processes.
+
+## Document-Oriented Storage
+
+Documents in MongoDB are stored in a flexible, JSON-like format, allowing each document to possess different fields. This flexibility facilitates a more natural and productive data integration process.
+
+## Collections
+
+Documents are organized into collections, analogous to relational database tables but without enforced schema constraints. This approach enables documents within a collection to vary in their fields and structures.
+
+## Data Modeling
+
+MongoDB's dynamic schemas allow for the easy adjustment and redefinition of data structures as required. Data modeling can leverage embedded and reference models:
+
+- **Embedded Data Models**: These models embed related data within a single document, optimizing for read performance and atomicity.
+- **Reference Data Models**: These models link documents from different collections, suitable for more complex datasets or when embedding would lead to data duplication.
+
+## Replication
+
+Replication in MongoDB is managed through replica sets, ensuring high availability by duplicating data across multiple database servers. This redundancy is crucial for protecting against single server failures.
+
+- **Primary and Secondary Replication**: In a replica set, one server acts as the primary node handling all write operations, while the rest serve as secondary nodes, replicating the primary's data and standing by for failover.
+
+## Sharding
+
+MongoDB employs sharding for horizontal scalability, distributing data across multiple servers. Sharding involves:
+
+- **Shard Key**: A shard key is a field used to distribute documents across shards, facilitating efficient data retrieval and balancing.
+
+## Indexes
+
+Indexes are vital for enhancing search performance, allowing MongoDB to execute queries without scanning each document in a collection.
+
+## Transactions
+
+Supporting multi-document transactions, MongoDB ensures atomic operations can be performed across several documents, achieving ACID (Atomicity, Consistency, Isolation and Durability) compliance similar to relational databases.
+
+## Populate
+
+The `populate()` method enables document references in other collections, supporting document relationships and automatic replacement of specified paths with documents from other collections.
+
+## Scalability
+
+- **Horizontal Scaling (Sharding)**: Distributes data across multiple servers to handle large datasets and high throughput beyond a single server's capacity.
+- **Vertical Scaling**: Involves adding more resources (e.g., CPU, RAM) to a single server to improve its performance.
+
+## Capped Collections
+
+Capped collections are fixed-size collections that support high-throughput operations for scenarios requiring FIFO (First-In-First-Out) data management, such as logging.
+
+## GridFS
+
+For storing and retrieving large files (e.g., images, videos), MongoDB uses GridFS, splitting files into smaller chunks and storing them as separate documents.
+
+## Aggregation
+
+MongoDB's aggregation framework processes data records and returns computed results, supporting filtering, grouping, and sorting of document data for advanced data analysis.
+
+- `$match`: Filters the documents to pass only those that match the specified conditions to the next pipeline stage.
+- `$group`: Groups documents by some specified expression and outputs to the next stage a document for each distinct grouping. The output documents contain an `_id` field which is the distinct group by key.
+- `$sort`: Sorts all input documents and returns them to the pipeline in sorted order.
+- `$project`: Passes along the documents with the requested fields to the next stage in the pipeline. The specified fields can be existing fields from the input documents or newly computed fields.
+- `$lookup`: Used to perform a join of two collections. It allows you to bring together documents from a separate collection into the pipeline, effectively performing a left outer join to the joined collection.
+- `$limit`: Limits the number of documents passed to the next stage in the pipeline.
+- `$skip`: Skips over the specified number of documents that pass into the stage and passes the remaining documents to the next stage in the pipeline.
+- `$unwind`: Deconstructs an array field from the input documents to output a document for each element.
+
+## Backup and Restoring
+
+Ensuring data integrity involves regular backups. MongoDB provides utilities for backing up and restoring databases, safeguarding against data loss.
+
+- **Backup with `mongodump`**
+  mongodump is a utility for creating a binary export of the contents of a MongoDB database.
+
+- **Restore with `mongorestore`**
+  mongorestore is a utility for restoring a binary backup created by mongodump.
+
+## Profiler
+
+The MongoDB Profiler helps in monitoring database performance, identifying slow queries, and optimizing them for better efficiency.

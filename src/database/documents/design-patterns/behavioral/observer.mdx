@@ -1,0 +1,98 @@
+# Observer Pattern Example: Weather Monitoring System
+
+This TypeScript code demonstrates the Observer Pattern applied to a weather monitoring system. The `WeatherStation` acts as the Subject that maintains a list of Observers, which are displays updating temperature readings. When the `WeatherStation`'s temperature changes, it notifies all attached Observers to update their displays accordingly. This pattern allows for flexible design where Observers can subscribe or unsubscribe from the Subject, enabling dynamic addition or removal of displays without altering the `WeatherStation`'s code. The Observer Pattern decouples the state object from its viewers, promoting loose coupling and enhancing system maintainability and extensibility.
+
+## Interface: Observer
+
+Defines the method for receiving updates from the Subject.
+
+```typescript
+interface Observer {
+	update(temperature: number): void; // Method called by the Subject to update Observers.
+}
+```
+
+## Interface: Subject
+
+Defines methods for managing Observers.
+
+```typescript
+interface Subject {
+	attach(observer: Observer): void; // Attach an Observer to the Subject.
+	detach(observer: Observer): void; // Detach an Observer from the Subject.
+	notify(): void; // Notify all attached Observers of a change.
+}
+```
+
+## Concrete Subject: WeatherStation
+
+Implements the `Subject` interface, managing temperature updates and Observer notifications.
+
+```typescript
+class WeatherStation implements Subject {
+	private observers: Observer[] = []; // List to keep track of Observers.
+	private temperature: number; // Internal state, temperature in this case.
+
+	attach(observer: Observer): void {
+		const isExist = this.observers.includes(observer);
+		if (isExist) {
+			return console.log('Observer has already been attached.');
+		}
+		this.observers.push(observer); // Adding an Observer if not already added.
+	}
+
+	detach(observer: Observer): void {
+		const observerIndex = this.observers.indexOf(observer);
+		if (observerIndex === -1) {
+			return console.log('Observer not found.');
+		}
+		this.observers.splice(observerIndex, 1); // Removing the Observer.
+	}
+
+	notify(): void {
+		for (const observer of this.observers) {
+			observer.update(this.temperature); // Notifying each Observer of the temperature change.
+		}
+	}
+
+	setTemperature(temp: number): void {
+		console.log(`WeatherStation: New Temperature Measurement: ${temp}`);
+		this.temperature = temp;
+		this.notify(); // Trigger notification to Observers.
+	}
+}
+```
+
+## Concrete Observer: TemperatureDisplay
+
+Implements the `Observer` interface, reacting to temperature updates.
+
+```typescript
+class TemperatureDisplay implements Observer {
+	private subject: Subject; // Reference to the Subject.
+
+	constructor(weatherStation: Subject) {
+		this.subject = weatherStation;
+		this.subject.attach(this); // Attaching itself to the Subject.
+	}
+
+	update(temperature: number): void {
+		// Logic to update the display based on the temperature.
+		console.log(
+			`TemperatureDisplay: I need to update my display to ${temperature}.`
+		);
+	}
+}
+```
+
+## Demonstration
+
+Example usage of the Observer Pattern with a WeatherStation and TemperatureDisplay.
+
+```typescript
+const weatherStation = new WeatherStation();
+const tempDisplay = new TemperatureDisplay(weatherStation);
+
+weatherStation.setTemperature(35); // Sets new temperature, causing Observers to update.
+weatherStation.setTemperature(36); // Sets another new temperature, triggering updates again.
+```

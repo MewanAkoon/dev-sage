@@ -1,0 +1,71 @@
+# Docker Notes
+
+Docker is a powerful platform for developing, shipping, and running applications. By using Docker, you can quickly deploy and scale applications into any environment and know your code will run.
+
+## Key Components
+
+### Dockerfile
+
+A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. Using `docker build` users can create an automated build that executes several command-line instructions in succession.
+
+### docker-compose.yml
+
+The `docker-compose.yml` file is a YAML file defining services, networks, and volumes for a Docker application. With a single command, you can create and start all the services defined in this file.
+
+### .dockerignore
+
+Similar to `.gitignore`, the `.dockerignore` file allows you to exclude files and directories from the context sent to the Docker daemon during builds. This can improve the build's performance by excluding non-relevant files.
+
+## Common Commands
+
+### `docker-compose up -d --build`
+
+- **`-d`**: Detached mode. Run containers in the background.
+- **`--build`**: Build images before starting containers.
+
+```bash
+docker-compose up -d --build
+```
+
+This command builds, (re)creates, starts, and attaches to containers for a service.
+
+### `docker-compose down`
+
+Stops containers and removes containers, networks, volumes, and images created by `up`.
+
+- **`-v`**: Remove named volumes declared in the `volumes` section of the Compose file and anonymous volumes attached to containers.
+
+```bash
+docker-compose down
+```
+
+### `docker system prune -a -f`
+
+Removes all unused containers, networks, images (both dangling and unreferenced), and optionally, volumes.
+
+- **`-a`**: Remove all unused images not just dangling ones.
+- **`-f`**: Force the removal without confirmation.
+
+```bash
+docker system prune -a -f
+```
+
+### `docker rm <container_name> -fv`
+
+Removes one or more containers.
+
+- **`-f`**: Force the removal of a running container (uses SIGKILL).
+- **`-v`**: Remove the volumes associated with the container.
+
+```bash
+docker rm <container_name> -fv
+```
+
+## Best Practices
+
+- **Dockerfile Optimization**: Keep your Dockerfiles clean and efficient by using multi-stage builds, ordering instructions to leverage Docker's build cache, and minimizing the number of layers.
+- **Security**: Use official or verified images as the basis for your containers, and regularly scan your images for vulnerabilities.
+
+- **Resource Limits**: Always set resource limits in your container definitions to prevent any service from consuming too much of the host's resources.
+
+- **Logging and Monitoring**: Implement logging and monitoring for your containers to keep track of their health and performance.

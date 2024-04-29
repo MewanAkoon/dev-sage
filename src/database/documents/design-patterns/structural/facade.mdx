@@ -1,0 +1,99 @@
+# Facade Pattern Example: Smart Home System
+
+This TypeScript code illustrates the use of the Facade Pattern in simplifying interactions with a complex smart home system comprising multiple subsystems: Lighting, Climate Control, and Security. The core problem addressed here is the complexity of managing diverse subsystems, each with its own set of operations. The Facade Pattern is employed to provide a simplified interface (SmartHomeFacade) to these subsystems, making it easier for the end-user to perform common tasks like "leaving home" or "coming home" without dealing with the intricacies of each subsystem.
+
+## Subsystems
+
+### Lighting System
+
+Controls all lighting operations within the home.
+
+```typescript
+class LightingSystem {
+	turnOffAllLights() {
+		console.log('All lights turned off.');
+	}
+
+	turnOnHomeLights() {
+		console.log('Home lights turned on.');
+	}
+}
+```
+
+### Climate Control System
+
+Manages the temperature settings within the home.
+
+```typescript
+class ClimateControlSystem {
+	setTemperature(temp: number) {
+		console.log(`Temperature set to ${temp} degrees.`);
+	}
+}
+```
+
+### Security System
+
+Handles the arming and disarming of the home's security.
+
+```typescript
+class SecuritySystem {
+	armSecurity() {
+		console.log('Security system armed.');
+	}
+
+	disarmSecurity() {
+		console.log('Security system disarmed.');
+	}
+}
+```
+
+## Facade: SmartHomeFacade
+
+Simplifies interactions with the subsystems by providing a unified interface for common tasks.
+
+```typescript
+class SmartHomeFacade {
+	constructor(
+		private lights: LightingSystem,
+		private climate: ClimateControlSystem,
+		private security: SecuritySystem
+	) {}
+
+	leavingHome() {
+		this.lights.turnOffAllLights();
+		this.climate.setTemperature(18); // Set an energy-saving temperature.
+		this.security.armSecurity();
+		console.log('Leaving home mode activated.');
+	}
+
+	comingHome() {
+		this.lights.turnOnHomeLights();
+		this.climate.setTemperature(22); // Set a comfortable temperature.
+		this.security.disarmSecurity();
+		console.log('Welcome home mode activated.');
+	}
+}
+```
+
+## Usage
+
+Demonstration of using the facade to interact with the smart home system.
+
+```typescript
+const lights = new LightingSystem();
+const climate = new ClimateControlSystem();
+const security = new SecuritySystem();
+
+const smartHome = new SmartHomeFacade(lights, climate, security);
+
+// Simulating the user leaving the house
+smartHome.leavingHome();
+
+// Simulating the user coming back home
+smartHome.comingHome();
+```
+
+---
+
+This Markdown documentation provides a comprehensive guide on how to implement and use the Facade Pattern to manage a smart home system effectively, illustrating the benefits of encapsulating complex subsystem interactions within a single, simplified interface.

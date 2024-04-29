@@ -1,0 +1,88 @@
+# Builder Pattern Example: Custom PC Construction
+
+This example demonstrates the Builder Pattern, which is used for constructing complex objects, like custom PCs, step by step. The Builder Pattern separates the construction of a complex object from its representation, allowing the same construction process to create various representations. It enables a high degree of control over the construction process and simplifies the creation of objects with many possible configurations.
+
+## Product Class: PC
+
+Represents the complex object being built.
+
+```typescript
+class PC {
+	constructor(
+		public processor: string = '',
+		public ram: string = '',
+		public storage: string = '',
+		public graphicsCard: string = ''
+	) {}
+
+	describe(): void {
+		console.log(
+			`PC Configuration:\nProcessor: ${this.processor}\nRAM: ${this.ram}\nStorage: ${this.storage}\nGraphics Card: ${this.graphicsCard}`
+		);
+	}
+}
+```
+
+## Builder Interface: PCBuilder
+
+Outlines the steps involved in building the PC.
+
+```typescript
+interface PCBuilder {
+	setProcessor(value: string): this;
+	setRAM(value: string): this;
+	setStorage(value: string): this;
+	setGraphicsCard(value: string): this;
+	build(): PC;
+}
+```
+
+## Concrete Builder: GamingPCBuilder
+
+Implements the builder interface for a specific type of PC, in this case, a Gaming PC.
+
+```typescript
+class GamingPCBuilder implements PCBuilder {
+	private pc = new PC();
+
+	setProcessor(value: string): this {
+		this.pc.processor = value;
+		return this;
+	}
+
+	setRAM(value: string): this {
+		this.pc.ram = value;
+		return this;
+	}
+
+	setStorage(value: string): this {
+		this.pc.storage = value;
+		return this;
+	}
+
+	setGraphicsCard(value: string): this {
+		this.pc.graphicsCard = value;
+		return this;
+	}
+
+	build(): PC {
+		return this.pc;
+	}
+}
+```
+
+## Usage
+
+Example of using the GamingPCBuilder to create a custom gaming PC.
+
+```typescript
+const builder = new GamingPCBuilder();
+const myGamingPC = builder
+	.setProcessor('Intel Core i9')
+	.setRAM('32GB')
+	.setStorage('1TB SSD')
+	.setGraphicsCard('NVIDIA RTX 3080')
+	.build();
+
+myGamingPC.describe(); // Outputs the configuration details of the built PC
+```

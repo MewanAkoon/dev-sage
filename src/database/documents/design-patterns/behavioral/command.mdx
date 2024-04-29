@@ -1,0 +1,176 @@
+# Command Pattern Example: Document Editing Application
+
+This example demonstrates the Command Pattern in a document editing application. The Command Pattern encapsulates document editing operations (add, remove, and modify text) within command objects. This allows for executing and undoing editing actions, showcasing the pattern's ability to handle complex operation sequences and support undoable operations in a way that decouples the action execution from the action requester.
+
+## Interface: Command
+
+Defines the basic interface for executing and undoing commands.
+
+```typescript
+interface Command {
+	execute(): void;
+	undo(): void;
+}
+```
+
+## Receiver Class: TextDocument
+
+Handles the direct manipulation of the text content.
+
+```typescript
+class TextDocument {
+	private content: string = '';
+
+	add(text: string): void {
+		this.content += text;
+	}
+
+	remove(text: string): void {
+		this.content = this.content.replace(text, '');
+	}
+
+	display(): void {
+		console.log(this.content);
+	}
+
+	getContent(): string {
+		return this.content;
+	}
+
+	setContent(content: string): void {
+		this.content = content;
+	}
+}
+```
+
+## Concrete Command Classes
+
+### AddTextCommand
+
+Encapsulates the action of adding text to the document.
+
+```typescript
+class AddTextCommand implements Command {
+	private document: TextDocument;
+	private text: string;
+
+	constructor(document: TextDocument, text: string) {
+		this.document = document;
+		this.text = text;
+	}
+
+	execute(): void {
+		this.document.add(this.text);
+	}
+
+	undo(): void {
+		this.document.remove(this.text);
+	}
+}
+```
+
+### RemoveTextCommand
+
+Encapsulates the action of removing text from the document.
+
+```typescript
+class RemoveTextCommand implements Command {
+	private document: TextDocument;
+	private text: string;
+	private previousContent: string;
+
+	constructor(document: TextDocument, text: string) {
+		this.document = document;
+		this.text = text;
+		this.previousContent = '';
+	}
+
+	execute(): void {
+		this.previousContent = this.document.getContent();
+		this.document.remove(this.text);
+	}
+
+	undo(): void {
+		this.document.setContent(this.previousContent);
+	}
+}
+```
+
+### ModifyTextCommand
+
+Encapsulates a more complex operation of modifying the entire text content.
+
+```typescript
+class ModifyTextCommand implements Command {
+	private document: TextDocument;
+	private newText: string;
+	private previousContent: string;
+
+	constructor(document: TextDocument, newText: string) {
+		this.document = document;
+		this.newText = newText;
+		this.previousContent = '';
+	}
+
+	execute(): void {
+		this.previousContent = this.document.getContent();
+		this.document.setContent(this.newText);
+	}
+
+	undo(): void {
+		this.document.setContent(this.previousContent);
+	}
+}
+```
+
+## Invoker Class: Editor
+
+Manages commands and maintains a stack to support undo operations.
+
+```typescript
+class Editor {
+	private undoStack: Command[] = [];
+
+	executeCommand(command: Command): void {
+		command.execute();
+		this.undoStack.push(command);
+	}
+
+	undo(): void {
+		if (this.undoStack.length > 0) {
+			const command = this.undoStack.pop();
+			if (command) command.undo();
+		}
+	}
+}
+```
+
+## Example Usage
+
+Demonstrates using the Editor with various commands.
+
+```typescript
+const doc = new TextDocument();
+const editor = new Editor();
+
+const addTextCommand = new AddTextCommand(doc, 'Hello, World!');
+editor.executeCommand(addTextCommand);
+doc.display(); // Output: Hello, World!
+
+const removeTextCommand = new RemoveTextCommand(doc, 'World!');
+editor.executeCommand(removeTextCommand);
+doc.display(); // Output: Hello,
+
+const modifyTextCommand = new ModifyTextCommand(doc, 'Modified content.');
+editor.executeCommand(modifyTextCommand);
+doc.display(); // Output: Modified content.
+
+editor.undo(); // Undo modify
+doc.display(); // Output: Hello,
+
+editor.undo(); // Undo remove
+doc.display(); // Output: Hello, World!
+
+editor.undo(); // Undo add
+doc.display(); // Output: (empty)
+```

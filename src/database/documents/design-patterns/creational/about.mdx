@@ -1,0 +1,53 @@
+# Creational Design Patterns
+
+Creational design patterns are focused on mechanisms of object creation such that objects are created in a manner suitable to the situation. These patterns help in making a system independent of how its objects are created, composed, and represented.
+
+## Introduction
+
+Creational patterns encapsulate knowledge about which concrete classes the system uses and hides how instances of these classes are created and put together. This increases the system's flexibility in deciding which objects need to be created for a given use case.
+
+## Patterns
+
+### Builder
+
+The Builder pattern separates the construction of a complex object from its representation, allowing the same construction process to create different representations.
+
+- **Intent**: Separate the construction of a complex object from its representation to allow the same construction process to create various representations.
+- **Applicability**: Use when the algorithm for creating a complex object should be independent of the parts that make up the object and how they're assembled.
+- **Example**: Creating a custom PC with various configurations for processor, RAM, storage, and graphics card, using a `GamingPCBuilder`.
+
+### Constructor
+
+The Constructor pattern is used to initialize objects in a controlled manner with necessary parameters.
+
+- **Intent**: Define a blueprint for creating objects where each instance carries its own state and behavior.
+- **Applicability**: Useful in situations where multiple objects of the same class, each with specific settings, are needed.
+- **Example**: Instantiating multiple `Task` objects each with its own title, description, and completion status in a task management system.
+
+### Factory
+
+The Factory pattern defines an interface for creating an object, but lets subclasses decide which class to instantiate.
+
+- **Intent**: Define an interface for creating an object, but let subclasses decide which class to instantiate, deferring instantiation to subclasses.
+- **Applicability**: Use when a class wants its subclasses to specify the objects it creates without specifying their concrete classes.
+- **Example**: A `ButtonFactory` creates UI buttons specific to different operating systems like iOS and Android without binding to concrete button classes.
+
+### Prototype
+
+The Prototype pattern is used when the types of objects to create are determined by a prototypical instance, which is cloned to produce new objects.
+
+- **Intent**: Use a prototype instance to specify the kinds of objects to create, and create new objects by copying this prototype.
+- **Applicability**: Applicable when object creation is expensive or complicated, and it is more convenient to copy an existing object.
+- **Example**: Cloning `Shape` objects to create new shapes with pre-configured settings.
+
+### Singleton
+
+The Singleton pattern ensures a class has only one instance and provides a global point of access to it.
+
+- **Intent**: Ensure a class only has one instance, and provide a global point of access to it.
+- **Applicability**: Useful when exactly one instance of a class is needed to coordinate actions across the system.
+- **Example**: A `ConfigurationManager` class that manages global settings across an application.
+
+## Conclusion
+
+Creational design patterns are essential for coding flexible, reusable, and maintainable classes. They abstract the instantiation process, making a system more independent of how its objects are created and structured.

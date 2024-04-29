@@ -1,0 +1,123 @@
+## Queues
+
+- **Definition**:
+
+  - A queue is a linear data structure that follows the First In, First Out (FIFO) principle.
+  - Operations are performed from both ends, front and rear.
+
+- **Operations**:
+
+  - **Enqueue**: Adds an item to the rear of the queue. Complexity: O(1).
+  - **Enqueue (PriorityQueue)**: Adds an item to the queue based on its priority. Complexity: O(n), as items need to be iterated to find the correct insertion point.
+  - **Dequeue**: Removes an item from the front of the queue. Complexity: O(1).
+  - **Front**: Returns the front element without removing it. Complexity: O(1).
+  - **Rear**: Returns the rear element without removing it. Complexity: O(1).
+  - **IsEmpty**: Checks if the queue is empty. Complexity: O(1).
+
+- **Applications**:
+  - Handling of interrupts in real-time systems.
+  - Managing requests on a single shared resource, like a printer.
+  - Call center systems to hold people calling them in an order.
+  - Implementing scheduling algorithms in operating systems.
+
+---
+
+```typescript
+interface BaseQueue<T> {
+	get size(): number;
+	/** Removes and returns the item at the front of the queue */
+	dequeue(): T | undefined;
+	/** Returns the item at the front of the queue without removing it */
+	front(): T | undefined;
+	/** Returns the item at the rear of the queue */
+	rear(): T | undefined;
+	isEmpty(): boolean;
+}
+
+interface IQueue<T> extends BaseQueue<T> {
+	/** Adds an item to the queue rear */
+	enqueue(item: T): void;
+}
+
+interface IPriorityQueue<T> extends BaseQueue<T> {
+	/** Adds an item to the queue by it's priority */
+	enqueue(item: T, priority: number): void;
+}
+
+class Queue<T> implements IQueue<T> {
+	private storage: Record<number, T> = {};
+	private headIndex: number = 0;
+	private tailIndex: number = 0;
+
+	get size(): number {
+		return this.tailIndex - this.headIndex;
+	}
+
+	enqueue(item: T): void {
+		this.storage[this.tailIndex] = item;
+		this.tailIndex++;
+	}
+
+	dequeue(): T | undefined {
+		if (this.size === 0) return undefined;
+
+		const item = this.storage[this.headIndex];
+		delete this.storage[this.headIndex];
+		this.headIndex++;
+
+		return item;
+	}
+
+	front(): T | undefined {
+		return this.storage[this.headIndex];
+	}
+
+	rear(): T | undefined {
+		return this.storage[this.tailIndex - 1];
+	}
+
+	isEmpty(): boolean {
+		return this.size === 0;
+	}
+}
+
+class PriorityQueue<T = unknown> implements IPriorityQueue<T> {
+	private storage: Array<{ item: T; priority: number }> = [];
+
+	get size(): number {
+		return this.storage.length;
+	}
+
+	enqueue(item: T, priority: number): void {
+		const newItem = { item, priority };
+		let added = false;
+
+		for (let i = 0; i < this.size; i++) {
+			if (newItem.priority < this.storage[i].priority) {
+				this.storage.splice(i, 0, newItem);
+				added = true;
+				break;
+			}
+		}
+		if (!added) {
+			this.storage.push(newItem);
+		}
+	}
+
+	dequeue(): T | undefined {
+		return this.isEmpty() ? undefined : this.storage.shift()!.item;
+	}
+
+	front(): T | undefined {
+		return this.isEmpty() ? undefined : this.storage[0].item;
+	}
+
+	rear(): T | undefined {
+		return this.isEmpty() ? undefined : this.storage[this.size - 1].item;
+	}
+
+	isEmpty(): boolean {
+		return this.size === 0;
+	}
+}
+```

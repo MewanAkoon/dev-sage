@@ -1,0 +1,135 @@
+# Iterator Pattern Example: Playlist Iteration
+
+This TypeScript example demonstrates the use of the Iterator Pattern to navigate through a collection of songs in a playlist, either in forward or reverse order. The Iterator Pattern allows for sequential access to elements within a collection without exposing the collection's internal structure. The Playlist class represents the collection (Aggregate) of songs, providing methods to get an iterator based on the desired order of traversal. Concrete iterators, ForwardIterator and ReverseIterator, define specific strategies for iterating through the playlist. This implementation adheres to the Open/Closed Principle and enhances system flexibility.
+
+## Song Class
+
+Represents a music track with title, artist, and genre.
+
+```typescript
+class Song {
+	constructor(
+		public title: string, // Title of the song
+		public artist: string, // Artist of the song
+		public genre: string // Genre of the song
+	) {}
+}
+```
+
+## Interfaces
+
+### PlaylistIterator
+
+Defines methods for iterating over a playlist.
+
+```typescript
+interface PlaylistIterator {
+	next(): Song | null; // Retrieves the next song in the sequence
+	hasNext(): boolean; // Checks if there are more songs to iterate over
+}
+```
+
+### Aggregate
+
+Represents a collection that can provide an iterator.
+
+```typescript
+interface Aggregate {
+	getIterator(): PlaylistIterator; // Returns an iterator for the collection
+}
+```
+
+## Playlist Class
+
+Manages a collection of songs.
+
+```typescript
+class Playlist implements Aggregate {
+	constructor(private songs: Song[]) {} // Initializes the playlist with an array of songs
+
+	getIterator(order: 'forward' | 'reverse' = 'forward'): PlaylistIterator {
+		switch (order) {
+			case 'reverse':
+				return new ReverseIterator(this); // Provides reverse traversal
+			case 'forward':
+			default:
+				return new ForwardIterator(this); // Provides forward traversal
+		}
+	}
+
+	getSong(index: number): Song | null {
+		return this.songs[index] || null;
+	}
+
+	size(): number {
+		return this.songs.length;
+	}
+}
+```
+
+## Iterators
+
+### ForwardIterator
+
+For forward traversal of the playlist.
+
+```typescript
+class ForwardIterator implements PlaylistIterator {
+	constructor(private playlist: Playlist, private position = 0) {}
+
+	next(): Song | null {
+		return this.playlist.getSong(this.position++); // Moves forward in the playlist
+	}
+
+	hasNext(): boolean {
+		return this.position < this.playlist.size(); // Checks for remaining songs
+	}
+}
+```
+
+### ReverseIterator
+
+For reverse traversal of the playlist.
+
+```typescript
+class ReverseIterator implements PlaylistIterator {
+	constructor(
+		private playlist: Playlist,
+		private position = playlist.size() - 1 // Starts from the end of the playlist
+	) {}
+
+	next(): Song | null {
+		return this.playlist.getSong(this.position--); // Moves backward in the playlist
+	}
+
+	hasNext(): boolean {
+		return this.position >= 0; // Checks for remaining songs in reverse order
+	}
+}
+```
+
+## Usage Example
+
+Demonstrates both forward and reverse iteration through a playlist.
+
+```typescript
+const myPlaylist = new Playlist([
+	new Song('Yesterday', 'The Beatles', 'Rock'),
+	new Song('Bohemian Rhapsody', 'Queen', 'Rock'),
+	new Song('Smells Like Teen Spirit', 'Nirvana', 'Grunge'),
+]);
+
+// Forward iteration through the playlist
+const forwardIterator = myPlaylist.getIterator('forward');
+while (forwardIterator.hasNext()) {
+	const song = forwardIterator.next()!;
+	console.log(`Now Playing: ${song.title} by ${song.artist}`);
+}
+
+// Reverse iteration through the playlist
+const reverseIterator = myPlaylist.getIterator('reverse');
+while (reverseIterator.hasNext()) {
+	const song = reverseIterator.next()!;
+	console.log(`Now Playing: ${song.title} by ${song.artist}`);
+}
+```

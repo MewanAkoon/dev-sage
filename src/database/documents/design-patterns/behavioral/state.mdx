@@ -1,0 +1,116 @@
+# State Pattern Example: Document Editor
+
+This TypeScript code demonstrates the State Pattern applied in a document editor context, allowing the editor to switch between different states (Editing, Viewing, and Preview) dynamically. Each state implements the `EditorState` interface with methods for edit, view, and preview actions, encapsulating the behavior specific to each state. The `DocumentEditor` class, acting as the context, delegates calls to its current state. This design pattern enables the `DocumentEditor` to change its behavior based on its state, facilitating maintenance and extension by isolating state-specific behaviors in separate classes. It exemplifies how the State Pattern can simplify complex conditional logic that would otherwise be needed to handle state-dependent behavior.
+
+## Interface: EditorState
+
+Defines actions available in different editor states.
+
+```typescript
+interface EditorState {
+	edit(text: string): void; // Method to edit text
+	view(): void; // Method to view the document
+	preview(): void; // Method to preview the document
+}
+```
+
+## Concrete States
+
+### EditingState
+
+Represents the editing mode of the document editor.
+
+```typescript
+class EditingState implements EditorState {
+	edit(text: string) {
+		console.log(`Editing text: ${text}`);
+	}
+	view() {
+		console.log('Viewing is read-only in editing mode.');
+	}
+	preview() {
+		console.log('Previewing changes.');
+	}
+}
+```
+
+### ViewingState
+
+Represents the viewing mode of the document editor.
+
+```typescript
+class ViewingState implements EditorState {
+	edit(text: string) {
+		console.log('Editing is disabled in viewing mode.');
+	}
+	view() {
+		console.log('Viewing document...');
+	}
+	preview() {
+		console.log('Previewing is disabled in viewing mode.');
+	}
+}
+```
+
+### PreviewState
+
+Represents the preview mode of the document editor.
+
+```typescript
+class PreviewState implements EditorState {
+	edit(text: string) {
+		console.log('Editing is disabled in preview mode.');
+	}
+	view() {
+		console.log('Viewing is disabled in preview mode.');
+	}
+	preview() {
+		console.log('Previewing document...');
+	}
+}
+```
+
+## Context Class: DocumentEditor
+
+Maintains a reference to the current state and delegates state-specific actions to it.
+
+```typescript
+class DocumentEditor {
+	constructor(private state: EditorState = new ViewingState()) {}
+
+	setState(state: EditorState) {
+		this.state = state;
+	}
+
+	edit(text: string) {
+		this.state.edit(text);
+	}
+
+	view() {
+		this.state.view();
+	}
+
+	preview() {
+		this.state.preview();
+	}
+}
+```
+
+## Demonstration
+
+Example usage showing state changes and corresponding behavior in the document editor.
+
+```typescript
+const editor = new DocumentEditor();
+
+// Attempts to edit while in the default viewing state
+editor.edit('Hello, World!'); // Output: Editing is disabled in viewing mode.
+
+// Switches to editing state and edits the document
+editor.setState(new EditingState());
+editor.edit('Hello, World!'); // Output: Editing text: Hello, World!
+
+// Switches to preview state and previews the document
+editor.setState(new PreviewState());
+editor.preview(); // Output: Previewing document...
+```

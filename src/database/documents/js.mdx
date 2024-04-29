@@ -1,0 +1,76 @@
+# JavaScript Concepts Guide
+
+JavaScript is a versatile and powerful programming language used in web development, known for its dynamic and asynchronous capabilities. Understanding its core concepts is crucial for both front-end and back-end development.
+
+## JavaScript Engine
+
+- **Chrome**: V8
+- **Firefox**: SpiderMonkey
+- **Explorer**: Chakra
+
+### Components
+
+- **Memory Heap**: Where memory allocation happens. Memory leaks occur here when memory is not properly managed, leading to a shortage of available memory space.
+- **Call Stack**: Executes code in a LIFO (Last In, First Out) manner. Functions called by the script are pushed to the stack and popped out once they are executed.
+
+## Execution Characteristics
+
+- **Single-Threaded**: JavaScript uses a single call stack, simplifying the execution model and avoiding complex scenarios like deadlocks, common in multithreaded environments.
+
+- **Synchronous Execution**: By default, JavaScript code is executed line by line, with each statement waiting for the previous one to finish before executing.
+
+- **Asynchronous Execution**: Allows JavaScript to perform operations like HTTP requests without blocking subsequent operations. This is achieved with callbacks, promises, and async/await.
+
+## JavaScript Runtime Environment (JRE)
+
+To support asynchronous execution, JRE provides additional components beyond the JS engine:
+
+- **Web APIs**: Browser-provided APIs like DOM, AJAX (XMLHttpRequest), and Timeout (setTimeout), among others.
+- **Microtask Queue**: Handles microtasks such as promises and queues them to execute immediately after the current script has finished execution, but before processing any other macro tasks.
+- **Callback/Task Queue**: A queue that holds callbacks from asynchronous operations, waiting to be moved to the call stack.
+- **Event Loop**: Coordinates the execution of the call stack, handling the callback and microtask queues, and ensuring smooth asynchronous behavior.
+
+## Variable Declarations
+
+### `var`
+
+- **Scope**: Function scope or globally scoped outside a function.
+- **Hoisting**: Declarations are hoisted but not initializations.
+- **Reassignment**: Allows redeclaration and reassignment.
+
+### `let`
+
+- **Scope**: Block scope.
+- **Hoisting**: Hoisted but not initialized. Access before declaration results in a ReferenceError.
+- **Reassignment**: Allows reassignment but not redeclaration in the same scope.
+
+### `const`
+
+- **Scope**: Block scope.
+- **Hoisting**: Similar to `let`, hoisted but not initialized.
+- **Reassignment**: Does not allow redeclaration or reassignment. Objects and arrays can have their contents modified.
+
+## Advanced Concepts
+
+### High-Order Components (HOCs)
+
+- Functions that take a component and return a new component, used to abstract or modify behaviors in a reusable way.
+
+### `setTimeout` and `setInterval`
+
+- **`setTimeout`**: Executes code or a function after a specified delay (in milliseconds). It's a one-time event.
+- **`setInterval`**: Repeatedly executes code or a function, with a fixed time delay between each call. Useful for periodic tasks.
+
+### Promises
+
+Objects that represent the eventual completion (or failure) of an asynchronous operation, and its resulting value. They allow you to write asynchronous code that is closer to the way you would write synchronous code, making it more readable and manageable.
+
+- **`Promise.all(iterable)`**: Waits for all promises in the iterable to resolve and returns a promise that resolves with an array of the results. If any promise in the iterable rejects, the returned promise is immediately rejected with the reason of the first promise that was rejected.
+
+- **`Promise.allSettled(iterable)`**: Similar to Promise.all, but waits for all promises to settle (either resolve or reject). Returns a promise that resolves after all of the given promises have either resolved or rejected, with an array of objects that each describe the outcome of each promise.
+
+- **`Promise.race(iterable)`**: Returns a promise that resolves or rejects as soon as one of the promises in the iterable resolves or rejects, with the value or reason from that promise.
+
+- **`Promise.resolve(value)`**: Returns a promise that is resolved with the given value. If the value is a promise, that promise is returned; if the value is a thenable (i.e., has a "then" method), the returned promise will "follow" that thenable, adopting its eventual state; otherwise, the returned promise will be fulfilled with the value.
+
+- **`Promise.reject(reason)`**: Returns a promise that is rejected with the given reason.

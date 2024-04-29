@@ -1,0 +1,48 @@
+# Constructor Pattern Example: Task Management System
+
+This example demonstrates the Constructor Pattern through a `Task` class used in a task management system. The Constructor Pattern allows for defining a blueprint for tasks with properties such as title, description, and completion status, along with methods to manipulate these properties. This pattern enables the instantiation of multiple task objects, each with its own state and behavior, promoting reusability and encapsulation in object-oriented design.
+
+## Class: Task
+
+Defines a blueprint for creating tasks with a title, description, and completion status.
+
+```typescript
+class Task {
+	// Initializes a new instance of the Task class with title and description.
+	constructor(public title: string, public description: string) {
+		this.isCompleted = false; // Default status of a new task is not completed.
+	}
+
+	isCompleted: boolean;
+
+	// Marks the task as completed.
+	complete(): void {
+		this.isCompleted = true;
+		console.log(`Task "${this.title}" completed.`);
+	}
+
+	// Outputs the current state of the task.
+	describe(): void {
+		console.log(
+			`Task: ${this.title}, Description: ${this.description}, Completed: ${this.isCompleted}`
+		);
+	}
+}
+```
+
+## Usage
+
+Demonstration of creating and managing tasks using the `Task` class.
+
+```typescript
+const task1 = new Task(
+	'Implement Constructor Pattern',
+	'Create a basic implementation of the Constructor Pattern.'
+);
+task1.describe(); // Initially display the task's state
+task1.complete(); // Mark the task as completed
+task1.describe(); // Display the updated state of the task
+
+const task2 = new Task('Learn TypeScript', 'Study the basics of TypeScript.');
+task2.describe(); // Display another task's state
+```

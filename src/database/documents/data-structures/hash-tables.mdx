@@ -1,0 +1,119 @@
+## Hash Tables
+
+- **Definition**:
+
+  - A hash table is a data structure that implements an associative array abstract data type, a structure that can map keys to values.
+  - A hash table uses a hash function to compute an index into an array of buckets or slots, from which the desired value can be found.
+
+- **Properties**:
+
+  - **Hash Function**: An algorithm that converts keys into array indices. A good hash function should distribute the keys uniformly across the buckets.
+  - **Collisions**: Occur when the hash function maps two different keys to the same bucket. Collisions are handled using methods like chaining or open addressing.
+  - **Load Factor**: A measure that decides when to increase the hash table size. It's defined as the number of entries divided by the number of buckets.
+
+- **Operations**:
+
+  - **Insertion**: Complexity is ideally O(1), assuming a good hash function and that the hash table is not crowded (low load factor).
+  - **Deletion**: Also O(1) under the same assumptions as insertion. Some implementations may mark deleted slots in a special way.
+  - **Search**: Averages to O(1) complexity with a good hash function and low load factor. Worst-case scenario is O(n) if all keys hash to the same value.
+  - **Resize**: To maintain efficient operations, hash tables resize and rehash all entries periodically. This operation is costly (O(n)) but rare.
+
+- **Handling Collisions**:
+
+  - **Chaining (Separate Chaining)**: Each bucket is independent, and contains a list of entries for each index. A key is mapped to a particular index and then its corresponding value is placed in the list at that index.
+  - **Open Addressing**: All entry records are stored in the bucket array itself. When a new entry has to be inserted, the buckets are examined, starting with the hashed-to slot and proceeding in some probe sequence, until an empty slot is found.
+  - **Double Hashing**: A form of open addressing where the interval between probes is computed by another hash function.
+
+- **Advantages**:
+
+  - Offers fast data retrieval, addition, and deletion operations.
+  - Efficient in terms of storage for datasets with large numbers of records.
+  - Flexible and can handle different types of keys (integers, strings, objects).
+
+- **Disadvantages**:
+
+  - Poor hash functions can lead to many collisions, degrading performance.
+  - The deterministic nature of a hash table makes it vulnerable to certain types of security attacks, such as DoS attacks through collision induction.
+  - Not inherently ordered, which can be problematic for applications requiring sorted data.
+
+- **Applications**:
+
+  - Implementing associative arrays or maps (key/value pairs).
+  - Database indexing for quick data retrieval.
+  - Caching information (e.g., web page caching).
+  - Implementing sets.
+
+- **Improvements and Variations**:
+  - **Dynamic Hashing**: Adjusts the size of the hash table dynamically.
+  - **Perfect Hashing**: A hash function with no collisions on a known set of keys.
+  - **Cryptographic Hash Function**: Ensures security by making it difficult to find two different inputs that hash to the same output.
+
+The efficiency of operations in a hash table heavily depends on the quality of the hash function and the handling of collisions. Also, variations like cuckoo hashing and hopscotch hashing offer interesting alternatives for collision resolution.
+
+---
+
+```typescript
+// A simple hash function that computes a hash value for a given string
+const hashFn = (value: string, max: number) => {
+	let hash = 0;
+
+	// Sum up the ASCII values of all characters in the string
+	for (let i = 0; i < value.length; i++) {
+		hash += value.charCodeAt(i);
+	}
+
+	// Modulo the sum by the number of buckets to ensure the hash fits in the array
+	return hash % max;
+};
+
+// The type of the items stored in the hash table
+type HashItem<T> = [string, T];
+
+class HashTable<T> {
+	private storage: Array<HashItem<T>>[] = [];
+
+	// Constructor to initialize the hash table with a predefined number of buckets
+	constructor(private buckets = 5) {
+		// Initialize each bucket as an empty array to hold HashItems
+		for (let i = 0; i < this.buckets; i++) {
+			this.storage[i] = [];
+		}
+	}
+
+	// Method to print the current state of the hash table to the console
+	print() {
+		console.log(this.storage);
+	}
+
+	// Method to add a key-value pair to the hash table
+	add(key: string, value: T) {
+		const index = hashFn(key, this.buckets);
+		const bucket = this.storage[index];
+		const itemIndex = bucket.findIndex((item) => item[0] === key);
+
+		// If the key does not exist, push a new item. Otherwise, update the existing item's value.
+		if (itemIndex === -1) bucket.push([key, value]);
+		else bucket[itemIndex][1] = value;
+	}
+
+	// Method to remove a key-value pair from the hash table by key.
+	remove(key: string) {
+		const index = hashFn(key, this.buckets);
+		const bucket = this.storage[index];
+		const itemIndex = bucket.findIndex((item) => item[0] === key);
+
+		// If the key exists, remove the item from the bucket.
+		if (itemIndex !== -1) bucket.splice(itemIndex, 1);
+	}
+
+	// Method to look up a value by its key.
+	lookup(key: string) {
+		const index = hashFn(key, this.buckets);
+		const bucket = this.storage[index];
+		const item = bucket.find((item) => item[0] === key);
+
+		// Return the value associated with the key if found, otherwise undefined.
+		return item ? item[1] : undefined;
+	}
+}
+```

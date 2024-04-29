@@ -1,0 +1,83 @@
+# Proxy Pattern Example: Efficient Image Management
+
+This TypeScript code demonstrates the Proxy Pattern used to efficiently manage high-resolution images in an application. A proxy class controls access to the real image object, delaying its loading from disk until it is actually needed. This approach optimizes resource usage and application performance by avoiding the loading of heavy resources until they are required, thus improving startup time and reducing memory overhead.
+
+## Interface: Image
+
+Defines the common interface for both the real and proxy images.
+
+```typescript
+interface Image {
+	display(): void;
+}
+```
+
+## Real Subject: RealImage
+
+Represents the actual high-resolution image that is expensive to load.
+
+```typescript
+class RealImage implements Image {
+	private filename: string;
+
+	constructor(filename: string) {
+		this.filename = filename;
+		this.loadFromDisk(); // Expensive operation simulated by a method call
+	}
+
+	display(): void {
+		console.log(`Displaying ${this.filename}`);
+	}
+
+	private loadFromDisk(): void {
+		console.log(`Loading ${this.filename}`);
+	}
+}
+```
+
+## Proxy: ProxyImage
+
+Acts as a surrogate for the real image, loading the real image only when it is actually required to be displayed.
+
+```typescript
+class ProxyImage implements Image {
+	private realImage: RealImage;
+	private filename: string;
+
+	constructor(filename: string) {
+		this.filename = filename;
+	}
+
+	display(): void {
+		if (!this.realImage) {
+			this.realImage = new RealImage(this.filename); // Load real image only when required
+		}
+		this.realImage.display();
+	}
+}
+```
+
+## Client Code
+
+Demonstrates the use of the Proxy Pattern to manage image loading efficiently.
+
+```typescript
+const image1: Image = new ProxyImage('highres_photo1.jpg');
+const image2: Image = new ProxyImage('highres_photo2.jpg');
+
+console.log('Application startup complete.');
+
+// Images are not loaded at startup, only upon first display request
+image1.display(); // Here the image is loaded and then displayed
+console.log('Displayed image1 for the first time.');
+
+image2.display(); // Here the image is loaded and then displayed
+console.log('Displayed image2 for the first time.');
+
+image1.display(); // This time the image displays without loading
+console.log('Displayed image1 again.');
+```
+
+---
+
+This documentation provides a comprehensive guide on how to implement and use the Proxy Pattern for managing high-resolution images efficiently, illustrating how the pattern can significantly improve application performance by deferring the loading of resource-intensive operations.

@@ -1,7 +1,7 @@
 'use client';
 
 import { AnswerSegment, QAPair, SearchParamProps } from '@/lib/types';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
 	ColumnDef,
 	SortingState,
@@ -181,7 +181,7 @@ export default function Page({ params }: SearchParamProps) {
 				Questions
 			</h1>
 
-			<div className='w-full'>
+			<div className='w-full mb-8'>
 				<div className='flex items-center py-4 gap-x-1'>
 					<Input
 						placeholder='Filter questions...'
@@ -189,7 +189,9 @@ export default function Page({ params }: SearchParamProps) {
 							(table.getColumn('question')?.getFilterValue() as string) ?? ''
 						}
 						onChange={(event) =>
-							table.getColumn('question')?.setFilterValue(event.target.value)
+							table
+								.getColumn('question')
+								?.setFilterValue(event.currentTarget.value)
 						}
 						className='w-full max-w-md'
 					/>

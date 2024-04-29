@@ -1,0 +1,63 @@
+## Sets
+
+- **Definition**:
+
+  - A set is an abstract data type that can store unique values, without any particular order.
+  - It is a collection of distinct objects.
+
+- **Operations**:
+
+  - **Add**: Adds a new element to the set if it is not already present. Complexity: O(1) on average, depending on the underlying implementation.
+  - **Remove**: Removes a specified element from the set. Complexity: O(1) on average, depending on the implementation.
+  - **Contains**: Checks whether a specified element is present in the set. Complexity: O(1) on average.
+  - **Union**: Combines all elements from two sets into a new set, eliminating duplicates. Complexity: O(n + m), where n is the size of the first set and m is the size of the second set.
+  - **Intersection**: Creates a new set containing only elements that are present in both sets. Complexity: O(min(n, m)), where n is the size of the first set and m is the size of the second set.
+  - **Difference**: Generates a new set containing elements that are present in the first set but not in the second set. Complexity: O(n), where n is the size of the first set.
+  - **Subset Testing**: Determines whether all elements of the first set are contained within the second set. Complexity: O(n), where n is the size of the first set.
+
+- **Applications**:
+  - Database querying for distinct records.
+  - Mathematical set operations like union, intersection, difference.
+  - Implementing various data structures and algorithms where uniqueness is a key attribute.
+
+---
+
+```typescript
+class EnhancedSet<T> extends Set {
+	constructor(items: T[]) {
+		super(items);
+	}
+
+	// Returns the union of two sets
+	union(otherSet: Set<T>): Set<T> {
+		return new Set([...Array.from(this), Array.from(otherSet)]);
+	}
+
+	// Returns the intersection of two sets
+	intersection(otherSet: Set<T>): Set<T> {
+		const newSet = new Set<T>();
+
+		otherSet.forEach((item) => {
+			if (this.has(item)) newSet.add(item);
+		});
+
+		return newSet;
+	}
+
+	// Returns the difference of two sets
+	difference(otherSet: Set<T>) {
+		const newSet = new Set<T>();
+
+		this.forEach((item) => {
+			if (!otherSet.has(item)) newSet.add(item);
+		});
+
+		return newSet;
+	}
+
+	// Tests if the set is a subset of a different set
+	subset(otherSet: Set<T>): boolean {
+		return Array.from(this).every((item) => otherSet.has(item));
+	}
+}
+```

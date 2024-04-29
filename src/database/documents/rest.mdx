@@ -1,0 +1,56 @@
+# REST API Guide
+
+## Introduction
+
+**REST** (Representational State Transfer) is an architectural style for designing networked applications. It relies on a stateless, client-server, cacheable communications protocol -- in virtually all cases, the HTTP protocol. RESTful applications use HTTP requests to post data (create/update), read data (making queries), and delete data.
+
+## Principles of REST
+
+REST is based on several key principles:
+
+1. **Client-Server Architecture**: The client and the server should act independently. They interact with each other via requests (from the client) and responses (from the server).
+
+2. **Statelessness**: Each request from the client to the server must contain all the information the server needs to understand and fulfill the request. The server should not store any state about the client session on the server side.
+
+3. **Cacheable**: Clients and intermediaries can cache responses. Responses must therefore, implicitly or explicitly, define themselves as cacheable or not to prevent clients from reusing stale or inappropriate data.
+
+4. **Uniform Interface**: The interface between clients and servers is uniform, simplifying and decoupling the architecture, which enables each part to evolve independently.
+
+5. **Layered System**: A client cannot ordinarily tell whether it is connected directly to the end server or to an intermediary along the way.
+
+6. **Code on Demand (optional)**: Servers can temporarily extend or customize the functionality of a client by transferring executable code.
+
+## Components of REST API
+
+- **Resource**: Anything that can be stored on the server and can be represented in a meaningful way (e.g., text, JSON, XML). Each resource is identified by a unique URI.
+
+- **HTTP Methods**: Actions performed on the resources. The most common are:
+
+  - **GET**: Retrieve a specific resource or a collection of resources.
+  - **POST**: Create a new resource.
+  - **PUT**: Update a specific resource.
+  - **DELETE**: Remove a specific resource.
+  - **PATCH**: Partially update a specific resource.
+
+- **Status Codes**: Indicate the result of the HTTP request. Common status codes include:
+  - **200 OK**: The request has succeeded.
+  - **201 Created**: A new resource has been created.
+  - **400 Bad Request**: The server could not understand the request.
+  - **401 Unauthorized**: Authentication is required and has failed or has not been provided.
+  - **404 Not Found**: The requested resource could not be found.
+  - **500 Internal Server Error**: An unexpected condition was encountered.
+
+## Best Practices
+
+- Use nouns to represent resources (e.g., /users, /products).
+- Use HTTP methods appropriately.
+- Be consistent with the use of slash (/) and don’t use trailing slashes.
+- Use query parameters for filtering, sorting, and searching.
+- Version your API (e.g., /api/v1/products).
+- Secure your API using authentication mechanisms such as OAuth.
+- Provide meaningful HTTP status codes.
+- Use JSON for data interchange.
+
+## Conclusion
+
+Understanding REST is crucial for working with web technologies. By adhering to REST principles and best practices, developers can build scalable, reliable, and maintainable web APIs.

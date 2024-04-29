@@ -1,0 +1,49 @@
+# Prototype Pattern Example: Cloning Shapes
+
+This example demonstrates the Prototype Pattern by implementing a simple system for cloning shapes. The Prototype Pattern allows for the creation of new objects by copying existing instances, which is particularly useful in scenarios where object creation from scratch is costly or complex. It promotes object reusability and simplifies the creation process by cloning pre-configured prototypes.
+
+## Interface: Prototype
+
+Declares the clone method that all prototypes must implement.
+
+```typescript
+interface Prototype {
+	clone(): Prototype;
+}
+```
+
+## Concrete Prototype: Shape
+
+Represents a specific type of prototype, a shape that can clone itself.
+
+```typescript
+class Shape implements Prototype {
+	constructor(public id: string, public type: string) {}
+
+	// Method to clone itself
+	clone(): Shape {
+		// For simplicity, this example uses shallow copy.
+		// In real scenarios, you might need a deep copy depending on the complexity of the object's structure.
+		return new Shape(this.id, this.type);
+	}
+
+	describe(): void {
+		console.log(`Shape ID: ${this.id}, Type: ${this.type}`);
+	}
+}
+```
+
+## Usage
+
+Demonstration of cloning a shape and modifying the clone.
+
+```typescript
+const originalCircle = new Shape('1', 'Circle');
+originalCircle.describe(); // Output: Shape ID: 1, Type: Circle
+
+const clonedCircle = originalCircle.clone();
+clonedCircle.id = '2'; // Modifying the clone's ID
+clonedCircle.describe(); // Output: Shape ID: 2, Type: Circle
+
+// Despite clonedCircle being a clone of originalCircle, changes to clonedCircle do not affect the original.
+```

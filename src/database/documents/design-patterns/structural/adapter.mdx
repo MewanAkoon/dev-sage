@@ -1,0 +1,95 @@
+# Adapter Pattern Example: Content Management System Integration
+
+This TypeScript code demonstrates the use of the Adapter Pattern to solve the problem of integrating multiple content providers with different API interfaces into a single Content Management System (CMS). The CMS needs to aggregate content from various sources, each offering unique methods for article retrieval. The disparity in interfaces can complicate the process of adding new content providers to the CMS. The Adapter Pattern addresses this challenge by defining a common interface and implementing adapter classes for each content provider, allowing the CMS to interact with any content provider through a unified interface.
+
+## Interface: ILegacyContentProvider
+
+Defines the contract for content providers used by the CMS.
+
+```typescript
+interface ILegacyContentProvider {
+	getArticles(): string[];
+}
+```
+
+## Legacy Content Provider
+
+A legacy provider with its specific method of fetching articles.
+
+```typescript
+class LegacyContentProvider {
+	getLegacyArticles(): string[] {
+		return ['Legacy Article 1', 'Legacy Article 2'];
+	}
+}
+```
+
+## Adapter: LegacyContentAdapter
+
+Translates the interface of `LegacyContentProvider` to the expected `ILegacyContentProvider` interface.
+
+```typescript
+class LegacyContentAdapter implements ILegacyContentProvider {
+	constructor(private provider: LegacyContentProvider) {}
+
+	getArticles(): string[] {
+		return this.provider.getLegacyArticles();
+	}
+}
+```
+
+## Modern Content Provider
+
+A modern provider with a different method signature for fetching articles.
+
+```typescript
+class ModernContentProvider {
+	fetchLatestArticles(): string[] {
+		return ['Modern Article 1', 'Modern Article 2'];
+	}
+}
+```
+
+## Adapter: ModernContentAdapter
+
+Allows the `ModernContentProvider` to be used as an `ILegacyContentProvider`.
+
+```typescript
+class ModernContentAdapter implements ILegacyContentProvider {
+	constructor(private provider: ModernContentProvider) {}
+
+	getArticles(): string[] {
+		return this.provider.fetchLatestArticles();
+	}
+}
+```
+
+## CMS Class
+
+Displays articles from any content provider that implements the `ILegacyContentProvider` interface.
+
+```typescript
+class CMS {
+	displayArticles(provider: ILegacyContentProvider) {
+		const articles = provider.getArticles();
+		console.log('Displaying Articles: ', articles);
+	}
+}
+```
+
+## Usage
+
+Demonstrating the integration of both legacy and modern content providers into the CMS using adapters.
+
+```typescript
+const legacyProvider = new LegacyContentAdapter(new LegacyContentProvider());
+const modernProvider = new ModernContentAdapter(new ModernContentProvider());
+const cms = new CMS();
+
+cms.displayArticles(legacyProvider); // Outputs articles from the legacy provider
+cms.displayArticles(modernProvider); // Outputs articles from the modern provider
+```
+
+---
+
+This documentation provides a clear guide on how to implement and use the Adapter Pattern for integrating various content providers into a single CMS, highlighting the flexibility and maintainability of using adapters to standardize different interfaces.

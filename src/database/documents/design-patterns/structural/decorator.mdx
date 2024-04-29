@@ -1,0 +1,130 @@
+# Decorator Pattern Example: Coffee Ordering System
+
+This TypeScript code demonstrates the Decorator Pattern applied to a coffee ordering system. The core problem solved here is the dynamic customization of coffee orders. The system allows customers to start with a basic coffee and then add multiple customizations (e.g., Milk, Sugar, Whipped Cream, Chocolate) dynamically. Each customization adds to the cost and description of the coffee without altering the original `SimpleCoffee` class or the `Coffee` interface. This approach adheres to the Open/Closed Principle, enabling easy extension of the system with new additions without modifying existing code.
+
+## Interface: Coffee
+
+Defines the structure for coffee objects, including methods for cost and description.
+
+```typescript
+interface Coffee {
+	cost(): number; // Returns the cost of the coffee.
+	description(): string; // Returns the description of the coffee.
+}
+```
+
+## Concrete Component: SimpleCoffee
+
+Represents the basic coffee without any additions.
+
+```typescript
+class SimpleCoffee implements Coffee {
+	cost(): number {
+		return 2; // Base cost in dollars for simple coffee.
+	}
+
+	description(): string {
+		return 'Simple Coffee'; // Description for the simple coffee.
+	}
+}
+```
+
+## Decorators
+
+### MilkDecorator
+
+Adds milk to the coffee.
+
+```typescript
+class MilkDecorator implements Coffee {
+	constructor(private coffee: Coffee) {}
+
+	cost(): number {
+		return this.coffee.cost() + 0.5; // Adds the cost of milk to the existing coffee cost.
+	}
+
+	description(): string {
+		return `${this.coffee.description()} + Milk`; // Enhances description to include milk.
+	}
+}
+```
+
+### SugarDecorator
+
+Adds sugar to the coffee.
+
+```typescript
+class SugarDecorator implements Coffee {
+	constructor(private coffee: Coffee) {}
+
+	cost(): number {
+		return this.coffee.cost() + 0.3; // Adds the cost of sugar to the existing coffee cost.
+	}
+
+	description(): string {
+		return `${this.coffee.description()} + Sugar`; // Enhances description to include sugar.
+	}
+}
+```
+
+### WhippedCreamDecorator
+
+Adds whipped cream to the coffee.
+
+```typescript
+class WhippedCreamDecorator implements Coffee {
+	constructor(private coffee: Coffee) {}
+
+	cost(): number {
+		return this.coffee.cost() + 0.7; // Adds the cost of whipped cream to the existing coffee cost.
+	}
+
+	description(): string {
+		return `${this.coffee.description()} + Whipped Cream`; // Enhances description to include whipped cream.
+	}
+}
+```
+
+### ChocolateDecorator
+
+Adds chocolate to the coffee.
+
+```typescript
+class ChocolateDecorator implements Coffee {
+	constructor(private coffee: Coffee) {}
+
+	cost(): number {
+		return this.coffee.cost() + 0.8; // Adds the cost of chocolate to the existing coffee cost.
+	}
+
+	description(): string {
+		return `${this.coffee.description()} + Chocolate`; // Enhances description to include chocolate.
+	}
+}
+```
+
+## Usage
+
+Demonstrates creating a coffee order and dynamically adding customizations.
+
+```typescript
+let myCoffee: Coffee = new SimpleCoffee(); // Start with simple coffee.
+console.log(`${myCoffee.description()} = $${myCoffee.cost()}`); // Display the initial coffee order and cost.
+
+// Dynamically add customizations and display the updated order and cost after each addition.
+myCoffee = new MilkDecorator(myCoffee);
+console.log(`${myCoffee.description()} = $${myCoffee.cost()}`);
+
+myCoffee = new SugarDecorator(myCoffee);
+console.log(`${myCoffee.description()} = $${myCoffee.cost()}`);
+
+myCoffee = new WhippedCreamDecorator(myCoffee);
+console.log(`${myCoffee.description()} = $${myCoffee.cost()}`);
+
+myCoffee = new ChocolateDecorator(myCoffee);
+console.log(`${myCoffee.description()} = $${myCoffee.cost()}`);
+```
+
+---
+
+This documentation provides a comprehensive guide on how to implement and use the Decorator Pattern to dynamically customize coffee orders, illustrating the flexibility and extensibility of using decorators in a retail context.

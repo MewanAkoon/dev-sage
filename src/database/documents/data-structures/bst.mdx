@@ -1,0 +1,190 @@
+## Binary Search Trees (BSTs)
+
+- **Definition**:
+
+  - A binary search tree is a data structure that stores items (such as numbers, names, etc.) in a sorted manner.
+  - Each node has up to two children, where the left child's value is less than the parent's value, and the right child's value is greater than the parent's value.
+
+- **Properties**:
+
+  - Each node contains a unique key and data that may be associated with the key.
+  - The left subtree of a node contains only nodes with keys less than the node's key.
+  - The right subtree of a node contains only nodes with keys greater than the node's key.
+  - The left and right subtree each must also be a binary search tree.
+  - There are no duplicate nodes.
+
+- **Operations**:
+
+  - **Search**: Begins at the root and traverses down the tree, comparing the search key to the key of the current node, then proceeding to either the left or right child accordingly. Complexity: O(h), where h is the height of the tree.
+  - **Insertion**: Similar to search, but when a leaf node is reached, the new node is added as a child of the leaf node. Complexity: O(h).
+  - **Deletion**: More complex, with three cases: deleting a leaf node, a node with one child, and a node with two children. Complexity: O(h).
+  - **Traversal**: Methods include in-order, pre-order, and post-order traversals to visit all the nodes in a specific order.
+
+- **Advantages**:
+
+  - Provides efficient searching (comparable to binary search in arrays).
+  - Supports efficient insertion and deletion operations.
+
+- **Disadvantages**:
+
+  - The shape of the BST depends on the order of insertion, which can lead to an unbalanced tree.
+  - This may degrade performance to O(n) in the worst case, where n is the number of nodes.
+  - Balancing techniques (like AVL trees or Red-Black trees) are required to maintain optimal performance.
+
+- **Applications**:
+  - Implementing associative arrays (maps, dictionaries).
+  - Database indexing.
+  - Network routing algorithms.
+
+---
+
+```typescript
+class TreeNode<T> {
+	constructor(
+		public value: T,
+		public left: TreeNode<T> | null = null,
+		public right: TreeNode<T> | null = null
+	) {}
+}
+
+type TraverseType = 'in-order' | 'pre-order' | 'post-order' | 'level-order';
+
+type TraverseCallbackFn<T> = (value: T) => void;
+
+class BinarySearchTree<T> {
+	private root: TreeNode<T> | null;
+
+	constructor() {
+		this.root = null; // The tree starts empty.
+	}
+
+	// Inserts a new value into the BST. This is the public method that starts the process.
+	insert(data: T) {
+		const node = new TreeNode(data);
+		if (!this.root)
+			this.root = node; // If tree is empty, the new node becomes the root.
+		else this.insertNode(this.root, node); // Otherwise, we find the correct position for the new node.
+	}
+
+	// Recursive helper function for inserting a new node into the BST.
+	private insertNode(currentNode: TreeNode<T>, newNode: TreeNode<T>) {
+		if (newNode.value < currentNode.value) {
+			// New node goes to the left subtree
+			if (currentNode.left === null) currentNode.left = newNode;
+			else this.insertNode(currentNode.left, newNode);
+		} else {
+			// New node goes to the right subtree
+			if (currentNode.right === null) currentNode.right = newNode;
+			else this.insertNode(currentNode.right, newNode);
+		}
+	}
+
+	// Searches for a value in the BST. Returns the node if found, null otherwise.
+	search(value: T): TreeNode<T> | null {
+		return this.searchNode(this.root, value); // Start the search from the root.
+	}
+
+	// Recursive helper function to search for a node in the BST.
+	private searchNode(node: TreeNode<T> | null, value: T): TreeNode<T> | null {
+		if (node === null) return null; // Base case: value not found.
+		if (node.value === value) return node; // Value found.
+		// Continue search in the left or right subtree.
+		return value < node.value
+			? this.searchNode(node.left, value)
+			: this.searchNode(node.right, value);
+	}
+
+	// Public method to traverse the tree in various orders.
+	traverse(type: TraverseType, callback: TraverseCallbackFn<T>) {
+		switch (type) {
+			case 'in-order':
+				this.inOrder(this.root, callback);
+				break;
+			case 'pre-order':
+				this.preOrder(this.root, callback);
+				break;
+			case 'post-order':
+				this.postOrder(this.root, callback);
+				break;
+			case 'level-order':
+				this.levelOrder(this.root, callback);
+				break;
+		}
+	}
+
+	// In-order traversal visits nodes in ascending order (for BSTs).
+	private inOrder(node: TreeNode<T> | null, callback: TraverseCallbackFn<T>) {
+		if (node === null) return;
+
+		this.inOrder(node.left, callback); // Visit left subtree first.
+		callback(node.value); // Visit node itself.
+		this.inOrder(node.right, callback); // Visit right subtree next.
+	}
+
+	// Pre-order traversal visits nodes in their "pre-order" (root before children).
+	private preOrder(node: TreeNode<T> | null, callback: TraverseCallbackFn<T>) {
+		if (node === null) return;
+
+		callback(node.value); // Visit node itself first.
+		this.preOrder(node.left, callback); // Visit left subtree next.
+		this.preOrder(node.right, callback); // Visit right subtree last.
+	}
+
+	// Post-order traversal visits nodes in their "post-order" (children before root).
+	private postOrder(node: TreeNode<T> | null, callback: TraverseCallbackFn<T>) {
+		if (node === null) return;
+
+		this.postOrder(node.left, callback); // Visit left subtree first.
+		this.postOrder(node.right, callback); // Visit right subtree next.
+		callback(node.value); // Visit node itself last.
+	}
+
+	// Performs a breadth-first search (BFS) or level-order traversal on the binary search tree.
+	private levelOrder(
+		node: TreeNode<T> | null,
+		callback: TraverseCallbackFn<T>
+	) {
+		if (node === null) return;
+
+		// Use a queue to keep track of nodes and their children as we traverse the tree
+		const queue: TreeNode<T>[] = [node];
+
+		// Continue looping as long as there are nodes in the queue
+		while (queue.length > 0) {
+			const currentNode = queue.shift()!; // Retrieve and remove the front node from the queue
+
+			callback(currentNode.value); // Process the current node
+
+			// Add the left child to the queue if it exists
+			if (currentNode.left) queue.push(currentNode.left);
+			// Add the right child to the queue if it exists
+			if (currentNode.right) queue.push(currentNode.right);
+		}
+	}
+
+	// Calculates the minimum height of the BST from the root to the nearest leaf.
+	minHeight(node: TreeNode<T> | null = this.root): number {
+		if (!node) return -1; // Base case: tree is empty or node is a leaf.
+		// Recursive case: 1 + minimum of the heights of the left and right subtrees.
+		return 1 + Math.min(this.minHeight(node.left), this.minHeight(node.right));
+	}
+
+	// Calculates the maximum height of the BST from the root to the farthest leaf
+	maxHeight(node: TreeNode<T> | null = this.root): number {
+		if (!node) return -1; // Base case: If the tree is empty, or at a leaf, the height is -1.
+		// Recursive call to explore left and right subtrees, selecting the longer path at each step,
+		// and adding 1 to include the current node in the height count.
+		return 1 + Math.max(this.maxHeight(node.left), this.maxHeight(node.right));
+	}
+
+	// Checks if the BST is balanced by comparing the maximum and minimum heights.
+	// A tree is considered balanced if the difference between its maximum and minimum heights is at most 1.
+	// This is important for ensuring that operations like search, insert, and delete have good performance,
+	// as a balanced tree maintains a lower complexity by avoiding skewed distributions of nodes.
+	isBalanced(): boolean {
+		return this.maxHeight() - this.minHeight() <= 1; // Calculates and compares the heights, returning true if balanced.
+	}
+
+	// TODO: Implement the remove functionality
+}
+```

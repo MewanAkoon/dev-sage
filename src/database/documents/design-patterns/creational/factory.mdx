@@ -1,0 +1,71 @@
+# Factory Pattern Example: OS-Specific UI Buttons
+
+This example demonstrates a basic implementation of the Factory Pattern, focusing on the creation of UI button elements specific to different operating systems (iOS and Android). The `ButtonFactory` class contains a method `createButton` that returns a new button instance according to the operating system specified. This pattern allows for the encapsulation of object creation logic, making it easier to extend and maintain the code by introducing new types of buttons for different operating systems without modifying the existing factory logic.
+
+## Interface: Button
+
+Defines common behavior for buttons.
+
+```typescript
+interface Button {
+	render(): void;
+}
+```
+
+## Concrete Implementations
+
+### IOSButton
+
+Implementation for an iOS button.
+
+```typescript
+class IOSButton implements Button {
+	render(): void {
+		console.log('Rendering iOS Button');
+	}
+}
+```
+
+### AndroidButton
+
+Implementation for an Android button.
+
+```typescript
+class AndroidButton implements Button {
+	render(): void {
+		console.log('Rendering Android Button');
+	}
+}
+```
+
+## Factory Class: ButtonFactory
+
+Manages the creation of button instances based on the OS type.
+
+```typescript
+class ButtonFactory {
+	// Factory method returning a Button instance based on OS type
+	static createButton(os: 'ios' | 'android'): Button {
+		switch (os) {
+			case 'ios':
+				return new IOSButton();
+			case 'android':
+				return new AndroidButton();
+			default:
+				throw new Error('Unsupported OS type');
+		}
+	}
+}
+```
+
+## Usage Example
+
+Demonstrating the creation of OS-specific buttons using the Factory Pattern.
+
+```typescript
+const iosButton = ButtonFactory.createButton('ios');
+iosButton.render(); // Output: Rendering iOS Button
+
+const androidButton = ButtonFactory.createButton('android');
+androidButton.render(); // Output: Rendering Android Button
+```

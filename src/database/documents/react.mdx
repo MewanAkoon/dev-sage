@@ -1,0 +1,81 @@
+# React Notes
+
+React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It enables developers to create large web applications that can change data without reloading the page. React was created by Facebook and has gained immense popularity among developers for its approach to building component-based UIs.
+
+## How React Works
+
+- **Virtual DOM**: React creates a lightweight JavaScript object, a virtual representation of the DOM. This approach enhances performance by minimizing direct manipulation of the DOM, which is slow.
+- **Diffing Algorithm**: React uses a diffing algorithm to identify changes between the current state of the virtual DOM and the new state. This process is known as reconciliation.
+- **Updates**: After identifying the changes, React updates the real DOM efficiently, ensuring minimal update time.
+
+## Advantages
+
+- **Performance**: Utilizes the Virtual DOM to increase application performance.
+- **JSX**: JavaScript syntax extension that makes code easy to write and read by allowing HTML in JavaScript files.
+- **Integration**: Easily integrates with other frameworks like Angular or BackboneJS, as React is primarily a view library.
+- **Testing**: Facilitates easy UI testing and integrates well with tools such as Jest.
+
+## Limitations
+
+- **View Library**: React is not a full-blown framework but a library focused on UI development, requiring additional configurations for comprehensive solutions.
+- **Integration Complexity**: Incorporating React into traditional MVC frameworks may require extra setup.
+
+## Core Concepts
+
+### Virtual DOM
+
+- A lightweight copy of the real DOM, allowing React to perform operations in a more efficient manner.
+- Process:
+  1. UI re-renders in the virtual DOM upon data changes.
+  2. The difference between the previous and new virtual DOM is calculated.
+  3. Only the changed elements are updated in the real DOM.
+
+### Props
+
+- Short for properties, props are how data is passed from parent to child components, making them readonly.
+
+### Class Component vs Functional Component
+
+- **Class Component**:
+
+  - Utilizes ES6 class syntax.
+  - Can leverage lifecycle methods (e.g., `componentDidMount`, `componentDidUpdate`).
+  - Extends from React component.
+
+- **Functional Component**:
+  - Simpler and more modern approach compared to class components.
+  - Uses React Hooks for state management and lifecycle events (e.g., `useState`, `useEffect`).
+  - Encourages cleaner code with less boilerplate.
+
+### JSX
+
+- A syntax extension for JavaScript, allowing HTML and JavaScript to coexist in the same file.
+- Transforms HTML-like code into React elements.
+
+### Prop Drilling
+
+- Describes the process of passing props through multiple layers of components.
+- Can lead to complexity and maintenance challenges.
+- Solutions like Context API or Redux can help avoid prop drilling by providing a more direct method of state management across components.
+
+## Advanced Topics
+
+### Hooks
+
+- Hooks are functions that let developers "hook into" React state and lifecycle features from functional components.
+- Common hooks:
+  - `useState`: Manages state in a functional component.
+  - `useEffect`: Executes side effects in functional components.
+  - `useRef`: References DOM elements or stores a mutable value.
+
+### Context API
+
+- Provides a way to pass data through the component tree without having to pass props down manually at every level.
+- Useful for sharing global data like themes, authentication status, etc.
+
+### Redux
+
+- A predictable state container for JavaScript apps, often used with React.
+- Helps manage the application state globally, making it accessible across the entire app without prop drilling.
+
+This guide provides a snapshot of React's core principles, usage, and best practices. React's component-based architecture, combined with its efficient updating mechanism, makes it a powerful tool for developing interactive and dynamic web applications.

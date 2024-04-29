@@ -1,0 +1,70 @@
+# Mediator Pattern Example: Chat Room
+
+This TypeScript code demonstrates the Mediator Pattern applied to a chat room scenario. The `ChatRoom` class acts as a mediator that facilitates communication between `User` instances. By having users communicate through the chat room instead of directly, the design reduces coupling between users and centralizes control logic for message passing in the `ChatRoom` mediator, simplifying maintenance and future extensions of the chat system.
+
+## Interface: ChatRoomMediator
+
+Defines the Mediator interface for sending messages and managing users.
+
+```typescript
+interface ChatRoomMediator {
+	sendMessage(message: string, userId: number): void; // Method to send a message to a specific user.
+	addUser(user: User): void; // Method to add a user to the chat room.
+}
+```
+
+## Concrete Mediator: ChatRoom
+
+Implementation of the `ChatRoomMediator` interface, managing communication between users.
+
+```typescript
+class ChatRoom implements ChatRoomMediator {
+	private users: Map<number, User> = new Map(); // Holds a reference to all users in the chat room.
+
+	sendMessage(message: string, userId: number): void {
+		const user = this.users.get(userId); // Retrieves the recipient user by userId.
+		if (user) {
+			user.receive(message); // Delivers the message to the user.
+		}
+	}
+
+	addUser(user: User): void {
+		this.users.set(user.id, user); // Maps the user's id to the user object for easy retrieval.
+	}
+}
+```
+
+## Class: User
+
+Represents a user in the chat room.
+
+```typescript
+class User {
+	constructor(public id: number, private chatRoom: ChatRoomMediator) {
+		this.chatRoom.addUser(this); // Adds itself to the chat room upon creation.
+	}
+
+	send(message: string, userId: number): void {
+		console.log(`${this.id} sends message: ${message}`); // Logging for demonstration.
+		this.chatRoom.sendMessage(message, userId); // Delegates the message sending to the chatRoom mediator.
+	}
+
+	receive(message: string): void {
+		console.log(`${this.id} received message: ${message}`); // Logging for demonstration.
+	}
+}
+```
+
+## Demonstration
+
+Example usage showing message exchange between users through the mediator.
+
+```typescript
+const chatRoom = new ChatRoom(); // Instantiates a new ChatRoom, acting as the mediator.
+
+const user1 = new User(1, chatRoom); // Creates a new user with id "1" and adds it to the chat room.
+const user2 = new User(2, chatRoom); // Creates another user with id "2" and adds it to the chat room.
+
+user1.send('Hello, User 2!', 2); // User 1 sends a message to User 2 through the chat room.
+user2.send('Hi, User 1! How are you?', 1); // User 2 responds to User 1 through the chat room.
+```

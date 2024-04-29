@@ -1,0 +1,179 @@
+# TypeScript (TS) Notes
+
+TypeScript is a superset of JavaScript that adds static types and powerful features to the language, making it more robust and maintainable. Here are the key aspects and features of TypeScript:
+
+## Strong Typing
+
+### Basic Types
+
+TypeScript supports several basic types:
+
+```typescript
+let age: number = 30;
+let name: string = 'John Doe';
+let isActive: boolean = true;
+```
+
+### Array and Tuple
+
+Specify types for arrays and fixed-size arrays:
+
+```typescript
+let list: number[] = [1, 2, 3];
+let tuple: [string, number] = ['hello', 10];
+```
+
+### Enum
+
+Defines a set of named constants:
+
+```typescript
+enum Color {
+	Red,
+	Green,
+	Blue,
+}
+let c: Color = Color.Green;
+
+// or with explicit values
+enum Status {
+	Success = 200,
+	NotFound = 404,
+}
+```
+
+### Any
+
+Opt-out of type-checking for a variable:
+
+```typescript
+let notSure: any = 4;
+```
+
+## Object-Oriented Features
+
+### Classes
+
+TypeScript supports class-based OOP:
+
+```typescript
+class Animal {
+	name: string;
+	constructor(theName: string) {
+		this.name = theName;
+	}
+	move(distanceInMeters: number = 0) {
+		console.log(`${this.name} moved ${distanceInMeters}m.`);
+	}
+}
+```
+
+### Interfaces
+
+Define contracts within your code and custom types for object shapes:
+
+```typescript
+interface LabelledValue {
+	label: string;
+}
+function printLabel(labelledObj: LabelledValue) {
+	console.log(labelledObj.label);
+}
+```
+
+### Access Modifiers
+
+Control access to class members with `public` (default), `private`, and `protected`:
+
+```typescript
+class Animal {
+	private name: string;
+	constructor(theName: string) {
+		this.name = theName;
+	}
+}
+```
+
+## Advanced Features
+
+### Generics
+
+Enable components to work with any type rather than a single one:
+
+```typescript
+function identity<T>(arg: T): T {
+	return arg;
+}
+```
+
+### Decorators
+
+Special kind of declaration that can be attached to a class declaration, method, accessor, property, or parameter. Decorators use the form `@expression`, where `expression` must evaluate to a function that will be called at runtime with information about the decorated declaration:
+
+```typescript
+function sealed(constructor: Function) {
+	Object.seal(constructor);
+	Object.seal(constructor.prototype);
+}
+
+@sealed
+class Greeter {
+	greeting: string;
+	constructor(message: string) {
+		this.greeting = message;
+	}
+	greet() {
+		return 'Hello, ' + this.greeting;
+	}
+}
+```
+
+### Modules
+
+TypeScript supports module systems such as ES Modules and CommonJS:
+
+```typescript
+// In a file myModule.ts
+export const pi = 3.14;
+export function computeCircumference(diameter: number) {
+	return diameter * pi;
+}
+
+// In another file
+import { pi, computeCircumference } from './myModule';
+console.log(computeCircumference(10)); // Output: 31.4
+```
+
+### Type Assertions
+
+Similar to type casting in other languages, but performed at compile time for type checking:
+
+```typescript
+let someValue: any = 'this is a string';
+let strLength: number = (someValue as string).length;
+// or
+let strLength: number = (<string>someValue).length;
+```
+
+### Union Types and Type Guards
+
+Union Types and Type Guards allow for more flexible and safe type operations:
+
+```typescript
+// Union Types
+let variableName: type1 | type2;
+let myValue: number | string;
+myValue = 20; // Valid
+myValue = 'hello'; // Valid
+
+// Type Guards
+function printId(id: number | string) {
+	if (typeof id === 'string') {
+		console.log(id.toUpperCase());
+	} else {
+		console.log(id);
+	}
+}
+```
+
+Custom type guards and the use of `instanceof` with classes are advanced strategies to determine the specific type of an object within a union type at runtime.

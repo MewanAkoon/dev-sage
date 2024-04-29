@@ -1,0 +1,41 @@
+# Structural Design Patterns
+
+Structural design patterns are concerned with how objects and classes are composed to form larger structures. These patterns simplify the structure by identifying relationships between entities, making it easier to understand, design, and maintain.
+
+## Introduction
+
+Structural patterns facilitate the design by specifying simple ways to realize relationships between entities. They help ensure that if one part of a system changes, the entire system does not need to do the same. They also promote reusability and can help to prevent minor issues from causing major problems in the design.
+
+## Patterns
+
+### Adapter
+
+The Adapter pattern allows objects with incompatible interfaces to collaborate. It wraps itself around an object and presents a standard interface to the outside world.
+
+- **Intent**: Convert the interface of a class into another interface clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.
+- **Example**: Integrating new advanced content providers with different APIs into an existing content management system without changing the system's core code.
+
+### Decorator
+
+The Decorator pattern dynamically adds new behaviors to objects without altering their structure through subclassing, providing a flexible alternative to subclassing for extending functionality.
+
+- **Intent**: Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
+- **Example**: Adding various toppings and flavors to a coffee, where each decorator (like `MilkDecorator` or `SugarDecorator`) enhances the functionalities of the simple coffee without changing its structure.
+
+### Facade
+
+The Facade pattern provides a simplified interface to a complex subsystem. By doing so, it hides the complexities of the subsystem and makes the subsystem easier to use.
+
+- **Intent**: Provide a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.
+- **Example**: A smart home system where a single `SmartHomeFacade` class provides simple methods like `leavingHome` and `comingHome` that manage intricate operations across lighting, climate, and security systems.
+
+### Proxy
+
+The Proxy pattern provides a placeholder for another object to control access to it, such as deferring the full cost of creating and initializing an object until we actually need to use it.
+
+- **Intent**: Provide a surrogate or placeholder for another object to control access to it.
+- **Example**: In an image viewer application, a `ProxyImage` delays the actual loading of image data until it is required for display, thereby improving the application's startup performance and reducing memory usage.
+
+## Conclusion
+
+Structural design patterns are essential for creating large-scale systems where the interaction between objects is significant but complex. By using these patterns, developers can create systems that are easier to manage and extend, while also promoting greater efficiency in code maintenance and performance.

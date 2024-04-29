@@ -1,0 +1,75 @@
+# Essential Web Development Concepts
+
+This guide covers foundational and advanced topics in web development, focusing on aspects relevant to building applications with the MERN stack (MongoDB, Express.js, React, and Node.js).
+
+## SPA (Single-Page Application)
+
+- A web application that loads a single HTML page and dynamically updates that page as the user interacts with the app.
+- **Goal**: Offer faster transitions to make the website feel more like a native app.
+- **Examples**: Gmail, Google Maps, Airbnb, Netflix, Pinterest.
+
+## Callback Hell
+
+- **Problem**: Arises in asynchronous JavaScript, leading to a nested pyramid of callbacks, making the code hard to read and maintain.
+- **Solutions**:
+  - Name anonymous functions.
+  - Use async/await or Promises.
+  - Modularize the code.
+  - Implement error handling strategies.
+  - Avoid nesting functions unnecessarily.
+
+## Hoisting
+
+- JavaScript's behavior of moving declarations to the top of a scope (global or local) before code execution.
+
+## Promises
+
+- Objects representing the eventual completion or failure of an asynchronous operation.
+- Provide a cleaner, more manageable way to handle asynchronous operations compared to callbacks.
+
+## Middleware
+
+- Code that runs between receiving the request and sending the response in your application.
+- **Uses**: Logging, error handling, performing asynchronous operations, validation.
+
+## MVC (Model-View-Controller)
+
+- An architectural pattern that separates an application into three main logical components.
+  - **Model**: Manages the data and business logic.
+  - **View**: The UI logic of the application.
+  - **Controller**: Interfaces between Model and View, processing all the business logic and incoming requests, manipulating data using the Model, and interacting with the Views to render the final output.
+
+## API (Application Programming Interface)
+
+- Defines interactions between multiple software intermediaries. Specifies the kinds of calls or requests that can be made, how to make them, the data formats, conventions, etc.
+
+## REST API
+
+- An API that adheres to the principles of RESTful architecture.
+- **REST Principles**: Stateless operations, cacheable data, and a uniform interface.
+- Facilitates interaction with RESTful web services.
+
+## Status Codes
+
+### Success (2xx)
+
+- `200 OK`: Standard response for successful HTTP requests.
+- `201 Created`: The request has succeeded and a new resource has been created as a result. This is typically the response sent after POST requests, or some PUT requests.
+
+### Redirection (3xx)
+
+- `301 Moved Permanently`: The resource has been moved to a new URL permanently.
+- `302 Found`: The resource has been moved to a new URL temporarily.
+
+### Client Errors (4xx)
+
+- `400 Bad Request`: The server cannot process the request due to a client error.
+- `401 Unauthorized`: Authentication is required and has failed or has not been provided.
+- `403 Forbidden`: The request was valid, but the server is refusing action.
+- `404 Not Found`: The requested resource could not be found.
+- `410 Gone`: The requested resource is no longer available.
+
+### Server Errors (5xx)
+
+- `500 Internal Server Error`: A generic error message when an unexpected condition was encountered.
+- `503 Service Unavailable`: The server cannot handle the request (because it is overloaded or down for maintenance).

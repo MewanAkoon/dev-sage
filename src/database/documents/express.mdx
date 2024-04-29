@@ -1,0 +1,158 @@
+# Express.js Comprehensive Guide
+
+Express.js is a fast, unopinionated, minimalist web framework for Node.js. It's widely acclaimed for simplifying the development of web applications and APIs. Below is an expanded guide that includes your new pointers.
+
+## Introduction
+
+Express.js facilitates the construction of server-side applications with Node.js by offering a robust set of features for web and mobile applications, emphasizing simplicity, middleware, routing, and performance.
+
+## Key Features
+
+- **Simplicity**: Streamlines web application and API development with Node.js.
+- **Middleware**: Utilizes functions that access request and response objects, and the next middleware function, to execute code, alter request and response, and manage the request-response cycle.
+- **Routing**: Employs a robust routing API to manage application responses to different HTTP methods and URL paths.
+- **Performance**: Inherits Node.js's non-blocking I/O and the V8 JavaScript engine's speed.
+- **Flexibility**: Allows for the choice of ORM, template engine, and more, without enforcing specific tools.
+
+## Core Concepts
+
+### Application Setup
+
+A minimal server setup in Express:
+
+```javascript
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => res.send('Hello World!'));
+
+app.listen(port, () =>
+	console.log(`App listening at http://localhost:${port}`)
+);
+```
+
+### Middleware
+
+Middleware functions can perform various tasks: code execution, modifications to request/response objects, ending the request-response cycle, and calling the next middleware.
+
+#### Middleware Types
+
+- **Application-level Middleware**: Attached with `app.use()` or `app.METHOD()`, where METHOD is the HTTP method. Applied globally or to specific routes.
+
+  ```javascript
+  app.use((req, res, next) => {
+  	console.log('Time:', Date.now());
+  	next();
+  });
+  ```
+
+- **Router-level Middleware**: Similar to application-level but bound to an instance of `express.Router()`.
+
+  ```javascript
+  const router = express.Router();
+  router.use((req, res, next) => {
+  	console.log('Request Type:', req.method);
+  	next();
+  });
+  ```
+
+- **Error-handling Middleware**: Defined with four arguments instead of three, specifically for handling errors.
+
+  ```javascript
+  app.use((err, req, res, next) => {
+  	console.error(err.stack);
+  	res.status(500).send('Something broke!');
+  });
+  ```
+
+- **Built-in Middleware**: Comes with Express, like `express.static`, `express.json`, and `express.urlencoded`.
+
+- **Third-party Middleware**: Added via `npm`, such as `body-parser`, `cors`, `morgan`.
+
+  ```javascript
+  const cors = require('cors');
+  app.use(cors());
+  ```
+
+#### Using `next` in Middleware
+
+`next` is used to pass control to the next middleware function. If not called, the request will hang.
+
+```javascript
+app.use(
+	(req, res, next) => {
+		console.log('Middleware 1');
+		next();
+	},
+	(req, res) => {
+		console.log('Middleware 2');
+		res.send('Finished!');
+	}
+);
+```
+
+### Request and Response Objects
+
+Express enhances these objects with additional features and methods to facilitate request handling and response sending.
+
+- **Request Object (`req`)**: Represents the HTTP request. Contains properties like `req.body`, `req.params`, `req.query`, and methods like `req.get()`.
+
+- **Response Object (`res`)**: Represents the HTTP response. Methods like `res.send()`, `res.status()`, and `res.json()` control the response sent back.
+
+### Routing
+
+Express's routing system allows actions based on HTTP methods and URLs.
+
+```javascript
+app
+	.route('/users')
+	.get((req, res) => {
+		res.send('Get Users');
+	})
+	.post((req, res) => {
+		res.send('Add User');
+	});
+```
+
+### Scaffolding
+
+Quickly bootstrap new Express applications using the `express-generator` package, which creates an application skeleton.
+
+```shell
+npm install -g express-generator
+express myapp
+```
+
+### Handling CORS
+
+Cross-Origin Resource Sharing (CORS) can be managed using the `cors` middleware.
+
+```javascript
+const cors = require('cors');
+app.use(cors());
+```
+
+### Template Engines
+
+Express supports several template engines like Pug, EJS, and Handlebars, which allow for dynamic content rendering on the server side.
+
+- **Setting Up a Template Engine**:
+
+  ```javascript
+  app.set('view engine', 'pug');
+  ```
+
+- **Rendering Views**:
+
+  ```javascript
+  app.get('/', (req, res) => {
+  	res.render('index', { title: 'Hey', message: 'Hello there!' });
+  });
+  ```
+
+## Conclusion
+
+Express.js stands out for its simplicity, flexibility, and efficiency in developing web
+
+applications and APIs. Understanding its core concepts, including middleware, routing, and scaffolding, equips developers to build scalable and maintainable server-side applications.
