@@ -267,7 +267,7 @@ export default function Page({ params }: SearchParamProps) {
 												))}
 											</TableRow>
 										</DialogTrigger>
-										<DialogContent className='w-full max-h-full sm:max-w-2xl overflow-y-auto'>
+										<DialogContent className='w-full max-h-full sm:w-fit sm:max-w-2xl overflow-y-auto'>
 											<DialogHeader>
 												<DialogTitle className='flex gap-x-4 items-center w-full'>
 													<span className='capitalize'>
