@@ -1,0 +1,74 @@
+# Inheritance: Architecting Reusability and Hierarchical Relationships in OOP
+
+Inheritance stands as a key pillar in object-oriented programming, enabling classes to inherit and reuse code from other classes. This mechanism is instrumental in reducing redundancy, facilitating code maintenance, and fostering a natural hierarchical organization of program components.
+
+## Core Aspects:
+
+### - Code Reuse
+
+At the heart of inheritance is the ability to reuse existing code. By inheriting from a superclass, a subclass can adopt its properties and methods without the need to rewrite those components, leading to a more efficient development process.
+
+### - Hierarchical Structure
+
+Inheritance introduces a clear hierarchical relationship between classes, mirroring real-world relationships and making the software design more intuitive and aligned with domain concepts.
+
+### - Extensibility
+
+Through inheritance, new functionality can be easily added to existing codebases. A subclass can extend the capabilities of its superclass, adding new properties and methods or overriding existing ones to modify their behavior.
+
+### - The `extends` Keyword
+
+In TypeScript, the `extends` keyword is used to declare that a class is inheriting from another class, establishing a parent-child relationship between the two.
+
+## Benefits:
+
+### - Enhanced Code Organization
+
+Inheritance promotes a structured and organized codebase, making it easier to navigate and manage.
+
+### - Reduced Duplication
+
+By inheriting common functionality from a parent class, subclasses avoid the need to duplicate code, leading to cleaner and more maintainable code.
+
+### - Improved Flexibility and Maintainability
+
+Changes to shared functionality can be made in just one place (the superclass), automatically propagating to all subclasses, which simplifies maintenance and evolution of the codebase.
+
+Inheritance is not merely a feature of object-oriented programming; it is a paradigm that mirrors the natural hierarchical relationships found in the real world, thereby providing a framework for creating more logical, intuitive, and scalable software architectures.
+
+---
+
+```typescript
+// Base class (Superclass)
+class Vehicle {
+	constructor(public brand: string, public model: string) {}
+
+	displayInfo(): void {
+		console.log(`Vehicle Info: ${this.brand} ${this.model}`);
+	}
+}
+
+// Subclass extending Vehicle
+class Car extends Vehicle {
+	constructor(brand: string, model: string, public doors: number) {
+		super(brand, model); // Call the superclass's constructor
+	}
+
+	displayInfo(): void {
+		super.displayInfo(); // Call the superclass's method
+		console.log(`Doors: ${this.doors}`);
+	}
+}
+
+// Another subclass extending Vehicle
+class Truck extends Vehicle {
+	constructor(brand: string, model: string, public towingCapacity: number) {
+		super(brand, model); // Call the superclass's constructor
+	}
+
+	displayInfo(): void {
+		super.displayInfo(); // Call the superclass's method
+		console.log(`Towing Capacity: ${this.towingCapacity} lbs`);
+	}
+}
+```

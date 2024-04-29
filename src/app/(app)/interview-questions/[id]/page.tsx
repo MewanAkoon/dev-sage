@@ -4,7 +4,6 @@ import { AnswerSegment, QAPair, SearchParamProps } from '@/lib/types';
 import React, { useState } from 'react';
 import {
 	ColumnDef,
-	ColumnFiltersState,
 	SortingState,
 	VisibilityState,
 	flexRender,
@@ -43,6 +42,7 @@ import {
 import { Separator } from '@/components/ui/separator';
 import DifficultyBadge from '@/components/shared/difficultyBadge';
 import { Input } from '@/components/ui/input';
+import { getTextCase } from '@/lib/utils';
 
 const columns: ColumnDef<QAPair>[] = [
 	{
@@ -175,9 +175,10 @@ export default function Page({ params }: SearchParamProps) {
 	});
 
 	return (
-		<main>
-			<h1 className='text-center mt-8 mb-4 capitalize'>
-				{params.id} Interview Questions
+		<>
+			<h1 className='text-center my-4'>
+				<span className={getTextCase(params.id)}>{params.id}</span> Interview
+				Questions
 			</h1>
 
 			<div className='w-full'>
@@ -330,6 +331,6 @@ export default function Page({ params }: SearchParamProps) {
 					</div>
 				</div>
 			</div>
-		</main>
+		</>
 	);
 }

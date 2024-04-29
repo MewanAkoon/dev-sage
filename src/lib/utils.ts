@@ -6,6 +6,12 @@ export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
 }
 
+const titlesToUppercase = ['oop', 'dsa'];
+
+export const getTextCase = (title: string) => {
+	return titlesToUppercase.includes(title) ? 'uppercase' : 'capitalize';
+};
+
 export const difficultyConfig: Record<
 	Difficulty,
 	{ variant: 'default' | 'secondary' | 'destructive'; text: string }

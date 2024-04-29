@@ -1,7 +1,12 @@
-import Link from 'next/link';
+'use client';
+
 import React from 'react';
 
+import { useRouter } from 'next/navigation';
+
 export default function NotFound() {
+	const router = useRouter();
+
 	return (
 		<main className='mx-auto flex w-full max-w-7xl flex-auto flex-col justify-center px-6 py-24 sm:py-64 lg:px-8'>
 			<p className='text-base font-semibold leading-8 text-sky-600'>404</p>
@@ -12,9 +17,12 @@ export default function NotFound() {
 				Sorry, we couldn’t find the page you’re looking for.
 			</p>
 			<div className='mt-10'>
-				<Link href='/' className='text-sm font-semibold leading-7 text-sky-600'>
-					<span aria-hidden='true'>&larr;</span> Back to home
-				</Link>
+				<button
+					className='text-sm font-semibold leading-7 text-sky-600'
+					onClick={() => router.back()}
+				>
+					<span aria-hidden='true'>&larr;</span> Go back
+				</button>
 			</div>
 		</main>
 	);

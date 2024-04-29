@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import NavItems from './navItems';
 
-import devSageLogo from '../../../public/assets/images/logo.png';
+import devSageLogo from '../../../public/assets/logos/logo.png';
 
 export default function Header() {
 	return (

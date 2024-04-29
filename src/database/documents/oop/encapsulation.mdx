@@ -1,0 +1,71 @@
+# Encapsulation: The Pillar of Data Integrity and Modularity in Object-Oriented Design
+
+Encapsulation is a fundamental principle in object-oriented programming (OOP) that focuses on bundling the data (attributes) and the operations (methods) that manipulate this data into a cohesive unit known as a class. This principle is pivotal in safeguarding the internal state of an object from unintended or harmful modifications, thereby promoting data integrity and modularity.
+
+## Key Mechanisms:
+
+### - Access Modifiers: Gatekeepers of Data Integrity
+
+Encapsulation employs access modifiers (private, public, protected, and default) as tools to control access to the class members. By restricting direct access to the object's data, these modifiers ensure that interactions with the data are conducted in a controlled manner, significantly reducing the risk of data corruption or inadvertent exposure.
+
+### - Preventing Invalid States: Beyond Access Control
+
+Beyond merely restricting access, encapsulation plays a crucial role in preventing objects from entering invalid states. By funneling all interactions through well-defined interfaces (methods), encapsulation ensures that the object's data remains valid and consistent, thereby upholding the integrity of the application's state.
+
+### - Getters and Setters: The Interface to Robust Applications
+
+Getters and setters are instrumental in encapsulation, serving as the exclusive avenues for accessing and modifying the private data of a class. These methods do more than just read and write data; they can enforce rules, validate data, and perform transformations, thus acting as the object's safeguard against invalid inputs and states. The use of getters and setters is a hallmark of robust, resilient applications.
+
+### - Hiding Internal Complexity: A Blueprint for Modularity
+
+By hiding its internal state and requiring all interactions to occur through an explicitly defined interface, encapsulation reduces complexity and interdependencies between objects. This not only enhances modularity but also improves the maintainability and scalability of the codebase by allowing changes to the internal workings of a class without affecting its external interface.
+
+## Benefits:
+
+### - Enhanced Data Integrity
+
+By controlling how data is accessed and modified, encapsulation helps maintain the consistency and correctness of the object's state.
+
+### - Improved Code Maintainability
+
+Encapsulated code minimizes dependencies, making the system easier to debug, test, and extend.
+
+### - Increased Flexibility
+
+Changes to the internal implementation of a class can be made with minimal impact on the rest of the application, facilitating easier updates and refinements.
+
+In essence, encapsulation is not just a technique for bundling data and methods; it is a comprehensive approach for designing resilient and adaptable systems. It fosters a design ethos where the focus shifts from individual functionalities to the broader narrative of creating secure, reliable, and cohesive software architectures.
+
+---
+
+```typescript
+class BankAccount {
+	private _balance: number;
+
+	constructor(initialBalance: number) {
+		this._balance = initialBalance;
+	}
+
+	public deposit(amount: number): void {
+		if (amount > 0) {
+			this._balance += amount;
+			console.log(`Deposit successful. New balance is: ${this._balance}`);
+		}
+	}
+
+	public withdraw(amount: number): void {
+		if (amount <= this._balance) {
+			this._balance -= amount;
+			console.log(
+				`Withdrawal successful. Remaining balance is: ${this._balance}`
+			);
+		} else {
+			console.log('Insufficient funds.');
+		}
+	}
+
+	public get balance(): number {
+		return this._balance;
+	}
+}
+```

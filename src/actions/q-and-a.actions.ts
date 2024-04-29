@@ -1,13 +1,14 @@
+import { notFound } from 'next/navigation';
+
 import { QAPair } from '@/lib/types';
 
-import jsData from '../database/js.json';
-import tsData from '../database/ts.json';
-import reactData from '../database/react.json';
-import nodeData from '../database/node.json';
-import expressData from '../database/express.json';
-import mongoData from '../database/mongo.json';
-import dsaData from '../database/dsa.json';
-import { notFound } from 'next/navigation';
+import jsData from '../database/interview-questions/js.json';
+import tsData from '../database/interview-questions/ts.json';
+import reactData from '../database/interview-questions/react.json';
+import nodeData from '../database/interview-questions/node.json';
+import expressData from '../database/interview-questions/express.json';
+import mongoData from '../database/interview-questions/mongo.json';
+import dsaData from '../database/interview-questions/dsa.json';
 
 type DataConfig = {
 	id: string;
