@@ -24,6 +24,10 @@ const links = [
 		to: '/documents',
 		title: 'Documentation',
 	},
+	{
+		to: '/profile',
+		title: 'Profile',
+	},
 ] as const;
 
 export default function NavItems() {
