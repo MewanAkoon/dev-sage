@@ -14,7 +14,7 @@ export default async function Page() {
 
 	return (
 		<div className='my-2 sm:my-8 flex flex-col gap-y-4 w-full h-full items-center'>
-			<div className='grid grid-cols-1 sm:grid-cols-2 w-full gap-4'>
+			<div className='grid grid-cols-1 lg:grid-cols-2 w-full gap-4'>
 				{/* User Info Section */}
 				<section className='flex flex-col sm:flex-row gap-x-4 rounded-xl p-6 bg-slate-600 shadow-sm shadow-slate-300'>
 					<Image
@@ -26,12 +26,12 @@ export default async function Page() {
 						priority
 					/>
 
-					<div className='flex flex-col justify-between min-h-44 h-full w-full mt-4 sm:mt-0'>
+					<div className='flex flex-col justify-between min-h-44 h-full w-full max-w-full mt-4 sm:mt-0 overflow-auto'>
 						<div className='w-full'>
 							<p className='font-semibold mb-2 text-slate-200'>My Profile</p>
 							<Separator />
 						</div>
-						<div className='flex flex-col gap-y-3 text-slate-300'>
+						<div className='flex flex-col gap-y-3 my-5 sm:my-0 text-slate-300'>
 							<p className='flex gap-2 items-center'>
 								<Fingerprint width={12} height={12} /> {user.username}
 							</p>
