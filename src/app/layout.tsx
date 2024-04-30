@@ -1,14 +1,13 @@
 import './globals.css';
 
 import type { Metadata } from 'next';
-import { ClerkLoaded, ClerkLoading, ClerkProvider } from '@clerk/nextjs';
+import { ClerkProvider } from '@clerk/nextjs';
 
 import { poppins } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 
 import Header from '@/components/shared/header';
 import Footer from '@/components/shared/footer';
-import Loading from '@/components/shared/loading';
 
 export const metadata: Metadata = {
 	title: 'DevSage',
@@ -25,14 +24,9 @@ export default function RootLayout({
 		<ClerkProvider>
 			<html lang='en'>
 				<body className={cn(poppins.className, 'flex h-screen flex-col')}>
-					<ClerkLoading>
-						<Loading />
-					</ClerkLoading>
-					<ClerkLoaded>
-						<Header />
-						<main className='flex-1 wrapper'>{children}</main>
-						<Footer />
-					</ClerkLoaded>
+					<Header />
+					<main className='flex-1 wrapper'>{children}</main>
+					<Footer />
 				</body>
 			</html>
 		</ClerkProvider>
