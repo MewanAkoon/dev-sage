@@ -1860,5 +1860,46 @@
 		"tags": [],
 		"estimatedTime": 10,
 		"resources": []
+	},
+	{
+		"question": "What are pure functions in JS?",
+		"answer": [
+			{
+				"type": "text",
+				"content": "A pure function in JavaScript is a function that satisfies two main conditions: it always returns the same output for the same set of inputs, and it does not cause any observable side effects. This means that the function does not alter any external state (like global variables, I/O operations) or depend on any hidden state."
+			},
+			{
+				"type": "text",
+				"content": "Due to these characteristics, pure functions are predictable, easy to test, and reliable."
+			}
+		],
+		"difficulty": 0,
+		"practicality": 0,
+		"tags": ["functions", "pure-functions", "javascript"],
+		"estimatedTime": 6,
+		"resources": []
+	},
+	{
+		"question": "What is function composition?",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Function composition is a technique in JavaScript (and functional programming in general) where you combine two or more functions to produce a new function."
+			},
+			{
+				"type": "text",
+				"content": "This process involves taking the output of one function and using it as the input for another. It’s a powerful design concept that allows for creating more complex functions by combining simpler ones, promoting code reusability and functional clarity."
+			}
+		],
+		"difficulty": 0,
+		"practicality": 0,
+		"tags": [
+			"functions",
+			"composition",
+			"functional-programming",
+			"javascript"
+		],
+		"estimatedTime": 10,
+		"resources": []
 	}
 ]
