@@ -1,74 +1,48 @@
-# Inheritance: Architecting Reusability and Hierarchical Relationships in OOP
+# Object-Oriented Programming (OOP) Concepts
 
-Inheritance stands as a key pillar in object-oriented programming, enabling classes to inherit and reuse code from other classes. This mechanism is instrumental in reducing redundancy, facilitating code maintenance, and fostering a natural hierarchical organization of program components.
+Object-Oriented Programming (OOP) is a programming paradigm that organizes software design around data, or objects, rather than functions and logic. It's characterized by its use of objects that are instances of classes, which act as blueprints for the objects' data and behavior.
 
-## Core Aspects:
+## Four Pillars of OOP
 
-### - Code Reuse
+### Abstraction
 
-At the heart of inheritance is the ability to reuse existing code. By inheriting from a superclass, a subclass can adopt its properties and methods without the need to rewrite those components, leading to a more efficient development process.
+- **Definition**: Simplifying complex reality by modeling classes appropriate to the problem, focusing only on the relevant attributes and behaviors.
+- **Purpose**: Makes the interaction with objects simpler by hiding complex details and showing only the necessary features of an object.
 
-### - Hierarchical Structure
+### Polymorphism
 
-Inheritance introduces a clear hierarchical relationship between classes, mirroring real-world relationships and making the software design more intuitive and aligned with domain concepts.
+- **Definition**: Allows entities to take on more than one form, enhancing flexibility and scalability.
+- **Types**:
+  - **Static (Compile-time) Polymorphism**: Achieved through method overloading.
+  - **Dynamic (Run-time) Polymorphism**: Achieved through method overriding, using a class hierarchy.
 
-### - Extensibility
+### Inheritance
 
-Through inheritance, new functionality can be easily added to existing codebases. A subclass can extend the capabilities of its superclass, adding new properties and methods or overriding existing ones to modify their behavior.
+- **Definition**: Enables new objects to take on the properties and methods of existing objects.
+- **Benefits**: Facilitates code reuse, reduces redundancy, and establishes a hierarchical relationship between classes.
 
-### - The `extends` Keyword
+### Encapsulation
 
-In TypeScript, the `extends` keyword is used to declare that a class is inheriting from another class, establishing a parent-child relationship between the two.
+- **Definition**: Hides the internal state and functionality of an object, exposing only selected information and methods.
+- **Benefits**: Protects object integrity by preventing external access to its state, and bundles the data with methods that operate on that data.
 
-## Benefits:
+## Additional Concepts
 
-### - Enhanced Code Organization
+### Coupling
 
-Inheritance promotes a structured and organized codebase, making it easier to navigate and manage.
+- **Definition**: Measures the degree of direct knowledge one element has of another.
+- **Objective**: Achieving low coupling to increase modularity, making systems easier to understand, maintain, and modify.
 
-### - Reduced Duplication
+### Overloading
 
-By inheriting common functionality from a parent class, subclasses avoid the need to duplicate code, leading to cleaner and more maintainable code.
+- **Definition**: Occurs when two or more methods in a class have the same name but differ in parameters.
+- **Purpose**: Enhances flexibility by allowing a method to adapt to different input parameters, contributing to polymorphism.
 
-### - Improved Flexibility and Maintainability
+### Overriding
 
-Changes to shared functionality can be made in just one place (the superclass), automatically propagating to all subclasses, which simplifies maintenance and evolution of the codebase.
+- **Definition**: Allows a subclass to provide a specific implementation of a method that is already defined in its superclass.
+- **Key Aspect**: The overriding method in the subclass must have the same name, return type, and parameters as in the superclass, but with a different implementation.
 
-Inheritance is not merely a feature of object-oriented programming; it is a paradigm that mirrors the natural hierarchical relationships found in the real world, thereby providing a framework for creating more logical, intuitive, and scalable software architectures.
+## Overview
 
----
-
-```typescript
-// Base class (Superclass)
-class Vehicle {
-	constructor(public brand: string, public model: string) {}
-
-	displayInfo(): void {
-		console.log(`Vehicle Info: ${this.brand} ${this.model}`);
-	}
-}
-
-// Subclass extending Vehicle
-class Car extends Vehicle {
-	constructor(brand: string, model: string, public doors: number) {
-		super(brand, model); // Call the superclass's constructor
-	}
-
-	displayInfo(): void {
-		super.displayInfo(); // Call the superclass's method
-		console.log(`Doors: ${this.doors}`);
-	}
-}
-
-// Another subclass extending Vehicle
-class Truck extends Vehicle {
-	constructor(brand: string, model: string, public towingCapacity: number) {
-		super(brand, model); // Call the superclass's constructor
-	}
-
-	displayInfo(): void {
-		super.displayInfo(); // Call the superclass's method
-		console.log(`Towing Capacity: ${this.towingCapacity} lbs`);
-	}
-}
-```
+OOP is a paradigm that emphasizes organizing software around data, with a focus on the four fundamental concepts of abstraction, polymorphism, inheritance, and encapsulation. These principles encourage the development of code that is modular, scalable, reusable, and easier to manage. Additional concepts like coupling, overloading, and overriding complement these principles by refining and enhancing the design and functionality of object-oriented systems, making OOP a robust approach to software development.
