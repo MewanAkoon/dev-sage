@@ -1650,5 +1650,55 @@
 		"tags": [],
 		"estimatedTime": 20,
 		"resources": []
+	},
+	{
+		"question": "What is code splitting in React, and how can it improve the performance of a web application?",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Code splitting in React is a technique that allows you to split your code into smaller chunks which the browser can then load on demand. This is achieved using dynamic imports that React supports out of the box."
+			},
+			{
+				"type": "text",
+				"content": "By splitting the code, you can reduce the size of the initial load of your application, thereby improving the load time and performance, especially for large applications. This not only speeds up the initial load but also uses resources more efficiently as only the necessary code is loaded and executed based on user interaction or route changes."
+			},
+			{
+				"type": "code",
+				"content": "const OtherComponent = React.lazy(() => import('./OtherComponent'));\n\nfunction MyComponent() {\n  return (\n    <React.Suspense fallback={<div>Loading...</div>}>\n      <OtherComponent />\n    </React.Suspense>\n  );\n}"
+			}
+		],
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": ["react", "performance-optimization", "web-development"],
+		"estimatedTime": 10,
+		"resources": []
+	},
+	{
+		"question": "Explain the concept of hydration in the context of React and Next.js and discuss its significance.",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Hydration is a process in server-side rendered applications where the server-rendered static HTML becomes interactive on the client side."
+			},
+			{
+				"type": "text",
+				"content": "In React and Next.js, after the initial HTML is rendered by the server and sent to the browser, React 'hydrates' this HTML by attaching event handlers and enabling state updates, thus making the static content interactive. This process allows for a faster initial page rendering, as users can see the content before all JavaScript is fully downloaded and executed."
+			},
+			{
+				"type": "text",
+				"content": "It's crucial for improving the user experience on web applications that need quick time-to-interactive and SEO benefits, as it combines the speed of server rendering with the richness of client-side React applications."
+			}
+		],
+		"difficulty": 1,
+		"practicality": 2,
+		"tags": [
+			"react",
+			"next.js",
+			"server-side-rendering",
+			"ssr",
+			"web-development"
+		],
+		"estimatedTime": 15,
+		"resources": ["https://nextjs.org/docs/basic-features/pages#pre-rendering"]
 	}
 ]

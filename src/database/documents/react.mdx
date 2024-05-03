@@ -78,4 +78,16 @@ React is a declarative, efficient, and flexible JavaScript library for building 
 - A predictable state container for JavaScript apps, often used with React.
 - Helps manage the application state globally, making it accessible across the entire app without prop drilling.
 
+### Code Splitting
+
+- **Purpose**: Code splitting is a technique that splits the code into various bundles which can then be loaded on demand or in parallel. It's particularly useful in improving the performance of large web applications.
+- **Implementation**: React supports code splitting out-of-the-box via dynamic import() statements. When used with React Router, components can be loaded just at the time they are needed, rather than loading the entire application upfront.
+- **Benefits**: This reduces the initial load time of the application, enhances user experience by loading only what is necessary, and can also reduce resource consumption on both the server and client.
+
+### Hydration
+
+- **Concept**: Hydration is the process of taking a server-rendered HTML and making it interactive on the client side. This happens by attaching event handlers and enabling state changes to the already existing markup.
+- **Context** in React: In React, this process typically follows server-side rendering (SSR). After the HTML is loaded on the client, React "hydrates" the markup by attaching the necessary React components. This makes the static server-rendered HTML fully interactive.
+- **Why It's Important**: Hydration allows for faster initial page loads and a smoother user experience, as users can view server-rendered content before the JavaScript bundle fully executes to make the site interactive.
+
 This guide provides a snapshot of React's core principles, usage, and best practices. React's component-based architecture, combined with its efficient updating mechanism, makes it a powerful tool for developing interactive and dynamic web applications.

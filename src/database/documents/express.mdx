@@ -40,40 +40,40 @@ Middleware functions can perform various tasks: code execution, modifications to
 
 - **Application-level Middleware**: Attached with `app.use()` or `app.METHOD()`, where METHOD is the HTTP method. Applied globally or to specific routes.
 
-  ```javascript
-  app.use((req, res, next) => {
-  	console.log('Time:', Date.now());
-  	next();
-  });
-  ```
+```javascript
+app.use((req, res, next) => {
+  console.log('Time:', Date.now());
+  next();
+});
+```
 
 - **Router-level Middleware**: Similar to application-level but bound to an instance of `express.Router()`.
 
-  ```javascript
-  const router = express.Router();
-  router.use((req, res, next) => {
-  	console.log('Request Type:', req.method);
-  	next();
-  });
-  ```
+```javascript
+const router = express.Router();
+router.use((req, res, next) => {
+  console.log('Request Type:', req.method);
+  next();
+});
+```
 
 - **Error-handling Middleware**: Defined with four arguments instead of three, specifically for handling errors.
 
-  ```javascript
-  app.use((err, req, res, next) => {
-  	console.error(err.stack);
-  	res.status(500).send('Something broke!');
-  });
-  ```
+```javascript
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+```
 
 - **Built-in Middleware**: Comes with Express, like `express.static`, `express.json`, and `express.urlencoded`.
 
 - **Third-party Middleware**: Added via `npm`, such as `body-parser`, `cors`, `morgan`.
 
-  ```javascript
-  const cors = require('cors');
-  app.use(cors());
-  ```
+```javascript
+const cors = require('cors');
+app.use(cors());
+```
 
 #### Using `next` in Middleware
 
@@ -139,20 +139,18 @@ Express supports several template engines like Pug, EJS, and Handlebars, which a
 
 - **Setting Up a Template Engine**:
 
-  ```javascript
-  app.set('view engine', 'pug');
-  ```
+```javascript
+app.set('view engine', 'pug');
+```
 
 - **Rendering Views**:
 
-  ```javascript
-  app.get('/', (req, res) => {
-  	res.render('index', { title: 'Hey', message: 'Hello there!' });
-  });
-  ```
+```javascript
+app.get('/', (req, res) => {
+  res.render('index', { title: 'Hey', message: 'Hello there!' });
+});
+```
 
 ## Conclusion
 
-Express.js stands out for its simplicity, flexibility, and efficiency in developing web
-
-applications and APIs. Understanding its core concepts, including middleware, routing, and scaffolding, equips developers to build scalable and maintainable server-side applications.
+Express.js stands out for its simplicity, flexibility, and efficiency in developing web applications and APIs. Understanding its core concepts, including middleware, routing, and scaffolding, equips developers to build scalable and maintainable server-side applications.
