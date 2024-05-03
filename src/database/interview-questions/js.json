@@ -1901,5 +1901,59 @@
 		],
 		"estimatedTime": 10,
 		"resources": []
+	},
+	{
+		"question": "What's pass by reference and pass by value in JavaScript?",
+		"answer": [
+			{
+				"type": "text",
+				"content": "In JavaScript, when you pass a value to a function, it can be passed either by reference or by value. Primitive types (like numbers, strings, and booleans) are passed by value, meaning that a copy of the value is made and used inside the function. Any changes to this value do not affect the original variable."
+			},
+			{
+				"type": "text",
+				"content": "Objects, arrays, and functions, however, are passed by reference. This means that the function receives a reference to the original object, and any modifications to this object within the function are reflected outside the function as well."
+			}
+		],
+		"difficulty": 1,
+		"practicality": 1,
+		"tags": ["javascript", "pass-by-value", "pass-by-reference", "data-types"],
+		"estimatedTime": 15,
+		"resources": []
+	},
+	{
+		"question": "What are the cons of using arrow functions in JavaScript?",
+		"answer": [
+			{
+				"type": "text",
+				"content": "While arrow functions provide a concise syntax and share the same 'this' context as their enclosing execution context, they have some limitations. They cannot be used as constructors, meaning you cannot use the 'new' keyword with an arrow function. They also do not have their own 'arguments' object, which can limit their use in functions that require dynamic parameter handling."
+			},
+			{
+				"type": "text",
+				"content": "Additionally, the lexical binding of 'this' means that arrow functions are not suitable for all contexts, particularly when the function needs to be bound to a different 'this' context, like in object methods or event handlers."
+			}
+		],
+		"difficulty": 1,
+		"practicality": 2,
+		"tags": ["javascript", "arrow-functions", "functions", "limitations"],
+		"estimatedTime": 10,
+		"resources": []
+	},
+	{
+		"question": "What are symbols in JavaScript?",
+		"answer": [
+			{
+				"type": "text",
+				"content": "Symbols are a primitive data type introduced in ECMAScript 2015 (ES6) that are used to create unique identifiers for object properties. Each symbol value returned by the Symbol function is unique, making symbols ideal for creating private or protected object keys that do not clash with any other properties in the object."
+			},
+			{
+				"type": "text",
+				"content": "Symbols are particularly useful for adding metadata to objects in a way that won't interfere with the normal operation of the object or any library code trying to manipulate the object."
+			}
+		],
+		"difficulty": 2,
+		"practicality": 1,
+		"tags": ["javascript", "symbols", "data-types", "ES6"],
+		"estimatedTime": 10,
+		"resources": []
 	}
 ]

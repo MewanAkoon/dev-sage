@@ -75,6 +75,14 @@ Objects that represent the eventual completion (or failure) of an asynchronous o
 
 - **`Promise.reject(reason)`**: Returns a promise that is rejected with the given reason.
 
+### References and Values in JavaScript
+
+JavaScript variables hold references to objects and values directly for primitives. When a primitive type is assigned from one variable to another, its value is copied. For objects, the reference is copied, not the object itself. This means changes to the object reflect across all references.
+
+### Symbols in JavaScript
+
+Symbols are a unique and immutable data type and are often used as identifiers for object properties. Each symbol is unique; even if you create many symbols with the same description, they are different. This uniqueness makes symbols ideal for creating non-colliding property keys in objects, particularly in situations where there needs to be a distinction between publicly accessible properties and properties that are meant to be private.
+
 ---
 
 ## Resources
