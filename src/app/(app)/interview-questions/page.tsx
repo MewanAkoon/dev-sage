@@ -1,7 +1,11 @@
-import React from 'react';
+import { Metadata } from 'next';
+import { technologies } from '@/configs';
+import { Card } from '@/components/shared/card';
 
-import Card from '@/components/shared/card';
-import { technologies } from '@/lib/technologies';
+export const metadata: Metadata = {
+	title: 'Interview Questions',
+	// TODO: Add description
+};
 
 export default function Page() {
 	return (

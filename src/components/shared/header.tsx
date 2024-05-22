@@ -1,11 +1,10 @@
-import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import NavItems from './navItems';
+import { NavItems } from './navItems';
 
 import devSageLogo from '../../../public/assets/logos/logo.png';
 
-export default function Header() {
+export function Header() {
 	return (
 		<header className='bg-slate-100 w-full h-fit'>
 			<div className='wrapper flex justify-between items-center'>

@@ -1,6 +1,8 @@
 'use client';
 
+import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 import {
 	Breadcrumb,
@@ -10,10 +12,9 @@ import {
 	BreadcrumbPage,
 	BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
-import { usePathname } from 'next/navigation';
-import React from 'react';
+
 import { Home } from 'lucide-react';
-import { getTextCase } from '@/lib/utils';
+import { getTitleCase } from '@/utils';
 
 export function BreadcrumbComponent() {
 	const pathname = usePathname();
@@ -38,12 +39,12 @@ export function BreadcrumbComponent() {
 				{breadcrumbItems.map((item, idx) => (
 					<React.Fragment key={idx}>
 						<BreadcrumbSeparator />
-						<BreadcrumbItem className={getTextCase(item.label)}>
+						<BreadcrumbItem>
 							{idx === breadcrumbItems.length - 1 ? (
-								<BreadcrumbPage>{item.label}</BreadcrumbPage>
+								<BreadcrumbPage>{getTitleCase(item.label)}</BreadcrumbPage>
 							) : (
 								<BreadcrumbLink asChild>
-									<Link href={item.path}>{item.label}</Link>
+									<Link href={item.path}>{getTitleCase(item.label)}</Link>
 								</BreadcrumbLink>
 							)}
 						</BreadcrumbItem>

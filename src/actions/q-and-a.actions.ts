@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 
-import { QAPair } from '@/lib/types';
+import { QAPair } from '@/types';
 
 import jsData from '../database/interview-questions/js.json';
 import tsData from '../database/interview-questions/ts.json';

@@ -1,7 +1,11 @@
-import React from 'react';
+import { Metadata } from 'next';
+import { Card } from '@/components/shared/card';
+import { documents } from '@/configs';
 
-import Card from '@/components/shared/card';
-import documents from '@/lib/documents';
+export const metadata: Metadata = {
+	title: 'Documents',
+	// TODO: Add description
+};
 
 export default function Page() {
 	return (

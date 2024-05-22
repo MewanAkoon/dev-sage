@@ -1,7 +1,6 @@
 'use client';
 
-import { AnswerSegment, QAPair, SearchParamProps } from '@/lib/types';
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
 	ColumnDef,
 	SortingState,
@@ -13,8 +12,11 @@ import {
 	getSortedRowModel,
 	useReactTable,
 } from '@tanstack/react-table';
-
 import { ArrowUpDown, ChevronDown } from 'lucide-react';
+
+import { AnswerSegment, QAPair, SearchParamProps } from '@/types';
+import { getTitleCase } from '@/utils';
+import { getQuestionsAndAnswers } from '@/actions/q-and-a.actions';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -31,7 +33,6 @@ import {
 	TableHeader,
 	TableRow,
 } from '@/components/ui/table';
-import { getQuestionsAndAnswers } from '@/actions/q-and-a.actions';
 import {
 	Dialog,
 	DialogContent,
@@ -40,9 +41,8 @@ import {
 	DialogTrigger,
 } from '@/components/ui/dialog';
 import { Separator } from '@/components/ui/separator';
-import DifficultyBadge from '@/components/shared/difficultyBadge';
+import { DifficultyBadge } from '@/components/shared/difficultyBadge';
 import { Input } from '@/components/ui/input';
-import { getTextCase } from '@/lib/utils';
 
 const columns: ColumnDef<QAPair>[] = [
 	{
@@ -177,8 +177,7 @@ export default function Page({ params }: SearchParamProps) {
 	return (
 		<>
 			<h1 className='text-center my-4'>
-				<span className={getTextCase(params.id)}>{params.id}</span> Interview
-				Questions
+				<span>{getTitleCase(params.id)}</span> Interview Questions
 			</h1>
 
 			<div className='w-full mb-8'>

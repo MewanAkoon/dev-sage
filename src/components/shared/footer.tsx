@@ -1,17 +1,4 @@
-import React from 'react';
-
-const links = [
-	{
-		to: '/interview-questions',
-		title: 'Interview Questions',
-	},
-	{
-		to: '/documents',
-		title: 'Documentation',
-	},
-] as const;
-
-export default function Footer() {
+export function Footer() {
 	return (
 		<footer className='bg-slate-100 w-full h-fit'>
 			<div className='wrapper flex items-center justify-center'>

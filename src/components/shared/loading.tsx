@@ -1,6 +1,4 @@
-import React from 'react';
-
-export default function Loading() {
+export function Loading() {
 	return (
 		<div className='absolute top-0 left-0 bg-gray-200 w-full h-full flex items-center justify-center opacity-30'>
 			<div

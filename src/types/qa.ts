@@ -1,8 +1,3 @@
-export type SearchParamProps = {
-	params: { id: string };
-	searchParams: { [key: string]: string | string[] | undefined };
-};
-
 export enum Practicality {
 	TheoreticalAndFundamental = 0,
 	Practical = 1,

@@ -2,7 +2,6 @@
 
 import Image, { StaticImageData } from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
-import React from 'react';
 
 type BaseCardItem = {
 	title: string;
@@ -21,7 +20,7 @@ type CardProps = {
 	item: CardItem;
 };
 
-export default function Card({ item }: CardProps) {
+export function Card({ item }: CardProps) {
 	const pathname = usePathname();
 	const route = useRouter();
 

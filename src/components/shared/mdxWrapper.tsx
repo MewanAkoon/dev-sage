@@ -1,8 +1,9 @@
 import React from 'react';
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils';
+
 type MarkdownComponentProps = { children: React.ReactNode; className?: string };
 
-function MDXWrapper({ children, className }: MarkdownComponentProps) {
+export function MDXWrapper({ children, className }: MarkdownComponentProps) {
 	return (
 		<div
 			className={cn(
@@ -14,5 +15,3 @@ function MDXWrapper({ children, className }: MarkdownComponentProps) {
 		</div>
 	);
 }
-
-export default MDXWrapper;

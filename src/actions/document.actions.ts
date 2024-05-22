@@ -57,6 +57,7 @@ import StackMDX from '@/database/documents/data-structures/stacks.mdx';
 
 type DocumentConfig = {
 	id: string;
+	title: string;
 	data: MDXContent;
 	subDocuments?: DocumentConfig[];
 };
@@ -64,110 +65,204 @@ type DocumentConfig = {
 const config: DocumentConfig[] = [
 	{
 		id: 'docker',
+		title: 'Docker',
 		data: DockerMDX,
 	},
 	{
 		id: 'express',
+		title: 'Express JS',
 		data: ExpressMDX,
 	},
 	{
 		id: 'javascript',
+		title: 'Javascript',
 		data: JSMDX,
 	},
 	{
 		id: 'mongo',
+		title: 'MongoDB',
 		data: MongoMDX,
 	},
 	{
 		id: 'node',
+		title: 'Node JS',
 		data: NodeMDX,
 	},
 	{
 		id: 'react',
+		title: 'React JS',
 		data: ReactMDX,
 	},
 	{
 		id: 'rest',
+		title: 'REST',
 		data: RestMDX,
 	},
 	{
 		id: 'sdlc',
+		title: 'SDLC',
 		data: SDLCMDX,
 	},
 	{
 		id: 'sdm',
+		title: 'SDM',
 		data: SDMMDX,
 	},
 	{
 		id: 'solid',
+		title: 'SOLID',
 		data: SOLIDMDX,
 	},
 	{
 		id: 'typescript',
+		title: 'Typescript',
 		data: TSMDX,
 	},
 	{
 		id: 'oop',
+		title: 'OOP',
 		data: OOPMDX,
 		subDocuments: [
-			{ id: 'inheritance', data: InheritanceMDX },
-			{ id: 'abstraction', data: AbstractionMDX },
-			{ id: 'encapsulation', data: EncapsulationMDX },
-			{ id: 'polymorphism', data: PolymorphismMDX },
+			{
+				id: 'inheritance',
+				title: 'Inheritance | OOP',
+				data: InheritanceMDX,
+			},
+			{
+				id: 'abstraction',
+				title: 'Abstraction | OOP',
+				data: AbstractionMDX,
+			},
+			{
+				id: 'encapsulation',
+				title: 'Encapsulation | OOP',
+				data: EncapsulationMDX,
+			},
+			{
+				id: 'polymorphism',
+				title: 'Polymorphism | OOP',
+				data: PolymorphismMDX,
+			},
 		],
 	},
 	{
 		id: 'design-patterns',
+		title: 'Design Patterns',
 		data: DesignPatternsMDX,
 		subDocuments: [
 			{
 				id: 'behavioral',
+				title: 'Behavioral Design Patterns',
 				data: BehavioralPatternsMDX,
 				subDocuments: [
-					{ id: 'command', data: CommandPatternMDX },
-					{ id: 'iterator', data: IteratorPatternMDX },
-					{ id: 'mediator', data: MediatorPatternMDX },
-					{ id: 'observer', data: ObserverPatternMDX },
-					{ id: 'state', data: StatePatternMDX },
+					{
+						id: 'command',
+						title: 'Command Design Pattern',
+						data: CommandPatternMDX,
+					},
+					{
+						id: 'iterator',
+						title: 'Iterator Design Pattern',
+						data: IteratorPatternMDX,
+					},
+					{
+						id: 'mediator',
+						title: 'Mediator Design Pattern',
+						data: MediatorPatternMDX,
+					},
+					{
+						id: 'observer',
+						title: 'Observer Design Pattern',
+						data: ObserverPatternMDX,
+					},
+					{
+						id: 'state',
+						title: 'State Design Pattern',
+						data: StatePatternMDX,
+					},
 				],
 			},
 			{
 				id: 'creational',
+				title: 'Creational Design Patterns',
 				data: CreationalPatternsMDX,
 				subDocuments: [
-					{ id: 'builder', data: BuilderPatternMDX },
-					{ id: 'constructor', data: ConstructorPatternMDX },
-					{ id: 'factory', data: FactoryPatternMDX },
-					{ id: 'prototype', data: PrototypePatternMDX },
-					{ id: 'singleton', data: SingletonPatternMDX },
+					{
+						id: 'builder',
+						title: 'Builder Design Pattern',
+						data: BuilderPatternMDX,
+					},
+					{
+						id: 'constructor',
+						title: 'Constructor Design Pattern',
+						data: ConstructorPatternMDX,
+					},
+					{
+						id: 'factory',
+						title: 'Factory Design Pattern',
+						data: FactoryPatternMDX,
+					},
+					{
+						id: 'prototype',
+						title: 'Prototype Design Pattern',
+						data: PrototypePatternMDX,
+					},
+					{
+						id: 'singleton',
+						title: 'Singleton Design Pattern',
+						data: SingletonPatternMDX,
+					},
 				],
 			},
 			{
 				id: 'structural',
+				title: 'Structural Design Patterns',
 				data: StructuralPatternsMDX,
 				subDocuments: [
-					{ id: 'adapter', data: AdapterPatternMDX },
-					{ id: 'decorator', data: DecoratorPatternMDX },
-					{ id: 'facade', data: FacadePatternMDX },
-					{ id: 'proxy', data: ProxyPatternMDX },
+					{
+						id: 'adapter',
+						title: 'Adapter Design Pattern',
+						data: AdapterPatternMDX,
+					},
+					{
+						id: 'decorator',
+						title: 'Decorator Design Pattern',
+						data: DecoratorPatternMDX,
+					},
+					{
+						id: 'facade',
+						title: 'Facade Design Pattern',
+						data: FacadePatternMDX,
+					},
+					{ id: 'proxy', title: 'Proxy Design Pattern', data: ProxyPatternMDX },
 				],
 			},
 		],
 	},
 	{
 		id: 'dsa',
+		title: 'DSA',
 		data: DSAMDX,
 		subDocuments: [
-			{ id: 'binary-search-trees', data: BSTMDX },
-			{ id: 'hash-tables', data: HashTableMDX },
-			{ id: 'linked-lists', data: LinkedListMDX },
-			{ id: 'queues', data: QueueMDX },
-			{ id: 'sets', data: SetMDX },
-			{ id: 'stacks', data: StackMDX },
+			{
+				id: 'binary-search-trees',
+				title: 'BST',
+				data: BSTMDX,
+			},
+			{ id: 'hash-tables', title: 'Hash Tables', data: HashTableMDX },
+			{
+				id: 'linked-lists',
+				title: 'Linked Lists',
+				data: LinkedListMDX,
+			},
+			{ id: 'queues', title: 'Queues', data: QueueMDX },
+			{ id: 'sets', title: 'Sets', data: SetMDX },
+			{ id: 'stacks', title: 'Stacks', data: StackMDX },
 		],
 	},
 	{
 		id: 'essential-concepts',
+		title: 'Essential Concepts',
 		data: EssentialConceptsMDX,
 	},
 ];

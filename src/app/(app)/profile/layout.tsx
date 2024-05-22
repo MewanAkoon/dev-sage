@@ -1,5 +1,5 @@
-import Loading from '@/components/shared/loading';
 import { ClerkLoaded, ClerkLoading } from '@clerk/nextjs';
+import { Loading } from '@/components/shared/loading';
 
 export default function Layout({
 	children,

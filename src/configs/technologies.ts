@@ -7,7 +7,7 @@ import {
 	NodeCardItem,
 	ReactCardItem,
 	TSCardItem,
-} from './cardItems';
+} from './card-items';
 
 export const technologies: CardItem[] = [
 	JSCardItem,

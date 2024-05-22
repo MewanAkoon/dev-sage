@@ -1,11 +1,17 @@
 import React from 'react';
-
+import { Metadata } from 'next';
 import Image from 'next/image';
 import { Fingerprint, Mail, User } from 'lucide-react';
 import { currentUser } from '@clerk/nextjs/server';
 import { SignOutButton } from '@clerk/nextjs';
+
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
+
+export const metadata: Metadata = {
+	title: 'Profile',
+	// TODO: Add description
+};
 
 export default async function Page() {
 	const user = await currentUser();

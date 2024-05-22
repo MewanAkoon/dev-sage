@@ -1,4 +1,5 @@
-import { CardItem } from '@/components/shared/card';
+import { type Document } from '@/types';
+
 import {
 	DSACardItem,
 	DesignPatternsCardItem,
@@ -15,13 +16,9 @@ import {
 	SDMCardItem,
 	SOLIDCardItem,
 	TSCardItem,
-} from './cardItems';
+} from './card-items';
 
-type Document = CardItem & {
-	subDocuments?: Document[];
-};
-
-const documents: Document[] = [
+export const documents: Document[] = [
 	JSCardItem,
 	TSCardItem,
 	ReactCardItem,
@@ -218,13 +215,3 @@ const documents: Document[] = [
 	SDLCCardItem,
 	EssentialConceptsCardItem,
 ];
-
-export const getSubDocumentCardsData = (parentId: string) => {
-	const parentDoc = documents
-		.flatMap((doc) => [doc, ...(doc.subDocuments || [])])
-		.find((doc) => doc.href === `/${parentId}`);
-
-	return parentDoc?.subDocuments || [];
-};
-
-export default documents;
