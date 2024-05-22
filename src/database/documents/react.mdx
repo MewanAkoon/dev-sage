@@ -37,7 +37,6 @@ React is a declarative, efficient, and flexible JavaScript library for building 
 ### Class Component vs Functional Component
 
 - **Class Component**:
-
   - Utilizes ES6 class syntax.
   - Can leverage lifecycle methods (e.g., `componentDidMount`, `componentDidUpdate`).
   - Extends from React component.
@@ -58,6 +57,17 @@ React is a declarative, efficient, and flexible JavaScript library for building 
 - Can lead to complexity and maintenance challenges.
 - Solutions like Context API or Redux can help avoid prop drilling by providing a more direct method of state management across components.
 
+### Lifecycle Methods
+
+- **Mounting**: `componentDidMount`, `constructor`, `render`, `componentWillMount` (deprecated).
+- **Updating**: `componentDidUpdate`, `shouldComponentUpdate`, `render`, `componentWillUpdate` (deprecated), `componentWillReceiveProps` (deprecated).
+- **Unmounting**: `componentWillUnmount`.
+
+### Error Boundaries
+
+- **Purpose**: Components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of the component tree that crashed.
+- **Usage**: Implemented using `componentDidCatch` and `getDerivedStateFromError`.
+
 ## Advanced Topics
 
 ### Hooks
@@ -67,6 +77,12 @@ React is a declarative, efficient, and flexible JavaScript library for building 
   - `useState`: Manages state in a functional component.
   - `useEffect`: Executes side effects in functional components.
   - `useRef`: References DOM elements or stores a mutable value.
+  - `useContext`: Allows consuming context values without the need for a wrapper component.
+  - `useReducer`: An alternative to `useState` for managing complex state logic.
+  - `useMemo`: Memoizes a computed value to optimize performance.
+  - `useCallback`: Memoizes a function reference to prevent unnecessary re-renders.
+  - `useLayoutEffect`: Similar to `useEffect` but fires synchronously after all DOM mutations.
+  - **Custom Hooks**: Functions that let you extract component logic into reusable pieces.
 
 ### Context API
 
@@ -87,7 +103,68 @@ React is a declarative, efficient, and flexible JavaScript library for building 
 ### Hydration
 
 - **Concept**: Hydration is the process of taking a server-rendered HTML and making it interactive on the client side. This happens by attaching event handlers and enabling state changes to the already existing markup.
-- **Context** in React: In React, this process typically follows server-side rendering (SSR). After the HTML is loaded on the client, React "hydrates" the markup by attaching the necessary React components. This makes the static server-rendered HTML fully interactive.
+- **Context** in React: In React, this process typically follows server-side rendering (SSR). After the HTML is loaded on
+
+ the client, React "hydrates" the markup by attaching the necessary React components. This makes the static server-rendered HTML fully interactive.
 - **Why It's Important**: Hydration allows for faster initial page loads and a smoother user experience, as users can view server-rendered content before the JavaScript bundle fully executes to make the site interactive.
+
+### Server-Side Rendering (SSR) and Static Site Generation (SSG)
+
+- **Next.js**: A React framework that supports SSR and SSG out-of-the-box.
+  - **getInitialProps**, **getServerSideProps**, **getStaticProps**, **getStaticPaths**: Data fetching methods in Next.js.
+
+### Performance Optimization
+
+- **Memoization**: Using `React.memo` for component memoization.
+- **useMemo and useCallback**: For memoizing values and functions.
+- **PureComponent**: A base class similar to `React.Component` but performs a shallow comparison on props and state to prevent unnecessary renders.
+
+### Testing
+
+- **Tools**: Jest, Enzyme, React Testing Library.
+- **Concepts**:
+  - Unit Testing: Testing individual components.
+  - Integration Testing: Testing interactions between components.
+  - Snapshot Testing: Ensuring the UI does not change unexpectedly.
+
+### Routing
+
+- **React Router**: A standard library for routing in React applications.
+  - **Components**: `<BrowserRouter>`, `<Route>`, `<Link>`, `<Switch>`, `<Redirect>`.
+
+### TypeScript with React
+
+- **Benefits**: Type safety, improved code quality, better refactoring.
+- **Usage**: Typing props, state, and hooks in functional and class components.
+
+### State Management Libraries
+
+- **MobX**: An alternative to Redux for state management.
+- **Recoil**: A state management library for React developed by Facebook.
+
+### Context API Patterns
+
+- **Provider Pattern**: How to provide and consume context.
+- **Compound Components**: Using context to manage state between related components.
+
+### Modern React Features
+
+- **React Suspense**: For lazy loading components and handling asynchronous data fetching.
+- **Concurrent Mode**: Experimental feature for rendering updates without blocking the main thread.
+
+### Best Practices
+
+- **Component Composition**: Building complex UIs from smaller, reusable components.
+- **Container and Presentational Components**: Separation of concerns by splitting components into those that handle logic (containers) and those that handle UI (presentational).
+- **Error Handling**: Using error boundaries and graceful degradation.
+- **Code Splitting**: Using dynamic import() for better performance.
+
+### Additional Topics
+
+- **React Fiber**: The reimplementation of the React core algorithm for improved scheduling of rendering tasks.
+- **Contextual Hooks**: Custom hooks tailored for specific context values.
+- **Higher-Order Components (HOCs)**: A pattern for reusing component logic by wrapping components.
+
+---
 
 This guide provides a snapshot of React's core principles, usage, and best practices. React's component-based architecture, combined with its efficient updating mechanism, makes it a powerful tool for developing interactive and dynamic web applications.

@@ -1,12 +1,14 @@
-# JavaScript Concepts Guide
+# JavaScript Comprehensive Guide
 
 JavaScript is a versatile and powerful programming language used in web development, known for its dynamic and asynchronous capabilities. Understanding its core concepts is crucial for both front-end and back-end development.
 
 ## JavaScript Engine
 
+Different browsers use various JavaScript engines to execute JavaScript code:
+
 - **Chrome**: V8
 - **Firefox**: SpiderMonkey
-- **Explorer**: Chakra
+- **Internet Explorer/Edge**: Chakra
 
 ### Components
 
@@ -23,7 +25,7 @@ JavaScript is a versatile and powerful programming language used in web developm
 
 ## JavaScript Runtime Environment (JRE)
 
-To support asynchronous execution, JRE provides additional components beyond the JS engine:
+To support asynchronous execution, the JRE provides additional components beyond the JS engine:
 
 - **Web APIs**: Browser-provided APIs like DOM, AJAX (XMLHttpRequest), and Timeout (setTimeout), among others.
 - **Microtask Queue**: Handles microtasks such as promises and queues them to execute immediately after the current script has finished execution, but before processing any other macro tasks.
@@ -52,9 +54,13 @@ To support asynchronous execution, JRE provides additional components beyond the
 
 ## Advanced Concepts
 
-### High-Order Components (HOCs)
+### Higher-Order Functions (HOFs)
 
-- Functions that take a component and return a new component, used to abstract or modify behaviors in a reusable way.
+Functions that take one or more functions as arguments or return a function. They enable functional programming paradigms such as map, filter, reduce, and composition.
+
+### Function Currying
+
+A technique in functional programming where a function with multiple arguments is transformed into a sequence of nested functions, each taking a single argument. This allows partial application of the function, creating new functions with fewer arguments.
 
 ### `setTimeout` and `setInterval`
 
@@ -83,8 +89,10 @@ JavaScript variables hold references to objects and values directly for primitiv
 
 Symbols are a unique and immutable data type and are often used as identifiers for object properties. Each symbol is unique; even if you create many symbols with the same description, they are different. This uniqueness makes symbols ideal for creating non-colliding property keys in objects, particularly in situations where there needs to be a distinction between publicly accessible properties and properties that are meant to be private.
 
----
-
 ## Resources
 
-- [10 Interview Questions Every JavaScript Developer Should Know in 2024](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbkE3RnBuWTcyei00SXIwNHR2WFNtd3JjMkZEd3xBQ3Jtc0tuOUVNTGluZjlCc0ZHUXJ4WFhtaUZ6UUlxeUwxeHF6YkF6NHZWSi0zOHkzT1MwMnR2VUFMenRrODVJNmxqb0RIdk5LQTRzZW5manRfVUM0ZXJvWFUzZ3N0UFBhS0ZjTlZSVTFldnJ5Z0tIRE5XNU5CUQ&q=https%3A%2F%2Fmedium.com%2Fjavascript-scene%2F10-interview-questions-every-javascript-developer-should-know-in-2024-c1044bcb0dfb&v=kUTbEcO-lrk)
+- [10 Interview Questions Every JavaScript Developer Should Know in 2024](https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-in-2024-c1044bcb0dfb)
+
+---
+
+This comprehensive guide covers essential JavaScript concepts, ensuring a strong foundational understanding. Mastering these principles will help you excel in both front-end and back-end development, and prepare you well for interviews and real-world application development.

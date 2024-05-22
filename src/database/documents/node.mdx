@@ -5,21 +5,15 @@ Node.js is a powerful JavaScript runtime environment that enables JavaScript to 
 ## Key Features
 
 - **Asynchronous Event-Driven IO**: Utilizes non-blocking, asynchronous operations, allowing it to handle multiple requests concurrently. This is essential for high-performance applications that require handling many connections simultaneously.
-
 - **Fast Code Execution**: Powered by Google Chrome's V8 JavaScript engine, Node.js ensures quick compilation and execution of JavaScript code, leading to faster server-side application performance.
-
 - **Single-Threaded but Highly Scalable**: Despite its single-threaded nature, Node.js offers high scalability due to its event-driven model and non-blocking IO mechanism. It efficiently manages operations using an event loop, allowing for the processing of a high volume of requests.
-
 - **Uses JavaScript**: Offers a unified development experience by using JavaScript for both server-side and client-side scripts, streamlining the development process.
-
 - **Cross-Platform**: Node.js can run on various platforms (Windows, Linux, Unix, Mac OS X, etc.), making it versatile for different environments.
-
 - **Rich Ecosystem**: npm, Node.js's package ecosystem, is the largest ecosystem of open-source libraries, facilitating easy integration of various tools and libraries to enhance application development.
 
 ### Additional Details
 
 - **Event-Driven Architecture**: The foundation of Node.js's non-blocking IO operation, where events drive the execution of callbacks, enabling efficient handling of concurrent operations without the need for multi-threading.
-
 - **Non-Blocking Behavior**: A key characteristic where operations like I/O are executed asynchronously, allowing Node.js to perform other tasks while awaiting completion, improving the application's throughput and responsiveness.
 
 ## When Not to Use Node.js
@@ -29,19 +23,21 @@ Node.js is a powerful JavaScript runtime environment that enables JavaScript to 
 ## Types of Modules
 
 - **Built-in Modules (Core)**: Include essential modules like `fs` for file system operations, `path` for handling file paths, `os` for operating system-related utility methods, and `http` for making HTTP server and client requests.
-
 - **Local Modules**: Custom modules created in your Node.js application, which can be used to organize and separate your code into different files and modules.
-
 - **3rd Party Modules**: Modules/packages that you install from npm to add additional functionality to your Node.js applications. These can range from frameworks like Express for creating web servers to utility libraries like Lodash.
 
-## Example: Understanding the Event Loop
+## Understanding the Event Loop
+
+The event loop is the core mechanism that handles asynchronous operations in Node.js. It allows Node.js to perform non-blocking I/O operations, despite being single-threaded, by offloading operations to the system kernel whenever possible.
+
+### Example: Event Loop
 
 ```javascript
 // Example demonstrating Node.js's asynchronous execution
 console.log('Start');
 
 setTimeout(() => {
-	console.log('Processing');
+  console.log('Processing');
 }, 0);
 
 console.log('End');
@@ -49,6 +45,15 @@ console.log('End');
 
 In this example, "End" will be printed before "Processing", demonstrating the non-blocking nature of Node.js. The `setTimeout` function is handled outside the main flow, allowing the script to continue executing without delay.
 
-## Conclusion
+### Event Loop Phases
+
+- **Timers**: This phase executes callbacks scheduled by `setTimeout` and `setInterval`.
+- **Pending Callbacks**: Executes I/O callbacks deferred to the next loop iteration.
+- **Idle, Prepare**: Only used internally by Node.js.
+- **Poll**: Retrieves new I/O events; executes I/O-related callbacks.
+- **Check**: Executes `setImmediate` callbacks.
+- **Close Callbacks**: Executes close event callbacks, e.g., `socket.on('close', ...)`.
+
+---
 
 Node.js revolutionizes server-side development with its non-blocking, event-driven architecture, fast execution speed, and the extensive npm ecosystem. Its ability to handle concurrent operations efficiently, coupled with the convenience of using JavaScript across the full stack, makes Node.js a preferred choice for developing modern web applications, especially those requiring real-time capabilities and scalability.

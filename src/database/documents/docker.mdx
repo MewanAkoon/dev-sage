@@ -1,4 +1,4 @@
-# Docker Notes
+# Docker Comprehensive Guide
 
 Docker is a powerful platform for developing, shipping, and running applications. By using Docker, you can quickly deploy and scale applications into any environment and know your code will run.
 
@@ -6,7 +6,7 @@ Docker is a powerful platform for developing, shipping, and running applications
 
 ### Dockerfile
 
-A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. Using `docker build` users can create an automated build that executes several command-line instructions in succession.
+A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. Using `docker build`, users can create an automated build that executes several command-line instructions in succession.
 
 ### docker-compose.yml
 
@@ -43,7 +43,7 @@ docker-compose down
 
 Removes all unused containers, networks, images (both dangling and unreferenced), and optionally, volumes.
 
-- **`-a`**: Remove all unused images not just dangling ones.
+- **`-a`**: Remove all unused images, not just dangling ones.
 - **`-f`**: Force the removal without confirmation.
 
 ```bash
@@ -63,9 +63,37 @@ docker rm <container_name> -fv
 
 ## Best Practices
 
-- **Dockerfile Optimization**: Keep your Dockerfiles clean and efficient by using multi-stage builds, ordering instructions to leverage Docker's build cache, and minimizing the number of layers.
-- **Security**: Use official or verified images as the basis for your containers, and regularly scan your images for vulnerabilities.
+### Dockerfile Optimization
 
-- **Resource Limits**: Always set resource limits in your container definitions to prevent any service from consuming too much of the host's resources.
+- **Multi-Stage Builds**: Use multi-stage builds to keep your Dockerfiles clean and efficient. This helps reduce the final image size by separating build-time dependencies from runtime dependencies.
+- **Layer Caching**: Order instructions to leverage Docker's build cache. Changes in early layers invalidate all subsequent layers.
+- **Minimize Layers**: Each instruction in a Dockerfile adds a layer. Combine commands where possible to minimize the number of layers.
 
-- **Logging and Monitoring**: Implement logging and monitoring for your containers to keep track of their health and performance.
+### Security
+
+- **Base Images**: Use official or verified images as the basis for your containers. These images are maintained and regularly updated for security.
+- **Scanning**: Regularly scan your images for vulnerabilities using tools like `Docker scan` or third-party security tools.
+
+### Resource Limits
+
+- **CPU and Memory Limits**: Always set resource limits in your container definitions to prevent any service from consuming too much of the host's resources. This can be done using `--cpus` and `--memory` options in `docker run`.
+
+```yaml
+services:
+  web:
+    image: myapp
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+```
+
+### Logging and Monitoring
+
+- **Logging**: Implement logging for your containers to keep track of their health and performance. Docker supports several logging drivers that can be configured using `docker run` or `docker-compose`.
+- **Monitoring**: Use monitoring tools like Prometheus, Grafana, or ELK Stack to monitor the performance and health of your Docker containers.
+
+---
+
+This guide provides a comprehensive understanding of Docker's core concepts, commands, and best practices. By leveraging Docker effectively, you can ensure efficient, scalable, and secure deployment of your applications across various environments. Understanding these principles will prepare you well for a comprehensive discussion in an interview setting.
