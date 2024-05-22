@@ -125,22 +125,22 @@ const config: DocumentConfig[] = [
 		subDocuments: [
 			{
 				id: 'inheritance',
-				title: 'Inheritance | OOP',
+				title: 'Inheritance (OOP)',
 				data: InheritanceMDX,
 			},
 			{
 				id: 'abstraction',
-				title: 'Abstraction | OOP',
+				title: 'Abstraction (OOP)',
 				data: AbstractionMDX,
 			},
 			{
 				id: 'encapsulation',
-				title: 'Encapsulation | OOP',
+				title: 'Encapsulation (OOP)',
 				data: EncapsulationMDX,
 			},
 			{
 				id: 'polymorphism',
-				title: 'Polymorphism | OOP',
+				title: 'Polymorphism (OOP)',
 				data: PolymorphismMDX,
 			},
 		],
