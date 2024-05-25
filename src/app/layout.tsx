@@ -1,6 +1,7 @@
 import './globals.css';
 
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/react';
 
 import { poppins } from '@/styles/fonts';
 import { cn } from '@/utils';
@@ -26,7 +27,10 @@ export default function RootLayout({
 		<html lang='en'>
 			<body className={cn(poppins.className, 'flex h-screen flex-col')}>
 				<Header />
-				<main className='flex-1 wrapper'>{children}</main>
+				<main className='flex-1 wrapper'>
+					{children}
+					<Analytics />
+				</main>
 				<Footer />
 			</body>
 		</html>
