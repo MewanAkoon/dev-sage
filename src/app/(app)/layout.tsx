@@ -1,4 +1,4 @@
-import { BreadcrumbComponent } from '@/components/shared/breadcrumbComponent';
+import { BreadcrumbComponent } from '@/components/shared/breadcrumb-component';
 
 export default function Layout({
 	children,

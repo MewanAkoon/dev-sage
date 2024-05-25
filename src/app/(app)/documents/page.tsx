@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 	// TODO: Add description
 };
 
-export default function Page() {
+export default async function DocumentsMainPage() {
 	return (
 		<>
 			<h1 className='text-center my-8'>Documents</h1>

@@ -47,7 +47,7 @@ const config: DataConfig = [
 	// Add more configurations for other JSON files if needed
 ];
 
-export const getQuestionsAndAnswers = (id: string): QAPair[] => {
+export const getQuestionsAndAnswers = async (id: string): Promise<QAPair[]> => {
 	const selectedConfig = config.find((item) => item.id === id);
 	if (!selectedConfig) {
 		console.error(`No configuration found for ID: ${id}`);

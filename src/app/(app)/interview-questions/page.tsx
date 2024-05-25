@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 	// TODO: Add description
 };
 
-export default function Page() {
+export default async function InterviewQuestionsMainPage() {
 	return (
 		<>
 			<h1 className='text-center my-8'>Interview Questions</h1>

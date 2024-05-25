@@ -65,204 +65,208 @@ type DocumentConfig = {
 const config: DocumentConfig[] = [
 	{
 		id: 'docker',
-		title: 'Docker',
+		title: 'Docker Doc',
 		data: DockerMDX,
 	},
 	{
 		id: 'express',
-		title: 'Express JS',
+		title: 'Express JS Doc',
 		data: ExpressMDX,
 	},
 	{
 		id: 'javascript',
-		title: 'Javascript',
+		title: 'Javascript Doc',
 		data: JSMDX,
 	},
 	{
 		id: 'mongo',
-		title: 'MongoDB',
+		title: 'MongoDB Doc',
 		data: MongoMDX,
 	},
 	{
 		id: 'node',
-		title: 'Node JS',
+		title: 'Node JS Doc',
 		data: NodeMDX,
 	},
 	{
 		id: 'react',
-		title: 'React JS',
+		title: 'React JS Doc',
 		data: ReactMDX,
 	},
 	{
 		id: 'rest',
-		title: 'REST',
+		title: 'REST Doc',
 		data: RestMDX,
 	},
 	{
 		id: 'sdlc',
-		title: 'SDLC',
+		title: 'SDLC Doc',
 		data: SDLCMDX,
 	},
 	{
 		id: 'sdm',
-		title: 'SDM',
+		title: 'SDM Doc',
 		data: SDMMDX,
 	},
 	{
 		id: 'solid',
-		title: 'SOLID',
+		title: 'SOLID Doc',
 		data: SOLIDMDX,
 	},
 	{
 		id: 'typescript',
-		title: 'Typescript',
+		title: 'Typescript Doc',
 		data: TSMDX,
 	},
 	{
 		id: 'oop',
-		title: 'OOP',
+		title: 'OOP Doc',
 		data: OOPMDX,
 		subDocuments: [
 			{
 				id: 'inheritance',
-				title: 'Inheritance (OOP)',
+				title: 'Inheritance (OOP) Doc',
 				data: InheritanceMDX,
 			},
 			{
 				id: 'abstraction',
-				title: 'Abstraction (OOP)',
+				title: 'Abstraction (OOP) Doc',
 				data: AbstractionMDX,
 			},
 			{
 				id: 'encapsulation',
-				title: 'Encapsulation (OOP)',
+				title: 'Encapsulation (OOP) Doc',
 				data: EncapsulationMDX,
 			},
 			{
 				id: 'polymorphism',
-				title: 'Polymorphism (OOP)',
+				title: 'Polymorphism (OOP) Doc',
 				data: PolymorphismMDX,
 			},
 		],
 	},
 	{
 		id: 'design-patterns',
-		title: 'Design Patterns',
+		title: 'Design Patterns Doc',
 		data: DesignPatternsMDX,
 		subDocuments: [
 			{
 				id: 'behavioral',
-				title: 'Behavioral Design Patterns',
+				title: 'Behavioral Design Patterns Doc',
 				data: BehavioralPatternsMDX,
 				subDocuments: [
 					{
 						id: 'command',
-						title: 'Command Design Pattern',
+						title: 'Command Design Pattern Doc',
 						data: CommandPatternMDX,
 					},
 					{
 						id: 'iterator',
-						title: 'Iterator Design Pattern',
+						title: 'Iterator Design Pattern Doc',
 						data: IteratorPatternMDX,
 					},
 					{
 						id: 'mediator',
-						title: 'Mediator Design Pattern',
+						title: 'Mediator Design Pattern Doc',
 						data: MediatorPatternMDX,
 					},
 					{
 						id: 'observer',
-						title: 'Observer Design Pattern',
+						title: 'Observer Design Pattern Doc',
 						data: ObserverPatternMDX,
 					},
 					{
 						id: 'state',
-						title: 'State Design Pattern',
+						title: 'State Design Pattern Doc',
 						data: StatePatternMDX,
 					},
 				],
 			},
 			{
 				id: 'creational',
-				title: 'Creational Design Patterns',
+				title: 'Creational Design Patterns Doc',
 				data: CreationalPatternsMDX,
 				subDocuments: [
 					{
 						id: 'builder',
-						title: 'Builder Design Pattern',
+						title: 'Builder Design Pattern Doc',
 						data: BuilderPatternMDX,
 					},
 					{
 						id: 'constructor',
-						title: 'Constructor Design Pattern',
+						title: 'Constructor Design Pattern Doc',
 						data: ConstructorPatternMDX,
 					},
 					{
 						id: 'factory',
-						title: 'Factory Design Pattern',
+						title: 'Factory Design Pattern Doc',
 						data: FactoryPatternMDX,
 					},
 					{
 						id: 'prototype',
-						title: 'Prototype Design Pattern',
+						title: 'Prototype Design Pattern Doc',
 						data: PrototypePatternMDX,
 					},
 					{
 						id: 'singleton',
-						title: 'Singleton Design Pattern',
+						title: 'Singleton Design Pattern Doc',
 						data: SingletonPatternMDX,
 					},
 				],
 			},
 			{
 				id: 'structural',
-				title: 'Structural Design Patterns',
+				title: 'Structural Design Patterns Doc',
 				data: StructuralPatternsMDX,
 				subDocuments: [
 					{
 						id: 'adapter',
-						title: 'Adapter Design Pattern',
+						title: 'Adapter Design Pattern Doc',
 						data: AdapterPatternMDX,
 					},
 					{
 						id: 'decorator',
-						title: 'Decorator Design Pattern',
+						title: 'Decorator Design Pattern Doc',
 						data: DecoratorPatternMDX,
 					},
 					{
 						id: 'facade',
-						title: 'Facade Design Pattern',
+						title: 'Facade Design Pattern Doc',
 						data: FacadePatternMDX,
 					},
-					{ id: 'proxy', title: 'Proxy Design Pattern', data: ProxyPatternMDX },
+					{
+						id: 'proxy',
+						title: 'Proxy Design Pattern Doc',
+						data: ProxyPatternMDX,
+					},
 				],
 			},
 		],
 	},
 	{
 		id: 'dsa',
-		title: 'DSA',
+		title: 'DSA Doc',
 		data: DSAMDX,
 		subDocuments: [
 			{
 				id: 'binary-search-trees',
-				title: 'BST',
+				title: 'BST Doc',
 				data: BSTMDX,
 			},
-			{ id: 'hash-tables', title: 'Hash Tables', data: HashTableMDX },
+			{ id: 'hash-tables', title: 'Hash Tables Doc', data: HashTableMDX },
 			{
 				id: 'linked-lists',
-				title: 'Linked Lists',
+				title: 'Linked Lists Doc',
 				data: LinkedListMDX,
 			},
-			{ id: 'queues', title: 'Queues', data: QueueMDX },
-			{ id: 'sets', title: 'Sets', data: SetMDX },
-			{ id: 'stacks', title: 'Stacks', data: StackMDX },
+			{ id: 'queues', title: 'Queues Doc', data: QueueMDX },
+			{ id: 'sets', title: 'Sets Doc', data: SetMDX },
+			{ id: 'stacks', title: 'Stacks Doc', data: StackMDX },
 		],
 	},
 	{
 		id: 'essential-concepts',
-		title: 'Essential Concepts',
+		title: 'Essential Concepts Doc',
 		data: EssentialConceptsMDX,
 	},
 ];
@@ -281,7 +285,9 @@ const flattenDocuments = (docs: DocumentConfig[]) => {
 	}, []);
 };
 
-export const getMarkdownDocument = (id: string): DocumentConfig => {
+export const getMarkdownDocument = async (
+	id: string
+): Promise<DocumentConfig> => {
 	const selectedDoc = flattenDocuments(config).find((item) => item.id === id);
 
 	if (!selectedDoc) {

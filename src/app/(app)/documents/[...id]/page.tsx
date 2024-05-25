@@ -1,33 +1,35 @@
 import React from 'react';
-import { Metadata, ResolvingMetadata } from 'next';
+import { Metadata } from 'next';
 
 import { SearchParamProps } from '@/types';
 
 import { getSubDocumentsByParentId } from '@/utils';
-import { getMarkdownDocument } from '@/actions/document.actions';
+import { getMarkdownDocument } from '@/actions/documents.actions';
 
 import { Separator } from '@/components/ui/separator';
 import { Card } from '@/components/shared/card';
-import { MDXWrapper } from '@/components/shared/mdxWrapper';
+import { MDXWrapper } from '@/components/shared/mdx-wrapper';
 
-export async function generateMetadata(
-	{ params }: { params: { id: string } },
-	parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({
+	params,
+}: {
+	params: { id: string };
+}): Promise<Metadata> {
 	const documentId = params.id[params.id.length - 1];
 
-	const document = getMarkdownDocument(documentId);
+	const document = await getMarkdownDocument(documentId);
 	return {
 		title: document.title,
+		// TODO: Add description
 	};
 }
 
-export default function Page({ params }: SearchParamProps) {
+export default async function DocumentPage({ params }: SearchParamProps) {
 	const documentId = params.id[params.id.length - 1];
 
-	const document = getMarkdownDocument(documentId);
+	const document = await getMarkdownDocument(documentId);
 
-	const subDocumentCards = getSubDocumentsByParentId(documentId);
+	const subDocumentCards = await getSubDocumentsByParentId(documentId);
 
 	return (
 		<div className='flex flex-col my-8 gap-y-8'>

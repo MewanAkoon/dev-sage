@@ -21,11 +21,11 @@ const links = [
 	},
 	{
 		to: '/documents',
-		title: 'Documentation',
+		title: 'Documents',
 	},
 ] as const;
 
-export function NavItems() {
+export function Navbar() {
 	const pathname = usePathname();
 
 	return (

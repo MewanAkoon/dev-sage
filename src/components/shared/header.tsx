@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { NavItems } from './navItems';
+import { Navbar } from './navbar';
 
 import devSageLogo from '../../../public/assets/logos/logo.png';
 
@@ -20,7 +20,7 @@ export function Header() {
 					DevSage
 				</Link>
 
-				<NavItems />
+				<Navbar />
 			</div>
 		</header>
 	);

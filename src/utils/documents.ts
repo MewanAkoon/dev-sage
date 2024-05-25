@@ -7,7 +7,9 @@ import { type Document } from '@/types';
  * @param {string} parentId - The ID of the parent document.
  * @returns {Document[]} - An array of sub-documents associated with the parent document. Returns an empty array if no sub-documents are found.
  */
-export const getSubDocumentsByParentId = (parentId: string): Document[] => {
+export const getSubDocumentsByParentId = async (
+	parentId: string
+): Promise<Document[]> => {
 	// Flatten the documents array to include both the main documents and their sub-documents
 	const parentDoc = documents
 		.flatMap((doc) => [doc, ...(doc.subDocuments || [])])
