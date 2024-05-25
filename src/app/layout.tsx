@@ -1,7 +1,6 @@
 import './globals.css';
 
 import type { Metadata } from 'next';
-import { ClerkProvider } from '@clerk/nextjs';
 
 import { poppins } from '@/styles/fonts';
 import { cn } from '@/utils';
@@ -24,14 +23,12 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<ClerkProvider>
-			<html lang='en'>
-				<body className={cn(poppins.className, 'flex h-screen flex-col')}>
-					<Header />
-					<main className='flex-1 wrapper'>{children}</main>
-					<Footer />
-				</body>
-			</html>
-		</ClerkProvider>
+		<html lang='en'>
+			<body className={cn(poppins.className, 'flex h-screen flex-col')}>
+				<Header />
+				<main className='flex-1 wrapper'>{children}</main>
+				<Footer />
+			</body>
+		</html>
 	);
 }

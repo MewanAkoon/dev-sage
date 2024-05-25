@@ -8,14 +8,6 @@ import rehypePrism from 'rehype-prism';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
-	images: {
-		remotePatterns: [
-			{
-				protocol: 'https',
-				hostname: 'img.clerk.com',
-			},
-		],
-	},
 };
 
 const withMDX = createMDX({
