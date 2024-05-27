@@ -26,7 +26,7 @@ export function Card({ item }: CardProps) {
 
 	return (
 		<div
-			className='group relative border border-1 p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-sky-500 shadow rounded cursor-pointer hover:bg-gray-50'
+			className='group relative border border-1 p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-sky-500 shadow rounded cursor-pointer bg-white hover:bg-gray-50'
 			onClick={() => route.push(`${pathname}/${item.href}`)}
 		>
 			{'imgSrc' in item && (

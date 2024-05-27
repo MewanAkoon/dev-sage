@@ -27,6 +27,7 @@ export default function RootLayout({
 		<html lang='en'>
 			<body className={cn(poppins.className, 'flex h-screen flex-col')}>
 				<Header />
+				<div className='background-image' />
 				<main className='flex-1 wrapper'>
 					{children}
 					<Analytics />
