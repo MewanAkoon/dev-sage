@@ -7,7 +7,7 @@ export function MDXWrapper({ children, className }: MarkdownComponentProps) {
 	return (
 		<div
 			className={cn(
-				'prose max-w-full border border-gray-200 p-5 sm:p-10 rounded-md backdrop-blur-md',
+				'prose max-w-full border border-gray-200 p-5 sm:p-10 rounded-md background-blur-md',
 				className
 			)}
 		>

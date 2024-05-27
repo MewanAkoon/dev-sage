@@ -1,13 +1,14 @@
-import { Button } from '@/components/ui/button';
-import { ArrowRightCircle, MoveUpRight } from 'lucide-react';
 import Link from 'next/link';
+import { MoveUpRight } from 'lucide-react';
+
+import { Button } from '@/components/ui/button';
 
 export default function Home() {
 	return (
-		<div className='flex w-full h-full items-center justify-center my-8'>
-			<div className='sm:-mt-28 -mt-32'>
-				<h1 className='text-4xl font-semibold'>DevSage</h1>
-				<p className='mt-10 text-xl text-gray-700 leading-8'>
+		<div className='flex w-full h-full items-center sm:justify-center sm:my-8'>
+			<div className='my-4 sm:-mt-28 sm:mb-0'>
+				<h1 className='text-2xl sm:text-4xl font-semibold'>DevSage</h1>
+				<p className='mt-8 sm:mt-10 sm:text-xl text-gray-700 leading-8'>
 					Welcome to your go-to hub for mastering the MERN stack! Dive into a
 					comprehensive collection of interview questions, detailed notes, and
 					coding examples focused on JavaScript and TypeScript libraries.

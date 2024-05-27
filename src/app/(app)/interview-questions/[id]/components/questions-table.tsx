@@ -214,7 +214,7 @@ export function QuestionsTable({ id, questions }: QuestionsTableProps) {
 					</DropdownMenuContent>
 				</DropdownMenu>
 			</div>
-			<div className='rounded-md border backdrop-blur-md'>
+			<div className='rounded-md border background-blur-md'>
 				<Table>
 					<TableHeader>
 						{table.getHeaderGroups().map((headerGroup) => (
