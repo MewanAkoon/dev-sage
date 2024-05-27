@@ -32,7 +32,7 @@ export default async function DocumentPage({ params }: SearchParamProps) {
 	const subDocumentCards = await getSubDocumentsByParentId(documentId);
 
 	return (
-		<div className='flex flex-col my-8 gap-y-8'>
+		<div className='flex flex-col my-2 sm:my-8 gap-y-8'>
 			<MDXWrapper>{React.createElement(document.data)}</MDXWrapper>
 
 			{subDocumentCards.length > 0 && (
