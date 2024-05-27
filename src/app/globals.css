@@ -92,6 +92,6 @@
 	.background-image {
 		background-image: url('../../public/assets/images/background-image.png');
 
-		@apply absolute w-full h-full bg-cover opacity-80 blur-[2px] -z-10;
+		@apply absolute w-full h-full bg-cover blur-[2px] -z-50 opacity-50;
 	}
 }
