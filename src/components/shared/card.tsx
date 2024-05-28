@@ -46,7 +46,7 @@ const CardImage = ({ src, alt }: CardImageProps) => (
 const CardContent = ({ title, description }: CardContentProps) => (
 	<div className='mt-6'>
 		<h3 className='text-base font-semibold leading-6 text-gray-900'>{title}</h3>
-		<p className='mt-2 text-sm text-gray-500'>{description}</p>
+		<p className='mt-2 text-sm text-gray-500 text-justify'>{description}</p>
 	</div>
 );
 

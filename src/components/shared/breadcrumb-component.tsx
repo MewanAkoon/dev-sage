@@ -3,6 +3,9 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Home } from 'lucide-react';
+
+import { formatTitleCase } from '@/utils';
 
 import {
 	Breadcrumb,
@@ -12,9 +15,6 @@ import {
 	BreadcrumbPage,
 	BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
-
-import { Home } from 'lucide-react';
-import { getTitleCase } from '@/utils';
 
 export function BreadcrumbComponent() {
 	const pathname = usePathname();
@@ -41,10 +41,10 @@ export function BreadcrumbComponent() {
 						<BreadcrumbSeparator />
 						<BreadcrumbItem>
 							{idx === breadcrumbItems.length - 1 ? (
-								<BreadcrumbPage>{getTitleCase(item.label)}</BreadcrumbPage>
+								<BreadcrumbPage>{formatTitleCase(item.label)}</BreadcrumbPage>
 							) : (
 								<BreadcrumbLink asChild>
-									<Link href={item.path}>{getTitleCase(item.label)}</Link>
+									<Link href={item.path}>{formatTitleCase(item.label)}</Link>
 								</BreadcrumbLink>
 							)}
 						</BreadcrumbItem>

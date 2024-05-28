@@ -15,6 +15,7 @@ import {
 import { ArrowUpDown, ChevronDown } from 'lucide-react';
 
 import { AnswerSegment, QAPair } from '@/types';
+import { formatTitleCase } from '@/utils';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -265,8 +266,8 @@ export function QuestionsTable({ id, questions }: QuestionsTableProps) {
 									<DialogContent className='w-full max-h-full sm:w-fit sm:max-w-2xl overflow-y-auto'>
 										<DialogHeader>
 											<DialogTitle className='flex gap-x-4 items-center w-full'>
-												<span className='capitalize'>
-													{id} Question {parseInt(row.id) + 1}
+												<span>
+													{formatTitleCase(id)} Question {parseInt(row.id) + 1}
 												</span>
 												<DifficultyBadge
 													difficulty={row.getValue('difficulty')}
@@ -275,10 +276,10 @@ export function QuestionsTable({ id, questions }: QuestionsTableProps) {
 										</DialogHeader>
 										<Separator />
 										<div className='flex w-full flex-col gap-y-4 my-2'>
-											<section className='font-semibold'>
+											<section className='font-semibold text-justify'>
 												{row.getValue('question')}
 											</section>
-											<section className='text-gray-600 leading-relaxed'>
+											<section className='text-gray-600 leading-relaxed text-justify'>
 												<AnswerRenderer segments={row.getValue('answer')} />
 											</section>
 										</div>

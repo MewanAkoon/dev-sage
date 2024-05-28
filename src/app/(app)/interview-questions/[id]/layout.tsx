@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { getTitleCase } from '@/utils';
+import { formatTitleCase } from '@/utils';
 
 export async function generateMetadata({
 	params,
@@ -7,7 +7,7 @@ export async function generateMetadata({
 	params: { id: string };
 }): Promise<Metadata> {
 	return {
-		title: `${getTitleCase(params.id)} Interview Questions`,
+		title: `${formatTitleCase(params.id)} Interview Questions`,
 		// TODO: Add a description
 	};
 }

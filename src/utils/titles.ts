@@ -1,12 +1,12 @@
 import { TITLES_TO_UPPER_CASE } from '@/configs';
 
 /**
- * Determines the title case (uppercase or capitalize) for a given title.
+ * Formats the title to either uppercase or capitalized case.
  *
- * @param {string} title - The title to check for text case.
- * @returns {string} - The title with the determined text case.
+ * @param {string} title - The title to format.
+ * @returns {string} - The formatted title.
  */
-export const getTitleCase = (title: string): string => {
+export const formatTitleCase = (title: string): string => {
 	if (TITLES_TO_UPPER_CASE.includes(title)) {
 		// Convert the title to uppercase if it exists in the TITLES_TO_UPPER_CASE array
 		return title.toUpperCase();

@@ -8,7 +8,7 @@ export default function Home() {
 		<div className='flex w-full h-full sm:items-center justify-center sm:my-8'>
 			<div className='my-4 sm:-mt-28 sm:mb-0'>
 				<h1 className='text-2xl sm:text-4xl font-semibold'>DevSage</h1>
-				<p className='mt-8 sm:mt-10 sm:text-xl text-gray-700 leading-8'>
+				<p className='mt-8 sm:mt-10 sm:text-xl text-gray-700 leading-8 text-justify'>
 					Welcome to your go-to hub for mastering the MERN stack! Dive into a
 					comprehensive collection of interview questions, detailed notes, and
 					coding examples focused on JavaScript and TypeScript libraries.

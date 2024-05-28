@@ -1,5 +1,5 @@
 import { SearchParamProps } from '@/types';
-import { getTitleCase } from '@/utils';
+import { formatTitleCase } from '@/utils';
 import { getQuestionsAndAnswers } from '@/actions/questions.actions';
 
 import { QuestionsTable } from './components';
@@ -12,7 +12,7 @@ export default async function InterviewQuestionsPage({
 	return (
 		<>
 			<h1 className='text-center my-4'>
-				<span>{getTitleCase(params.id)}</span> Interview Questions
+				<span>{formatTitleCase(params.id)}</span> Interview Questions
 			</h1>
 
 			<QuestionsTable questions={questions} id={params.id} />
