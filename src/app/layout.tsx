@@ -20,6 +20,11 @@ export const metadata: Metadata = {
 		'A wealth of interview questions and answers, tech notes, and coding examples in data structures and algorithms, all in one place. Enhance your software development knowledge with curated resources and expert insights.',
 };
 
+// TODO: Add a profile section
+//  - Users should be able to add custom questions and answers
+
+// TODO: Add a theme switcher
+
 export default function RootLayout({
 	children,
 }: Readonly<{
