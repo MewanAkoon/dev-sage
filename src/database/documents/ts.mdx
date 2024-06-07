@@ -1,6 +1,6 @@
 # TypeScript (TS) Notes
 
-TypeScript is a superset of JavaScript that adds static types and powerful features to the language, making it more robust and maintainable. Here are the key aspects and features of TypeScript:
+TypeScript is a superset of JavaScript that adds static types and powerful features to the language, making it more robust and maintainable. This guide is organized to cover TypeScript concepts from basic to advanced, providing a clear learning path.
 
 ## Strong Typing
 
@@ -29,16 +29,16 @@ Defines a set of named constants:
 
 ```typescript
 enum Color {
-	Red,
-	Green,
-	Blue,
+  Red,
+  Green,
+  Blue,
 }
 let c: Color = Color.Green;
 
 // or with explicit values
 enum Status {
-	Success = 200,
-	NotFound = 404,
+  Success = 200,
+  NotFound = 404,
 }
 ```
 
@@ -50,6 +50,22 @@ Opt-out of type-checking for a variable:
 let notSure: any = 4;
 ```
 
+### Never, Unknown
+
+- **Never**: Represents the type of values that never occur, used for functions that always throw an error or never return.
+- **Unknown**: A safer alternative to `any`, requires you to perform type checks before performing operations on the variable.
+
+```typescript
+function error(message: string): never {
+  throw new Error(message);
+}
+
+let value: unknown = "Hello, world!";
+if (typeof value === "string") {
+  console.log(value.toUpperCase());
+}
+```
+
 ## Object-Oriented Features
 
 ### Classes
@@ -58,13 +74,13 @@ TypeScript supports class-based OOP:
 
 ```typescript
 class Animal {
-	name: string;
-	constructor(theName: string) {
-		this.name = theName;
-	}
-	move(distanceInMeters: number = 0) {
-		console.log(`${this.name} moved ${distanceInMeters}m.`);
-	}
+  name: string;
+  constructor(theName: string) {
+    this.name = theName;
+  }
+  move(distanceInMeters: number = 0) {
+    console.log(`${this.name} moved ${distanceInMeters}m.`);
+  }
 }
 ```
 
@@ -74,10 +90,10 @@ Define contracts within your code and custom types for object shapes:
 
 ```typescript
 interface LabelledValue {
-	label: string;
+  label: string;
 }
 function printLabel(labelledObj: LabelledValue) {
-	console.log(labelledObj.label);
+  console.log(labelledObj.label);
 }
 ```
 
@@ -87,10 +103,10 @@ Control access to class members with `public` (default), `private`, and `protect
 
 ```typescript
 class Animal {
-	private name: string;
-	constructor(theName: string) {
-		this.name = theName;
-	}
+  private name: string;
+  constructor(theName: string) {
+    this.name = theName;
+  }
 }
 ```
 
@@ -102,7 +118,7 @@ Enable components to work with any type rather than a single one:
 
 ```typescript
 function identity<T>(arg: T): T {
-	return arg;
+  return arg;
 }
 ```
 
@@ -112,19 +128,19 @@ Special kind of declaration that can be attached to a class declaration, method,
 
 ```typescript
 function sealed(constructor: Function) {
-	Object.seal(constructor);
-	Object.seal(constructor.prototype);
+  Object.seal(constructor);
+  Object.seal(constructor.prototype);
 }
 
 @sealed
 class Greeter {
-	greeting: string;
-	constructor(message: string) {
-		this.greeting = message;
-	}
-	greet() {
-		return 'Hello, ' + this.greeting;
-	}
+  greeting: string;
+  constructor(message: string) {
+    this.greeting = message;
+  }
+  greet() {
+    return 'Hello, ' + this.greeting;
+  }
 }
 ```
 
@@ -136,7 +152,7 @@ TypeScript supports module systems such as ES Modules and CommonJS:
 // In a file myModule.ts
 export const pi = 3.14;
 export function computeCircumference(diameter: number) {
-	return diameter * pi;
+  return diameter * pi;
 }
 
 // In another file
@@ -168,12 +184,64 @@ myValue = 'hello'; // Valid
 
 // Type Guards
 function printId(id: number | string) {
-	if (typeof id === 'string') {
-		console.log(id.toUpperCase());
-	} else {
-		console.log(id);
-	}
+  if (typeof id === 'string') {
+    console.log(id.toUpperCase());
+  } else {
+    console.log(id);
+  }
 }
 ```
 
-Custom type guards and the use of `instanceof` with classes are advanced strategies to determine the specific type of an object within a union type at runtime.
+### Custom Type Guards
+
+Custom type guards allow you to create functions that determine the specific type of a variable at runtime:
+
+```typescript
+interface Cat {
+  meow(): void;
+}
+
+interface Dog {
+  bark(): void;
+}
+
+function isCat(pet: Cat | Dog): pet is Cat {
+  return (pet as Cat).meow !== undefined;
+}
+
+let pet: Cat | Dog = getPet();
+
+if (isCat(pet)) {
+  pet.meow();
+} else {
+  pet.bark();
+}
+```
+
+### Satisfies Operator
+
+The `satisfies` operator ensures that the object satisfies the type constraints without necessarily conforming to them:
+
+```typescript
+const point = {
+  x: 1,
+  y: 2,
+  z: 3,
+} satisfies { x: number; y: number };
+```
+
+### `as const`
+
+`as const` is used to indicate that the value should be treated as a literal type:
+
+```typescript
+const point = { x: 1, y: 2 } as const;
+```
+
+## Resources
+
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+
+---
+
+This comprehensive guide covers essential TypeScript concepts, ensuring a strong foundational understanding. Mastering these principles will help you write more robust and maintainable code, and prepare you well for real-world application development.
