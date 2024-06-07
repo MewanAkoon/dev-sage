@@ -4,7 +4,10 @@ import { Metadata } from 'next';
 import { SearchParamProps } from '@/types';
 
 import { getSubDocumentsByParentId } from '@/utils';
-import { getMarkdownDocument } from '@/actions/documents.actions';
+import {
+	collectDocumentIdPaths,
+	getMarkdownDocument,
+} from '@/actions/documents.actions';
 
 import { Separator } from '@/components/ui/separator';
 import { Card } from '@/components/shared/card';
@@ -22,6 +25,12 @@ export async function generateMetadata({
 		title: document.title,
 		// TODO: Add description
 	};
+}
+
+export async function generateStaticParams() {
+	const paths = await collectDocumentIdPaths();
+
+	return paths;
 }
 
 export default async function DocumentPage({ params }: SearchParamProps) {

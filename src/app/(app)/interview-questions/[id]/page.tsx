@@ -1,8 +1,19 @@
 import { SearchParamProps } from '@/types';
 import { formatTitleCase } from '@/utils';
-import { getQuestionsAndAnswers } from '@/actions/questions.actions';
+import {
+	collectQAIdPaths,
+	getQuestionsAndAnswers,
+} from '@/actions/questions.actions';
 
 import { QuestionsTable } from './components';
+
+export async function generateStaticParams() {
+	const ids = await collectQAIdPaths();
+
+	return ids.map((id) => ({
+		id,
+	}));
+}
 
 export default async function InterviewQuestionsPage({
 	params,

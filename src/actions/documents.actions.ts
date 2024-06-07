@@ -62,7 +62,7 @@ type DocumentConfig = {
 	subDocuments?: DocumentConfig[];
 };
 
-const config: DocumentConfig[] = [
+const configs: DocumentConfig[] = [
 	{
 		id: 'docker',
 		title: 'Docker Doc',
@@ -288,7 +288,7 @@ const flattenDocuments = (docs: DocumentConfig[]) => {
 export const getMarkdownDocument = async (
 	id: string
 ): Promise<DocumentConfig> => {
-	const selectedDoc = flattenDocuments(config).find((item) => item.id === id);
+	const selectedDoc = flattenDocuments(configs).find((item) => item.id === id);
 
 	if (!selectedDoc) {
 		console.error(`No document found for ID: ${id}`);
@@ -297,3 +297,30 @@ export const getMarkdownDocument = async (
 
 	return selectedDoc;
 };
+
+type DocumentIdPath = {
+	id: string[];
+};
+
+export async function collectDocumentIdPaths(): Promise<DocumentIdPath[]> {
+	let paths: DocumentIdPath[] = [];
+
+	function collectPaths(doc: DocumentConfig, currentPath: string[]) {
+		const newPath = [...currentPath, doc.id]; // Append the current document ID to the path
+		paths.push({ id: newPath }); // Add the new path to the paths array
+
+		// If there are subDocuments, recursively collect their paths
+		if (doc.subDocuments) {
+			for (const subDoc of doc.subDocuments) {
+				collectPaths(subDoc, newPath);
+			}
+		}
+	}
+
+	// Iterate over each config and start the collection process
+	for (const config of configs) {
+		collectPaths(config, []);
+	}
+
+	return paths;
+}

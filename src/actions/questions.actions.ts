@@ -15,7 +15,7 @@ type DataConfig = {
 	data: QAPair[];
 }[];
 
-const config: DataConfig = [
+const configs: DataConfig = [
 	{
 		id: 'javascript',
 		data: JSON.parse(JSON.stringify(jsData)),
@@ -48,7 +48,7 @@ const config: DataConfig = [
 ];
 
 export const getQuestionsAndAnswers = async (id: string): Promise<QAPair[]> => {
-	const selectedConfig = config.find((item) => item.id === id);
+	const selectedConfig = configs.find((item) => item.id === id);
 	if (!selectedConfig) {
 		console.error(`No configuration found for ID: ${id}`);
 		notFound();
@@ -57,4 +57,8 @@ export const getQuestionsAndAnswers = async (id: string): Promise<QAPair[]> => {
 	const { data } = selectedConfig;
 
 	return data.sort((a, b) => a.difficulty - b.difficulty);
+};
+
+export const collectQAIdPaths = async (): Promise<string[]> => {
+	return configs.map((config) => config.id);
 };
